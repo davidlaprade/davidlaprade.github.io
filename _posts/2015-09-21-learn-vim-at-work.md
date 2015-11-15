@@ -1,8 +1,9 @@
-Learning vim is daunting. Many people find it hard to make the switch from a text editor
-like Sublime -- so hard, and so time-consuming, that they feel they can't
-justify doing it while at work. I don't think it has to be that way.
-I learned vim largely while at work, and I don't think my productivity took a
-hit while I did it. This is how I managed.
+---
+title: "Learn Vim at Work"
+excerpt: "Learning vim is daunting. It kills your productivity for at least a full week. So how can anyone justify learning it while at work? This is how I did it."
+---
+
+Here's how to learn vim at work without killing your productivity.
 
 ### 0. Setup some bare-bones configs
 Otherwise vim can be quite unpleasant to use.
@@ -22,7 +23,7 @@ I recommend setting your default git editor to be vim
 and learning the basic vim commands while writing commit messages.
 To do this, start by adding the following to your `~/.gitconfig`:
 
-{% highlight html linenos %}
+{% highlight bash %}
 [core]
   editor = vim
 {% endhighlight %}
@@ -58,15 +59,21 @@ Once you feel fairly comfortable writing commit messages with vim, you're
 using vim exclusively. There were just a lot of things that Sublime did well
 that vim either didn't seem to do at all or did very poorly.
 The most significant of which were (in rough order of importance):
+
   * fuzzy file finding within the directory
   * grepping within the directory
   * syntax highlighting
-  * auto-completion (of variable and method names, and also of grouping symbols)
+  * auto-completion
+    * of variable and method names
+    * of grouping symbols, e.g. `(`, `[`, `{`, `<p>`
   * copying text to the clipboard
   * multiple cursors
   * multiple windows
+
 So step 3 was just figuring out how to do these things with vim. As it turns
-out, it wasn't hard to get vim to do these things. Here's how I did it...
+out, it wasn't hard. I just had to use a few plugins, which were easy to
+install. Checkout my [vim installation guide](https://github.com/davidlaprade/dotfiles/#vim-installationupdate) for
+more details.
 
 ### 5. Go cold turkey
 Once you have vim configured with all the bells and whistles that other editors have, go cold turkey. Open vim in the root of your directory and start grepping through files.
