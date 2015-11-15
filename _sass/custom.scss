@@ -1,3 +1,6 @@
 /*- Custom style -*/
 
-// -- Put custom style under this point -- //
+// don't add margin to bottom of nested lists
+li > ul {
+  margin-bottom: 0px;
+}
