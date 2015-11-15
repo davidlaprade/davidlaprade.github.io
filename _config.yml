@@ -1,7 +1,7 @@
 # Site settings
-title: Emerald | A simple Jekyll blog
+title: David Laprade | Blog
 description: "A minimal blog template, build with Jekyll."
-url: "http://www.jacoporabolini.com/emerald"
+url: "http://davidlaprade.github.io/blog"
 author:
   name: "David Laprade"
   email: "david.laprade@gmail.com"
