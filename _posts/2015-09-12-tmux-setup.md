@@ -1,5 +1,5 @@
 ---
-title: "Tmux Setup"
+title: "Tmux Setup with Vim"
 excerpt: "I recently started using Tmux. Here's how I installed and configured it to play nicely with Vim."
 ---
 
