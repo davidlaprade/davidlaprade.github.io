@@ -4,3 +4,13 @@
 li > ul {
   margin-bottom: 0px;
 }
+
+// indent and set backgound on code blocks
+.highlight {
+  margin-left: 10px;
+  background-color: #f2f2f2;
+  code {
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+  }
+}
