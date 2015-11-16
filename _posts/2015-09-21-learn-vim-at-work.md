@@ -44,7 +44,7 @@ Make a list of the useful commands you learn. Here's
 [mine](https://gist.github.com/davidlaprade/ec6b0e26a6525f89293a). It's still
 growing! By making a list you don't have to worry about memorizing everything.
 
-### 3. Be deliberate.
+### 3. Be deliberate
 When you are using vim for small tasks like editing commit
    messages and you find yourself doing something the "wrong way"(TM) -- e.g.
 deleting a word by first navigating to the end of the word in normal mode, then
