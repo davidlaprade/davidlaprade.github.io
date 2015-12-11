@@ -17,7 +17,7 @@ useful to record what I did.
 ### Background
 
 The app has a `Procfile` sitting in its root that declares the two
-commands that must run for it to carry out its functions:
+commands that must run for the app to carry out its functions:
 
 {% highlight bash %}
 # ./Procfile
@@ -333,8 +333,8 @@ presupposes. Note that you will need to update the IP address in the
 `config/deploy/production.rb` script.
 Also note that at this point the deploy will fail. That's okay!
 
-Though the deployment failed, it should have succeeded in making foreman
-translate your Procfile into init files. To check this:
+Though the deployment failed, it should have succeeded in
+translating your Procfile into init files. To check this:
 
 {% highlight bash %}
 ls -l /etc/init my_app*
@@ -350,16 +350,14 @@ You should see something like the following:
 -rw-r--r-- 1 root root   49 Dec  4 14:55 my_app-shoryuken.conf
 {% endhighlight %}
 
-(If you don't see these files, then capistrano failed before foreman
+If you don't, then capistrano probably failed before foreman
 was able to export the Procfile. To debug this, simply cd into the
 `/data/my_app/current` folder and attempt to run the `bundle exec
-foreman export upstart` command in the `deploy.rb` script above.)
+foreman export upstart` command in the `deploy.rb` script above.
 
-Let's open one of these config files to see what's inside:
+Let's `cat my_app-shoryuken-1.conf` to see what's inside:
 
 {% highlight bash %}
-vim my_app-shoryuken-1.conf
-
 start on starting my_app-shoryuken
 stop on stopping my_app-shoryuken
 respawn
@@ -383,9 +381,9 @@ your current shell.
 
 Fortunately, foreman will take care of this for you if you just put the needed
 ENV vars in a `.env` file sitting in your application's root. Now, you obviously
-don't want to check your `.env` file into version control. And, because
-capistrano only deploys the files that have been checked into version control,
-it seems that you might have a problem getting your `.env` file on the server
+don't want to check your `.env` file into version control. But
+capistrano only deploys the files that have been checked into version control.
+So, it seems that you might have a problem getting your `.env` file on the server
 during deployment.
 
 This problem has an easy solution.
@@ -416,11 +414,15 @@ And you should be able to see each process writing its output to the logs with
 process, so it takes a few seconds to write each line. Also bear in mind that
 shoryuken throws a lot of information into the logs.
 
-# Helpful Hints
+And that's it! We've now deployed a plain-old ruby app to a production
+environment and set it up to run two non-web processes.
+
+## Helpful Hints
 
 ### Check Services Running on the Server
 
 The three most important services on the server are:
+
   * monit
   * my_app-shoryuken
   * my_app-clockwork
@@ -438,7 +440,7 @@ stop a service, just replace `status` with `stop`. To restart, replace with
 clockwork without first stopping monit, since monit is set up to restart these
 services whenever they go down.
 
-### Deploy with [Capistrano](https://github.com/capistrano/capistrano):
+### Deploy with Capistrano
 {% highlight bash %}
 bundle exec cap production deploy
 {% endhighlight %}
