@@ -20,7 +20,5 @@ i.e. [here](https://github.com/davidlaprade/blog/blob/master/_sass/custom.scss)
 ### Deployment
 
 ```bash
-git checkout gh-pages
-git rebase master
-git push origin/HEAD
+bin/deploy
 ```
