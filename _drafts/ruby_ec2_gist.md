@@ -1,27 +1,73 @@
 # Provision EC2 for a Ruby App Running Non-Web Processes
 
-Most ruby apps that you read about are using web frameworks such as Rails
-or Sinatra. And, as such, most ruby apps are deployed and hosted to run web
-processes -- servers like unicorn, puma, or thin.
+Most ruby apps use web frameworks such as Rails
+or Sinatra, and thus are deployed and hosted to run web
+processes: servers like unicorn, puma, or thin.
 
-I recently had the need to host something out of the norm: a plain-old ruby app
-(i.e. non-Rails, non-Sinatra) running two non-web processes.
+I recently had the need to host something out of the norm:
+a plain-old ruby app
+(i.e. a non-Rails, non-Sinatra app) running only non-web processes.
 Since this is something I had never done before, and
 something I hadn't read about other people doing, I thought it might be
-useful to describe the steps that I took here.
+useful to record what I did.
 
-I did it using upstart, monit, capistrano, and foreman on an AWS EC2 instance.
+### Background
 
-And, in the interest of avoiding jargon, "provision" just means "install
-programs".
+The app has a `Procfile` sitting in its root that declares the two
+commands that must run for it to carry out its functions:
+
+```
+# ./Procfile
+shoryuken: bundle exec shoryuken -C config/shoryuken.yml
+clockwork: bundle exec clockwork bin/clockwork.rb
+```
+
+[This](https://devcenter.heroku.com/articles/process-model) is a useful
+article explaining the process model that the `Procfile` presupposes.
+And here's some information about
+[shoryuken](https://github.com/phstc/shoryuken) and
+[clockwork](https://github.com/tomykaira/clockwork).
+
+The app is run in development using
+[foreman](https://github.com/ddollar/foreman), which coordinates the start
+of both processes at once. This isn't strictly necessary.
+The processes could always be started manually simply by running the commands in
+the `Procfile`. But it is convenient.
+
+What's more than convenient, however, is foreman's ability to "export", or
+translate, a `Procfile` into system
+[init](https://en.wikipedia.org/wiki/Init) files on a server so that the
+processes turn on when your server boots up, and (most importantly) can be
+managed and monitored like other system services. Since it's really important
+that this app run with no down-time in production, this will be very useful.
+
+Instead of init, I'll be using [upstart](http://upstart.ubuntu.com/) in
+production. Upstart is an event-based replacement of init that ships with
+most distributions of Linux.
+[This](https://en.wikipedia.org/wiki/Upstart#Rationale) offers a good
+description of the differences between the two, and the benefits of Upstart.
+Because I'll be using Upstart, I'm going to need to have foreman export my
+`Procfile` in the format expected by Upstart.
+
+Once the processes have been written as init files on the production server,
+and can be run like system services,
+I'll use [monit](https://mmonit.com/) to monitor these services to make sure
+that they stay up, and restart them if they go down.
+
+Finally, I'm going to deploy the whole thing with capistrano.
 
 ### Launch your EC2 Instance
 
-This post presupposes that:
-* your instance is running Ubuntu 14.04
-* your instance allows access to port 22 (for SSH) but not port 80 (for HTTP)
-* you've downloaded your `.pem` file
-* you've got your public IP
+I'm going to use an EC2 server from Amazon running Ubuntu 14.04. I'll basically
+just be using this server out-of-the-box: the standard configurations suggested
+by Amazon during the launch process will all be fine. The only non-standard
+thing I'll be doing is not creating a security group for port 80 (for HTTP
+connections). There's no need to open port 80 since I'm not going to be running
+a web server. I'll just need to make sure that the instance permits traffic
+on port 22 to allow SSH access.
+
+Once the EC2 instance is launched, I'll make sure to download my `.pem` file and
+write down its public IP address.
 
 ### Get SSH Access to your EC2 Instance
 
@@ -34,6 +80,8 @@ vim ~/.ssh/authorized_keys # add your id_rsa.pub
 
 With your public key added to the server, you'll now be able to SSH in the
 normal way, i.e. with `ssh ubuntu@YOUR_IP`.
+
+### Server Setup
 
 Prepare for provisioning:
 
@@ -142,10 +190,10 @@ check process shoryuken matching 'bin/shoryuken'
   start program "/sbin/start shoryuken"
   stop program "/sbin/stop shoryuken"
 
-check process scheduler matching 'bin/scheduler'
+check process clockwork matching 'bin/clockwork'
   group my_app
-  start program "/sbin/start scheduler"
-  stop program "/sbin/stop scheduler"
+  start program "/sbin/start clockwork"
+  stop program "/sbin/stop clockwork"
 ```
 
 Now set the permissions on the `monitrc` file:
@@ -176,9 +224,6 @@ Then create your `Capfile`:
 require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/rbenv'
-# set production as the default deployment
-# http://stackoverflow.com/questions/21006875/set-default-stage-with-capistrano-3
-invoke :production
 ```
 
 Then create your `deploy.rb`:
@@ -284,26 +329,8 @@ application has been deployed. So, all you need to do is this:
 ```bash
 touch /data/my_app/shared/.env
 vim /data/my_app/shared/.env
-# don't use exports, just use the syntax VARIABLE='xxxxxxxxx'
-# see the `my_app.env.sh` file in the Rails Setup folder on the google drive
-```
-
-Now you'll need to export your variables into your shell's environment
-so that you can run the bootstrap script which will create the SQS
-queues for you and configure their permissions. To do this, just go into the
-Rails Setup folder, grab all of the production variables from `my_app.env.sh`,
-add an `export` to the front, then copy and paste into the terminal like so:
-
-```bash
-export AWS_ACCESS_KEY='xxxxxxxx'
-export AWS_SECRET_KEY='xxxxxxxx'
-# and so on ...
-```
-
-Run the setup script:
-
-```bash
-cd /data/my_app/current && bin/bootstrap
+# don't use `export` in this .env file
+# just use the syntax VARIABLE='xxxxxxxxx'
 ```
 
 At this point you may have to manually turn off and then on the application
