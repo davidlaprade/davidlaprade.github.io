@@ -14,8 +14,14 @@ li > ul {
     padding: 10px 25px;
   }
   code {
-    background-color: #f2f2f2;
+    padding: 0px; // override the default below
   }
+}
+
+code {
+  color: #7b7b7b;
+  background-color: #f2f2f2;
+  padding: 0px 10px;
 }
 
 h2, h3, h4, h5 {
