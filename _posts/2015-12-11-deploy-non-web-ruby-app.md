@@ -399,20 +399,33 @@ vim /data/my_app/shared/.env
 # don't use `export`s
 {% endhighlight %}
 
+Now when you deploy foreman will automatically write the ENV vars into
+the init files for your processes so that they'll be in the upstart shell
+that runs your commands.
+
 The server should now be ready to go. To confirm, deploy the
-app again with `bundle exec cap production deploy`.
-Then SSH into the server at look at the
-running processes. You should see something like the following:
+app again with `bundle exec cap production deploy`. It should
+exit without a failure code.
+
+SSH into the server to take a look at your new init files. They should
+look the same as they did before, but now they should contain all of the
+ENV variables that you placed in your `.env` file.
+
+Also take a look at the running processes on the server.
+You should see something like the following:
 {% highlight bash %}
 ps aux | ag 'shoryuken|clockwork'
 # ubuntu   10804 42.0  2.3 1261504 95224 ? Ssl  20:14   0:02 ruby /home/ubuntu/.rbenv/versions/2.0.0-p647/lib/ruby/gems/2.0.0/bin/shoryuken -C config/shoryuken.yml
 # ubuntu    3383  0.0  2.1 253056 88268 ?  Ssl  19:45   0:02 ruby /home/ubuntu/.rbenv/versions/2.0.0-p647/bin/clockwork bin/clockwork.rb
 {% endhighlight %}
 
-And you should be able to see each process writing its output to the logs with
+Great! Both processes are up and running.
+
+You should also be able to see each process writing its output to the logs with
 `tail -f /data/my_app/current/log/*`. Note that clockwork is a slow-running
 process, so it takes a few seconds to write each line. Also bear in mind that
-shoryuken throws a lot of information into the logs.
+shoryuken throws a lot of information into the logs. But if you can see both
+processes writing to the logs, then you know the app is up and running.
 
 And that's it! We've now deployed a plain-old ruby app to a production
 environment and set it up to run two non-web processes.
