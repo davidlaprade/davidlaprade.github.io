@@ -21,3 +21,8 @@ li > ul {
 h2, h3, h4, h5 {
   color: #008A3C;
 }
+
+// distinguish links from headers
+a {
+  font-weight: 400;
+}
