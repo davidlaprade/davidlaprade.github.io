@@ -1,5 +1,9 @@
 /*- Custom style -*/
 
+p {
+  text-align: justify;
+}
+
 // don't add margin to bottom of nested lists
 li > ul {
   margin-bottom: 0px;
