@@ -117,7 +117,8 @@ This has been suggested by many people in many places. For example:
 [here](http://railscasts.com/episodes/413-fast-tests), and
 [here](https://gist.github.com/burke/1688857).
 
-This change was especially helpful to us because:
+This change was especially helpful because:
+
   * The app was running ruby 1.9.3
   * The app had a rather involved CI build. It had extensive seeding and
     configuration scripts. As well as separate databases and test suites
@@ -146,7 +147,7 @@ RAM just to run a test suite?
 Obviously, this wasn't a long-term fix. The change that fixed ruby's GC
 permanently was an upgrade to ruby 2.1.6 -- which is dramatically
 better about garbage collection than 1.9.3.
-In all, however, configuring ruby's GC probably made a huge difference to
+In all, then, configuring ruby's GC probably made a huge difference to
 the build time on CI, and was the second most important change overall.
 
 ### Clean the DB With Transactions (saved ~5 min)
