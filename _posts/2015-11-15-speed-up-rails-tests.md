@@ -7,7 +7,13 @@ There are a lot of suggestions as to how to speed up a test suite.
 But many of them don't make much of a difference.
 The following are the changes that I found most useful when attempting to
 speed up the test suite for a legacy Rails app, along with the amount of time
-each saved.
+each saved. In brief, they were:
+
+* Record/Stub All API Calls (saved ~10 min)
+* Decrease Ruby's Garbage Collection Frequency (saved ~8 min)
+* Clean the DB With Transactions (saved ~5 min)
+* Profile the Test Suite After Each Run (saved ~4 min)
+* Block requests to external URLs (saved ~4 min)
 
 ### Background
 
@@ -490,6 +496,15 @@ end
 This shaved an additional 4 minutes off of the test run time, and got rid of
 a lot of annoying warning messages in the process.
 
+### Conclusion
+
+So, those are the changes that made the biggest difference to the app I was
+working on. They were all changes suggested elsewhere by other people. But
+hopefully others can benefit from either the implementation detailed here, or
+the relative importance suggested by the amount of time they saved me.
+
+Good luck!
+
 -----------------------
 
 ### Helpful Links
@@ -497,10 +512,10 @@ a lot of annoying warning messages in the process.
 These are some links that were helpful to me when I was going through
 this process myself:
 
-* corey haines' talk
-* corey haines' post
-* rails cast
-* post about magic ENV vars to speed up ruby
+* Corey Haines' [talk](https://www.youtube.com/watch?v=bNn6M2vqxHE)
+* Corey Haines'
+  [post](http://articles.coreyhaines.com/posts/active-record-spec-helper/)
+* rails cast on [fast tests](https://www.youtube.com/watch?v=Ek2iyeeL1Vc)
 * Jose Valim's
   [post](http://blog.plataformatec.com.br/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/)
 * shared connection [gist](https://gist.github.com/josevalim/470808)
