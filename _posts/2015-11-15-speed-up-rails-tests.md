@@ -325,6 +325,8 @@ click through the app. Fortunately, the app was already set up to
 optionally run selenium. Here are the relevant bits of code:
 
 {% highlight ruby %}
+# spec/support/capybara.rb
+
 firefox_cask_path = '/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/firefox-bin'
 
 if File.exists?(firefox_cask_path)
