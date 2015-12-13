@@ -22,8 +22,7 @@ particular details of the app I was working on. Obviously, every app
 is different. So, I figured it might be useful to give a little more detail
 about the app in question.
 
-Probably the most useful thing would just be the Gemfile.
-Here are the relevant bits:
+The `Gemfile`:
 
 {% highlight ruby %}
 gem 'rails',                  '3.2.16'
@@ -41,6 +40,58 @@ group :test do
   gem 'shoulda-matchers',     '2.6.1'
 end
 {% endhighlight %}
+
+The `spec_helper.rb`:
+
+{% highlight ruby %}
+
+ENV["RAILS_ENV"] ||= 'test'
+require File.expand_path("../../config/environment", __FILE__)
+
+require 'rspec/rails'
+require 'rspec/instafail'
+require 'capybara/rspec'
+require 'capybara/rails'
+require 'capybara-screenshot/rspec'
+
+# Require support files in spec/support/ and its subdirectories.
+Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+# Require factories in spec/factories
+Dir[File.join(File.dirname(__FILE__), "factories/*.rb")].each {|f| require f }
+
+RSpec.configure do |config|
+  config.mock_with :rspec
+  config.use_transactional_fixtures = false
+  config.include FactoryGirl::Syntax::Methods
+  config.include Devise::TestHelpers, :type => :controller
+  config.include Formulaic::Dsl
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+end
+
+Devise.stretches = 1
+
+{% endhighlight %}
+
+The directory structure:
+
+{% highlight bash %}
+$ tree spec
+spec
+├── features
+├── controllers
+├── lib
+├── models
+├── factories
+├── support
+│   └── capybara.rb
+│   └── ssl_required.rb
+│   └── . . .
+└── spec_helper.rb
+
+{% endhighlight %}
+
+The `support` folder will come up a bunch later.
 
 ### Record/Stub All API Calls (saved ~10 min)
 
