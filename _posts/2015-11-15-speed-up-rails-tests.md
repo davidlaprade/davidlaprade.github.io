@@ -571,3 +571,4 @@ this process myself:
 * Jose Valim's
   [post](http://blog.plataformatec.com.br/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/)
 * shared connection [gist](https://gist.github.com/josevalim/470808)
+* Andre Dieb's [post](http://andredieb.com/5-ways-to-speedup-rails-feature-tests.html)
