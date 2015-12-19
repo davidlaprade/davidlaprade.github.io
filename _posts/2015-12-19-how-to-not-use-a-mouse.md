@@ -11,8 +11,13 @@ many mouse/trackpad operations to speed up workflows.
 * `CMD + v` = paste
 * `CMD + V` = paste without formatting
 * `CMD + x` = cut
+* `CMD + b` = bold selected text
+* `CMD + i` = italicize selected text
+* `CMD + u` = underline selected text
 * `CMD + z` = undo
 * `CMD + y` = redo
+* `CMD + m` = minimize current window
+* `CMD + n` = open new window
 * `CMD + f` = find text
 * `CMD + a` = select all
 * `CMD + p` = print
