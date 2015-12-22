@@ -52,69 +52,69 @@ only takes `al`) then press `Enter`
 Boom. No mouse clicks!
 
 ### General OSX
-* `CMD + c` = copy
-* `CMD + v` = paste
-* `CMD + V` = paste without formatting
-* `CMD + x` = cut
-* `CMD + b` = bold selected text
-* `CMD + i` = italicize selected text
-* `CMD + u` = underline selected text
-* `CMD + z` = undo
-* `CMD + y` = redo
-* `CMD + m` = minimize current window
-* `CMD + n` = open new window
-* `CMD + f` = find text
-* `CMD + a` = select all
-* `CMD + p` = print
-* `CMD + s` = save
-* `CMD + q` = quit application
-* `CMD + w` = close current application window
-* `CMD + Tab` = switch to last application
-* `CMD(hold) + Tab` = view open applications, while still holding `CMD`:
+* <code>&#8984; + c</code> = copy
+* <code>&#8984; + v</code> = paste
+* <code>&#8984; + V</code> = paste without formatting
+* <code>&#8984; + x</code> = cut
+* <code>&#8984; + b</code> = bold selected text
+* <code>&#8984; + i</code> = italicize selected text
+* <code>&#8984; + u</code> = underline selected text
+* <code>&#8984; + z</code> = undo
+* <code>&#8984; + y</code> = redo
+* <code>&#8984; + m</code> = minimize current window
+* <code>&#8984; + n</code> = open new window
+* <code>&#8984; + f</code> = find text
+* <code>&#8984; + a</code> = select all
+* <code>&#8984; + p</code> = print
+* <code>&#8984; + s</code> = save
+* <code>&#8984; + q</code> = quit application
+* <code>&#8984; + w</code> = close current application window
+* <code>&#8984; + Tab</code> = switch to last application
+* <code>&#8984;(hold) + Tab</code> = view open applications, while still holding <code>&#8984;</code>:
   * `Tab` = select next running application
   * <code>&#8592;/&#8594;</code> = select previous/next running application
   * `q` = quit selected application
   * `n` = open a new window for the selected application
-  * (release `CMD` key) = switch to selected application
-* `CMD + space` = open searchlight
+  * (release <code>&#8984;</code> key) = switch to selected application
+* <code>&#8984; + space</code> = open searchlight
 
 When in a text-editing context:
 
 * `OPT + delete` = delete previous word
-* `CMD + delete` = delete to beginning of line
-* <code> CMD + Shift + &#8592;/&#8594;</code> - select to beginning/end of line
-* <code> CMD + Shift + &#8593;/&#8595;</code> - select to top/bottom of document
+* <code>&#8984; + delete</code> = delete to beginning of line
+* <code> &#8984; + Shift + &#8592;/&#8594;</code> - select to beginning/end of line
+* <code> &#8984; + Shift + &#8593;/&#8595;</code> - select to top/bottom of document
 * <code> OPT + Shift + &#8592;/&#8594;</code> - select previous/next word
-* <code> CMD + &#8592;</code> = move cursor to start of line
-* <code> CMD + &#8594;</code> = move cursor to end of line
-* <code> CMD + &#8593;</code> = move cursor to top of document
-* <code> CMD + &#8595;</code> = move cursor to bottom of document
+* <code> &#8984; + &#8592;</code> = move cursor to start of line
+* <code> &#8984; + &#8594;</code> = move cursor to end of line
+* <code> &#8984; + &#8593;</code> = move cursor to top of document
+* <code> &#8984; + &#8595;</code> = move cursor to bottom of document
 * <code> OPT + &#8592;</code> = move cursor to start of current word
 * <code> OPT + &#8594;</code> = move cursor to end of current word
 * `FN + delete` = forward delete
 * <code>SHIFT + &#8593;/&#8595;</code> = select up/down one line
 
 ### Chrome
-* `CMD + f` = find text
-* `CMD + t` = open a new tab
-* `CMD + l` = highlight URL of current page
-* <code>CMD + OPT + &#8592;/&#8594;</code> = move to previous/next tab
-* `CMD + w` = close tab
-* `CMD + r` = refresh tab
-* `CMD + R` = hard refresh tab
-* `CMD + -/+` = zoom out/in
-* `CMD(hold) + l + ENTER` = duplicate current tab
-* <code>CMD + &#8592;/&#8594;</code> = go to previous/next in history
-* `CMD + 9` = jump to last tab
-* `CMD + (1-8)` = jump to n-th tab
-* `CMD + C` = view DOM, dev tools
+* <code>&#8984; + f</code> = find text
+* <code>&#8984; + t</code> = open a new tab
+* <code>&#8984; + l</code> = highlight URL of current page
+* <code>&#8984; + OPT + &#8592;/&#8594;</code> = move to previous/next tab
+* <code>&#8984; + w</code> = close tab
+* <code>&#8984; + r</code> = refresh tab
+* <code>&#8984; + R</code> = hard refresh tab
+* <code>&#8984; + -/+</code> = zoom out/in
+* <code>&#8984;(hold) + l + ENTER</code> = duplicate current tab
+* <code>&#8984; + &#8592;/&#8594;</code> = go to previous/next in history
+* <code>&#8984; + 9</code> = jump to last tab
+* <code>&#8984; + (1-8)</code> = jump to n-th tab
+* <code>&#8984; + C</code> = view DOM, dev tools
 * type search string into address bar to run google search
   * use `Tab` to move to next auto-completed suggestion
   * use `Tab` to move cursor to next search option, enter to select
 
 Requires 3rd-party applications:
 
-* `CMD + \` = open 1password
+* <code>&#8984; + \</code> = open 1password
 
 ### Gmail
 * `gi` = navigate to inbox
@@ -127,7 +127,7 @@ Requires 3rd-party applications:
 Once you are in compose mode:
 
   * `Tab` = move between to/from, subject, and body fields
-  * `CMD + ENTER` = send email
+  * <code>&#8984; + ENTER</code> = send email
 
 Once one or more emails have been selected you can:
 
@@ -159,10 +159,10 @@ The following hotkeys work even with Tmux
 
 Won't work in Tmux session
 
-* `CMD + d` = split screen vertically
-* `CMD + SHIFT + d` = split screen horizontally
-* `CMD + w` = close terminal window
-* `CMD + OPT + arrow key` = move between terminal windows
+* <code>&#8984; + d</code> = split screen vertically
+* <code>&#8984; + SHIFT + d</code> = split screen horizontally
+* <code>&#8984; + w</code> = close terminal window
+* <code>&#8984; + OPT + arrow key</code> = move between terminal windows
 * `CTRL + k` = delete to end of line (I mapped this to move to lower tmux pane)
 
 ### Github
@@ -179,16 +179,16 @@ Won't work in Tmux session
 * `CMD + k` = search for and jump to conversation
 
 ### Sublime
-* `CMD + n` = open a new tab
-* `CMD + OPT + arrow key` = move to tab
-* `CMD + w` = close tab
+* <code>&#8984; + n</code> = open a new tab
+* <code>&#8984; + OPT + arrow key</code> = move to tab
+* <code>&#8984; + w</code> = close tab
 * <code>SHIFT + &#8593;/&#8595;</code> = highlight line above/below
-* <code>CMD + &#8592;/&#8594;/&#8593;/&#8595;</code> = jump to start/end of line or top/bottom of the
+* <code>&#8984; + &#8592;/&#8594;/&#8593;/&#8595;</code> = jump to start/end of line or top/bottom of the
   doc
-* <code>CMD + SHIFT + &#8592;/&#8594;</code> = highlight to beginning/end of line
-* `CMD + SHIFT + L` = open cursor on each highlighted line
-* `CMD + CTRL + G` = open cursor at each instance of highlighted text
-* `CMD + D` = open cursor at next instance of highlighted text
-* `CMD + P` = find file by name
-* `CMD + SHIFT + F` = grep for string through entire directory
-* `CMD + R` = jump to symbol on current page
+* <code>&#8984; + SHIFT + &#8592;/&#8594;</code> = highlight to beginning/end of line
+* <code>&#8984; + SHIFT + L</code> = open cursor on each highlighted line
+* <code>&#8984; + CTRL + G</code> = open cursor at each instance of highlighted text
+* <code>&#8984; + D</code> = open cursor at next instance of highlighted text
+* <code>&#8984; + P</code> = find file by name
+* <code>&#8984; + SHIFT + F</code> = grep for string through entire directory
+* <code>&#8984; + R</code> = jump to symbol on current page
