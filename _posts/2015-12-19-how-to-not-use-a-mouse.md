@@ -182,7 +182,19 @@ When viewing a code file:
 * `l` = go to line
 
 ### Slack
-* `CMD + k` = search for and jump to conversation
+* <code>&#8984; + k</code> = search for and jump to conversation
+
+### Vim
+Vim is a text editor that allows you to completely avoid using a mouse.
+I use [these](https://gist.github.com/davidlaprade/ec6b0e26a6525f89293a)
+commands most often in Vim.
+
+### Tmux
+Tmux allows you to manage windows and panes in your terminal without using
+a mouse (among other things).
+[Here's](https://gist.github.com/davidlaprade/0c54559e9e1007e6aa5b)
+a list of the commands I most often use in Tmux.
+
 
 ### Sublime
 * <code>&#8984; + n</code> = open a new tab
