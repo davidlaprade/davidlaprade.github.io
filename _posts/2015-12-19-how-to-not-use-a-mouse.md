@@ -175,6 +175,12 @@ Won't work in Tmux session
 * `gc` = jump to code
 * `gp` = jump to pull requests
 
+When viewing a code file:
+
+* `y` = change URL to reference the specific commit SHA of the code you're
+  looking at
+* `l` = go to line
+
 ### Slack
 * `CMD + k` = search for and jump to conversation
 
