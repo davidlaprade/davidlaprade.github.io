@@ -6,6 +6,51 @@ excerpt: "Using a mouse is almost always an avoidable waste of time. Here's how 
 This is a list of OSX hotkeys for common apps. They can be used in place of
 many mouse/trackpad operations to speed up workflows.
 
+Here's an example of the kind of thing you can do...
+
+### Example
+Here's how I would send someone a link to a line in my dotfiles on slack.
+
+* Is Chrome open?
+  * No
+    * <code>&#8984; + space</code> to open spotlight
+    * Start typing `chrome` until spotlight finds Chrome (this usually only
+      requires me to type `c`) then hit Enter to open Chrome
+  * Yes
+    * <code>&#8984; + Tab</code> to open a list of running applications
+    * hold <code>&#8984;</code> then hit `Tab` until you get to Chrome
+* Does Chrome have an open window?
+  * No - <code>&#8984; + n </code> to open a new window
+  * Yes - skip this step
+* Are you in a new tab?
+  * No - <code>&#8984; + t</code> to open a new one
+  * Yes - skip this step
+* <code>&#8984; + l</code> to highlight whatever is in the address bar
+* type `git dav dot` in the search bar; Chrome will look through my history for
+  a URL that matches each of these strings. When I see the URL I want in the
+  suggestions, I hit `Tab` to get to it and then `Enter` to go to it. I'm now in
+  the github repo.
+* `t` to enter search mode in the github repo
+* start typing `alias` into the search until `.aliases` is the first choice (usually
+only takes `al`) then press `Enter`
+* `y` to switch the URL to reference the SHA of file's current commit
+* `l26` to highlight the line I want to send, line 26
+* <code>&#8984; + l</code> to highlight the current URL
+* <code>&#8984; + c</code> to copy the URL
+* Is Slack open?
+  * No
+    * <code>&#8984; + space</code> to open spotlight
+    * Start typing `slack` until spotlight finds Slack (this usually only
+      requires me to type `sl`) then hit Enter to open Slack
+  * Yes
+    * <code>&#8984; + Tab</code> to open a list of running applications
+    * hold <code>&#8984;</code> then hit `Tab` until you get to Slack
+* <code>&#8984; + k</code> then type in the first few letters of the person I
+  want to send the message to, then hit `Enter`
+* <code>&#8984; + v</code> to paste the URL, then `Enter` to send
+
+Boom. No mouse clicks!
+
 ### General OSX
 * `CMD + c` = copy
 * `CMD + v` = paste
