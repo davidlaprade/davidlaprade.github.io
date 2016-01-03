@@ -120,6 +120,7 @@ Requires 3rd-party applications:
 * `gi` = navigate to inbox
 * `j` = move cursor down (to previous email)
 * `k` = move cursor up (to next email)
+* `s` = star the current email
 * `x` = select current email
 * `* + u` = select all unread emails
 * `c` = enter compose mode (must be in inbox)
