@@ -118,11 +118,13 @@ Requires 3rd-party applications:
 
 ### Gmail
 * `gi` = navigate to inbox
+* `/` = to search
 * `j` = move cursor down (to previous email)
 * `k` = move cursor up (to next email)
 * `s` = star/unstar the current email
 * `x` = select current email
 * `* + u` = select all unread emails
+* `* + a` = select all emails in current scope
 * `c` = enter compose mode (must be in inbox)
 
 Once you are in compose mode:
@@ -144,6 +146,7 @@ Once you are in view mode for a given email you can:
   * `r` = reply to email
   * `a` = reply all to email
   * `f` = forward email
+  * `u` = go back to thread-view
 
 ### iTerm
 __I highly recommend mapping your Caps Lock key to CNTL__
