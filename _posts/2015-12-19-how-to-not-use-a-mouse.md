@@ -120,7 +120,7 @@ Requires 3rd-party applications:
 * `gi` = navigate to inbox
 * `j` = move cursor down (to previous email)
 * `k` = move cursor up (to next email)
-* `s` = star the current email
+* `s` = star/unstar the current email
 * `x` = select current email
 * `* + u` = select all unread emails
 * `c` = enter compose mode (must be in inbox)
@@ -133,6 +133,9 @@ Once you are in compose mode:
 Once one or more emails have been selected you can:
 
   * `I` = mark as read
+  * `U` = mark as unread
+  * `=` = mark as important
+  * `-` = mark as unimportant
   * `* + n` = deselect all
   * `ENTER` = view selected email
 
