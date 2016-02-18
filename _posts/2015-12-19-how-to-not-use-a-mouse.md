@@ -63,6 +63,7 @@ Boom. No mouse clicks!
 * <code>&#8984; + y</code> = redo
 * <code>&#8984; + m</code> = minimize current window
 * <code>&#8984; + n</code> = open new window
+* <code>&#8984; + `</code> = toggle open windows of current program
 * <code>&#8984; + f</code> = find text
 * <code>&#8984; + a</code> = select all
 * <code>&#8984; + p</code> = print
@@ -118,6 +119,7 @@ Requires 3rd-party applications:
 
 ### Gmail
 * `gi` = navigate to inbox
+* `gt` = navigate to sent folder
 * `/` = to search
 * `j` = move cursor down (to previous email)
 * `k` = move cursor up (to next email)
@@ -138,6 +140,7 @@ Once one or more emails have been selected you can:
   * `U` = mark as unread
   * `=` = mark as important
   * `-` = mark as unimportant
+  * `e` = archive it
   * `* + n` = deselect all
   * `ENTER` = view selected email
 
