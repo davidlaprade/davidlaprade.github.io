@@ -1,9 +1,9 @@
 ---
-title: "Inserting Breakpoints in Elixir"
+title: "Breakpoints in Ruby and Elixir"
 excerpt: "Like many Ruby developers, I've been learning some Elixir on the side.
 Knowing how to set and interact with breakpoints in a language is crucial to
-efficient debugging. Here's a side-by-side comparison of breakpoints in the two
-languages."
+efficient debugging. Here's a side-by-side comparison of breakpoints in Ruby and
+Elixir."
 ---
 
 Like many [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language))
@@ -39,29 +39,14 @@ assuming I've convinced you of the need to set breakpoints when debugging,
 then hopefully the following comparison of breakpoints in Ruby and Elixir
 will be of interest to you.
 
-I'm going to break this up into four steps.
-
-### 0. Start your REPL from the command line
-
-In Ruby you do this:
-
-{% highlight bash %}
-$ irb
->> # you're in! write some ruby to see it instantly evaluated
-{% endhighlight %}
-
-In Elixir you do this:
-
-{% highlight bash %}
-$ iex
-iex(1)> # you're in! write some elixir to see it instantly evaluated
-{% endhighlight %}
+I'm going to break this up into three steps.
 
 ### 1. Set up the code to be debugged
 
 In Ruby you do this:
 
 {% highlight ruby %}
+# ./example.rb
 class Example
   require 'pry' # load the library, `gem install pry` first
 
@@ -76,6 +61,7 @@ end
 In Elixir you do this:
 
 {% highlight elixir %}
+# ./example.exs
 defmodule Example do
   require IEx # load the library
 
@@ -95,11 +81,11 @@ In Ruby you do this:
 $ irb
 >> $LOAD_PATH << '.'
 => # the contents of Ruby's current load path
->> require 'path_to_file'
+>> require 'example'
 => true
 >> Example.my_method "yo"
 
-From: /Path/to/your/file/example.rb @ line 6 Example#my_method:
+From: ./example.rb @ line 6 Example#my_method:
 
     4: def self.my_method(arg)
     5:   # some code
@@ -116,20 +102,17 @@ In Elixir you'd do this:
 
 {% highlight bash %}
 $ iex
-
-Interactive Elixir (1.2.1) - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)> c "file_name.exs" # compile your file
+iex(1)> c "example.exs" # compile your file
 [Example]
 iex(2)> Example.do_method("hey")
 Request to pry #PID<0.57.0> at file_name.exs:3
 
   def do_method(some_arg) do
-    # ...where you want to insert your breakpoint
-    IEx.pry
+    # some code
+    IEx.pry # your breakpoint
+    # some code
 
 Allow? [Yn] Y
-
-Interactive Elixir (1.2.1) - press Ctrl+C to exit (type h() ENTER for help)
 
 # you're in the interactive REPL!
 pry(1)> some_arg
@@ -138,9 +121,10 @@ pry(1)> some_arg
 
 ### 3. Interact with your breakpoint
 
+At this point, enter whatever code you want to start debugging.
+
 In Ruby you exit the pry session and skip to the next breakpoint with the
 same command: `quit`.
 
 In Elixir, you exit the pry session with `CNTL + C` and skip to the next
 breakpoint with `respawn`.
-
