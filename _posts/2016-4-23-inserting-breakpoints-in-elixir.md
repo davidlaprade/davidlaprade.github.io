@@ -1,9 +1,8 @@
 ---
 title: "Breakpoints in Ruby and Elixir"
-excerpt: "Like many Ruby developers, I've been learning some Elixir on the side.
-Knowing how to set and interact with breakpoints in a language is crucial to
-efficient debugging. Here's a side-by-side comparison of breakpoints in Ruby and
-Elixir."
+excerpt: "Knowing how to set and interact with breakpoints in a language is
+crucial to efficient debugging. Here's a side-by-side comparison of
+breakpoints in Ruby and Elixir."
 ---
 
 Like many [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language))
@@ -17,7 +16,7 @@ One of the basic things anyone needs to learn when picking up a new language is
 how to set breakpoints. Intuitively, a breakpoint is a line of code where the
 machine will pause when executing the program, opening up a
 [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)
-in which the user can evaluate code interactively within the context --
+in which the user can evaluate code interactively within the scope --
 i.e. with access to all of the variables, functions, modules, etc., that would
 otherwise be available to him/her at the line of the breakpoint.
 
