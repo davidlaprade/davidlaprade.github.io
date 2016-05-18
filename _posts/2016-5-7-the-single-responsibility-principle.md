@@ -30,34 +30,16 @@ wikipedia:
 > Anthropomorphism is the attribution of human traits, emotions, and intentions
   to non-human entities
 
-Discussions of code design/architecture are often maddeningly anthropomorphic.
-We talk about where code "lives", about what it "knows".
-We say that some code "talks" to other code, we say that we should "ask" certain
-pieces of code certain things, and not "tell" them. And on and on.
-
-But code is just
-text: nothing more. It doesn't live anywhere, it doesn't know anything, it
-doesn't talk, ask, tell -- not _literally_ anyway. When we say these
-anthropomorphic things, we know they are just metaphors. We know they are really
-just short for other things that we could have said instead.
-
-But sometimes these anthropomorphic metaphors can be unhelpful, as they mask
-what we really mean. They are especially unhelpful when we use them during
-explanations. Unless someone already knows what the metaphors mean, using
-them in explanations doesn't actually explain anything to the person.
-
 It strikes me as anthropomorphic to describe code as having a "reason
 to change". Code doesn't literally have reasons (to change, or to anything)
 because it doesn't think. It's text in a
 file. It has no mind, intentions, desires, wishes, hopes, dreams -- nor any of
 the things necessary to have reasons for anything: for getting ice cream, for
-riding a bike, for writing more code, for changing code, etc. Hence, I think
-it's unhelpful to use this anthropomorphic language in an explanation of the
-SRP.
+riding a bike, for changing.
 
-So, anthropomorphism aside, what I think Martin must have meant is this:
+Anthropomorphism aside, what I think Martin must have meant is this:
 
-> _Programmers_ should only have one reason to change a class.
+> Programmers should only have one reason to change a class.
 
 Okay, that's better. Progammers definitely have reasons for changing code.
 But now here's the problem. This is literally never true. Here are some reasons
@@ -66,12 +48,13 @@ a programmer might have to change _any_ class:
 1. it contains a bug
 2. it can be refactored so that it's easier to read
 3. the language that it's written in has deprecated one of its methods
-4. it can be refactored so that it's faster, more memory efficient
-5. it or its methods weren't named as perspicuously as they could have been
-6. the programmers have decided to follow a new style of programming, and this
+4. one of its dependencies has deprecated one of its methods
+5. it can be refactored so that it's faster, more memory efficient
+6. it or its methods weren't named as perspicuously as they could have been
+7. the programmers have decided to follow a new style of programming, and this
   code follows a different style
-7. a boss demands that it be rewritten because he thinks it's too confusing to
-  explain to the CEO
+8. a boss demands that it be rewritten
+9. it's too confusing to explain to the CEO during funding requests
 
 And so on. Any code might have a
 bug, and thus a programmer would have a reason to change it. Any code might
@@ -79,7 +62,7 @@ become deprecated, and thus a programmer would have a reason to change it. Any
 code might have a faster implementation, and thus a programmer would have a
 reason to change it. And so on. So, if Martin's quote is taken as an
 adequate statement of the SRP,
-then the SRP is literally not possible to ever abide by. No matter what anyone
+then the SRP is literally not possible to abide by ever. No matter what anyone
 writes, it has more than one "responsibility" -- more than one reason to change.
 
 This seems like it's missed Martin's point. But why?
@@ -122,11 +105,11 @@ does, only __how__ it does it. And so on.
 
 Awesome. Progress!
 
-### What is the Function?
+### What Does Software Do?
 
 Not so fast. Perhaps it's clear that we should differentiate between what a
 piece of software does and how it does it. But even then, is it ever clear
-exactly what a piece of software does? Consider again the examples from above:
+exactly what a piece of software does? Consider again the example from above:
 
 {% highlight ruby %}
 class User
@@ -136,42 +119,82 @@ class User
 end
 {% endhighlight %}
 
+Above I had suggested that __what__ this method does is set a user's full
+name. But couldn't someone reasonably object that __what__ this method does
+is _return_ the user's full name? The fact that it does so by setting an
+instance method is simply immaterial to the point -- to think otherwise is to
+confuse part of __how__ the method is implemented with __what__ it is that it
+does.
+
+What we're seeing here is that even granting the how vs. what distinction,
+the way we divide up some code's functionality between these two categories
+is not beyond dispute.
+
+There's a further issue. Any piece of software can be made to seem as if
+it does only one thing if described from a high enough level.
+Since Martin focuses on classes -- let's look at a class:
+
 {% highlight ruby %}
-class User
-  def full_name
-    @full_name ||= @first_name + " " + @last_name
+class PaymentProcessor
+  def charge(customer)
+    # ...
+  end
+
+  def refund(charge)
+    # ...
   end
 end
 {% endhighlight %}
 
-Above I had suggested that __what__ these methods do is to set a user's full
-name. But couldn't someone reasonably object that __what__ these methods do
-is _return_ the user's full name? The fact that they do so by setting an
-instance method is simply immaterial to the point -- to think otherwise is to
-confuse part of __how__ these methods are implemented with __what__ it is
-that they do.
+How many things does this class do? Well, if we speak at a relatively
+high-level, it would seem like this class does one thing: it processes payments.
+But it seems equally accurate to say that this class does two things:
+it (1) makes charges and (2) refunds charges. The question here is just a
+question of language: which level are we supposed to speak at?
 
-How could one adjudicate between two programmers who disagreed on this matter?
-Which one would be right and which one wrong? Can we even answer this question?
-It's not
-clear to me that we can -- nor that any rules we might have for doing so would be
-non-arbitrary and objective. It really just seems like there's no truth of the
-matter in such a dispute.
+How could one adjudicate between two programmers who disagreed on these matters?
+Which would be right and which wrong? It's not clear that this
+question has an answer -- nor that there are any rules for answering
+it that are non-arbitrary and objective.
+It really just seems like there's no truth of the matter in such a dispute.
+There's no right answer to the question: "__what__ does this software do?"
 
-This is another complaint that I have with Martin's formulation of the SRP. It
-often just doesn't seem like there's a truth of the matter about __what__ any
-given class does. Because of that, it's often unclear what the SRP says that the
-the programmer should not change about that class.
-Would I be violating the SRP to rename the instance
-variable `@full_name` to `@complete_name`? Could I remove it all together? That
-really depends on __what__ we say the method is doing!
+### Function
 
-Perhaps not all hope is lost.
+At this point, it's tempting to reach for the "it's an art not a science"
+response:
 
-The __what__ that I think Martin has in mind is the _functional role_ that a
-piece of software plays within the system. Just like we can ask "what does a
-heart do" we can ask "what does this class/method do". In both cases we're
-asking for something's functional role in a system.
+> The SRP isn't perfect. It's just a rough guideline. You're not going
+to get anything rigorous -- nor should you expect something rigorous -- because
+software
+engineering is an art. Just as there isn't a rigid formula for what
+combinations of paint will look good on a canvas, there isn't a formula for
+when you've put too much functionality into a class.
 
-A great deal of effort has been spent in theoretical biology attempting to
-clarify the notion of a functional role.
+I think this is a fair response to my complaints. But I also think it gives up
+too fast.
+
+Scientists face the same conceptual problems that software
+developers do. Consider the heart. What does it do? On one hand, it seems
+that it pumps blood. On the other, it makes a thumping noise. But only the
+former constitutes the __function__ of the organ -- __what__
+it does. The thumping is simply a side effect: part of __how__ it functions.
+
+How do biologists deal with this problem? How would they settle a disagreement
+between someone who thought the thumping and not the pumping was the function of
+the heart?
+
+Simply put, natural selection would solve the problem. The function of an organ
+is [the behavior which accounts for its being selected for](https://mechanism.ucsd.edu/teaching/w10/wright.functions.%201973.pdf).
+The
+pumping behavior of the heart, and not its thumping, accounts for its being
+selected for. Hence, the heart's function is to pump.
+
+Natural selection in its rough form has three tenets:
+
+1. organisms possess different versions of the same traits
+2. differing versions of the same traits confer differing fitness levels on the
+   organisms: i.e. having certain versions of the traits increases an organism's
+   propensity to survive and have offspring
+3. traits are heritable, i.e. they are passed down from one generation to
+   the next
