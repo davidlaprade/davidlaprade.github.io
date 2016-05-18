@@ -105,11 +105,13 @@ does, only __how__ it does it. And so on.
 
 Awesome. Progress!
 
-### What Does Software Do?
-
 Not so fast. Perhaps it's clear that we should differentiate between what a
 piece of software does and how it does it. But even then, is it ever clear
-exactly what a piece of software does? Consider again the example from above:
+exactly what a piece of software does?
+
+### What Does Software Do?
+
+Recall the example from above:
 
 {% highlight ruby %}
 class User
@@ -127,7 +129,7 @@ confuse part of __how__ the method is implemented with __what__ it is that it
 does.
 
 What we're seeing here is that even granting the how vs. what distinction,
-the way we divide up some code's functionality between these two categories
+the way we divide up functionality between these two categories
 is not beyond dispute.
 
 There's a further issue. Any piece of software can be made to seem as if
@@ -156,7 +158,7 @@ How could one adjudicate between two programmers who disagreed on these matters?
 Which would be right and which wrong? It's not clear that this
 question has an answer -- nor that there are any rules for answering
 it that are non-arbitrary and objective.
-It really just seems like there's no truth of the matter in such a dispute.
+It really just seems like there's no truth of the matter in such disputes.
 There's no right answer to the question: "__what__ does this software do?"
 
 ### Function
@@ -166,35 +168,61 @@ response:
 
 > The SRP isn't perfect. It's just a rough guideline. You're not going
 to get anything rigorous -- nor should you expect something rigorous -- because
-software
-engineering is an art. Just as there isn't a rigid formula for what
+software engineering is an art. Just as there isn't a rigid formula for what
 combinations of paint will look good on a canvas, there isn't a formula for
 when you've put too much functionality into a class.
 
-I think this is a fair response to my complaints. But I also think it gives up
-too fast.
+Until recently, I felt that this was the real take-away from the SRP. But now I
+think it gives up too fast.
 
 Scientists face the same conceptual problems that software
 developers do. Consider the heart. What does it do? On one hand, it seems
 that it pumps blood. On the other, it makes a thumping noise. But only the
 former constitutes the __function__ of the organ -- __what__
-it does. The thumping is simply a side effect: part of __how__ it functions.
+it does, its purpose, the reason it's there. The thumping is simply a side
+effect: part of __how__ it functions.
 
-How do biologists deal with this problem? How would they settle a disagreement
-between someone who thought the thumping and not the pumping was the function of
-the heart?
+Notice how similar this is to our problem above? Biologists, like programmers,
+have a maddening tendency to adopt anthropomorphic metaphors when they speak.
+"The purpose of the heart is to pump." As if hearts can think, and act
+intentionally! Note too the similarity to Martin: "Pumping is the single reason
+we have a heart". And then there's also the problem of differentiating how from
+what: is the thumping part of the __how__ or the __what__?
 
-Simply put, natural selection would solve the problem. The function of an organ
-is [the behavior which accounts for its being selected for](https://mechanism.ucsd.edu/teaching/w10/wright.functions.%201973.pdf).
-The
-pumping behavior of the heart, and not its thumping, accounts for its being
-selected for. Hence, the heart's function is to pump.
+Should we conclude that biology is an art and not a science?
 
-Natural selection in its rough form has three tenets:
+No, we shouldn't. This problem can (and is) solved by appeal to [natural
+selection](https://en.wikipedia.org/wiki/Natural_selection). Natural selection
+in its rough form has three tenets:
 
 1. organisms possess different versions of the same traits
-2. differing versions of the same traits confer differing fitness levels on the
+2. different versions of the same traits confer differing fitness levels on
    organisms: i.e. having certain versions of the traits increases an organism's
-   propensity to survive and have offspring
+   propensity to survive and have offspring, while having others decreases it
 3. traits are heritable, i.e. they are passed down from one generation to
    the next
+
+The function of an organ -- or anything -- in biology is
+[the behavior which accounts for its being selected for](https://mechanism.ucsd.edu/teaching/w10/wright.functions.%201973.pdf).
+The pumping behavior of the heart, and not its thumping, accounts for its being
+selected for. Hence, the heart's function is to pump. The pumping, and not the
+thumping, is thus the purpose of the heart. It is the sole reason we have a
+heart.
+
+Can we apply this to software?
+
+I think we miss something important if we don't point out the similarities that
+digital systems (code-bases) have with living systems (organisms). Organisms have
+generations, each successive member of which with slightly different properties
+than that before it. Those properties which are selected for by the environment
+appear more readily in the next generation. Codebases, alternatively, have
+iterations. Each successive iteration has slightly different
+properties(functions, classes) than that before it. And here too, the change in
+properties over time is a function of the environment: market forces, what
+users liked, what they complained about, what competitor products did, etc.
+
+So we can ask of parts of code-bases what we asked of parts of organisms: what
+behaviors account for their being selected for? Why didn't we just delete this
+class last month? What keeps this around?
+
+Surely this is a question that we can answer.
