@@ -1,4 +1,7 @@
 /*- Custom style -*/
+$indent: 1.3334em;
+$light-gray: #f2f2f2;
+
 table {
   border-spacing: 0px;
   border-collapse: collapse;
@@ -69,8 +72,8 @@ li > ul {
 
 // indent and set backgound on code blocks
 .highlight {
-  margin-left: 10px;
-  background-color: #f2f2f2;
+  margin-left: $indent;
+  background-color: $light-gray;
   pre {
     overflow-x: scroll;
     padding: 10px 25px;
@@ -82,7 +85,7 @@ li > ul {
 
 code {
   color: #7b7b7b;
-  background-color: #f2f2f2;
+  background-color: $light-gray;
   padding: 0px 10px;
 }
 
@@ -97,5 +100,5 @@ a {
 
 // indent list items
 li {
-  margin-left: 1.3334em;
+  margin-left: $indent;
 }
