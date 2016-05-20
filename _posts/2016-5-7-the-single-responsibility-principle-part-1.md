@@ -1,7 +1,10 @@
 ---
-title: "The Single Responsibility Principle"
+title: "The Single Responsibility Principle, Part 1"
 excerpt: "How I fail to understand it and you can too."
 ---
+
+_NOTE: this is the first of a two part series on the Single Responsibility
+Principle._
 
 The [Single Responsibility
 Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle),
@@ -43,7 +46,7 @@ Anthropomorphism aside, what I think Martin must have meant is this:
 
 Okay, that's better. Progammers definitely have reasons for changing code.
 But now here's the problem. This is literally never true. Here are some reasons
-a programmer might have to change _any_ class:
+_any_ programmer might have to change _any_ class:
 
 1. it contains a bug
 2. it can be refactored so that it's easier to read
@@ -152,19 +155,29 @@ How many things does this class do? Well, if we speak at a relatively
 high-level, it would seem like this class does one thing: it processes payments.
 But it seems equally accurate to say that this class does two things:
 it (1) makes charges and (2) refunds charges. The question here is just a
-question of language: which level are we supposed to speak at?
+question of language: which level are we supposed to speak at? That, then, is
+the second issue.
 
 How could one adjudicate between two programmers who disagreed on these matters?
-Which would be right and which wrong? It's not clear that this
-question has an answer -- nor that there are any rules for answering
-it that are non-arbitrary and objective.
+What if one programmer felt that __what__ the `first_name` function did was set
+a variable, and
+another felt that what it _really_ did was return a string? What if one 
+programmer thought the `PaymentProcessor` did one thing and another two?
+Who would be right and who wrong? Why?
+
+It's not obvious to me that
+these questions have answers. Nor is it obvious that there are any rules for
+answering them that are both non-arbitrary and objective.
 It really just seems like there's no truth of the matter in such disputes.
-There's no right answer to the question: "__what__ does this software do?"
+It seems like there's no right answer to the question: "__what__ does this
+software do?" If so, the prospects of getting a rigorous statement of the SRP
+look bleak.
 
-### Function
+### Conclusion
 
+I've tried to show why the Single Responsibility Principle isn't all that clear.
 At this point, it's tempting to reach for the "it's an art not a science"
-response:
+response, like this:
 
 > The SRP isn't perfect. It's just a rough guideline. You're not going
 to get anything rigorous -- nor should you expect something rigorous -- because
@@ -175,54 +188,4 @@ when you've put too much functionality into a class.
 Until recently, I felt that this was the real take-away from the SRP. But now I
 think it gives up too fast.
 
-Scientists face the same conceptual problems that software
-developers do. Consider the heart. What does it do? On one hand, it seems
-that it pumps blood. On the other, it makes a thumping noise. But only the
-former constitutes the __function__ of the organ -- __what__
-it does, its purpose, the reason it's there. The thumping is simply a side
-effect: part of __how__ it functions.
-
-Notice how similar this is to our problem above? Biologists, like programmers,
-have a maddening tendency to adopt anthropomorphic metaphors when they speak.
-"The purpose of the heart is to pump." As if hearts can think, and act
-intentionally! Note too the similarity to Martin: "Pumping is the single reason
-we have a heart". And then there's also the problem of differentiating how from
-what: is the thumping part of the __how__ or the __what__?
-
-Should we conclude that biology is an art and not a science?
-
-No, we shouldn't. This problem can (and is) solved by appeal to [natural
-selection](https://en.wikipedia.org/wiki/Natural_selection). Natural selection
-in its rough form has three tenets:
-
-1. organisms possess different versions of the same traits
-2. different versions of the same traits confer differing fitness levels on
-   organisms: i.e. having certain versions of the traits increases an organism's
-   propensity to survive and have offspring, while having others decreases it
-3. traits are heritable, i.e. they are passed down from one generation to
-   the next
-
-The function of an organ -- or anything -- in biology is
-[the behavior which accounts for its being selected for](https://mechanism.ucsd.edu/teaching/w10/wright.functions.%201973.pdf).
-The pumping behavior of the heart, and not its thumping, accounts for its being
-selected for. Hence, the heart's function is to pump. The pumping, and not the
-thumping, is thus the purpose of the heart. It is the sole reason we have a
-heart.
-
-Can we apply this to software?
-
-I think we miss something important if we don't point out the similarities that
-digital systems (code-bases) have with living systems (organisms). Organisms have
-generations, each successive member of which with slightly different properties
-than that before it. Those properties which are selected for by the environment
-appear more readily in the next generation. Codebases, alternatively, have
-iterations. Each successive iteration has slightly different
-properties(functions, classes) than that before it. And here too, the change in
-properties over time is a function of the environment: market forces, what
-users liked, what they complained about, what competitor products did, etc.
-
-So we can ask of parts of code-bases what we asked of parts of organisms: what
-behaviors account for their being selected for? Why didn't we just delete this
-class last month? What keeps this around?
-
-Surely this is a question that we can answer.
+To find out why, stay tuned for part 2!
