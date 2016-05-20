@@ -1,4 +1,57 @@
 /*- Custom style -*/
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table td {
+  padding: 6px 20px;
+  border: 1px solid #ddd;
+}
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+// https://gist.github.com/rcmdnk/5218040
+* + table {
+  border-style:solid;
+  border-width:1.5px;
+  border-color:#CCCCCC;
+}
+
+* + table th, * + table td {
+  border-style:solid;
+  border-width:1.5px;
+  border-width:1px;
+  border-color:#CCCCCC;
+}
+
+* + table th {
+  border-style:solid;
+  font-weight:bold;
+  background: #FFFFFF;
+}
+
+* + table tr:nth-child(2n+1) {
+  background: #F8F8F8;
+}
+
+* + table tr:nth-child(even) {
+  background: #FFFFFF;
+}
+
+* + table th[align="left"], * + table td[align="left"] {
+  text-align:left;
+}
+
+* + table th[align="right"], * + table td[align="right"] {
+  text-align:right;
+}
+
+* + table th[align="center"], * + table td[align="center"] {
+  text-align:center;
+}
 
 #container {
   min-height: 400px;
