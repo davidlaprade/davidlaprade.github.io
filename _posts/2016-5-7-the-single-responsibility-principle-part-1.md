@@ -1,6 +1,7 @@
 ---
 title: "The Single Responsibility Principle, Part 1"
 excerpt: "How I fail to understand it and you can too."
+date: "2016-05-19"
 ---
 
 _NOTE: this is the first of a two part series on the Single Responsibility
