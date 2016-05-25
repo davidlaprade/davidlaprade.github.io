@@ -20,7 +20,8 @@ objectively measure the "amount" that any given unit of code does? In other
 words, it remains an open question just what specifically the SRP consists in.
 
 The most famous attempt to say what the SRP amounts to comes from
-Robert Martin. He puts it like this:
+Bob Martin, AKA [Uncle Bob](https://blog.8thlight.com/uncle-bob/archive.html),
+who coined the term "Single Responsibility Principle". He puts it like this:
 
 > A class should have only one reason to change.
 
@@ -32,7 +33,7 @@ To start, this quote is
 wikipedia:
 
 > Anthropomorphism is the attribution of human traits, emotions, and intentions
-  to non-human entities
+to non-human entities
 
 It strikes me as anthropomorphic to describe code as having a "reason
 to change". Code doesn't literally have reasons (to change, or to anything)
@@ -41,7 +42,13 @@ file. It has no mind, intentions, desires, wishes, hopes, dreams -- nor any of
 the things necessary to have reasons for anything: for getting ice cream, for
 riding a bike, for changing.
 
-Anthropomorphism aside, what I think Martin must have meant is this:
+Martin knows this. He
+[clarifies](https://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html):
+
+> Certainly the code is not responsible [. . .] Those
+things are the responsibility of the programmer, not of the program.
+
+A ha! So, Martin meant this:
 
 > Programmers should only have one reason to change a class.
 
@@ -49,16 +56,16 @@ Okay, that's better. Progammers definitely have reasons for changing code.
 But now here's the problem. This is literally never true. Here are some reasons
 _any_ programmer might have to change _any_ class:
 
-1. it contains a bug
-2. it can be refactored so that it's easier to read
-3. the language that it's written in has deprecated one of its methods
-4. one of its dependencies has deprecated one of its methods
-5. it can be refactored so that it's faster, more memory efficient
-6. it or its methods weren't named as perspicuously as they could have been
-7. the programmers have decided to follow a new style of programming, and this
+  1. it contains a bug
+  2. it can be refactored so that it's easier to read
+  3. the language that it's written in has deprecated one of its methods
+  4. one of its dependencies has deprecated one of its methods
+  5. it can be refactored so that it's faster, more memory efficient
+  6. it or its methods weren't named as perspicuously as they could have been
+  7. the programmers have decided to follow a new style of programming, and this
   code follows a different style
-8. a boss demands that it be rewritten
-9. it's too confusing to explain to the CEO during funding requests
+  8. a boss demands that it be rewritten
+  9. it's too confusing to explain to the CEO during funding requests
 
 And so on. Any code might have a
 bug, and thus a programmer would have a reason to change it. Any code might
@@ -69,7 +76,72 @@ adequate statement of the SRP,
 then the SRP is literally not possible to abide by ever. No matter what anyone
 writes, it has more than one "responsibility" -- more than one reason to change.
 
-This seems like it's missed Martin's point. But why?
+Martin anticipates this objection in his
+[article](https://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html):
+
+> Some folks have wondered whether a bug-fix qualifies as a reason to change.
+Others have wondered whether refactorings are reasons to change. [. . .]
+remember that the reasons for change
+are people. It is people who request changes. And you don't want to confuse
+those people, or yourself, by mixing together the code that many different
+people care about for different reasons. [. . .] When you write a software
+module, you want to make sure that when changes are requested, those changes can
+only originate from a single person, or rather, a single tightly coupled group
+of people representing a single narrowly defined business function.
+
+Martin seems to be saying that the examples above are not actually "reasons
+to change" -- not in the sense that he meant the phrase. It seems from this
+clarification that he actually meant something like this:
+
+> For any given class that a programmer writes, there should be no more than one
+person who can justifiably request a change to it
+
+I found this idea really pretty exciting the first time I heard it. But
+I don't think it solves our problems.
+(I'm going to ignore his qualification of "a single tightly coupled group of
+people representing a single narrowly defined business function" for now. I'll
+come back to it later.)
+
+Just consider a class that has a bug in it. Who __wouldn't__ be justified in
+requesting that we change this code? The CTO would. The CEO would. The marketing
+department would. A fellow developer would. The intern would. Really,
+_anyone_ would. But surely it doesn't follow _just from that_
+that our class has multiple responsibilities, right?
+
+Or what about this class:
+
+{% highlight ruby %}
+class PaymentEmailService
+  def initialize(email, amount)
+   @email = email
+   @amount = amount
+  end
+
+  def charge
+    stripe_id = User.find_by_email(@email).stripe_id
+    customer = Stripe::Customer.retrieve(stripe_id)
+    customer.charge(@amount)
+  end
+
+  def email
+    CustomerNotifier.welcome_email(@email).deliver
+  end
+end
+{% endhighlight %}
+
+Suppose I write this class at the company I just started. I'm the only employee.
+No one other than me can (within the authoritative structure of my company)
+justifiably request that I change this class. But surely it doesn't follow
+__just from that__ that the class has only one responsibility, right? It seems
+pretty clear that it has multiple responsibilities.
+
+So Martin's clarification, while interesting, seems like a step in the wrong
+direction. At best, it just pushes the problem back: instead of having to write
+off the many good reasons anyone could have to change any piece
+of software, we find ourselves having to write off the
+many justifiable requests anyone could make for us to change anything.
+
+There's got to be a better way to understand this.
 
 ### What vs. How
 I think it's important to distinguish between _what_ a piece of software does
@@ -143,11 +215,11 @@ Since Martin focuses on classes -- let's look at a class:
 {% highlight ruby %}
 class PaymentProcessor
   def charge(customer)
-    # ...
+  # ...
   end
 
   def refund(charge)
-    # ...
+  # ...
   end
 end
 {% endhighlight %}
@@ -156,7 +228,7 @@ How many things does this class do? Well, if we speak at a relatively
 high-level, it would seem like this class does one thing: it processes payments.
 But it seems equally accurate to say that this class does two things:
 it (1) makes charges and (2) refunds charges. The question here is just a
-question of language: which level are we supposed to speak at? That, then, is
+question of language: which level are we supposed to speak at? That's
 the second issue.
 
 How could one adjudicate between two programmers who disagreed on these matters?
