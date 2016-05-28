@@ -1,6 +1,5 @@
 ---
 title: "Learn Vim at Work"
-comments: true
 excerpt: "Learning vim is daunting. It kills your productivity for at least a full week. So how can anyone justify learning it while at work? This is how I did it."
 ---
 

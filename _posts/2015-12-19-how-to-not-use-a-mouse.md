@@ -1,6 +1,5 @@
 ---
 title: "How to not use a Mouse on OSX"
-comment: true
 excerpt: "Using a mouse is almost always an avoidable waste of time. Here's how I get by without one."
 ---
 
