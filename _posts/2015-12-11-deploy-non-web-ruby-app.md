@@ -1,5 +1,6 @@
 ---
 title: "Deploy and Host a Ruby App Running Non-Web Processes"
+comments: true
 excerpt: "Most ruby apps use web frameworks such as Rails or Sinatra, and thus are deployed and hosted to run web servers. I recently had the need to host something out of the norm: a plain-old ruby app running non-web processes. I did it using capistrano, foreman, upstart, and monit. Here's how."
 ---
 
