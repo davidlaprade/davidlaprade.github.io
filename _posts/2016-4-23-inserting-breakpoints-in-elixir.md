@@ -13,34 +13,16 @@ Ruby-like syntax. Unlike Ruby, however, Elixir is crazy fast -- making it an
 exciting alternative for back-end programming.
 
 One of the basic things anyone needs to learn when picking up a new language is
-how to set breakpoints. Intuitively, a breakpoint is a line of code where the
-machine will pause when executing the program, opening up a
-[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)
-in which the user can evaluate code interactively within the scope --
-i.e. with access to all of the variables, functions, modules, etc., that would
-otherwise be available to him/her at the line of the breakpoint.
+how to set [breakpoints](https://en.wikipedia.org/wiki/Breakpoint). So, if you
+know how to set breakpoints in Ruby, how can you translate this into Elixir?
 
-Breakpoints are exceedingly useful when debugging, as they dramatically speed up
-the feedback loop. Rather than peppering your code with lines that write to
-standard out, compiling (if need be), running the program, waiting for it to
-finish, reading the output,
-realizing that you actually needed to know what __that__ function returned,
-adding a new line to log the return value, saving the program, compiling again,
-re-running it, waiting for it to finish, reading the output, ... then finally
-fixing the problem, only to realize that you now have to go back to remove
-all of those logging statements you added everywhere -- __instead__, you could
-just set a breakpoint and literally skip that whole, awful process.
-Put another way, breakpoints with respect to debugging are like print statements on crack.
+I'm going to break this up into three steps:
 
-So, assuming you agree that knowing how to debug code
-in a language is an important first step to learning it. And
-assuming I've convinced you of the need to set breakpoints when debugging,
-then hopefully the following comparison of breakpoints in Ruby and Elixir
-will be of interest to you.
+  * insert your breakpoint
+  * trigger your breakpoint
+  * interact with your breakpoint
 
-I'm going to break this up into three steps.
-
-### 1. Set up the code to be debugged
+### 1. Insert Your Breakpoint
 
 In Ruby you do this:
 
@@ -55,6 +37,8 @@ class Example
     # some code
   end
 end
+
+Example.my_method('yo')
 {% endhighlight %}
 
 In Elixir you do this:
@@ -72,19 +56,14 @@ defmodule Example do
 end
 {% endhighlight %}
 
-### 2. Trigger your breakpoint
+### 2. Trigger Your Breakpoint
 
 In Ruby you do this:
 
 {% highlight bash %}
-$ irb
->> $LOAD_PATH << '.'
-=> # the contents of Ruby's current load path
->> require 'example'
-=> true
->> Example.my_method "yo"
+$ ruby example.rb # just run the file!
 
-From: ./example.rb @ line 6 Example#my_method:
+From: ./example.rb @ line 7 Example.my_method:
 
     4: def self.my_method(arg)
     5:   # some code
@@ -93,7 +72,7 @@ From: ./example.rb @ line 6 Example#my_method:
     8: end
 
 # you're in the interactive REPL!
-[1] pry(main)> arg
+[1] pry(Example)> arg
 => "yo"
 {% endhighlight %}
 
@@ -102,7 +81,6 @@ In Elixir you'd do this:
 {% highlight bash %}
 $ iex
 iex(1)> c "example.exs" # compile your file
-[Example]
 iex(2)> Example.do_method("hey")
 Request to pry #PID<0.57.0> at file_name.exs:3
 
@@ -111,14 +89,22 @@ Request to pry #PID<0.57.0> at file_name.exs:3
     IEx.pry # your breakpoint
     # some code
 
-Allow? [Yn] Y
+Allow? [Yn] # type Y
 
 # you're in the interactive REPL!
 pry(1)> some_arg
 "hey"
 {% endhighlight %}
 
-### 3. Interact with your breakpoint
+**NOTE:** The single most important difference between breakpoints in Ruby and
+Elixir is that Elixir breakpoints have to be triggered from within a running
+Elixir
+[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). This
+is optional in Ruby -- you could always load your files into your `irb` session,
+then invoke the method containing the breakpoint directly. But most of the time
+this isn't what is done.
+
+### 3. Interact with Your Breakpoint
 
 At this point, enter whatever code you want to start debugging.
 
