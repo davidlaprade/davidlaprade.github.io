@@ -101,10 +101,13 @@ symbol manipulation
 Pincipia Mathematica
 -new problem: how do we know the new system is complete, compact, consistent?
 -Hilbert’s marching orders for a theory of mathematics
+  - https://en.wikipedia.org/wiki/Hilbert%27s_program
 -he wants to show, essentially following Frege, that arithmetic is in some sense
 just symbol manipulation
+-hilbert succeeds for geometry: a complete axiomatization
+  - the terms of geometry are considered "defined in use"
 -Godel
-    -incompleteness of arithmetic, single most important result in the history
+    - 1931, incompleteness of arithmetic, single most important result in the history
 of logic
     -there is no finite, consistent set of sentences (axioms) which can prove
 every true sentence of arithmetic
