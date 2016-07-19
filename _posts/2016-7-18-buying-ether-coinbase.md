@@ -27,8 +27,9 @@ developers to understand and pickup, in contrast with
     [hostile](https://github.com/bitcoin-dot-org/bitcoin.org/pull/1178),
     so much so that
 [many](http://www.coindesk.com/coinbase-brian-armstrong-risk-developers/) consider it to be bitcoin's biggest systematic risk; meanwhile, the identity of bitcoin's creator(s), [Satoshi Nakamoto](https://en.bitcoin.it/wiki/Satoshi_Nakamoto), is unknown, and his disappearance in late 2010 has lead to a [leadership vacuum](https://medium.com/@octskyward/the-resolution-of-the-bitcoin-experiment-dabb30201f7#.vbntenstd) within the community
-  * it's grown in value over 1100% in the last 6 months, compared with bitcoin's
-    175%
+  * it's grown in value over 1000% (from $1 to $11) in the last 6 months,
+    compared with bitcoin's 75% growth (from $380 to $675) during the same
+    period
 
 Unlike bitcoin, however, ether (the individual unit of the Ethereum currency)
 is not quite so easy to buy.
