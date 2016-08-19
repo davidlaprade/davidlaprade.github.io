@@ -6,8 +6,10 @@ people. What is logic? How is it related to computers? I try to explain"
 ---
 
 I studied logic. Now I write software for a living. This confuses some
-people. What the heck is logic? How is it related to computers? This is my
+people. What is logic? How is it related to computers? This is my
 explanation.
+
+### Logic
 
 Logic is the study of inference: of drawing conclusions, or extracting
 information out of the information we already have. If someone says he
@@ -19,17 +21,18 @@ people for fun, then I can __infer__ that Jones is a bad person. And so on.
 This is the kind of thing that logic studies: the process of drawing
 conclusions.
 
-One of the things that logic tries to do is to provide tools for drawing
+One of the things that logic tries to do is to provide rules for drawing
 inferences:
 
-* tools that make it easier to see what conclusions can be drawn and what can't
-* tools that eliminate the possibility of drawing false conclusions from true premises
-* tools that objectively settle disputes about what conclusions can be drawn
-* tools that de-psychologize the process of inference entirely -- i.e. that
+* rules that eliminate the possibility of drawing false conclusions from true premises
+* rules that objectively settle disputes about what conclusions can be drawn
+* rules that de-psychologize the process of inference entirely -- i.e. that
   remove our reliance on what we "feel" the conclusions of a sentence are
 
-Computation theory was born out of an attempt to use these tools to settle a
+Computation theory was born out of an attempt to use these rules to settle a
 dispute in mathematics.
+
+### Arithmetic
 
 In 1781, [Immanuel
 Kant](https://en.wikipedia.org/wiki/Immanuel_Kant) published
@@ -79,27 +82,41 @@ if ever, think about anything more than this.
 But if Kant is right, then this commonsense vision of math leaves
 something important out.
 
+### Frege's Program
+
 [Gottlob Frege](https://en.wikipedia.org/wiki/Gottlob_Frege), a German
 logician and mathematician, took issue with Kant's claim. He felt that
-mathematics really was just like "Bachelors are unmarried" -- one could arrive
+arithmetic really was just like "Bachelors are unmarried": _analytic_. One could
+arrive
 at all of the true equations simply by manipulating the symbols according to
-rules. The symbols that he thought could do this were the those of set theory.
-And the rules were those of logic.
+rules. The symbols were those of set theory.  And the rules were those of logic.
+
+> Kant obviously [. . .] underestimated the value of analytic judgements [ . . .]
+The conclusions we draw from [a definition] extend our knowledge, and ought
+therefore, on Kant’s view, to be regarded as synthetic; and yet they can be
+proved by purely logical means, and are thus analytic. (Grundlagen, &sect;87)
 
 The book that resulted from Frege's attempts to develop a logic strong enough
 to infer arithmetic was the **Begriffsschrift**, published in 1879.
-Frege then published **The Foundations of Arithmetic** in 1884 to complete his
-project. There, he attempted to define
+Frege then published **Die Grundlagen der Arithmetik** (_The Foundations of
+Arithmetic_) in 1884 to complete his project. There, he attempted to define
 the major terms of arithmetic using only set theory and logic:
 
 > [T]he natural numbers 0, 1, 2, 3, etc., considered as sets [. . . can
 be] defined in purely logical fashion, namely, for 0 the set of things not
 identical with themselves, for 1 the set whose sole member is the number 0, for
 2 the set whose members are the numbers 0 and 1, for 3 the set whose members are
-the numbers 0, 1, and 2, and so forth.
+the numbers 0, 1, and 2, and so forth. (Kneale and Kneale, The Development of
+Logic, pp467-468)
 
-By the beginning of the 20th century, Frege thought he'd succeeded. But a young
-logician out of Cambridge named [Bertrand
+By the beginning of the 20th century, Frege thought he'd succeeded:
+
+> I hope I may claim  in the present work to have made it probable that the laws
+> of arithmetic are analytic judgements and are consequently a priori. Arithmetic
+> thus becomes simply a development of logic, and every proposition of
+> arithmetic a law of logic, albeit a derivative one. (Grundlagen, &sect;88)
+
+But a young logician out of Cambridge named [Bertrand
 Russell](https://en.wikipedia.org/wiki/Bertrand_Russell) wrote to him in the
 summer of 1902:
 
@@ -129,41 +146,44 @@ advance in logic, unwelcome as it may seem at first glance. [. . .] Very
 respectfully yours, G. Frege.
 
 Frege was devastated by Russell's discovery. Nevertheless, the focus in mathematics and
-logic remained on Frege's project: showing that mathematics was mere
-symbol manipulation.
+logic remained on Frege's project.
 
 To that end, Russell and [Alfred North
 Whitehead](https://en.wikipedia.org/wiki/Alfred_North_Whitehead) published the
 monumental [Principia Mathematica](https://en.wikipedia.org/wiki/Principia_Mathematica) in
 1910 -- another attempt to derive arithmetic from set theory. Here, after about
-400 pages, is their proof of `1 + 1 = 2`:
+400 pages, they finally prove that `1 + 1 = 2`:
 
-![principia_proof]({{ site.baseurl }}/jekyll_img/principia_proof.png)
-
-Other mathematicians and logicians followed Russell and Whitehead's lead.
+![proof_of_one_plus_one_equals_two]({{ site.baseurl }}/jekyll_img/principia_proof.png)
 
 With time, however, mathematicians grew increasingly worried that what happened
 to Frege would happen again: that there were contradictions hiding in these
 increasingly complex logical systems. A subtle shift in focus
 began to take place: from proving this or that portion of mathematics, to
-proving that one's proof was consistent. The German mathematician, David
-Hilbert, even went so far as to claim that the [second most important outstanding
+proving that _one's proof_ was consistent. The German mathematician, David
+Hilbert -- who had done for
+[geometry](https://en.wikipedia.org/wiki/Hilbert%27s_axioms) what Russell and
+Whitehead did for arithmetic --  even went so far as to claim that the
+[second most important outstanding
 problem in mathematics](https://en.wikipedia.org/wiki/Hilbert%27s_problems) was
-whether there was any consistent axiomitization (i.e. set of rules) for
-arithmetic.
+whether there was any consistent set of rules for arithmetic.
 
-    -Russell finds a way to avoid the paradox: his theory of types
-  -he and Whitehead publish the monumental Principia Mathematica
--Hilbert
--mathematicians begin dedicating their careers to finding new alternatives to
-Pincipia Mathematica
--new problem: how do we know the new system is complete, compact, consistent?
--Hilbert’s marching orders for a theory of mathematics
-  - https://en.wikipedia.org/wiki/Hilbert%27s_program
--he wants to show, essentially following Frege, that arithmetic is in some sense
-just symbol manipulation
--hilbert succeeds for geometry: a complete axiomatization
-  - the terms of geometry are considered "defined in use"
+It's hard to overstate the influence of Frege's research program on early
+twentieth century mathematics and logic. Careers were staked on it. Entire
+fields sprang up around it. It was perhaps the single unifying focus of
+mathematics at the time.
+
+### The Incompleteness of Arithmetic
+
+All this changed in 1931.
+
+[Kurt Godel](https://en.wikipedia.org/wiki/Kurt_G%C3%B6del), an Austrian
+logician -- just out of graduate school and 25 years old -- published a paper
+titled
+
+> On Formally Undecidable Propositions of 'Principia Mathematica' and
+Related Systems
+
 -Godel
     - 1931, incompleteness of arithmetic, single most important result in the history
 of logic
