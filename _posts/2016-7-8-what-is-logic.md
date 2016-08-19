@@ -1,54 +1,95 @@
 ---
 title: "What is Logic"
 date: "2016-07-08"
-excerpt: "I studied logic. But I'm a software engineer. To help explain the
-connection, I here sketch the
-history of ideas that led from logic into computation theory."
+excerpt: "I studied logic. Now I write software for a living. This confuses some
+people. What is logic? How is it related to computers? I try to explain"
 ---
 
-I studied logic. But I'm a software engineer. To understand the connection,
-it's helpful to consider the
-history of ideas that led from logic into computation theory.
+I studied logic. Now I write software for a living. This confuses some
+people. What the heck is logic? How is it related to computers? This is my
+explanation.
 
-It's useful to begin with a dispute over the nature of arithmetic.
-In 1781, the philosopher [Immanuel
-Kant](https://en.wikipedia.org/wiki/Immanuel_Kant) published his
-_magnum opus_ **The Critique of Pure Reason**, in which he argued that
-arithmetical propositions
-like `7 + 5 = 12` are not true solely in virtue of their meanings, or concepts:
+Logic is the study of inference: of drawing conclusions, or extracting
+information out of the information we already have. If someone says he
+lives in Boston, then I can __infer__ that he lives in Massachusetts. If I know I'm
+driving 60 mph, and I have 30 miles left to go, I can __infer__ that I still have a
+half hour left to drive. If I know that Smith is a human, and I know all humans are
+mortal, then I can __infer__ that Smith is mortal. If I know that Jones hurts
+people for fun, then I can __infer__ that Jones is a bad person. And so on.
+This is the kind of thing that logic studies: the process of drawing
+conclusions.
+
+One of the things that logic tries to do is to provide tools for drawing
+inferences:
+
+* tools that make it easier to see what conclusions can be drawn and what can't
+* tools that eliminate the possibility of drawing false conclusions from true premises
+* tools that objectively settle disputes about what conclusions can be drawn
+* tools that de-psychologize the process of inference entirely -- i.e. that
+  remove our reliance on what we "feel" the conclusions of a sentence are
+
+Computation theory was born out of an attempt to use these tools to settle a
+dispute in mathematics.
+
+In 1781, [Immanuel
+Kant](https://en.wikipedia.org/wiki/Immanuel_Kant) published
+**The Critique of Pure Reason**. There, he argued that that claims in arithmetic
+-- e.g. claims like `7 + 5 = 12` -- are not true solely in virtue of their
+meanings, or concepts:
 
 > [N]o matter how long I analyze my concept of such a possible sum [of
 seven and five] I will still not find twelve in it [. . .] One must go beyond
 these concepts [of seven and five . . . to] see the number 12 arise.
 (Critique, B15)
 
-To see the significance of this claim, contrast a sentence like "All bachelors
-are unmarried" with a sentence like "Some flowers are red".
-The truth of the first sentence does not depend in any way on the world -- if
-a man is unmarried, then he just is a bachelor, that's just what it means --
-while the truth of the second does. Kant was claiming, then, that
-mathematical claims were more like "Some flowers are red" than "All bachelors
-are unmarried". Something else -- something besides the syntax and semantics of
-mathematical expressions -- determines whether they are true.
+To see the significance of this, contrast a sentence like:
 
-If this is correct, it's very surprising. We tend to think of
-math as something we can do just by thinking. But if mathematical sentences are
-made true by something more than just their syntax and semantics, how do we have
-access to this additional element __just by thinking__?
+> Bachelors are unmarried
+
+with a sentence like:
+
+> There are red flowers
+
+The truth of the first sentence does not depend in any way on the world. If
+a man is unmarried, then he __just is__ a bachelor, that's just what the word
+"bachelor" means. If we were to move around some symbols and replace the word "bachelor"
+with its definition, then we would see that "Bachelors are unmarried" really just
+says:
+
+> Unmarried men are unmarried
+
+which is vacuously true.
+
+The truth of the second sentence, however, __does__ depend on the
+world. The existence of red roses,
+for example, makes the sentence true. But if
+there were another ice age and all of the red flowers died, that sentence would
+no longer be true. It's not just a matter of symbol manipulation.
+
+Kant was claiming, then, that `5 + 7 = 12` is more like "There are red flowers"
+than it is like "Bachelors are unmarried". Something besides the meaning and
+grammar of `5 + 7 = 12` makes it true. Mathematics isn't just symbol manipulation.
+
+This should be surprising. We tend to think of math as a kind of symbolic game. We
+move symbols around, write new ones, substitute this symbol for that, etc.,
+according to some very
+specific rules. If we follow the rules, we succeed. And we seldom,
+if ever, think about anything more than this.
+
+But if Kant is right, then this commonsense vision of math leaves
+something important out.
 
 [Gottlob Frege](https://en.wikipedia.org/wiki/Gottlob_Frege), a German
 logician and mathematician, took issue with Kant's claim. He felt that
-mathematics was really just logic and set theory in wolves'
-clothing. He felt that if we were really clear about what we meant by "5" and
-"7", and if we had a logic powerful enough for drawing inferences
-about them, then we would see that all of arithmetic simply followed
-deductively from set theory. The truth of arithmetic, he thought, doesn't
-depend on anything more than its syntax and semantics.
+mathematics really was just like "Bachelors are unmarried" -- one could arrive
+at all of the true equations simply by manipulating the symbols according to
+rules. The symbols that he thought could do this were the those of set theory.
+And the rules were those of logic.
 
 The book that resulted from Frege's attempts to develop a logic strong enough
-to prove arithmetic -- the **Begriffsschrift**, published in 1879 -- might be
-the single greatest work on logic ever. Frege then published **The Foundations
-of Arithmetic** in 1884 to complete his project. There, he attempted to define
+to infer arithmetic was the **Begriffsschrift**, published in 1879.
+Frege then published **The Foundations of Arithmetic** in 1884 to complete his
+project. There, he attempted to define
 the major terms of arithmetic using only set theory and logic:
 
 > [T]he natural numbers 0, 1, 2, 3, etc., considered as sets [. . . can
@@ -57,9 +98,9 @@ identical with themselves, for 1 the set whose sole member is the number 0, for
 2 the set whose members are the numbers 0 and 1, for 3 the set whose members are
 the numbers 0, 1, and 2, and so forth.
 
-By the beginning of the 20th century, Frege thinks he's succeeded. But a young
-philosopher and logician out of Cambridge named [Bertrand
-Russell](https://en.wikipedia.org/wiki/Bertrand_Russell) writes to him in the
+By the beginning of the 20th century, Frege thought he'd succeeded. But a young
+logician out of Cambridge named [Bertrand
+Russell](https://en.wikipedia.org/wiki/Bertrand_Russell) wrote to him in the
 summer of 1902:
 
 > [date: 16 June 1902] Dear colleague, For a year and a half I have been
@@ -87,12 +128,29 @@ any case your discovery is very remarkable and will perhaps result in a great
 advance in logic, unwelcome as it may seem at first glance. [. . .] Very
 respectfully yours, G. Frege.
 
-Russell and others
+Frege was devastated by Russell's discovery. Nevertheless, the focus in mathematics and
+logic remained on Frege's project: showing that mathematics was mere
+symbol manipulation.
 
-kant says: math not true solely in virtue of its syntax/semantics
-frege says: math is true solely in virtue of its syntax/semantics
-godel says: math not true solely in virtue of its syntax/semantics: not mere
-symbol manipulation
+To that end, Russell and [Alfred North
+Whitehead](https://en.wikipedia.org/wiki/Alfred_North_Whitehead) published the
+monumental [Principia Mathematica](https://en.wikipedia.org/wiki/Principia_Mathematica) in
+1910 -- another attempt to derive arithmetic from set theory. Here, after about
+400 pages, is their proof of `1 + 1 = 2`:
+
+![principia_proof]({{ site.baseurl }}/jekyll_img/principia_proof.png)
+
+Other mathematicians and logicians followed Russell and Whitehead's lead.
+
+With time, however, mathematicians grew increasingly worried that what happened
+to Frege would happen again: that there were contradictions hiding in these
+increasingly complex logical systems. A subtle shift in focus
+began to take place: from proving this or that portion of mathematics, to
+proving that one's proof was consistent. The German mathematician, David
+Hilbert, even went so far as to claim that the [second most important outstanding
+problem in mathematics](https://en.wikipedia.org/wiki/Hilbert%27s_problems) was
+whether there was any consistent axiomitization (i.e. set of rules) for
+arithmetic.
 
     -Russell finds a way to avoid the paradox: his theory of types
   -he and Whitehead publish the monumental Principia Mathematica
