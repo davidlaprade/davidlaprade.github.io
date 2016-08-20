@@ -2,22 +2,30 @@
 title: "What is Logic"
 date: "2016-07-08"
 excerpt: "I studied logic. Now I write software for a living. This confuses some
-people. What is logic? How is it related to computers? I try to explain"
+people. What is logic? How is it related to computers? This is how I understand
+it.
 ---
 
 I studied logic. Now I write software for a living. This confuses some
-people. What is logic? How is it related to computers? This is my
-explanation.
+people. What is logic? How is it related to computers?
+
+This is how I understand it.
 
 ### Logic
 
 Logic is the study of inference: of drawing conclusions, or extracting
-information out of the information we already have. If someone says he
-lives in Boston, then I can __infer__ that he lives in Massachusetts. If I know I'm
-driving 60 mph, and I have 30 miles left to go, I can __infer__ that I still have a
-half hour left to drive. If I know that Smith is a human, and I know all humans are
-mortal, then I can __infer__ that Smith is mortal. If I know that Jones hurts
-people for fun, then I can __infer__ that Jones is a bad person. And so on.
+information out of the information we already have. Some examples of inferences:
+
+* If someone says he lives in Boston, then I can __infer__ that he lives
+in Massachusetts
+* If I know I'm driving 60 mph, and I have 30 miles left to go, I can
+__infer__ that I still have a half hour left to drive
+* If I know that Smith is a human, and I know all humans are
+mortal, then I can __infer__ that Smith is mortal
+* If I know that Jones hurts
+people for fun, then I can __infer__ that Jones is a bad person
+
+And so on.
 This is the kind of thing that logic studies: the process of drawing
 conclusions.
 
@@ -180,14 +188,15 @@ All this changed in 1931.
 [Kurt Godel](https://en.wikipedia.org/wiki/Kurt_G%C3%B6del), an Austrian
 logician -- just out of graduate school and only 25 years old -- published a
 paper titled "On Formally Undecidable Propositions of 'Principia Mathematica' and
-Related Systems". In it he proved what is today known as the _Incompleteness
-of Arithmetic_:
+Related Systems". In it he solved Hilbert's second problem, proving what is
+today known as the _Incompleteness of Arithmetic_:
 
 > There is no finite, consistent set of rules from which every truth of
   arithmetic can be inferred.
 
 Put another way: arithmetic is not mere symbol manipulation. There is no way to
-avoid inconsistency/paradox. It is simply impossible.
+avoid the inconsistency/paradox that Frege's system was shown to succumb to. It
+is simply impossible.
 
 Frege's program -- the animating principle behind nearly 75 years of research in
 mathematics -- was finally dead.
@@ -197,26 +206,30 @@ Godel's proof he walked into his class and said "this class is now over..."
 
 ### Mere Symbol Manipulation
 
-Godel's discovery lead logicians to focus on a new question:
+Godel's discovery, despite all of the work that it swept away, led logicians
+and mathematicians to focus on an important, new question:
 
 > What is "mere symbol manipulation"?
 
-Can it be characterized precisely?
 If all of the truths of arithmetic cannot be proven
 by simply manipulating symbols, then what is the limit of symbol manipulation?
+Can it be characterized precisely?
 
 Much of the history at this point is well known. A young Alan Turing, on break
 before begining graduate school in 1936, was looking for something to do. So he
 penned "On Computable Numbers", in which he gave a precise definition of what
 he called "automatic machines" -- today known as "Turing Machines". He then sent
-the paper to Alonzo Church, his future dissertation advisor, who immediately saw
-the significance of what had been done. Church's thesis, as it came to be known,
-was that computation (i.e. mere symbol manipulation) is nothing other than what
-can be done by a Turing machine.
+the paper to Alonzo Church, his future dissertation advisor, thinking Church
+might find it interesting. Church immediately saw
+the significance of what had been done. _Church's Thesis_, as it came to be known,
+was that:
+
+> Computation (i.e. mere symbol manipulation) is what a Turing Machine does
 
 At long last, computation theory was born.
 
 ### Conclusion
 
 That, then, is a high-level overview of the historical and conceptual
-connections between logic and computation theory.
+connections between logic and computation theory. As I hope I have shown, the
+two are very intimately related.
