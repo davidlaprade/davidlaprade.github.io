@@ -170,7 +170,7 @@ whether there was any consistent set of rules for arithmetic.
 
 It's hard to overstate the influence of Frege's research program on early
 twentieth century mathematics and logic. Careers were staked on it. Entire
-fields sprang up around it. It was perhaps the single unifying focus of
+fields sprang up around it. It was perhaps _the_ single unifying focus of
 mathematics at the time.
 
 ### The Incompleteness of Arithmetic
@@ -178,26 +178,45 @@ mathematics at the time.
 All this changed in 1931.
 
 [Kurt Godel](https://en.wikipedia.org/wiki/Kurt_G%C3%B6del), an Austrian
-logician -- just out of graduate school and 25 years old -- published a paper
-titled
+logician -- just out of graduate school and only 25 years old -- published a
+paper titled "On Formally Undecidable Propositions of 'Principia Mathematica' and
+Related Systems". In it he proved what is today known as the _Incompleteness
+of Arithmetic_:
 
-> On Formally Undecidable Propositions of 'Principia Mathematica' and
-Related Systems
+> There is no finite, consistent set of rules from which every truth of
+  arithmetic can be inferred.
 
--Godel
-    - 1931, incompleteness of arithmetic, single most important result in the history
-of logic
-    -there is no finite, consistent set of sentences (axioms) which can prove
-every true sentence of arithmetic
-    -there is no way to avoid inconsistency/paradox
-    -frege's project is doomed
-    -mathematics is more than just definitions, more than just symbol
-manipulation
--theory of symbol manipulation via Church, Turing, Godel, Kleene, Post
-  -if mathematics isn’t just symbol manipulation, what is?
-    -use Godel's insights to develop computation theory; leads to development of
-modern computers
-    -logic thus changed everything
-  -if the development of computers is interesting/important, then the
-development of logic is interesting/important (since the development of
-computers just is the development of logic)
+Put another way: arithmetic is not mere symbol manipulation. There is no way to
+avoid inconsistency/paradox. It is simply impossible.
+
+Frege's program -- the animating principle behind nearly 75 years of research in
+mathematics -- was finally dead.
+
+Legend has it that at the time ... was teaching a class on ... And when he read
+Godel's proof he walked into his class and said "this class is now over..."
+
+### Mere Symbol Manipulation
+
+Godel's discovery lead logicians to focus on a new question:
+
+> What is "mere symbol manipulation"?
+
+Can it be characterized precisely?
+If all of the truths of arithmetic cannot be proven
+by simply manipulating symbols, then what is the limit of symbol manipulation?
+
+Much of the history at this point is well known. A young Alan Turing, on break
+before begining graduate school in 1936, was looking for something to do. So he
+penned "On Computable Numbers", in which he gave a precise definition of what
+he called "automatic machines" -- today known as "Turing Machines". He then sent
+the paper to Alonzo Church, his future dissertation advisor, who immediately saw
+the significance of what had been done. Church's thesis, as it came to be known,
+was that computation (i.e. mere symbol manipulation) is nothing other than what
+can be done by a Turing machine.
+
+At long last, computation theory was born.
+
+### Conclusion
+
+That, then, is a high-level overview of the historical and conceptual
+connections between logic and computation theory.
