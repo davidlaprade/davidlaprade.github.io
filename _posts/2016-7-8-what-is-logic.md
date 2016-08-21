@@ -1,6 +1,6 @@
 ---
 title: "What is Logic"
-date: "2016-07-08"
+date: "2016-08-20"
 excerpt: "I studied logic. Now I write software for a living. This confuses some
 people. What is logic? How is it related to computers? This is how I understand
 it."
@@ -25,9 +25,7 @@ mortal, then I can __infer__ that Smith is mortal
 * If I know that Jones hurts
 people for fun, then I can __infer__ that Jones is a bad person
 
-And so on.
-This is the kind of thing that logic studies: the process of drawing
-conclusions.
+And so on.  This is the kind of thing that logic studies.
 
 One of the things that logic tries to do is to provide rules for drawing
 inferences:
@@ -44,7 +42,7 @@ dispute in mathematics.
 
 In 1781, [Immanuel
 Kant](https://en.wikipedia.org/wiki/Immanuel_Kant) published
-**The Critique of Pure Reason**. There, he argued that that claims in arithmetic
+**The Critique of Pure Reason**, in which he argued that claims in arithmetic
 -- e.g. claims like `7 + 5 = 12` -- are not true solely in virtue of their
 meanings, or concepts:
 
@@ -69,13 +67,16 @@ says:
 
 > Unmarried men are unmarried
 
-which is vacuously true.
+which is vacuously true. You can tell that this sentence is true just based on
+its form, knowing nothing about what the words even mean.
 
 The truth of the second sentence, however, __does__ depend on the
 world. The existence of red roses,
 for example, makes the sentence true. But if
 there were another ice age and all of the red flowers died, that sentence would
-no longer be true. It's not just a matter of symbol manipulation.
+no longer be true. It's truth is not just a matter of swapping out a word for
+its definition. It's not just a matter of symbol manipulation. You need to know
+what these words mean in order to know that the sentence is true.
 
 Kant was claiming, then, that `5 + 7 = 12` is more like "There are red flowers"
 than it is like "Bachelors are unmarried". Something besides the meaning and
@@ -83,12 +84,11 @@ grammar of `5 + 7 = 12` makes it true. Mathematics isn't just symbol manipulatio
 
 This should be surprising. We tend to think of math as a kind of symbolic game. We
 move symbols around, write new ones, substitute this symbol for that, carry a 1,
-cross out a 3, etc., according to some very
+cross out a 3, move an 9 to the other side, etc., according to some very
 specific rules. If we follow the rules, we succeed. And we seldom,
 if ever, think about anything more than this.
 
-But if Kant is right, then this commonsense vision of math leaves
-something important out.
+But if Kant is right, then this commonsense vision of math is deeply mistaken.
 
 ### Frege's Program
 
@@ -169,11 +169,11 @@ to Frege would happen again: that there were contradictions hiding in these
 increasingly complex logical systems. A subtle shift in focus
 began to take place: from proving this or that portion of mathematics, to
 proving that _one's proof_ was consistent. The influential German mathematician,
-David Hilbert, once claimed:
+[David Hilbert](https://en.wikipedia.org/wiki/David_Hilbert), once claimed:
 
 > The chief requirement of the theory of axioms must go farther [than merely
 avoiding known paradoxes. It must show that] contradictions based on the
-underlying axiom-system are absolutely impossible. ( Hilbert, 1918, "Axiomatic
+underlying axiom-system are absolutely impossible. (1918, "Axiomatic
 Thought")
 
 Hilbert -- who had done for
@@ -231,25 +231,28 @@ and mathematicians to focus on an important, new question:
 
 > What is "mere symbol manipulation"?
 
-If all of the truths of arithmetic is not just symbol manipulation, then what
-is? Can this notion be characterized precisely? Gödel, in order to construct his
-famous proof,
-had to develop the rudiments of such a characterization. It was left to others
-to flesh out the details.
+If arithmetic is not just symbol manipulation, then what
+is? Can this notion be characterized precisely? Gödel had already developed the
+rudiments of such a characterization in order to construct his famous proof.
+But it was left to others to flesh out the details.
 
 Much of the history at this point is well known. A young Alan Turing, on break
 before beginning graduate school in 1936, was looking for something to do. So he
 penned "On Computable Numbers", in which he gave a precise definition of what
 he called "automatic machines". He then sent
-the paper to Alonzo Church, his future dissertation advisor, thinking Church
+the paper to Alonzo Church, his future dissertation director, thinking Church
 might find it interesting. Church immediately saw
-the significance of what had been done. Church wrote a review of Turing's
+the significance of what had been done. To his credit, Church went out of his
+way to make sure Turing got acknowledged for his discovery. He wrote a review
+of Turing's
 paper in _The Journal of Symbolic Logic_ in the spring of 1937, in which he
-first referred to "automatic machines" as "Turing Machines":
+coined the term "Turing Machines":
 
 > [Turing] proposes as a criterion that an infinite sequence of digits 0 and 1
 [i.e. a binary string] be "computable" that it shall be possible to devise a
-computing machine [. . .] [which] can be regarded as a [. . .] Turing machine.
+computing machine [. . .] which will write down the sequence [. . .] if allowed
+to run for a sufficiently long time. [Such a machine] can be regarded as a
+[. . .] Turing machine.
 (Journal of Symbolic Logic, vol. 2, 1937, p49)
 
 _Church's Thesis_, as it came to be known, was that:
@@ -264,5 +267,5 @@ That, then, is a high-level overview of the historical and conceptual
 connections between logic and computation theory. As I hope I have shown, the
 two are very intimately related.
 
-For this reason, studying logic is actually a great to do if you have any
-interest in working with computers.
+For this reason, studying logic is actually great to do if you have an
+interest in working with computers and learning computer languages.
