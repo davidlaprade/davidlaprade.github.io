@@ -3,7 +3,7 @@ title: "What is Logic"
 date: "2016-07-08"
 excerpt: "I studied logic. Now I write software for a living. This confuses some
 people. What is logic? How is it related to computers? This is how I understand
-it.
+it."
 ---
 
 I studied logic. Now I write software for a living. This confuses some
@@ -82,8 +82,8 @@ than it is like "Bachelors are unmarried". Something besides the meaning and
 grammar of `5 + 7 = 12` makes it true. Mathematics isn't just symbol manipulation.
 
 This should be surprising. We tend to think of math as a kind of symbolic game. We
-move symbols around, write new ones, substitute this symbol for that, etc.,
-according to some very
+move symbols around, write new ones, substitute this symbol for that, carry a 1,
+cross out a 3, etc., according to some very
 specific rules. If we follow the rules, we succeed. And we seldom,
 if ever, think about anything more than this.
 
@@ -119,10 +119,10 @@ Logic, pp467-468)
 
 By the beginning of the 20th century, Frege thought he'd succeeded:
 
-> I hope I may claim  in the present work to have made it probable that the laws
-> of arithmetic are analytic judgements and are consequently a priori. Arithmetic
-> thus becomes simply a development of logic, and every proposition of
-> arithmetic a law of logic, albeit a derivative one. (Grundlagen, &sect;88)
+> I hope I may claim in the present work to have made it probable that the laws
+of arithmetic are analytic judgements and are consequently a priori. Arithmetic
+thus becomes simply a development of logic, and every proposition of
+arithmetic a law of logic, albeit a derivative one. (Grundlagen, &sect;88)
 
 But a young logician out of Cambridge named [Bertrand
 Russell](https://en.wikipedia.org/wiki/Bertrand_Russell) wrote to him in the
@@ -168,7 +168,14 @@ With time, however, mathematicians grew increasingly worried that what happened
 to Frege would happen again: that there were contradictions hiding in these
 increasingly complex logical systems. A subtle shift in focus
 began to take place: from proving this or that portion of mathematics, to
-proving that _one's proof_ was consistent. The German mathematician, David
+proving that _one's proof_ was consistent. The influential German mathematician,
+David Hilbert, once claimed:
+
+> The chief requirement of the theory of axioms must go farther [than merely
+avoiding known paradoxes. It must show that] contradictions based on the
+underlying axiom-system are absolutely impossible. ( Hilbert, 1918, "Axiomatic
+Thought")
+
 Hilbert -- who had done for
 [geometry](https://en.wikipedia.org/wiki/Hilbert%27s_axioms) what Russell and
 Whitehead did for arithmetic --  even went so far as to claim that the
@@ -178,51 +185,74 @@ whether there was any consistent set of rules for arithmetic.
 
 It's hard to overstate the influence of Frege's research program on early
 twentieth century mathematics and logic. Careers were staked on it. Entire
-fields sprang up around it. It was perhaps _the_ single unifying focus of
+fields sprang up around it. It was perhaps _the_ unifying focus of
 mathematics at the time.
 
 ### The Incompleteness of Arithmetic
 
 All this changed in 1931.
 
-[Kurt Godel](https://en.wikipedia.org/wiki/Kurt_G%C3%B6del), an Austrian
+[Kurt Gödel](https://en.wikipedia.org/wiki/Kurt_G%C3%B6del), an Austrian
 logician -- just out of graduate school and only 25 years old -- published a
 paper titled "On Formally Undecidable Propositions of 'Principia Mathematica' and
 Related Systems". In it he solved Hilbert's second problem, proving what is
 today known as the _Incompleteness of Arithmetic_:
 
-> There is no finite, consistent set of rules from which every truth of
-  arithmetic can be inferred.
+> There is no finite, consistent set of axioms [i.e. rules] from which every
+truth of arithmetic can be inferred.
 
-Put another way: arithmetic is not mere symbol manipulation. There is no way to
+Put another way: arithmetic is not mere symbol manipulation -- it is not pure
+syntax without a semantics. There is no way to
 avoid the inconsistency/paradox that Frege's system was shown to succumb to. It
-is simply impossible.
+is simply impossible to carry out the task.  Frege's program -- the animating
+principle behind nearly 75 years of research in mathematics -- was finally dead.
 
-Frege's program -- the animating principle behind nearly 75 years of research in
-mathematics -- was finally dead.
+Legend has it that in the fall of 1930, shortly after Gödel had presented the
+proof for the first time, the celebrated mathematician [John Von
+Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was teaching a class on
+the foundations of mathematics. When Von Neumann learned of Godel's result, he
+walked into his class and said "Some young person down in Vienna has just shown
+that everything we've been trying to do for the last 15 years can't
+be done. I'm going to present the proof in this course, and then this course is
+over." Von Neumann went on to say that:
 
-Legend has it that at the time ... was teaching a class on ... And when he read
-Godel's proof he walked into his class and said "this class is now over..."
+> Kurt Gödel's achievement in modern logic is singular and monumental – indeed
+it is more than a monument, it is a landmark which will remain visible far in
+space and time. ... The subject of logic has certainly completely changed its
+nature and possibilities with Gödel's achievement.
+
+If it was hard to overstate the importance of Frege's work to the history of
+logic and mathematics, it's perhaps impossible to do so for Gödel's.
 
 ### Mere Symbol Manipulation
 
-Godel's discovery, despite all of the work that it swept away, led logicians
+Gödel's discovery, despite all of the work that it swept away, led logicians
 and mathematicians to focus on an important, new question:
 
 > What is "mere symbol manipulation"?
 
-If all of the truths of arithmetic cannot be proven
-by simply manipulating symbols, then what is the limit of symbol manipulation?
-Can it be characterized precisely?
+If all of the truths of arithmetic is not just symbol manipulation, then what
+is? Can this notion be characterized precisely? Gödel, in order to construct his
+famous proof,
+had to develop the rudiments of such a characterization. It was left to others
+to flesh out the details.
 
 Much of the history at this point is well known. A young Alan Turing, on break
-before begining graduate school in 1936, was looking for something to do. So he
+before beginning graduate school in 1936, was looking for something to do. So he
 penned "On Computable Numbers", in which he gave a precise definition of what
-he called "automatic machines" -- today known as "Turing Machines". He then sent
+he called "automatic machines". He then sent
 the paper to Alonzo Church, his future dissertation advisor, thinking Church
 might find it interesting. Church immediately saw
-the significance of what had been done. _Church's Thesis_, as it came to be known,
-was that:
+the significance of what had been done. Church wrote a review of Turing's
+paper in _The Journal of Symbolic Logic_ in the spring of 1937, in which he
+first referred to "automatic machines" as "Turing Machines":
+
+> [Turing] proposes as a criterion that an infinite sequence of digits 0 and 1
+[i.e. a binary string] be "computable" that it shall be possible to devise a
+computing machine [. . .] [which] can be regarded as a [. . .] Turing machine.
+(Journal of Symbolic Logic, vol. 2, 1937, p49)
+
+_Church's Thesis_, as it came to be known, was that:
 
 > Computation (i.e. mere symbol manipulation) is what a Turing Machine does
 
@@ -233,3 +263,6 @@ At long last, computation theory was born.
 That, then, is a high-level overview of the historical and conceptual
 connections between logic and computation theory. As I hope I have shown, the
 two are very intimately related.
+
+For this reason, studying logic is actually a great to do if you have any
+interest in working with computers.
