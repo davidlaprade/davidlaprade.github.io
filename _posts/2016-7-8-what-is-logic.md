@@ -22,7 +22,7 @@ in Massachusetts
 __infer__ that I still have a half hour left to drive
 * If I know that Smith is a human, and I know all humans are
 mortal, then I can __infer__ that Smith is mortal
-* If I know that Jones hurts
+* If I know that Jones hurts people for fun, and that only bad people hurt
 people for fun, then I can __infer__ that Jones is a bad person
 
 And so on.  This is the kind of thing that logic studies.
@@ -84,7 +84,7 @@ grammar of `5 + 7 = 12` makes it true. Mathematics isn't just symbol manipulatio
 
 This should be surprising. We tend to think of math as a kind of symbolic game. We
 move symbols around, write new ones, substitute this symbol for that, carry a 1,
-cross out a 3, move an 9 to the other side, etc., according to some very
+cross out a 3, etc., according to some very
 specific rules. If we follow the rules, we succeed. And we seldom,
 if ever, think about anything more than this.
 
@@ -203,8 +203,11 @@ truth of arithmetic can be inferred.
 
 Put another way: arithmetic is not mere symbol manipulation -- it is not pure
 syntax without a semantics. There is no way to
-avoid the inconsistency/paradox that Frege's system was shown to succumb to. It
-is simply impossible to carry out the task.  Frege's program -- the animating
+avoid the inconsistency/paradox that Frege's system was shown to succumb to. Any
+set of rules, no matter how large, will either be paradoxical or will fail to
+prove some part of arithmetic. This is not because arithmetic is somehow
+inherently paradoxical. It's just that it's impossible to reduce arithmetic to
+symbol manipulation. It's something more than that. Frege's program -- the animating
 principle behind nearly 75 years of research in mathematics -- was finally dead.
 
 Legend has it that in the fall of 1930, shortly after Gödel had presented the
@@ -212,7 +215,7 @@ proof for the first time, the celebrated mathematician [John Von
 Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was teaching a class on
 the foundations of mathematics. When Von Neumann learned of Godel's result, he
 walked into his class and said "Some young person down in Vienna has just shown
-that everything we've been trying to do for the last 15 years can't
+that everything we've been trying to do for the last 30 years can't
 be done. I'm going to present the proof in this course, and then this course is
 over." Von Neumann went on to say that:
 
@@ -240,11 +243,13 @@ Much of the history at this point is well known. A young Alan Turing, on break
 before beginning graduate school in 1936, was looking for something to do. So he
 penned "On Computable Numbers", in which he gave a precise definition of what
 he called "automatic machines". He then sent
-the paper to Alonzo Church, his future dissertation director, thinking Church
+the paper to Alonzo Church -- the inventor of the lambda calculus, and Turing's
+future dissertation director -- thinking Church
 might find it interesting. Church immediately saw
 the significance of what had been done. To his credit, Church went out of his
-way to make sure Turing got acknowledged for his discovery. He wrote a review
-of Turing's
+way to make sure Turing got acknowledged for his discovery, despite the fact
+that Church had already published a formally equivalent result months earlier.
+He wrote a very generous review of Turing's
 paper in _The Journal of Symbolic Logic_ in the spring of 1937, in which he
 coined the term "Turing Machines":
 
@@ -255,7 +260,8 @@ to run for a sufficiently long time. [Such a machine] can be regarded as a
 [. . .] Turing machine.
 (Journal of Symbolic Logic, vol. 2, 1937, p49)
 
-_Church's Thesis_, as it came to be known, was that:
+Turing's fame was thus cemented in history. _Church's Thesis_, as it came to be
+known, was that:
 
 > Computation (i.e. mere symbol manipulation) is what a Turing Machine does
 
