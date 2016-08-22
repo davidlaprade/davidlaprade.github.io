@@ -40,72 +40,28 @@ dispute in mathematics.
 
 ### Arithmetic
 
-In 1781, [Immanuel
-Kant](https://en.wikipedia.org/wiki/Immanuel_Kant) published
-**The Critique of Pure Reason**, in which he argued that claims in arithmetic
--- e.g. claims like `7 + 5 = 12` -- are not true solely in virtue of their
-meanings, or concepts:
+Arithmetic is the portion of mathematics that people tend to learn how to do
+early in school. It covers addition, subtraction, multiplication, division, and
+the like. When you add `5` to `7` to get `12`, you are doing arithmetic.
 
-> [N]o matter how long I analyze my concept of such a possible sum [of
-seven and five] I will still not find twelve in it [. . .] One must go beyond
-these concepts [of seven and five . . . to] see the number 12 arise.
-(Critique, B15)
-
-To see the significance of this, contrast a sentence like:
-
-> Bachelors are unmarried
-
-with a sentence like:
-
-> There are red flowers
-
-The truth of the first sentence does not depend in any way on the world. If
-a man is unmarried, then he __just is__ a bachelor, that's just what the word
-"bachelor" means. If we were to move around some symbols and replace the word "bachelor"
-with its definition, then we would see that "Bachelors are unmarried" really just
-says:
-
-> Unmarried men are unmarried
-
-which is vacuously true. You can tell that this sentence is true just based on
-its form, knowing nothing about what the words even mean.
-
-The truth of the second sentence, however, __does__ depend on the
-world. The existence of red roses,
-for example, makes the sentence true. But if
-there were another ice age and all of the red flowers died, that sentence would
-no longer be true. It's truth is not just a matter of swapping out a word for
-its definition. It's not just a matter of symbol manipulation. You need to know
-what these words mean in order to know that the sentence is true.
-
-Kant was claiming, then, that `5 + 7 = 12` is more like "There are red flowers"
-than it is like "Bachelors are unmarried". Something besides the meaning and
-grammar of `5 + 7 = 12` makes it true. Mathematics isn't just symbol manipulation.
-
-This should be surprising. We tend to think of math as a kind of symbolic game. We
+We tend to think of arithmetic as a kind of symbolic game. We
 move symbols around, write new ones, substitute this symbol for that, carry a 1,
 cross out a 3, etc., according to some very
-specific rules. If we follow the rules, we succeed. And we seldom,
-if ever, think about anything more than this.
-
-But if Kant is right, then this commonsense vision of math is deeply mistaken.
+specific rules. At the very least, this is how we are _taught_ arithmetic.
+If we follow the rules, we succeed. And we seldom,
+if ever, think about anything else. Arithmetic is mere symbol manipulation.
 
 ### Frege's Program
 
 [Gottlob Frege](https://en.wikipedia.org/wiki/Gottlob_Frege), a German
-logician and mathematician, took issue with Kant's claim. He felt that
-arithmetic really was just like "Bachelors are unmarried": _analytic_. One could
-arrive
-at all of the true equations simply by manipulating the symbols according to
-rules. The symbols were those of set theory.  And the rules were those of logic.
-
-> Kant obviously [. . .] underestimated the value of analytic judgements [ . . .]
-The conclusions we draw from [a definition] extend our knowledge, and ought
-therefore, on Kant’s view, to be regarded as synthetic; and yet they can be
-proved by purely logical means, and are thus analytic. (Grundlagen, &sect;87)
+logician and mathematician, wanted to prove that something like this commonplace
+view about arithmetic was correct. He believed that one could infer
+all of the true equations simply by applying some very specific rules to some
+very specific symbols. The symbols were those of set theory.  And the rules were
+those of logic.
 
 The book that resulted from Frege's attempts to develop a logic strong enough
-to infer arithmetic was the **Begriffsschrift**, published in 1879.
+to infer arithmetic from set theory was the **Begriffsschrift**, published in 1879.
 Frege then published **Die Grundlagen der Arithmetik** (_The Foundations of
 Arithmetic_) in 1884 to complete his project. There, he attempted to define
 the major terms of arithmetic using only set theory and logic:
@@ -204,7 +160,8 @@ truth of arithmetic can be inferred.
 Put another way: arithmetic is not mere symbol manipulation -- it is not pure
 syntax without a semantics. There is no way to
 avoid the inconsistency/paradox that Frege's system was shown to succumb to. Any
-set of rules, no matter how large, will either be paradoxical or will fail to
+set of rules, no matter how large or pristine, will either be paradoxical or
+will fail to
 prove some part of arithmetic. This is not because arithmetic is somehow
 inherently paradoxical. It's just that it's impossible to reduce arithmetic to
 symbol manipulation. It's something more than that. Frege's program -- the animating
