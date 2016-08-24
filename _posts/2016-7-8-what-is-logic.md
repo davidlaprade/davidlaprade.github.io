@@ -150,24 +150,50 @@ All this changed in 1931.
 
 [Kurt Gödel](https://en.wikipedia.org/wiki/Kurt_G%C3%B6del), an Austrian
 logician -- just out of graduate school and only 25 years old -- published a
-paper titled "On Formally Undecidable Propositions of 'Principia Mathematica' and
-Related Systems". In it he solved Hilbert's second problem, proving what is
+paper titled ["On Formally Undecidable Propositions of 'Principia Mathematica' and
+Related Systems"](http://researchweb.watson.ibm.com/people/h/hirzel/papers/canon00-goedel.pdf).
+In it he solved Hilbert's second problem, proving what is
 today known as the _Incompleteness of Arithmetic_:
+
+> The development of mathematics towards greater exactness has, as is
+ well-known, lead
+to [... a state] such that you can carry out proofs by
+following a few
+mechanical rules. The most comprehensive current formal systems are the system
+of
+Principia Mathematica on the one hand, the Zermelo-Fraenkelian axiom-system
+of set theory on the other hand. These two systems are so far developed that you
+can formalize in them all proof methods that are currently in use in
+mathematics, i.e.
+you can reduce these proof methods to a few axioms and deduction rules.
+Therefore,
+the conclusion seems plausible that these deduction rules are sufficient to
+decide all
+mathematical questions expressible in those systems. We will show that this is
+not true,
+and that there are even relatively easy problems in the theory of ordinary whole
+numbers
+that cannot be decided from the axioms. This is not due to the nature of these
+systems. (["On Formally
+Undecideable Propositions",
+Introduction](http://researchweb.watson.ibm.com/people/h/hirzel/papers/canon00-goedel.pdf))
+
+In its most general form, Gödel proved the following:
 
 > There is no finite, consistent set of axioms [i.e. rules] from which every
 truth of arithmetic can be inferred.
 
-Put another way: arithmetic is not mere symbol manipulation -- it is not pure
+In other words: arithmetic is not mere symbol manipulation -- it is not pure
 syntax without a semantics. There is no way to
 avoid the inconsistency/paradox that Frege's system was shown to succumb to. Any
 set of rules, no matter how large or pristine, will either be paradoxical or
 will fail to
 prove some part of arithmetic. This is not because arithmetic is somehow
 inherently paradoxical. It's just that it's impossible to reduce arithmetic to
-symbol manipulation. It's something more than that. Frege's program -- the animating
+symbol manipulation. It's something __more__ than that. Frege's program -- the animating
 principle behind nearly 75 years of research in mathematics -- was finally dead.
 
-Legend has it that in the fall of 1930, shortly after Gödel had presented the
+Legend has it that in the fall of 1930, shortly after Gödel had presented his
 proof for the first time, the celebrated mathematician [John Von
 Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was teaching a class on
 the foundations of mathematics. When Von Neumann learned of Godel's result, he
@@ -226,9 +252,23 @@ At long last, computation theory was born.
 
 ### Conclusion
 
-That, then, is a high-level overview of the historical and conceptual
-connections between logic and computation theory. As I hope I have shown, the
-two are very intimately related.
+That, then, is the connection between logic and computation theory.
 
-For this reason, studying logic is actually great to do if you have an
-interest in working with computers and learning computer languages.
+Anyone who
+studies modern logic (A.K.A. "mathematical", "formal", or "symbolic" logic)
+studies the topics discussed above. He
+learns the actual details of the proofs: their limitations, historical
+improvements, and how to construct them himself. He
+learns how to prove theorems within different axiom systems. He studies the
+meta-properties of those systems -- are they complete, compact? He learns
+different methods (read: algorithms) for checking
+the validity of inferences, e.g. natural deduction, trees, truth tables. He
+proves theorems about the effectiveness of these methods/algorithms. And so on.
+
+At it's heart, anyone who studies logic is doing one thing: he is
+using non-natural, syntactically and semantically exact languages as tools to
+solve problems. This is identical to what a software developer does, albeit with
+languages interpreted by machines.
+
+For these reasons, then, studying logic is actually great preparation for
+working with computers and learning computer languages.
