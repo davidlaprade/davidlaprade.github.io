@@ -1,5 +1,9 @@
 ### Art Not Science
 
+> "I thought of objects being like biological cells and/or individual computers on
+  a network, only able to communicate with messages" --Alan Kay, creator of
+Smalltalk, on the meaning of "object oriented programming"
+
 At this point, it's tempting to reach for the "it's an art not a science"
 response. It goes like this:
 
