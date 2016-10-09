@@ -7,8 +7,8 @@ breakpoints in Ruby and Elixir."
 
 Like many [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language))
 programmers, I've been learning
-[Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)) on the
-side. Elixir is a functional programming language with an approachable,
+[Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)).
+Elixir is a functional programming language with an approachable,
 Ruby-like syntax. Unlike Ruby, however, Elixir is crazy fast -- making it an
 exciting alternative for back-end programming.
 
@@ -96,13 +96,24 @@ pry(1)> some_arg
 "hey"
 {% endhighlight %}
 
-**NOTE:** The single most important difference between breakpoints in Ruby and
+**NOTE: The single most important difference between breakpoints in Ruby and
 Elixir is that Elixir breakpoints have to be triggered from within a running
 Elixir
-[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). This
-is optional in Ruby -- you could always load your files into your `irb` session,
-then invoke the method containing the breakpoint directly. But most of the time
-this isn't what is done.
+[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).** This
+is optional in Ruby -- and, indeed, most of the time you trigger your breakpoint
+outside of IRB, as in the example above.
+
+This also extends to debugging in elixir tests. If you want to trigger a
+breakpoint in a test file, you need to run that test within `iex` like so:
+
+{% highlight bash %}
+$ iex -S mix test --trace
+Request to pry #PID<0.57.0> at my_test.exs:4
+
+#...
+{% endhighlight %}
+
+The `--trace` option prevents Elixir from timing out during a debugging session.
 
 ### 3. Interact with Your Breakpoint
 
@@ -111,5 +122,5 @@ At this point, enter whatever code you want to start debugging.
 In Ruby you exit the pry session and skip to the next breakpoint with the
 same command: `quit`.
 
-In Elixir, you exit the pry session with `CNTL + C` and skip to the next
+In Elixir, you exit the pry session with `CTRL + C` and skip to the next
 breakpoint with `respawn`.
