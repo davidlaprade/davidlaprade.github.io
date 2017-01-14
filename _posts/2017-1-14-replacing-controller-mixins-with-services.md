@@ -243,35 +243,41 @@ There must be a better way.
 
 ### A Map Service
 
-Instead of creating a `MapHelper` module that we `include` in our controllers,
-we could have created a `MapService` object:
+Instead of creating a `MapHelper` module, we could have created a
+`MapService` class:
 
 {% highlight ruby %}
 # app/services/map_service.rb
 class MapService
+  class << self
 
-  def self.build_map_markers(locations, renderer)
-    @markers = Gmaps4rails.build_markers(locations) do |location, marker|
-      marker.lat(location.latitude)
-      marker.lng(location.longitude)
-      marker.infowindow(
-        renderer.render_to_string(
-          partial: 'shared/map_info_window', locals: { location: location }
-        )
+    def build_map_markers(locations, renderer)
+      @markers = Gmaps4rails.build_markers(locations) do |location, marker|
+        marker.lat(location.latitude)
+        marker.lng(location.longitude)
+        marker.infowindow(map_info_window(location, renderer))
+      end
+    end
+
+    def map_info_window(location, renderer)
+      renderer.render_to_string(
+        partial: 'shared/map_info_window', locals: { location: location }
       )
     end
-  end
 
+  end
 end
 {% endhighlight %}
 
 A few things have changed here:
 
-* the code for this object is in a new folder `/app/services`
+* the code for this object is in a new folder `/app/services`, not mixed up in
+  the `/app/controllers` folder
 * the new object is a `Class`, not a `Module`
-* the `#build_map_markers` method is a class method
-* the [arity](https://en.wikipedia.org/wiki/Arity) of `#build_map_markers` has
-  increased
+* the `#build_map_markers` and `#map_info_window` methods are class methods, not
+  instance methods
+* the [arity](https://en.wikipedia.org/wiki/Arity) of both methods has changed
+  from 1 to 2
 * there is [dependency
   injection](https://en.wikipedia.org/wiki/Dependency_injection) going on: a
   `renderer` object is now required,
@@ -284,6 +290,10 @@ class RestaurantsController < ApplicationController
   # goodbye mixin!
   def index
     @markers = MapService.build_map_markers(Restaurant.display_on_map, self)
+  end
+
+  def show
+    render MapService.map_info_window(Restaurant.find(params[:id]), self)
   end
 end
 {% endhighlight %}
@@ -305,13 +315,25 @@ and harder to work with. We saw that it was difficult to:
 This approach avoids the problems we encountered earlier.
 
 By explicitly
-[namespacing](https://en.wikipedia.org/wiki/Namespace) our helper method to the
-`MapService` we immediately know where to look for it. No digging around. No
-grep-driven-development. Just open the `MapService` file. This makes both
-debugging and refactoring much easier.
+[namespacing](https://en.wikipedia.org/wiki/Namespace) our helper methods to the
+`MapService` we immediately know where to look for them. No digging around. No
+grep-driven-development. Just open the `MapService` file and get going. This
+makes both debugging and refactoring much easier.
 
 By adding dependency injection, we remove the need to simulate HTTP requests
 when testing our code. We don't need any controllers, params, DB persistence,
-queries. Heck, we don't even need to load Rails if we don't want to! 
+queries. Heck, we don't even need to load Rails if we don't want to! We
+just pass in a test `double` that implements a `#render_to_string` method
+instead of an actual Rails controller instance, and we're off to the races.
 
-write to the database, run queries 
+Refactoring is also much simpler. If we want to separate these methods to
+isolate our Google Maps dependencies, it's trivial to do so. We just create a
+separate `MapService` -- perhaps a `MapMarkerService` -- that uses the other
+service as a dependency. We no longer have to worry about accidentially removing
+`#map_info_window` when all we want to get rid of is `#generate_map_markers`. We
+don't have to live with duplicated code to isolate our dependencies.
+
+### Conclusion
+
+This way of abstracting duplicate code has been a huge win on projects
+that I have worked on. I encourage you to give it a try!
