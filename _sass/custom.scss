@@ -72,7 +72,6 @@ li > ul {
 
 // indent and set backgound on code blocks
 .highlight {
-  margin-left: $indent;
   background-color: $light-gray;
   pre {
     overflow-x: scroll;
