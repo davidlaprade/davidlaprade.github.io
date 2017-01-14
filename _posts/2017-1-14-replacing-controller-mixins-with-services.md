@@ -37,7 +37,7 @@ end
 
 Here we're pulling some data out of the DB and generating a bunch of marker HTML
 that [Gmaps4rails](https://github.com/apneadiving/Google-Maps-for-Rails) is
-going to plot our restaurants on a Google maps iframe,
+going to use to plot our restaurants on a Google maps iframe,
 which we will render in our view.
 
 This is working well for us, but eventually we find that we want to display a
@@ -49,7 +49,6 @@ So, we create a new controller:
 {% highlight ruby %}
 # app/controllers/pizza_places_controller.rb
 class PizzaPlacesController < ApplicationController
-
   def index
     locations = Restaurant.display_on_map.pizza_places
 
@@ -63,7 +62,6 @@ class PizzaPlacesController < ApplicationController
       )
     end
   end
-
 end
 {% endhighlight %}
 
@@ -74,7 +72,6 @@ a mixin:
 {% highlight ruby %}
 # app/controllers/map_helper.rb
 module MapHelper
-
   def build_map_markers(locations)
     @markers = Gmaps4rails.build_markers(locations) do |location, marker|
       marker.lat(location.latitude)
@@ -88,7 +85,6 @@ module MapHelper
       partial: 'shared/map_info_window', locals: { location: location }
     )
   end
-
 end
 {% endhighlight %}
 
@@ -113,16 +109,17 @@ end
 {% endhighlight %}
 
 This feels a lot better. Our controllers are dead simple. There's no more
-redundant code. Etc. Everyone feels better. On we go!
+redundant code. Etc. Everyone feels good about it. On we go!
 
-As we continue developing our app, however, our `restaurants_controller`
-continues to grow in complexity. We add:
+As we continue developing our app, however, our `RestaurantsController`
+grows in complexity. We add:
 
 * some other actions,
 * some other mixins,
 * user authentication,
 * `before_actions`,
-* caching `private` methods,
+* caching
+* `private` methods,
 * error catching,
 * a `Base` class
 * etc
@@ -233,9 +230,10 @@ This would be a great place to start rolling back our dependence on Google Maps.
 But our mixin is getting in the way. Should we break it up into two mixins? _No
 -- that doesn't make sense. `#generate_markers` clearly depends on
 `#map_info_for`_.
-Should we just bite our tounge and re-implement `#map_info_for` in each such
-controller? _No -- because now we're not sure if `#generate_markers` is being
-called on the controller somewhere else that isn't obvious.
+Should we just bite the bullet and re-implement `#map_info_for` in each such
+controller? Even then, we're not sure that `#generate_markers` isn't being
+called on the controller somewhere that isn't obvious. We don't want a surprise
+bug out in production.
 
 In short, we're afraid to refactor our own code.
 
@@ -277,7 +275,7 @@ A few things have changed here:
 * the `#build_map_markers` and `#map_info_window` methods are class methods, not
   instance methods
 * the [arity](https://en.wikipedia.org/wiki/Arity) of both methods has changed
-  from 1 to 2
+  from 1 to 2 arguments
 * there is [dependency
   injection](https://en.wikipedia.org/wiki/Dependency_injection) going on: a
   `renderer` object is now required,
@@ -321,7 +319,7 @@ grep-driven-development. Just open the `MapService` file and get going. This
 makes both debugging and refactoring much easier.
 
 By adding dependency injection, we remove the need to simulate HTTP requests
-when testing our code. We don't need any controllers, params, DB persistence,
+when testing the `MapService`. We don't need any controllers, params, DB persistence,
 queries. Heck, we don't even need to load Rails if we don't want to! We
 just pass in a test `double` that implements a `#render_to_string` method
 instead of an actual Rails controller instance, and we're off to the races.
@@ -335,5 +333,5 @@ don't have to live with duplicated code to isolate our dependencies.
 
 ### Conclusion
 
-This way of abstracting duplicate code has been a huge win on projects
-that I have worked on. I encourage you to give it a try!
+This way of abstracting duplicate code has been a huge win on my projects.
+I encourage you to give it a try!
