@@ -1,5 +1,6 @@
 ---
 title: "Buying Ethereum on Coinbase"
+tags: tech
 excerpt: "How to buy ether through Coinbase's GDAX digital currency exchange."
 ---
 

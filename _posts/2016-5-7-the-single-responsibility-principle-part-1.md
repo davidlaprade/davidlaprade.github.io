@@ -1,5 +1,6 @@
 ---
 title: "The Single Responsibility Principle, Part 1"
+tags: architecture
 excerpt: "How I fail to understand it and you can too."
 date: "2016-05-19"
 ---

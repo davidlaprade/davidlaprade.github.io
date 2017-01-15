@@ -1,5 +1,6 @@
 ---
 title: "Breakpoints in Ruby and Elixir"
+tags: ruby elixir
 excerpt: "Knowing how to set and interact with breakpoints in a language is
 crucial to efficient debugging. Here's a side-by-side comparison of
 breakpoints in Ruby and Elixir."
