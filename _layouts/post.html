@@ -3,7 +3,16 @@ layout: default
 ---
 <article id="post-page">
   <h2>{{ page.title }}</h2>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{ page.date | date_to_string }}</time>
+  <ul class="tags">
+    <li style="margin-left: 0px; margin-right: 10px">
+      <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">
+        {{ page.date | date_to_string }}
+      </time>
+    </li>
+    {% for tag in page.tags %}
+    <li><a href="{{ site.baseurl}}/tags#{{ tag }}" class="tag">{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
   <div class="content">
 
     {{ content }}
