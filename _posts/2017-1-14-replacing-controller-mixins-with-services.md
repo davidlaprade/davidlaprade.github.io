@@ -1,5 +1,6 @@
 ---
 title: "Replacing Controller Mixins with Services"
+tags: ruby rails architecture
 excerpt: "How to use Rails services to extract shared behaviors out of
 controllers. This helps to keep your
 controllers light on logic, self-documenting, and free of tangled dependencies."
