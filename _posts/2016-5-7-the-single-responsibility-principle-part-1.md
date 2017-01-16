@@ -153,7 +153,7 @@ regardless of how many people are actually implementing that role.
 
 It's at this point that it really starts to feel like the problem is
 just getting pushed back. Where once we had the problem of determining when
-a unit of code did to much, now we have the problem of determining just
+a unit of code did too much, now we have the problem of determining just
 what "roles" there are for a person or multiple people to occupy. If this new
 problem were any more tractable than the former, I'd have no complaints. But,
 it isn't.
