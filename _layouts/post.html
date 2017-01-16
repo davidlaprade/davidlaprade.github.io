@@ -4,7 +4,7 @@ layout: default
 <article id="post-page">
   <h2>{{ page.title }}</h2>
   <ul class="tags">
-    <li style="margin-left: 0px; margin-right: 10px">
+    <li class="post-date">
       <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">
         {{ page.date | date_to_string }}
       </time>

@@ -1,6 +1,7 @@
 /*- Custom style -*/
 $indent: 1.3334em;
 $light-gray: #f2f2f2;
+$tag-height: 26px;
 
 table {
   border-spacing: 0px;
@@ -101,4 +102,11 @@ a {
 // indent list items
 li {
   margin-left: $indent;
+}
+
+// format post date with tags
+li.post-date {
+  margin-left: 0px;
+  margin-right: 10px;
+  line-height: $tag-height;
 }

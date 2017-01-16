@@ -9,7 +9,7 @@ layout: default
   <li class="post">
     <h2><a href="{% if site.baseurl == "/" %}{{ post.url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">{{ post.title }}</a></h2>
     <ul class="tags">
-      <li style="margin-left: 0px; margin-right: 10px">
+      <li class="post-date">
         <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line">
           {{ post.date | date_to_string }}
         </time>
