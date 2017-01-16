@@ -8,7 +8,7 @@ author:
   url: "http://davidlaprade.github.io"
 
 # Build settings
-baseurl: /blog
+baseurl: ""
 markdown: kramdown
 source: .
 destination: ./_site
