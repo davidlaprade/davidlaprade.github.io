@@ -110,3 +110,8 @@ li.post-date {
   margin-right: 10px;
   line-height: $tag-height;
 }
+
+#nav-menu {
+  // anchor nav menu at top of screen
+  position: fixed;
+}
