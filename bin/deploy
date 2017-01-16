@@ -1,6 +1,7 @@
 #!/bin/bash
 
-git checkout gh-pages
-git rebase master
+echo "Deploying develop to production"
+git checkout master
+git rebase develop
 git push origin HEAD
 git checkout -
