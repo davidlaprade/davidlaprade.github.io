@@ -175,7 +175,7 @@ class RestaurantsController < RestaurantsBaseController
 end
 {% endhighlight %}
 
-A 6 months go by.
+6 months go by.
 We get a bug report: a restaurant owner says the information for his restaurant
 is wrong on our map.
 
