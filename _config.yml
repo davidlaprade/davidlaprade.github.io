@@ -1,7 +1,7 @@
 # Site settings
 title: David Laprade | Blog
 description: "A minimal blog template, build with Jekyll."
-url: "http://davidlaprade.github.io/blog"
+url: "http://davidlaprade.github.io"
 author:
   name: "David Laprade"
   email: "david.laprade@gmail.com"
