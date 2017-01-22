@@ -1,6 +1,7 @@
 ---
 title: "What is Logic"
 date: "2016-08-20"
+redirect_from: "/blog/what-is-logic/"
 excerpt: "I studied logic. Now I write software for a living. This confuses some
 people. What is logic? How is it related to computers? This is how I understand
 it."

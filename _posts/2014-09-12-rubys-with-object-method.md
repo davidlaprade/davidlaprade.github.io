@@ -1,5 +1,6 @@
 ---
 title: "Enumerator's #with_object method"
+redirect_from: "/blog/rubys-with-object-method/"
 tags: ruby
 excerpt: "The benefits of this handy, oft-neglected ruby method."
 ---

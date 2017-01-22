@@ -1,5 +1,6 @@
 ---
 title: "Speed Up Rails Tests"
+redirect_from: "/blog/speed-up-rails-tests/"
 tags: ruby rails testing
 excerpt: "I recently cut the run time of a legacy Rails app by 32 min on CI, and 21 min locally. Here are the changes that made the biggest difference."
 ---

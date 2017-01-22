@@ -1,5 +1,6 @@
 ---
 title: "Tmux Setup with Vim"
+redirect_from: "/blog/tmux-setup/"
 tags: dev-env
 excerpt: "I recently started using Tmux. Here's how I installed and configured it to play nicely with Vim."
 ---
