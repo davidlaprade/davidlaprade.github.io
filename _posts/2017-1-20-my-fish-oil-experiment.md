@@ -5,43 +5,78 @@ self-experiment on fish oil supplements. Here are the results."
 ---
 
 There is a lot of conflicting information about dietary supplements.
-Do supplements really make a difference? Is there strong evidence that any
-of them can improve your life?
+Do they really make you healthier? Do they improve your quality of life?
+Or are they just yet another poorly justified nutrition fad?
 
-Perhaps the best tested supplement is fish-based omega-3 fatty acids, i.e.
-"fish oil". Excited by the potential gains this supplement could bring,
-I then spent 8 months on a sustained
-self-experiment to see if it made any difference to my health.
+Likely, the answer depends on the supplement.
 
-The results of my experiment were mixed. I saw:
+Perhaps the most highly touted of which is fish-based [omega-3 fatty
+acids](https://en.wikipedia.org/wiki/Omega-3_fatty_acid), i.e.
+"fish oil". A quick [google](https://www.google.com/) search reveals
+just how willing people are to sing its praises:
 
-* <span class="results-label good">GOOD</span> - a __25%__ decrease in blood triglycerides (i.e. blood fats)
-* <span class="results-label bad">BAD</span> - a __23%__ decrease in HDL cholesterol (i.e. the "good" cholesterol)
-* <span class="results-label good">GOOD</span> - a __5%__ decrease in LDL cholesterol (i.e. the "bad" cholesterol)
+> The health benefits of fish oil include its ability to aid in the treatment of
+> various heart diseases, high cholesterol, depression, anxiety, ADHD, weakened
+> immune system, cancer, diabetes, inflammation, arthritis, IBD, AIDS,
+> Alzheimer’s disease, eye disorders, macular degeneration and ulcers. It also
+> helps aid weight loss, healthy pregnancy, fertility and skin care
+> (particularly for conditions such as psoriasis and acne).
+> [Source](https://www.organicfacts.net/health-benefits/oils/health-benefits-of-fish-oil.html)
 
-In this post, I talk about:
+Indeed, there is just about no limit to the miraculous effects that fish oil
+is purported to enjoy.
 
-* the best reason I can think of for taking fish oil
-* the evidence: a summary of peer-reviewed fish oil supplementation experiments
-* my self-experiment
-  * materials
-  * methods
-  * results
-  * discussion
-* the oils: which brand is the best value?
+Excited by the potential gains this supplement could bring, but wary of
+exaggeration/fad, I dug in and tried to take a hard look at the
+[peer-reviewed](https://en.wikipedia.org/wiki/Peer_review)
+studies on fish oil supplementation.
 
-I hope this can be helpful to other people interested in the topic.
+I then used aggregate data from over 10,000
+subjects across 20+ studies to design a fish oil supplementation program for
+myself (under my doctor's supervision). I wanted to know how my body would respond.
+Would it be similar to the average person in the study? Would I exhibit the
+hallmark benefits?
 
-https://en.wikipedia.org/wiki/Omega-3_fatty_acid#Health_effect
+To help answer these questions, I took four 1200mg [Trader
+Joe's](https://www.amazon.com/Trader-Joes-Omega-3-90softgels-Odorless/dp/B004TVDMN8)
+omega-3 fish oil tablets per day (with food) for 4 months.
+
+The results were very positive. I saw:
+
+* a __25%__ decrease in blood triglycerides (i.e. blood fats)
+* a __13%__ decrease in total cholesterol
+* a __5%__ decrease in LDL cholesterol (i.e. the "bad" cholesterol)
+
+In this post, I talk about the specifics of my experiment: how exactly I did it,
+why I did it the way I did, etc., along with a summary of the papers I read,
+why I chose the Trader Joe's brand, and why I think fish oil is one supplement
+that lives up to the hype.
+
+I hope this can be helpful to other people interested in the topic!
+
+(As a disclaimer: I'm not a doctor. Consult with yours before you try starting
+any supplementation routine.)
 
 ### My Self-Experiment
 
 ##### Materials
 
-1200mg omega-3 fatty acid pills sold by [Trader
+I took 1200mg omega-3 fatty acid pills sold by [Trader
 Joes](https://www.amazon.com/Trader-Joes-Omega-3-90softgels-Odorless/dp/B004TVDMN8).
-The pills had the following lipid content, as assessed by an independent testing
-organization:
+Each pill had the following content, as assessed by an [independent
+testing organization](https://labdoor.com/review/trader-joes-omega-3):
+
+| Nutrients/Serving | Actual | Label |
+|-------------------|--------|-------|
+| Total Omega-3     | 830 mg |  --   |
+| EPA               | 520 mg | 400 mg |
+| DHA               | 230 mg | 200 mg |
+| Mercury           | 1 ppb  |   --  |
+| PCB               | 0.02 ppm | --  |
+
+(ppb = part per billion, ppm = part per million)
+
+Note that the pill content did differ significantly from what was on the label.
 
 ##### Methods
 
@@ -55,7 +90,7 @@ For 4 months, I adhered to the following exercise and diet regime:
   * low [net-carb](http://healthyeating.sfgate.com/difference-between-grams-carbohydrates-net-carbohydrates-2378.html) meals whenever possible
   * no food between meals unless it was very low net-carb
   * no dessert 4 days per week, where "dessert" was roughly defined as any
-    sweet (i.e. non-savory) food with added sugar
+    sweet (i.e. non-savory) food with added sugar that was not part of a meal
   * stevia is okay
   * little to no milk products: milk, butter, yogurt, cream; dairy was
     substituted with low-cholesterol products like coconut oil/milk/cream
@@ -64,8 +99,7 @@ For 4 months, I adhered to the following exercise and diet regime:
   * cooking oil was olive oil or coconut oil
 
 After 4 months, I asked my doctor for a prescription to get my lipid profile
-taken.
-Prior to getting my blood drawn, I
+taken. Prior to getting my blood drawn, I
 fasted for 12 hours, abstained from alcohol and dessert for 48 hrs, and went to
 the lab in the morning before work.
 This was my t=0, the comparison point for my experiment.
@@ -86,8 +120,8 @@ supplemented my diet with fish oil as described. I then asked my doctor to get
 my blood drawn again.
 
 I followed the same pre-blood-test routine of fasting, etc., and scheduled my lab
-visit before work at the same lab with the same phlebotomist as the first
-time. This was t=1, my experimental trial.
+visit before work at the same lab with the same phlebotomist.
+This was t=1, my experimental trial.
 
 ##### Results
 
@@ -104,7 +138,7 @@ Post-fish oil supplementation (Table 2):
 
 | t | test          | result | status |
 |---|---------------|--------|---------|
-| 0 | total cholesterol | 136 mg/dL | normal |
+| 1 | total cholesterol | 136 mg/dL | normal |
 | 1 | LDL           | 90 mg/dL | normal |
 | 1 | HDL           | 34 mg/dL | low    |
 | 1 | triglycerides | 62 mg/dL | normal |
@@ -115,7 +149,7 @@ Change, t=0 to t=1 (Table 3):
 |---------------|--------|---------|---------|
 | total cholesterol | -12.8% | no  | yes |
 | LDL           | -5.2%  | no     | yes    |
-| HDL           | -22.7% | yes      |  no    |
+| HDL           | -22.7% | no      |  no    |
 | triglycerides | -25.3% | yes     | yes    |
 
 ##### Discussion
@@ -127,13 +161,15 @@ This was
 important to test because not everyone's body responds to drugs in the same way.
 It was also important to test because I have relatively high LDL cholesterol and
 relatively low HDL cholesterol (tables 1, 2), and one fairly robust effect of
-fish oil supplementation is a slight decrease of HDL and a slight increase in LDL.
-Fortunately, my body did not exhibit the latter: my LDL actually slightly
-__decreased__. However my HDL went __way__ down -- which was expected, but not
-to this level.
+fish oil supplementation is an increase in both LDL and HDL. (See
+[[1]](https://www.ncbi.nlm.nih.gov/pubmed/9129504/),
+[[2]](https://www.ncbi.nlm.nih.gov/pubmed/16530201/)).
 
-The decrease in
-blood triglycerides was everything the studies made me hopeful of. 
+Fortunately, my LDL actually slightly __decreased__.
+However my HDL went __way__ down -- which was not expected, and
+not good. This is why you test these things.
+
+The decrease in blood triglycerides was everything the studies made me hopeful of.
 
 Everyone's body responds
 differently to drugs.
