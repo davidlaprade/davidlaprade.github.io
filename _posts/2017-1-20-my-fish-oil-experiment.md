@@ -64,7 +64,7 @@ Joes](https://www.amazon.com/Trader-Joes-Omega-3-90softgels-Odorless/dp/B004TVDM
 Each pill had the following content, as assessed by an [independent
 testing organization](https://labdoor.com/review/trader-joes-omega-3):
 
-| Nutrients/Serving | Actual | Label |
+| Nutrient          | Actual | Label |
 |-------------------|--------|-------|
 | Total Omega-3     | 830 mg |  --   |
 | EPA               | 520 mg | 400 mg |
@@ -96,7 +96,7 @@ My diet was essentially a low carb diet (as low as I could stand):
   * no food between meals unless it was very low net-carb
   * no dessert 4 days per week, where "dessert" was roughly defined as any
     sweet (i.e. non-savory) food with added sugar that was not part of a meal
-  * stevia is okay as a sugar substitute between meals
+  * stevia was okay as a sugar substitute between meals
   * little to no milk products: milk, butter, yogurt, cream; dairy was
     substituted with low-cholesterol products like coconut oil/milk/cream
     whenever possible
@@ -110,7 +110,15 @@ the lab in the morning before work.
 This was my t=0, the comparison point for my experiment.
 
 After having my blood drawn, I began taking fish oil supplements. I took 4x of
-the 1200mg pills per day.
+the 1200mg pills per day, adding up to:
+
+| Nutrient          | Amount/Day |
+|-------------------|--------|
+| Total Omega-3     | 3.3 g  |
+| EPA               | 2.1 g  |
+| DHA               | 0.9 g  |
+| Mercury           | 4 ppb  |
+| PCB               | 80 ppb |
 
 Consumption was spread out during the course of the day, each time with a meal.
 Typically I took 1 pill with breakfast and lunch, and 2 with dinner, though this
@@ -163,23 +171,23 @@ The point of this self-experiment was to see if my body displayed the hallmark
 positive effects of fish-oil supplementation. It did, in spades.
 
 Arguably, __the most robust positive effect of fish oil supplementation is a
-significant (~30%) reduction in blood triglycerides__, as observed in dozens of
-studies -- helpfully reviewed here
+significant (~30%) reduction in blood triglycerides__. This has been reproduced
+in dozens of studies -- helpfully reviewed in
 [[1]](https://www.ncbi.nlm.nih.gov/pubmed/9129504/),
-[[2]](https://www.ncbi.nlm.nih.gov/pubmed/16530201/),
-[[4]](https://www.ncbi.nlm.nih.gov/pubmed/12438303/).
+[[2]](https://www.ncbi.nlm.nih.gov/pubmed/16530201/), and
+[[3]](https://www.ncbi.nlm.nih.gov/pubmed/12438303/). Here's an excerpt:
 
 > The hypotriglyceridemic effects of omega-3 fatty acids from fish oils are well
-> established. [. . .] ≈4 g/d of omega-3 fatty acids from fish oil decreased
+> established. [. . .] ~4 g/d of omega-3 fatty acids from fish oil decreased
 > serum triglyceride
 > concentrations by 25% to 30%, with accompanying increases in LDL cholesterol
 > of 5% to 10% and in HDL cholesterol of 1% to 3%.
-> [[4]](https://www.ncbi.nlm.nih.gov/pubmed/16530201/).
+> [[Source]](https://www.ncbi.nlm.nih.gov/pubmed/12438303/)
 
 [Triglycerides](http://www.mayoclinic.org/diseases-conditions/high-blood-cholesterol/in-depth/triglycerides/art-20048186) are blood fats distinct from cholesterol, produced by the
 body from excess calories.
 Intuitively, having less fat in your blood sounds good: less clogged arteries!
-But, intuitions aside, one study[[3]](http://www.nejm.org/doi/full/10.1056/NEJM199304293281702),
+But, intuitions aside, one study [[4]](http://www.nejm.org/doi/full/10.1056/NEJM199304293281702),
 found that there is a direct relationship
 between levels of these fats and heart disease (i.e. the
 more triglycerides you have, the more likely you are to die of heart disease).
@@ -188,7 +196,6 @@ To quote:
 > We studied the association between plasma triglyceride levels and the 12-year
 > incidence of death from coronary heart disease[.] [. . .] The rates of
 > coronary death in both men and women increased with the triglyceride level.
-> [[3]](http://www.nejm.org/doi/full/10.1056/NEJM199304293281702),
 
 The 25% decrease in my triglyceride levels (which were already quite good) was
 everything the studies had made me hopeful of. This, coupled with the fact that
@@ -197,7 +204,7 @@ States](https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm) per the
 CDC, is a compelling reason for me to continue taking fish oil.
 
 As encouraging as these results were, I was taking a fairly large amount of fish
-oil: 4x as much as the bottle recommended.
+oil: 4x as much as the bottle recommended. Why?
 
 I did this because I wanted to reproduce, as closely as possible, the studies
 that had observed such marked changes in triglyceride levels. One such study was
@@ -212,8 +219,8 @@ quoted above. Another noted:
 > [here]( http://dx.doi.org/10.1016/j.jacl.2015.09.002)
 
 The following figure, Fig 1
-from a [2006 systematic review of the fish oil
-literature](https://www.ncbi.nlm.nih.gov/pubmed/16530201/), was key in my
+from a 2006 systematic review of the fish oil
+literature [[2]](https://www.ncbi.nlm.nih.gov/pubmed/16530201/), was also key in my
 decision:
 
 ![Balk 2006 Fig 1]({{ site.baseurl }}/jekyll_img/BALK-2006-effects-of-omega-3-fatty-acids-on-serum-markers-fig-1.png)
@@ -227,49 +234,134 @@ of omega-3 found in fish-oil.
 [EPA](https://en.wikipedia.org/wiki/Eicosapentaenoic_acid) is short for
 eicosapentaenoic acid, and
 [DHA](https://en.wikipedia.org/wiki/Docosahexaenoic_acid) docosahexaenoic acid.
-They seem to be universally assumed the important part of fish oil, though I
+They seem to be universally assumed the important parts of fish oil, though I
 have been unable to find a study which explains why.
 
-Why 2:1 EPA:DHA????
+By taking 4 of the Trader Joe's fish oil pills each day, I was able to very
+closely reproduce the EPA+DHA consumption in the triglyceride-lowering clinical
+trials.  This, again, was the nutrient breakdown of my dosage:
 
-It's also
-worth noting that the studies which found the biggest reduction in blood
-triglycerides were done at or above 3g/day. Also, many of the studies were
-fairly long-term, i.e. they had people taking fish oil supplements for two full
-years (104 weeks). The average duration of supplementation was 33 weeks.
+| Nutrient          | Amount/Day |
+|-------------------|--------|
+| Total Omega-3     | 3.3 g  |
+| EPA               | 2.1 g  |
+| DHA               | 0.9 g  |
+| Mercury           | 4 ppb  |
+| PCB               | 80 ppb |
 
-My goal, then, was to get roughly 3g of EPA+DHA
+My total EPA+DHA content at this dose was 3.0g, very close to the 3.06g average
+seen in the
+trials. I also liked this dosage because the EPA:DHA ratio was almost exactly
+2:1, the ratio that seems universally agreed upon to be ideal. (Though, I've been
+unable to track down any study which justifies this ratio.)
 
-This was
-important to test because not everyone's body responds to drugs in the same way.
+Moreover, this dose kept my intake of Mercury, PCB, and other harmful compounds
+to a minimum. To quote from the [independent testing
+organization](https://labdoor.com/review/trader-joes-omega-3/report)
+mentioned above:
+
+> Mercury content measured at 1 PPB [. . .] significantly below the Global
+> Organization for EPA and DHA Omega-3 (GOED) 100 PPB limit. Bulk samples of
+> this product also passed the
+> six mineral assays, indicating presence of under 1 PPM of arsenic, lead,
+> cadmium, bismuth, antimony, and silver compounds.
+> Total polychlorinated biphenyl (PCB) content [. . .] measured at 0.02 PPM, which is
+> significantly below the Food and Drug Administration’s (FDA) 2 PPM limit for the
+> edible parts of fish/shellfish. It is also below the stricter standards enacted
+> by California’s Proposition 65, which requires products containing greater than
+> 0.09 PPM of PCB content to bear a cancer warning.
+
+Even at my higher dose, I still came in well below the 100 PPB mercury limit,
+and the 90 PPB PCB limit.
+
+To put these numbers in perspective, a typical can of light tuna contains on
+average 126 PPB of mercury -- according to the
+[FDA](http://www.fda.gov/Food/FoodborneIllnessContaminants/Metals/ucm115644.htm).
+
+I did not experience a fishy aftertaste when taking these pills either, unless
+I took 3 or more at once.
+
+The "Net Change" figure also explains why I chose to run my experiment for 4
+months (~17 weeks). As seen there, the studies ranged in duration from 6 weeks to
+104, averaging 28 weeks. An experimental trial of 17 weeks put me squarely in
+the clinical range.
+
+I chose to take my supplements with high-fat meals because this has been shown to
+aid in absorption:
+
+> Human trials have demonstrated that EE [ethyl ester] omega-3s require
+> consumption with a high fat meal to secrete pancreatic lipase and thereby
+> enhance bioavailability.
+> [[6]](http://www.lipidjournal.com/article/S1933-2874(11)00142-5/abstract)
+
+Also, from the 2015 "National Lipid Association Recommendations for
+Patient-Centered Management of Dyslipidemia"
+[[7]](https://www.ncbi.nlm.nih.gov/pubmed/26699442),
+[[full text]](http://www.lipidjournal.com/article/S1933-2874(15)00380-3/fulltext):
+
+> EPA and DHA ethyl esters may not be absorbed well on an empty stomach or when
+> consumed with a low-fat meal.
+
+I actually had trouble finding the primary source research for these claims.
+[[7]](https://www.ncbi.nlm.nih.gov/pubmed/26699442) cites
+[[8]](https://www.ncbi.nlm.nih.gov/pubmed/21986642) as evidence, but
+[[8]](https://www.ncbi.nlm.nih.gov/pubmed/21986642) cites
+[[9]](https://clinicaltrials.gov/ct2/show/study/NCT01208961?sect=X01256) --
+titled "A Randomized, Open-label, Four-Way Crossover Study to Compare the
+Relative Bioavailability of a Single Dose of Epanova With Lovaza After a
+Low-Fat and High-Fat Meal".
+
+Unfortunately [[9]](https://clinicaltrials.gov/ct2/show/study/NCT01208961?sect=X01256)
+doesn't actually provide any of the results from the high-fat trials:
+
+> Results for the analyses of the High-Fat Periods were not posted because the
+> critical comparison was the response of Lovaza versus Epanova to the
+> clinically relevant low-fat diet to be used as adjunct in hypertriglyceridemia.
+
+So I sent an email to the author of these papers to try to get these results. I
+will update this post if I ever hear back.
+
+To those who would object that my diet and/or exercise weren't ideal: you're
+probably right. I didn't intend them to be. The point was just to create a rough
+set of rules to keep my diet and exercise __consistent__ throughout the experiment.
+By keeping them consistent, it allowed me to reasonably infer that changes in my
+blood tests weren't due to diet or exercise.
+
+One reason why I wanted to perform these tests was that not everyone's body
+responds to drugs in the same way. I had no idea how my body was going to react.
 It was also important to test because I have relatively high LDL cholesterol and
 relatively low HDL cholesterol (tables 1, 2), and one fairly robust effect of
 fish oil supplementation is an increase in both. (See
 [[1]](https://www.ncbi.nlm.nih.gov/pubmed/9129504/),
 [[2]](https://www.ncbi.nlm.nih.gov/pubmed/16530201/)).
 
-Fortunately, my LDL actually slightly __decreased__.
-However my HDL went __way__ down -- which was not expected, and
-not good. This is why you test these things.
+Fortunately, my LDL actually slightly __decreased__, contrary to expectations,
+while my HDL also went down -- which was not expected, and
+not good. I guess this is why you test these things!
 
+I suspect that my HDL may have
+decreased because during the latter half of the experiment I changed the type of
+aerobic exercise I was getting (from running to biking/elliptical) because of a
+back injury. I also probably got a bit more vigorous cardio exercise in the
+first half of the experiment than the last half because I was training for a 5k
+run (i.e. I was running for ~22min instead of 15min).
 
-The diet and exercise regime wasn't intended as an ideal. It was just a rough
-set of rules to keep these two important variables (diet and exercise) roughly
-consistent for both blood tests.
+As mentioned in the 2015 "National Lipid Association Recommendations for
+Patient-Centered Management of Dyslipidemia" [[7]](http://www.lipidjournal.com/article/S1933-2874(15)00380-3/fulltext):
 
-Why 4 pills?
+> Exercise training in the absence of a change in adiposity has effects to
+> reduce the circulating TG concentration and modestly raise the level of HDL-C.
+> [. . .] The amount of aerobic exercise needed to produce significant HDL-C
+> changes is estimated at ∼1000 to 1500 kcal/week (i.e., ∼7 to 14 miles/week of
+> walking or jogging).
 
-Why with (high fat) food?
+Now that my back has improved, I plan to resume running, while increasing my
+amount of aerobic exercise to 25 min (~7miles/week), and I will continue taking the
+fish oil supplements as described. I'll retest in a few months to see if my HDL
+has improved. If not, that might mean game-over for fish oil and me.
 
-> EPA and DHA ethyl esters may not be absorbed well on an empty stomach or when
-> consumed with a low-fat meal.
-https://www.ncbi.nlm.nih.gov/pubmed/26699442, full text:
-http://dx.doi.org/10.1016/j.jacl.2015.09.002
-
-^^ that cites https://www.ncbi.nlm.nih.gov/pubmed/21986642 as evidence
-
-
-
-Confounds:
-* changed from running to elliptical, reduced time
-* vit D
+I'm also considering trying a similar experiment with krill oil at a lower
+concentration. A limited trial of 60 people (excluding 60 others used in controls)
+showed a 44% increase in HDL following 1g supplementation of krill oil and a 32%
+reduction in LDL, and an 11% reduction in triglycerides
+[[10]](https://www.ncbi.nlm.nih.gov/pubmed/15656713/).
