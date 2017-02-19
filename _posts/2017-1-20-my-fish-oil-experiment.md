@@ -5,7 +5,7 @@ self-experiment on fish oil supplements. Here are the results."
 ---
 
 There is a lot of conflicting information about dietary supplements.
-Do they really make you healthier? Do they improve your quality of life?
+Do they really make you healthier?
 Or are they just yet another poorly justified nutrition fad?
 
 The answer probably depends on the supplement.
@@ -23,18 +23,20 @@ just how willing people are to sing its praises:
 > (particularly for conditions such as psoriasis and acne).
 > [Source](https://www.organicfacts.net/health-benefits/oils/health-benefits-of-fish-oil.html)
 
-Fish oil, in other words, is the __God supplement__: there is no
+Indeed, it seems that fish oil is the __God supplement__: there is no
 limit to the miraculous effects it's purported to enjoy.
 
 Excited by the potential gains this supplement could bring, but wary of
 exaggeration/fad, I dug in and tried to take a hard look at the
 [peer-reviewed](https://en.wikipedia.org/wiki/Peer_review)
 studies on fish oil supplementation.
+(For a more sober review of its benefits, I recommend
+[wikipedia](https://en.wikipedia.org/wiki/Omega-3_fatty_acid#Health_effects).)
 
 I then used aggregate data from over 10,000
 subjects across 20+ studies to design a fish oil supplementation program for
 myself (under my doctor's supervision). I wanted to know whether my body would
-respond like the average person in the study. Would I exhibit the
+respond like the average person in the studies. Would I exhibit the
 hallmark benefits?
 
 To help answer these questions, I took four 1200mg [Trader
@@ -48,9 +50,10 @@ The results were very positive. I saw:
 * a __5%__ decrease in LDL cholesterol (i.e. the "bad" cholesterol)
 
 In this post, I talk about the specifics of my experiment: how exactly I did it,
-why I did it the way I did, etc., along with a summary of the papers I read,
-why I chose the Trader Joe's brand, and why I think __fish oil is one supplement
-that actually lives up to the hype__.
+why I did it the way I did, what primary research papers justified my decisions,
+why I chose the Trader Joe's brand given all the options,
+and why I think __fish oil is one supplement that may actually be worth
+taking__.
 
 (As a disclaimer: I'm not a doctor. Consult with yours before you try starting
 any supplementation routine.)
@@ -80,28 +83,8 @@ Note that the pill content did differ significantly from what was on the label.
 
 My experiment began before I started taking the pills.
 For 4 months, I ate a standardized diet and followed a specific
-exercise routine without taking any supplements.
-
-For exercise, my routine was:
-
-  * At least 2 workouts per week, not more than 3
-  * 15 min of vigorous cardio exercise per workout (heart rate >= 170 BPM) via running,
-    bike, or elliptical
-  * 3 weight training exercises per workout, 3 sets each of 10 reps at roughly 80% of my
-    personal max
-
-My diet was essentially a low carb diet (as low as I could stand):
-
-  * low [net-carb](http://healthyeating.sfgate.com/difference-between-grams-carbohydrates-net-carbohydrates-2378.html) meals whenever possible, but not always
-  * no food between meals unless it was very low net-carb
-  * no dessert 4 days per week, where "dessert" was roughly defined as any
-    sweet (i.e. non-savory) food with added sugar that was not part of a meal
-  * stevia was okay as a sugar substitute between meals
-  * little to no milk products: milk, butter, yogurt, cream; dairy was
-    substituted with low-cholesterol products like coconut oil/milk/cream
-    whenever possible
-  * protein was largely from chicken and turkey, little red meat, no fish
-  * cooking oil was usually olive oil, but sometimes coconut oil
+exercise routine without taking any supplements. (See supplemental info for
+details.)
 
 After 4 months, I asked my doctor for a prescription to get my lipid profile
 taken. Prior to getting my blood drawn, I
@@ -208,15 +191,14 @@ oil: 4x as much as the bottle recommended. Why?
 
 I did this because I wanted to reproduce, as closely as possible, the studies
 that had observed such marked changes in triglyceride levels. One such study was
-quoted above. Another noted:
+quoted above. Another study [[5]](https://www.ncbi.nlm.nih.gov/pubmed/26699442)
+noted:
 
 > Intakes of 2.0 to 4.0 g/day of long-chain omega-3 fatty acids are generally
 > required to achieve significant (>15%) TG-lowering [triglyceride-lowering]
 > effects. As noted by Pirillo and Catapano, there is little evidence of
-> clinically relevant
-> efficacy at dosages <1 g/day.
-> [[5]](https://www.ncbi.nlm.nih.gov/pubmed/26699442), full text
-> [here]( http://dx.doi.org/10.1016/j.jacl.2015.09.002)
+> clinically relevant efficacy at dosages <1 g/day.
+> [[Full Text]]( http://dx.doi.org/10.1016/j.jacl.2015.09.002)
 
 The following figure, Fig 1
 from a 2006 systematic review of the fish oil
@@ -253,7 +235,9 @@ My total EPA+DHA content at this dose was 3.0g, very close to the 3.06g average
 seen in the
 trials. I also liked this dosage because the EPA:DHA ratio was almost exactly
 2:1, the ratio that seems universally agreed upon to be ideal. (Though, I've been
-unable to track down any study which justifies this ratio.)
+unable to track down any study which justifies this ratio. I created a
+[question](http://health.stackexchange.com/questions/11154/why-is-21-ratio-of-epadha-recommended)
+in the health stack exchange to try to see if anyone else knows of one.)
 
 Moreover, this dose kept my intake of Mercury, PCB, and other harmful compounds
 to a minimum. To quote from the [independent testing
@@ -271,12 +255,13 @@ mentioned above:
 > by California’s Proposition 65, which requires products containing greater than
 > 0.09 PPM of PCB content to bear a cancer warning.
 
-Even at my higher dose, I still came in well below the 100 PPB mercury limit,
+Even at my higher dose, I still came in well below the 100 PPB mercury limit
 and the 90 PPB PCB limit.
-
 To put these numbers in perspective, a typical can of light tuna contains on
 average 126 PPB of mercury -- according to the
 [FDA](http://www.fda.gov/Food/FoodborneIllnessContaminants/Metals/ucm115644.htm).
+So this dose is roughly equivalent (with respect to Mercury content) to eating
+one can of light tuna per month.
 
 I did not experience a fishy aftertaste when taking these pills either, unless
 I took 3 or more at once.
@@ -364,4 +349,33 @@ I'm also considering trying a similar experiment with krill oil at a lower
 concentration. A limited trial of 60 people (excluding 60 others used in controls)
 showed a 44% increase in HDL following 1g supplementation of krill oil and a 32%
 reduction in LDL, and an 11% reduction in triglycerides
-[[10]](https://www.ncbi.nlm.nih.gov/pubmed/15656713/).
+[[10]](https://www.ncbi.nlm.nih.gov/pubmed/15656713/). Other studies have
+similarly found that krill oil has a more potent effect than traditional
+fish-oil supplements, most notably
+[[11]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3024511/).
+
+TODO
+* risks
+
+### Supplemental Information
+
+For exercise, my routine was:
+
+  * At least 2 workouts per week, not more than 3
+  * 15 min of vigorous cardio exercise per workout (heart rate >= 170 BPM) via running,
+    bike, or elliptical
+  * 3 weight training exercises per workout, 3 sets each of 10 reps at roughly 80% of my
+    personal max
+
+My diet was essentially a low carb diet (as low as I could stand):
+
+  * low [net-carb](http://healthyeating.sfgate.com/difference-between-grams-carbohydrates-net-carbohydrates-2378.html) meals whenever possible, but not always
+  * no food between meals unless it was very low net-carb
+  * no dessert 4 days per week, where "dessert" was roughly defined as any
+    sweet (i.e. non-savory) food with added sugar that was not part of a meal
+  * stevia was okay as a sugar substitute between meals
+  * little to no milk products: milk, butter, yogurt, cream; dairy was
+    substituted with low-cholesterol products like coconut oil/milk/cream
+    whenever possible
+  * protein was largely from chicken and turkey, little red meat, no fish
+  * cooking oil was usually olive oil, but sometimes coconut oil
