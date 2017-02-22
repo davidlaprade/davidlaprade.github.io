@@ -6,7 +6,7 @@ self-experiment on fish oil supplements. Here are the results."
 
 There is a lot of conflicting information about dietary supplements.
 Do they really make you healthier?
-Or are they just yet another poorly justified nutrition fad?
+Or are they just yet another poorly-justified nutrition fad?
 
 The answer probably depends on the supplement.
 
@@ -21,7 +21,7 @@ just how willing people are to sing its praises:
 > Alzheimer’s disease, eye disorders, macular degeneration and ulcers. It also
 > helps aid weight loss, healthy pregnancy, fertility and skin care
 > (particularly for conditions such as psoriasis and acne).
-> [Source](https://www.organicfacts.net/health-benefits/oils/health-benefits-of-fish-oil.html)
+> [[Source]](https://www.organicfacts.net/health-benefits/oils/health-benefits-of-fish-oil.html)
 
 Indeed, it seems that fish oil is the __God supplement__: there is no
 limit to the miraculous effects it's purported to enjoy.
@@ -29,19 +29,32 @@ limit to the miraculous effects it's purported to enjoy.
 Excited by the potential gains this supplement could bring, but wary of
 exaggeration/fad, I dug in and tried to take a hard look at the
 [peer-reviewed](https://en.wikipedia.org/wiki/Peer_review)
-studies on fish oil supplementation.
-(For a more sober review of its benefits, I recommend
-[wikipedia](https://en.wikipedia.org/wiki/Omega-3_fatty_acid#Health_effects).)
+studies on fish oil supplementation. I recommend
+[wikipedia](https://en.wikipedia.org/wiki/Omega-3_fatty_acid#Health_effects) as
+a well-cited, high-level overview of the primary literature.
+
+Unsurprisingly, the data is more sobering than most people would like to
+believe. It suggests that fish oil:
+
+* probably doesn't prevent cancer[[12]](https://www.ncbi.nlm.nih.gov/pubmed/16434631)
+* probably doesn't prevent heart disease[[13]](https://www.ncbi.nlm.nih.gov/pubmed/22968891)
+
+
+...
+
+As a healthy person, then, the best reason to take fish oil is this: that the
+likelihood of positive outcomes outweighs the risks.
 
 I then used aggregate data from over 10,000
 subjects across 20+ studies to design a fish oil supplementation program for
 myself (under my doctor's supervision). I wanted to know whether my body would
-respond like the average person in the studies. Would I exhibit the
-hallmark benefits?
+exhibit the hallmark benefits observed in the studies.
 
-To help answer these questions, I took four 1200mg [Trader
+To test this, I took four 1200mg [Trader
 Joe's](https://www.amazon.com/Trader-Joes-Omega-3-90softgels-Odorless/dp/B004TVDMN8)
 omega-3 fish oil tablets per day (with food) for 4 months.
+
+DO THE RISKS OUTWEIGH THE POTENTIAL BENEFITS FOR HEALTHY PEOPLE?
 
 The results were very positive. I saw:
 
@@ -100,8 +113,8 @@ the 1200mg pills per day, adding up to:
 | Total Omega-3     | 3.3 g  |
 | EPA               | 2.1 g  |
 | DHA               | 0.9 g  |
-| Mercury           | 4 ppb  |
-| PCB               | 80 ppb |
+| Mercury           | 1 ppb  |
+| PCB               | 20 ppb |
 
 Consumption was spread out during the course of the day, each time with a meal.
 Typically I took 1 pill with breakfast and lunch, and 2 with dinner, though this
@@ -228,8 +241,10 @@ trials.  This, again, was the nutrient breakdown of my dosage:
 | Total Omega-3     | 3.3 g  |
 | EPA               | 2.1 g  |
 | DHA               | 0.9 g  |
-| Mercury           | 4 ppb  |
-| PCB               | 80 ppb |
+| Mercury           | 1 ppb*  |
+| PCB               | 20 ppb* |
+
+&nbsp;&nbsp;&nbsp;&nbsp; * = calculation not effected by volume consumed
 
 My total EPA+DHA content at this dose was 3.0g, very close to the 3.06g average
 seen in the
@@ -237,7 +252,7 @@ trials. I also liked this dosage because the EPA:DHA ratio was almost exactly
 2:1, the ratio that seems universally agreed upon to be ideal. (Though, I've been
 unable to track down any study which justifies this ratio. I created a
 [question](http://health.stackexchange.com/questions/11154/why-is-21-ratio-of-epadha-recommended)
-in the health stack exchange to try to see if anyone else knows of one.)
+in the health stack exchange to try to see if anyone else knows.)
 
 Moreover, this dose kept my intake of Mercury, PCB, and other harmful compounds
 to a minimum. To quote from the [independent testing
@@ -245,23 +260,71 @@ organization](https://labdoor.com/review/trader-joes-omega-3/report)
 mentioned above:
 
 > Mercury content measured at 1 PPB [. . .] significantly below the Global
-> Organization for EPA and DHA Omega-3 (GOED) 100 PPB limit. Bulk samples of
+> Organization for EPA and DHA Omega-3 (GOED) 100 PPB limit.<br><br>
+> Bulk samples of
 > this product also passed the
 > six mineral assays, indicating presence of under 1 PPM of arsenic, lead,
-> cadmium, bismuth, antimony, and silver compounds.
+> cadmium, bismuth, antimony, and silver compounds.<br><br>
 > Total polychlorinated biphenyl (PCB) content [. . .] measured at 0.02 PPM, which is
 > significantly below the Food and Drug Administration’s (FDA) 2 PPM limit for the
 > edible parts of fish/shellfish. It is also below the stricter standards enacted
 > by California’s Proposition 65, which requires products containing greater than
 > 0.09 PPM of PCB content to bear a cancer warning.
 
-Even at my higher dose, I still came in well below the 100 PPB mercury limit
-and the 90 PPB PCB limit.
-To put these numbers in perspective, a typical can of light tuna contains on
+Even at my higher dose, I still came in well below the 100 PPB mercury limit.
+To put this in perspective, a typical can of light tuna contains on
 average 126 PPB of mercury -- according to the
 [FDA](http://www.fda.gov/Food/FoodborneIllnessContaminants/Metals/ucm115644.htm).
 So this dose is roughly equivalent (with respect to Mercury content) to eating
-one can of light tuna per month.
+less than one can of light tuna per month.
+
+My daily PCB exposure, however, would seem to be fairly close to the CA proposition
+65 limit (90 ppb). That limit was determined in
+[1989](https://oehha.ca.gov/media/downloads/crnr/041312pcbisor.pdf) based on
+data from 1987.  The California Office of Environmental Health Hazard
+Assessment (OEHHA), which is responsible for implementing proposition 65,
+issued a [proposed amendment](https://oehha.ca.gov/media/downloads/crnr/041312pcbisor.pdf)
+in 2012 which suggested that this limit should be revised in light of more
+recent findings. That amendment says:
+
+> In 1989, an NSRL [no significant risk limit] for PCBs of 0.09 micrograms (µg)
+> per day was derived and adopted in Section 25705(c).
+> It was based on a cancer potency value of 7.7 milligrams, per
+> kilogram bodyweight per day (mg/kg-day) published in a list of cancer potency
+> values in the U.S. EPA 1987 report “Health Assessment Document for Beryllium.”
+> This U.S. EPA cancer potency value has been superseded by values published by
+> the U.S. EPA in
+> 1996 in its document “PCBs: Cancer Dose Response Assessment and Application to
+> Environmental Mixtures.”
+
+They then go on to calculate a new "no significant risk limit" based on the
+updated studies:
+
+> The NSRL can be calculated from the U.S. EPA slope factor, a measure of the
+> carcinogenic activity of PCBs, as follows. [. . .] Inserting this number into
+> the equation above results in an NSRL of 0.35 µg/day for food chain exposures.
+
+Note that `ppb` is a rate. It stands for "parts per billion", and is equivalent to µg/L.
+Taking more pills doesn't change the rate, though it does increase the volume
+consumed. Obviously, the pill volume is exceedingly low.
+[This site](https://www.capsuline.com/empty-capsule-size-chart/) provides
+volumetric data on gel capsules based on size. The Trader Joe's capsules are
+2.5cm x 1cm x 1cm, which in the site above corresponds to an estimated volume
+of 1.37 mL each. We can can then estimate the total daily PCB consumption as
+follows:
+
+{% highlight bash %}
+1.37mL/pill x 4 pills = ~5.5mL
+5.5 mL pill volume = 0.0055 L pill volume
+20 ppb pill PCB = 20 µg PCB/L pill
+20 µg PCB/L pill x 0.005 L pill volume = 0.1 µg PCB in 4 pills
+{% endhighlight %}
+
+So, my dosage contained roughly 0.1 µg of PCB, less than 30% of the updated no
+significant risk limit.
+
+I picked Trader Joe's supplement after generating a heat map of many other
+supplement brands. I compared: ...
 
 I did not experience a fishy aftertaste when taking these pills either, unless
 I took 3 or more at once.
@@ -354,8 +417,6 @@ similarly found that krill oil has a more potent effect than traditional
 fish-oil supplements, most notably
 [[11]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3024511/).
 
-TODO
-* risks
 
 ### Supplemental Information
 
