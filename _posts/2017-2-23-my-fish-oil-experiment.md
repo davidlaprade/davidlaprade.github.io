@@ -72,7 +72,8 @@ experiments, __not__ fish oil experiments -- they don't appear to
 exist.
 
 As a healthy person, then, __the best reason to take fish oil is that the
-likelihood of positive outcomes outweighs the risks.__
+likelihood of positive outcomes outweighs the risks.__ There just isn't much to
+lose.
 
 At the end of the day, studies are an imperfect guide: you don't know how your
 body will respond to any supplement until you _actually take it_. And in the
