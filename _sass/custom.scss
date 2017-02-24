@@ -6,11 +6,12 @@ $tag-height: 26px;
 table {
   border-spacing: 0px;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin: 1.3334em;
 }
 table td {
-  padding: 6px 20px;
+  padding: 6px 40px;
   border: 1px solid #ddd;
+  text-align: center;
 }
 table tr {
   background-color: #fff;
