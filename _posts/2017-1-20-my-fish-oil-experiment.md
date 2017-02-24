@@ -27,34 +27,68 @@ Indeed, it seems that fish oil is the __God supplement__: there is no
 limit to the miraculous effects it's purported to enjoy.
 
 Excited by the potential gains this supplement could bring, but wary of
-exaggeration/fad, I dug in and tried to take a hard look at the
+exaggeration/fad, I tried to take a hard look at the
 [peer-reviewed](https://en.wikipedia.org/wiki/Peer_review)
-studies on fish oil supplementation. I recommend
-[wikipedia](https://en.wikipedia.org/wiki/Omega-3_fatty_acid#Health_effects) as
-a well-cited, high-level overview of the primary literature.
+studies on fish oil supplementation. (I recommend
+[omega-3 wikipedia article](https://en.wikipedia.org/wiki/Omega-3_fatty_acid#Health_effects)
+as a well-cited, high-level overview of the primary literature.)
 
-Unsurprisingly, the data is more sobering than most people would like to
-believe. It suggests that fish oil:
+Without cherry-picking papers based on desired results, the data is more
+sobering than the quote above would suggest.
+In fact, the primary literature is incredibly inconsistent in its findings:
+papers claiming beneficial effects are very often followed by papers claiming
+no effect at all.
 
-* probably doesn't prevent cancer[[12]](https://www.ncbi.nlm.nih.gov/pubmed/16434631)
-* probably doesn't prevent heart disease[[13]](https://www.ncbi.nlm.nih.gov/pubmed/22968891)
+The state of the literature notwithstanding, large-scale [meta-analyses](https://en.wikipedia.org/wiki/Meta-analysis)
+of many studies do show trends. These trends suggest that -- for
+__healthy adults__ -- fish oil probably:
 
+* doesn't prevent heart disease [[12]](https://www.ncbi.nlm.nih.gov/pubmed/22968891)
+* doesn't prevent cancer [[13]](https://www.ncbi.nlm.nih.gov/pubmed/16434631)
+* doesn't reduce inflammation [[14]](https://www.ncbi.nlm.nih.gov/pubmed/23456976)
 
-...
+Claims of other benefits appear to be too little researched
+to confirm or deny, and as such don't constitute justification for taking fish
+oil as a healthy adult.
 
-As a healthy person, then, the best reason to take fish oil is this: that the
-likelihood of positive outcomes outweighs the risks.
+With all of the research that has been done on fish oil supplementation,
+however -- with tens of thousands of people and hundreds of studies -- one
+thing can be said with some confidence: it is very low-risk. The [National
+Institute of Heath](https://nccih.nih.gov/health/omega3/introduction.htm#hed4)
+has a helpful summary of fish oil safety. The typical risks you see are:
 
-I then used aggregate data from over 10,000
+* heavy metal poisoning, especially Mercury and PCBs
+* prostate cancer [[15]](https://www.ncbi.nlm.nih.gov/pubmed/23766835)
+* exacerbated bleeding disorders [[16]](https://www.ncbi.nlm.nih.gov/pubmed/21621252)
+
+Here too, individual studies can be cherry-picked to suggest further risks.
+But -- given the frequency of inconsistent results in the field -- these
+shouldn't inspire much confidence.
+What should inspire confidence, however, is the conspicuous absence of any
+compelling meta-analyses
+which point to detrimental trends in experimental results. Apart from the link
+to prostate cancer -- which analyzed omega-3 blood concentrations from vitamin E
+experiments, __not__ fish oil experiments -- they don't appear to
+exist.
+
+As a healthy person, then, __the best reason to take fish oil is that the
+likelihood of positive outcomes outweighs the risks.__
+
+At the end of the day, studies are an imperfect guide: you don't know how your
+body will respond to any supplement until you _actually take it_. And in the
+case of fish oil, the risks seemed very low. So that's what
+I decided to do.
+
+I wanted to know whether I -- a relatively healthy adult -- would
+exhibit the hallmark benefits observed in some of the studies.
+
+To test this, I used aggregate data from over 10,000
 subjects across 20+ studies to design a fish oil supplementation program for
-myself (under my doctor's supervision). I wanted to know whether my body would
-exhibit the hallmark benefits observed in the studies.
+myself (under my doctor's supervision).
 
-To test this, I took four 1200mg [Trader
+I took four 1200mg [Trader
 Joe's](https://www.amazon.com/Trader-Joes-Omega-3-90softgels-Odorless/dp/B004TVDMN8)
 omega-3 fish oil tablets per day (with food) for 4 months.
-
-DO THE RISKS OUTWEIGH THE POTENTIAL BENEFITS FOR HEALTHY PEOPLE?
 
 The results were very positive. I saw:
 
@@ -64,9 +98,8 @@ The results were very positive. I saw:
 
 In this post, I talk about the specifics of my experiment: how exactly I did it,
 why I did it the way I did, what primary research papers justified my decisions,
-why I chose the Trader Joe's brand given all the options,
-and why I think __fish oil is one supplement that may actually be worth
-taking__.
+why I chose the Trader Joe's brand given all the options, and why I may not
+continue to take this supplement long-term even despite the benefits I've seen.
 
 (As a disclaimer: I'm not a doctor. Consult with yours before you try starting
 any supplementation routine.)
@@ -255,9 +288,9 @@ unable to track down any study which justifies this ratio. I created a
 in the health stack exchange to try to see if anyone else knows.)
 
 Moreover, this dose kept my intake of Mercury, PCB, and other harmful compounds
-to a minimum. To quote from the [independent testing
+to a minimum. To quote from the results of the [independent testing
 organization](https://labdoor.com/review/trader-joes-omega-3/report)
-mentioned above:
+mentioned above, Trader Joes' supplement had:
 
 > Mercury content measured at 1 PPB [. . .] significantly below the Global
 > Organization for EPA and DHA Omega-3 (GOED) 100 PPB limit.<br><br>
@@ -323,11 +356,15 @@ follows:
 So, my dosage contained roughly 0.1 µg of PCB, less than 30% of the updated no
 significant risk limit.
 
-I picked Trader Joe's supplement after generating a heat map of many other
-supplement brands. I compared: ...
-
 I did not experience a fishy aftertaste when taking these pills either, unless
 I took 3 or more at once.
+
+For anyone interested in what other factors went into choosing Trader Joes'
+supplement, I created a
+google sheet with all of the qualities I was interested in (including cost) and
+then color-coded each cell to create a
+[heatmap](https://docs.google.com/spreadsheets/d/1V2xrMPMMSGcmeqPBwBYU_9spPIRj_oPKsXF-ayagSIQ/edit?usp=sharing)
+of the supplement brands.
 
 The "Net Change" figure also explains why I chose to run my experiment for 4
 months (~17 weeks). As seen there, the studies ranged in duration from 6 weeks to
@@ -368,12 +405,6 @@ doesn't actually provide any of the results from the high-fat trials:
 
 So I sent an email to the author of these papers to try to get these results. I
 will update this post if I ever hear back.
-
-To those who would object that my diet and/or exercise weren't ideal: you're
-probably right. I didn't intend them to be. The point was just to create a rough
-set of rules to keep my diet and exercise __consistent__ throughout the experiment.
-By keeping them consistent, it allowed me to reasonably infer that changes in my
-blood tests weren't due to diet or exercise.
 
 One reason why I wanted to perform these tests was that not everyone's body
 responds to drugs in the same way. I had no idea how my body was going to react.
@@ -440,3 +471,10 @@ My diet was essentially a low carb diet (as low as I could stand):
     whenever possible
   * protein was largely from chicken and turkey, little red meat, no fish
   * cooking oil was usually olive oil, but sometimes coconut oil
+
+To those who would object that my diet and/or exercise weren't ideal: you're
+probably right. I didn't intend them to be. The point was just to create a rough
+set of rules to keep my diet and exercise __consistent__ throughout the experiment.
+By keeping them consistent, it allowed me to reasonably infer that changes in my
+blood tests weren't due to diet or exercise.
+
