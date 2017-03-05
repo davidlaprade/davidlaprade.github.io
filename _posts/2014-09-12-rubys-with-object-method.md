@@ -60,7 +60,7 @@ To do this using `array.find_all`, you would need to tack on a
 
 {% highlight ruby %}
 array = [1,2,3,4,5,6]
-array.find_all {|x| x>3}.map {|x| x\*2}
+array.find_all {|x| x>3}.map {|x| x*2}
 => [8,10,12]
 {% endhighlight %}
 
@@ -70,7 +70,7 @@ like:
 
 {% highlight ruby %}
 array = [1,2,3,4,5,6]
-[4, 6] << array.find_all {|x| x>3}.map {|x| x\*2}
+[4, 6] << array.find_all {|x| x>3}.map {|x| x*2}
 => [4, 6, 8, 10, 12]
 {% endhighlight %}
 
@@ -85,7 +85,7 @@ modified object back. Like this:
 
 {% highlight ruby %}
 array = [1,2,3,4,5,6]
-array.each.with_object([4,6]) {|x,o| o << x\*2 if x>3}
+array.each.with_object([4,6]) {|x,o| o << x*2 if x>3}
 => [4, 6, 8, 10, 12]
 {% endhighlight %}
 
