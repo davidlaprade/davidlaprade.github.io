@@ -2,6 +2,6 @@
 
 echo "Deploying develop to production"
 git checkout master
-git rebase develop
+git merge --no-ff develop
 git push origin HEAD
 git checkout -
