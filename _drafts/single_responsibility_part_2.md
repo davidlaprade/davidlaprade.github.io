@@ -4,6 +4,27 @@
   a network, only able to communicate with messages" --Alan Kay, creator of
 Smalltalk, on the meaning of "object oriented programming"
 
+**If you could find an example of a physical object that has been famously
+repurposed in another field, where it plays two roles, not one, this would
+essentially make your whole case**
+Ideas:
+  * rubber band: used to hold things together, spin airplane propeller (and
+    holds the propeller on?)
+  * water bath: used in science to keep solutions at temp, used in food to do
+    sous vide
+  * pvc pipe: plumbing, stretching
+  * tennis balls: tennis, walker pads
+
+Either way, show how **simply renaming** a method can change it from one
+responsibility to two. This shows: the number of responsibilities depends at
+least in part on intent, it's not just dependent on the code itself.
+
+Let's make this discussion test-driven. Let's start with some famous,
+unambiguous cases of multiple-responsibility. Whatever our statement of the SRP
+ends up being, then, it should get all of these cases right:
+* Sandy Metz' example of the bike #gear method that violates SRP because of data
+  structure presupposition
+
 At this point, it's tempting to reach for the "it's an art not a science"
 response. It goes like this:
 
