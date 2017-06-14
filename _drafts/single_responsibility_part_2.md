@@ -4,6 +4,133 @@
   a network, only able to communicate with messages" --Alan Kay, creator of
 Smalltalk, on the meaning of "object oriented programming"
 
+**If you could find an example of a physical object that has been famously
+repurposed in another field, where it plays two roles, not one, this would
+essentially make your whole case**
+Ideas:
+  * rubber band: used to hold things together, spin airplane propeller (and
+    holds the propeller on?)
+  * water bath: used in science to keep solutions at temp, used in food to do
+    sous vide
+  * pvc pipe: plumbing, stretching
+  * tennis balls: tennis, walker pads
+  * tonic water: prevent malaria, flavor cocktails
+  * duct tape: WWII waterproof tape ("duck tape"), later to repair ducts
+  * teflon: artillery shell fuses, non stick cookware
+  * temper foam: NASA space padding, bedding
+
+Either way, show how **simply renaming** a method can change it from one
+responsibility to two. This shows: the number of responsibilities depends at
+least in part on intent, it's not just dependent on the code/implementation
+itself.
+
+```
+# one responsibility
+def rectangle_perimeter(l1, l2, w1, w2)
+  lengths = l1 + l2
+  widths  = w1 + w2
+  lengths + widths
+end
+
+# multiple responsibilities
+def total_attendees(table1, table2, table3, table4)
+  brides_family = table1 + table2
+  grooms_family = table3 + table4
+  brides_family + grooms_family
+end
+```
+
+Also show that the number of responsibilities is dependent on the contexts in
+which the code is used -- also quite apart from its implementation.
+
+```
+# one responsibility, right?
+# this method couldn't have a simpler implementation
+def rate
+  0.05
+end
+
+def tax_total(subtotal)
+  subtotal * rate
+end
+
+# boom! second responsibility
+def suggested_tip(total)
+  total * rate
+end
+```
+
+Implementation does not matter when it comes to determining whether there is too
+much code in a method, or class, contra [Sandi Metz's Rules for
+Developers](https://robots.thoughtbot.com/sandi-metz-rules-for-developers).
+Even the simplest implementation can have multiple responsibilities. And any
+implementation can be changed from having one responsibility to many by simply
+placing it within a method with a different name.
+
+One and only one factor seems to determine the number of responsibilities:
+* meaning
+
+Meaning is determined, in part, by use.
+
+I think that in order to do the SRP right, you need to be doing some pretty
+subtle conceptual analysis of your method and class names.
+
+`#rate` above is ambiguous, or at least unclear. It means both `tax_rate` and
+`suggested_tip_rate`. This meaning is determined by its use in the code.
+
+What does your method name mean? And
+
+Are there basic actions -- basic in the sense that they are the acts that
+constitute/ground all other acts?
+
+It would seem so. My performing a certain number of steps might constitute my
+walking to the park. Some other steps with a few arm movements thrown in might
+constitute my doing the Macarena. Some sounds from my vocal chords, a serenade.
+My thinking certain things, a prayer. And so on. In each case, the
+latter acts are constituted by the former..
+
+The SRP then, could be a demand that the units of our code represent either
+basic acts, or composites of them, e.g.
+
+def walk_to_park
+  take_step(100)
+  ...
+end
+
+It's still hard to know just when an act is "basic" in this sense, and perhaps
+harder still for the kind of actions we make computers perform -- since they
+typically perform what otherwise would be mental actions. But it seems that if
+progress could be made in this direction, maybe, just maybe, it could help
+illuminate the SRP.
+
+So what are some basic mental acts? Candidates:
+* thinking/reasoning/inferring
+* remembering
+* intending
+* desiring
+* fearing
+* believing
+*
+
+The whole notion of "doing one thing" is specious. How are actions individuated?
+Are there *fundamental* actions, like there might be fundamental entities?
+
+
+But not all code is action-oriented. Not all method names are verbs. Sometimes
+they are just nouns, e.g. `tax_total`. Grounding here, too? In virtue of what is
+some number a tax total of an order?
+
+
+
+Let's make this discussion test-driven. Let's start with some famous,
+unambiguous cases of multiple-responsibility. Whatever our statement of the SRP
+ends up being, then, it should get all of these cases right:
+* Sandy Metz' example of the bike #gear method that violates SRP because of data
+  structure presupposition
+
+
+
+
 At this point, it's tempting to reach for the "it's an art not a science"
 response. It goes like this:
 
