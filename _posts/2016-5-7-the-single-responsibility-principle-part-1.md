@@ -7,7 +7,7 @@ date: "2016-05-19"
 ---
 
 _NOTE: this is the first of a two part series on the Single Responsibility
-Principle._
+Principle._ You can read the second part [here](/blog/the-single-responsibility-principle-part-2).
 
 The [Single Responsibility
 Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle),

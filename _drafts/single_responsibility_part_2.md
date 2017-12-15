@@ -1,10 +1,3 @@
----
-title: "The Single Responsibility Principle, Part 2"
-tags: architecture
-excerpt: Software design (AKA architecture) is conceptual analysis, not art.
-date: "2017-08-02"
----
-
 _NOTE: this is the second of a two part series on the Single Responsibility
 Principle. You can read the first part [here](/blog/the-single-responsibility-principle-part-1)._
 
@@ -15,7 +8,7 @@ is a near-universally endorsed principle of software architecture.
 It codifies the famous [Unix
 maxim](https://en.wikipedia.org/wiki/Unix_philosophy#Origin) that units of
 software should
-"do one thing and do it well". Put this way, it sounds clear and obvious. But the devil's in
+"do one thing and do it well". Put this way, it sounds clear and obvious -- a platitude. But the devil's in
 the details.
 
 For example, suppose I ask you what you did this afternoon. You might say that you
@@ -32,12 +25,20 @@ said that you did many things:
 
 So which is it? Did you do many things or did you do just one thing? That
 depends what level of detail we're supposed to be speaking at. But the point
-is that once you start trying to apply this principle, you very quickly realize
-that it's anything but clear and obvious.
+is that once we start trying to apply this principle, we very quickly realize
+that it's anything but clear and obvious. [My first post](/blog/the-single-responsibility-principle-part-1/) tried to hammer this point home.
+
+In this second post, I have a number of goals:
+  * the SRP is not one principle, it's many
+  * the SRP is really a requirement of conceptual analysis/semantics
+  * there are objective (albeit defeasible) signs of SRP violation
+  * the SRP is imperfect even once clarified: it does not meet its goal of
+    making code change-proof
+
 
 Did your
-afternoon have more than one responsibility? Start poking around and all of a
-sudden the SRP
+afternoon have more than one responsibility? Start pulling and all of a
+sudden the SRP comes unthreaded in your hands.
 
 In my previous post on the SRP, I argued that no one has the details of the SRP
 quite right. No one has really gotten to the heart of what this principle
@@ -45,10 +46,10 @@ consists in.
 
 Try writing code that adheres to this principle and you run into
 some difficult problems:
-* god methods
-* what level does a method have to do one thing at?
-* the same event can be described in different ways and seem on some
-  descriptions to actually be multiple actions and on others one
+* what level does a method have to do one thing at? god methods
+* how do you know when one method contains another method's implementation?
+* can the same event can be described in different ways and seem on some
+  descriptions to actually be multiple actions and on others one?
 *
 
 ### Art Not Science
