@@ -1,3 +1,5 @@
+# STOPPED on p 54 of POODR
+
 Define:
 architecture of a system =(df) the implementation of a system
 
@@ -13,8 +15,9 @@ best practices
 
 terms suggesting dependence:
 * coupling, coupled
-* knows
+* knows, knowledge (27)
 * encapsulation (27)
+* entangled (21)
 
 terms needing clarification:
 * everything the class does [should] be _highly related_ to its purpose. (Metz, 22)

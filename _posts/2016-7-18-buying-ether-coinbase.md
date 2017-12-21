@@ -1,7 +1,7 @@
 ---
 title: "Buying Ethereum on Coinbase"
 redirect_from: "/blog/buying-ether-coinbase/"
-tags: tech
+tags: crypto
 excerpt: "How to buy ether through Coinbase's GDAX digital currency exchange."
 ---
 
