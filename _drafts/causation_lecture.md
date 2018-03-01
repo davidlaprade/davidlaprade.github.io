@@ -1,13 +1,15 @@
-Causation
-* we're talking about efficient causation
+## Causal Reasoning
+
+### General Notes
+* we'll be talking about how to reason about efficient causation
   * i.e. one thing *making something to be the case* or *binging something about*
   * billiard ball-causation
   * causal claims don't all use the word "cause"
 * sufficient vs. necessary conditions
   * "c is necessary for e":  if e then c
-    * examples...
+    * being a US citizen is necessary for becoming President
   * "c is sufficient for e": if c then e
-    * examples...
+    * being elected by the general population is sufficient for becoming President
   * causes are typically parts of sufficient conditions
     * severe lack of vitamin C is both necessary and sufficient for scurvy
     * striking a match is neither necessary nor sufficient for starting a fire
@@ -15,9 +17,8 @@ Causation
       car
   * sufficient conditions are always sufficient: if X really was all it took to
     bring Y about today, then X would bring Y about tomorrow too
-
-Two kinds of causal statements:
-* general/repeatable == there are many instances of them
+* there are two kinds of causal statements we'll focus on
+* __general/repeatable__ == there are many instances of them
   * Smoking causes lung cancer
   * HIV causes AIDS
   * Cold weather causes low tire pressure
@@ -25,7 +26,7 @@ Two kinds of causal statements:
   * Caffeine prevents sleep
   * Thanksgiving causes traffic jams
   * Turkey dinner causes drowsiness
-* particular/unrepeatable == there is only one instance of them
+* __particular/unrepeatable__ == there is only one instance of them
   * Terrorists caused 9-11
   * John Wilkes Booth killed Abraham Lincoln
   * German aggression started WWII
@@ -33,8 +34,9 @@ Two kinds of causal statements:
   * Human CO2 emissions caused global warming
   * The pyramids were created by aliens
 
-Particular:
-* Write on board: "JFK was killed by Mr. Gravel" -- prove me wrong
+### Reasoning about Particular Causal Claims
+* Exercise:
+  * "JFK was killed by your teacher" -- prove me wrong
 * arguments for particular causal claims are inferences to the best explanation
 * *best* explanation reveals normative principles, i.e. "scientific virtues"
   * Conservativism: the less rejection of prior beliefs, the better
@@ -48,8 +50,8 @@ Particular:
     haven't thought of that fit the data as well as those we have
   * confirmation holism: any given prediction is the result of many beliefs, so "anything can be held true, come what may"
 
-General:
-* Example:
+### Reasoning about General Causal Claims
+* Exercise:
   * you begin college in the fall
   * you've were a constant weight for most of high school
   * when you return from college, you've gained 25lbs
@@ -65,8 +67,9 @@ General:
     * did your stress levels increase?
   * NOTE: you're trying to find things that changed
 * first thing a car mechanic wants to know: how to reproduce? why is this
-  important?
+  important? how is it similar?
 * controls in science
+  * all experiments are comparisons
 * correlation vs. causation
   * buying diapers causes having a baby
   * ice cream consumption causes shark attacks
