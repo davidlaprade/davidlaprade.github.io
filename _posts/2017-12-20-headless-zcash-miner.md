@@ -84,7 +84,8 @@ photo above). Plug those in now.
 Unplug any GPUs you have connected to the motherboard.
 
 Turn the power on. To do this, you'll initially need to short the pins on your
-motherboard's power switch header with a flat-head screwdriver. (Look in your
+motherboard's power switch header with a flat-head screwdriver. (I short pins 6
+and 8 on [this picture](https://superuser.com/a/975079). Look in your
 motherboard manual to determine which pins you need to connect.) You might need
 to hold the screwdriver against the pins for a couple seconds before it turns
 on. You'll only need to do this once. From here on, you can just use the on/off
@@ -93,7 +94,7 @@ switch on the power supply unit (PSU) to start/stop the computer.
 The computer should boot into BIOS because it doesn't have an operating system
 installed yet. Once that happens, configure BIOS to automatically boot when it
 receives power, then shut the computer down. Download the [latest version of
-BIOS](https://www.msi.com/Motherboard/support/Z170A-GAMING-PRO.html) for your
+BIOS](https://www.msi.com/Motherboard/support/Z170A-SLI-PLUS.html) for your
 motherboard onto your USB on another computer. Plug in the USB and reboot your
 mining rig. Follow the instructions on screen to update your BIOS. Once the
 update completes, power down the rig.
@@ -238,6 +239,9 @@ sudo nvidia-settings \
   -a "[gpu:5]/GPUMemoryTransferRateOffset[3]=$mem_boost" \
   -a "[gpu:5]/GpuPowerMizerMode=1" >> ~/mining.log &&
 
+# keep track of the cards in case one fails
+nvidia-smi --query-gpu=index,gpu_uuid,pci.bus_id,display_mode --format=csv >> mining.log
+
 # unbuffer so that you can tail the mining.log file
 unbuffer ./miner --server $mining_pool --user $zec_wallet.rig1 --pass x --port 3333 --templimit $temp_limit >> ~/mining.log
 
@@ -322,6 +326,11 @@ So it costs me 12 cents to run the rig each hour, and $2.88 to run per day --
 about $88 per month. It's not cheap. But on good months the rig generates
 between $500 and $800 in income with zero work required from me. Even factoring
 electricity into the equation, the hardware paid for itself within 5 months.
+
+UPDATE:
+I've now switched to this miner:
+https://bitcointalk.org/index.php?topic=2021765.0
+which is under active development
 
 ------------
 
