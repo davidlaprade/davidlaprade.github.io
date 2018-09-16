@@ -50,6 +50,7 @@ That depends on a lot of things, for example:
 * how long you expect to work
 * how long you expect to live
 * what kind of investment accounts you have access to (IRAs, 401ks, 403bs, etc)
+* whether social security will be around when you retire
 
 As if that were bad enough, the issue is compounded by the fact that tax law:
 
@@ -64,9 +65,10 @@ But saving for retirement is too important to let these hurdles deter us.
 It can mean the difference between:
 
 * retiring at age 50 and retiring at 70
-* being able to pursue one's retirement dreams (e.g. travel, hobbies) and not
+* being able to pursue one's retirement dreams (e.g. travel, hobbies) and
+  wasting the last years of your life in a state of bored loneliness
 * living on your own and living in a nursing home
-* leaving an inheritance to your children and leaving them with debt
+* leaving an inheritance to your children and leaving them with nothing, or even debt
 
 These are not differences that I take lightly.
 
@@ -109,13 +111,39 @@ function INCOME_TAX(income, accumulatedTax) {
   return taxInThisBracket + taxInLowerBrackets;
 };
 
+function AFTER_TAX(income) { return income - INCOME_TAX(income) };
+
 {% endhighlight %}
 
 The next step was to be able to quickly figure out how much one would need to
 withdraw from a Traditional plan in order to have a certain amount after taxes
 were subtracted, e.g. to pay for one's living expenses in retirement.
 
-That's what `WITHDRAW_FOR_AFTER_TAX_AMOUNT` does:
+I should emphasize that given US tax law, this is not an easy calculation. It
+has always been the thing that stopped me in my tracks when I wanted to try to
+run these numbers in the past. That's because there's a kind of vicious
+circularity to it. If you want to have $50k in after-tax money, you obviously
+can't earn just $50k in income because that doesn't account for the taxes you'll
+have to pay. So, suppose you start with $52k in income. The taxes on that
+(excluding FICA) are ~$2980, leaving you with ~$49,020. But now, you can't just
+increase your income by $1k to cover the difference, because by increasing your
+income you also increase your taxes!
+
+If you look at the problem algebraically, you can easily see why it's so
+challenging. This is the formula for the after-tax amount on an income:
+
+afterTax = beforeTax - INCOME_TAX(beforeTax)
+
+So, suppose that you want to solve for `beforeTax`. This would require you to
+isolate `beforeTax` on one side of the formula. That's just basic algebra. But
+there's no way to do that here, since one instance of `beforeTax` is bound to
+the `INCOME_TAX` function. There's no way to factor it out.
+
+Fortunately for us, now that we have a quick way to calculate tax amounts on an
+income, we can just brute-force the problem. We can just write a script to
+intelligently _guess_ what the `beforeTax` amount will be.
+
+That's exactly what `WITHDRAW_FOR_AFTER_TAX_AMOUNT` does:
 
 {% highlight javascript %}
 
@@ -139,10 +167,13 @@ function WITHDRAW_FOR_AFTER_TAX_AMOUNT(targetAfterTax, highGuess, lowGuess) {
 
 {% endhighlight %}
 
-With this, I now had removed two of the biggest practical hurdles to modeling
+With this, we've removed two of the biggest hurdles to modeling
 different retirement savings strategies.
 
 ### Simplifications
+
+These improvements notwithstanding, there are still a *lot* of complicating factors to our
+model.
 
 Given all the complications, my goal was to be able to run
 simulations of retirement saving that were _close enough_. I wanted to get the
@@ -150,34 +181,42 @@ big things right and not sweat the small stuff.
 
 To do this, I assumed the following:
 
-* the current tax laws won't change
+* the current tax laws won't change, in particular:
+  * the brackets don't change
+  * the standard deduction amount doesn't change
+* you take the standard deduction each year
 * you're currently married and will stay married
-* both your salary and retirement account max-contributions will (at least) keep pace with
+* your salary keeps pace with inflation
+* social security benefits keep pace with inflation
+* the max-contributions for retirement accounts will (at least) keep pace with
   inflation (IRA contribution limits have averaged a 6% yearly increase, 401ks a 4%
-  increase)
-* you take the standard deduction each year (and the standard deduction doesn't
-  change)
+  increase, both above 3% average inflation)
 * you don't withdraw from your retirement accounts before you can take qualified
   distributions, so you don't pay any penalties
-* during retirement, you spend money in this order of preference: retirement
-  income, traditional accounts, roth accounts
+* during retirement, you spend money in this order of preference: social
+  security benefits, retirement
+  income, traditional accounts, then finally roth accounts
 * you make your contributions in one lump sum at the beginning of each year
 * your investment portfolio won't change composition before retirement,
   e.g. in the way
   it's normally recommended that one slowly transition to lower-risk assets as
   retirement approaches
-* non-IRA retirement accounts (e.g. 401k, 403b, etc.) are all rolled over into IRAs,
-  and so the laws governing IRAs apply to all of the retirement funds you accumulate
+* non-IRA retirement accounts (e.g. 401k, 403b, etc.) are all rolled over into
+  their corresponding IRAs (i.e. a traditional 401k gets rolled over into a
+  traditional IRA), and so the laws governing IRAs apply to all of the retirement
+  funds you accumulate
+* you don't collect Social Security until you qualify at age 65
 
 Any of all of these assumptions might be false. But I contend that with respect
-to answering our questions they constitute at worst a rounding error.
+to answering our questions they constitute at worst a rounding error -- or, we
+have no way of knowing whether they will be true or not.
 
 ### Running Simulations
 
 The next step was to actually run some simulations. Ideally, the simulation
 would take as input the variables noted above (current age, age of retirement,
 cost of living, etc.) and produce as output the age at which one would run out of
-money. This would allow me to have a very quick way to compare different
+money. This would allow me to have a quick, objective way to compare different
 strategies.
 
 I also wanted to allow others to run simulations. This was in part out of a
@@ -217,15 +256,18 @@ with those in which you can't
 For these particular simulations, I've assumed (in addition to the global
 assumptions above):
 
-* you start saving at age 30
+* you make an income of $100k ($50k per spouse)
+* you start saving at age 30 (i.e. you have no prior retirement balance)
 * you retire at 60
 * inflation is 3%
-* you can contribute to a 401k plan as well as IRAs
+* you and your spouse can each contribute to a 401k and an IRA
 * your non-retirement portfolio averages 7% annually
 * your retirement portfolio averages 3% annually
 * you need $50k per year to live your desired retirement lifestyle
-* you make an income of $100k ($50k per spouse)
 * you have no company match on your traditional account contributions
+* your receive the equivalent of $2607 (in today's dollars) in Social Security
+  benefits each month beginning at age 65, estimated with
+  [this](https://www.ssa.gov/OACT/quickcalc/index.html)
 
 These assumptions are reasonable because...
 
@@ -233,50 +275,86 @@ These assumptions are reasonable because...
 Suppose that you can afford to max out all of your tax-shielded retirement investment
 accounts. Lucky you! What account, or mix of accounts, is best?
 
-TRAD ONLY - ($36 401ks, $11 trad IRAs) = 100 years old
+TRAD ONLY - ($37 401ks, $11 trad IRAs) = 107 years old
 
 There is currently an option to convert existing Traditional assets into Roth
 assets. [LINK??] This can be done without penalty, but requires you to pay
-income taxes on those assets. Let's assume that you take this option. And, for
-the sake of simplicity, let's also assume that you are able to convert your
-Traditional assets each year immediately after contributing them.
+income taxes (not FICA taxes) on those assets. Let's assume that you take this
+option. And, for the sake of simplicity, let's also assume that you are able to
+convert your Traditional assets each year immediately after contributing them.
 
 To keep the comparison fair, we might want to tweak the contribution to make sure
-that the additional taxes you incur on this approach are somehow factored in.
-One way to do this is to contribute slightly less to the 401k that you're
-rolling over -- just enough to pay the taxes on it.
+that the additional taxes you incur on this approach are somehow factored in --
+that way you aren't in some sense investing "more" via the Roth approach, thus
+unfairly privileging the strategy.
 
-This is actually a surprising difficult thing to calculate, but here's how to do
-it.
+One way to do this is to contribute slightly less to the Traditional accounts
+that you're rolling over -- just enough less to pay the extra taxes that a Roth
+conversion triggers.
 
-> what is the 401k contribution amount (under $36k) such that:
- salary - TAXES(salary - contribution_amount) == 
+On this approach, your taxable income doesn't change (it stays at 100k) because
+you have to pay income tax on your Traditional contributions when you roll them
+into the Roth. This increases your costs by:
 
-ROTH ONLY 1
+INCOME_TAX($100,000) - INCOME_TAX($100,000 - $48,000) = $5760
 
-On the other hand, since we're assuming that
-you make enough money to max out your investments -- no matter what approach you
-take -- one could reasonably argue that we should consider a scenario in which
-the additional income tax doesn't lessen the amount you can put away. I think
-this is a fair point.
+(We use $47k here, because that's the max 401k plus the max IRA contribution.)
+So, you're spending $5760 more in taxes if you roll over your entire
+Traditional contributions into a Roth IRA.
 
-ROTH ONLY 2 ($36k rolled over from 401ks into roth + $11k roth IRA = $47k)
+Note that the amount of your contribution doesn't matter here, so long as you
+roll the entire thing into a Roth account.  Whether you contribute $10k or $20k
+or $30k to your 401k, if you roll it over, it's going to increase your taxable
+income by the same amount it reduces it. In other words: you net zero.  If you
+put -- say, $10k into a 401k and immediately roll it over -- you'll take a $10k
+deduction on your adjusted gross income, but then you immediately have to add
+$10k back to your adjusted gross income for the rollover. The same goes for your
+Traditional IRA. No matter how much you
+contribute in this way, your entire income will still be taxable, and it will
+increase your taxes by $5760 (relative to the strategy that shielded $48k in
+Traditional accounts).
 
-to keep your after tax
-ROTH ONLY - ($36 401ks converted to roth, $11 roth IRAs) = ??
-TRAD ONLY 2 - ($11 trad IRAs) = 100 years old
-ROTH ONLY 2 - ($11 roth IRAs) = 73 years old
-MIX - (
+So, let's suppose that you just contribute $5760 less to your 401k to make up for these
+additional taxes. This still allows you to contribute $31,240 to your Roth via
+the 401k rollover, plus an additional $11k for the Traditional IRA contribution.
+You then pay the additional taxes with the leftover money you didn't invest.
 
-What is a fair comparison? Trad accounts have higher limits than Roth accounts.
-So is it fair to compare, say, a 401k with an $18,500 limit (as of now), and a
-Roth IRA with an $5,500 limit?  On the one hand, those *are* the
-options you have, so if one is obviously better, then that's the better option.
+What does this look like?
 
+ROTH ONLY #1 ($31.2k 401k rollover into Roth + $11k Trad IRA rollover into Roth) = you never run out of money
 
-It's obvious that the vastly different contribution amounts make this like
-comparing apples to oranges. In some cases, you get more money now than in
-others
+Never? No. Not unless you started spending more. At 130 years old, your Roth
+account would still have $17,932,942.84 in it. (You can thank Social Security
+for that.)
+
+On the other hand, since we're assuming that you make enough money to max out
+your investments -- no matter what approach you take -- one could reasonably
+argue that it really _would_ be fair to compare the Traditional-only approach to
+one in which the additional income tax of rolling over all 401k assets into Roth
+accounts doesn't lessen the amount you can put away.
+
+I think this is a fair objection. There's no point placing an artificial
+handicap on Roth accounts. If they allow you to put more money away, then that's
+a benefit that should be allowed to distinguish them from Traditional accounts
+in the simulation.
+
+So, suppose we did that. What is the result?
+
+ROTH ONLY #2 ($37k 401k rollover into Roth + $11k Roth IRA ) = you never run out of money
+
+Still never? Yes. By 130 years old, your Roth would have
+$24,090,702.44 in it.
+
+Finally, what about a mixed approach? What if you maxed out the 401k and the
+Roth IRA, but didn't convert any of the 401k to a Roth?
+
+MIX #1 ($37k 401k + $11k Roth IRA ) = you never run out of money
+
+This one also reaches escape velocity, with a combined account value of
+$16,080,549.90.
+
+So far, the lesson seems to be: get as much money as you can into your Roth
+accounts.
 
 # CANNOT MAX OUT
 Suppose that you can only afford to contribute $7000
@@ -295,6 +373,8 @@ Turns out that's pretty easy to calculate:
 At this income, $7k in after-tax dollars is equal to $7,950 in before-tax
 dollars.
 
-ROTH ONLY ($7000) - 67.79 years
-MIX ($3500 ROTH, $3977 TRAD) - 67.69 years
-TRAD ONLY ($7950) - 66.78 years
+ROTH ONLY ($7000) - 75 years
+MIX ($3500 ROTH, $3977 TRAD) - 71 years
+TRAD ONLY ($7950) - 71 years
+
+Here too: get as much money as you can into your Roth accounts.
