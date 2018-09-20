@@ -35,7 +35,7 @@ difference?
 That depends on a lot of things, for example:
 
 * how much you currently earn (pre-tax)
-* how much you can afford to contribute each year
+* how much you can afford to contribute to retirement saving each year
 * how much your employer contributes each year
 * how much you expect to earn at the time of retirement
 * whether you plan to work in retirement
@@ -52,10 +52,10 @@ That depends on a lot of things, for example:
 * what kind of investment accounts you have access to (IRAs, 401ks, 403bs, etc)
 * whether social security will be around when you retire
 
-As if that were bad enough, the issue is compounded by the fact that tax law:
+As if that weren't bad enough, the issue is compounded by the fact that tax law:
 
-* is exceedingly complicated
 * can (and does) change
+* is exceedingly complicated, and so it isn't quick to calculate taxes owed
 * does not make it quick to calculate taxes owed
 * makes it hard to determine how much one would need to withdraw from a
   Traditional account in order to have a certain amount available to spend after
@@ -135,7 +135,7 @@ challenging. This is the formula for the after-tax amount on an income:
 afterTax = beforeTax - INCOME_TAX(beforeTax)
 
 So, suppose that you want to solve for `beforeTax`. This would require you to
-isolate `beforeTax` on one side of the formula. That's just basic algebra. But
+isolate `beforeTax` on one side of the equation. That's just basic algebra. But
 there's no way to do that here, since one instance of `beforeTax` is bound to
 the `INCOME_TAX` function. There's no way to factor it out.
 
@@ -189,8 +189,8 @@ To do this, I assumed the following:
 * your salary keeps pace with inflation
 * social security benefits keep pace with inflation
 * the max-contributions for retirement accounts will (at least) keep pace with
-  inflation (IRA contribution limits have averaged a 6% yearly increase, 401ks a 4%
-  increase, both above 3% average inflation)
+  inflation (IRA contribution limits have averaged a [6% yearly increase](https://dqydj.com/history-of-contributions-ira-limit/), [401ks a 4%
+  increase](http://www.pensions123.com/index.php/401k-limit-graph), both above the 100-year average of [3.2% inflation](https://inflationdata.com/Inflation/Inflation_Rate/Long_Term_Inflation.asp))
 * you don't withdraw from your retirement accounts before you can take qualified
   distributions, so you don't pay any penalties
 * during retirement, you spend money in this order of preference: social
