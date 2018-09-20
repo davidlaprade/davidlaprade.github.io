@@ -1,7 +1,10 @@
 #!/bin/bash
 
 echo "Deploying develop to production"
+git push origin HEAD
+git stash
 git checkout master
 git merge --no-ff develop
 git push origin HEAD
 git checkout -
+git stash pop
