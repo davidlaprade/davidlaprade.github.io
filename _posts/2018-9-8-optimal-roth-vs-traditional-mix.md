@@ -56,7 +56,6 @@ As if that weren't bad enough, the issue is compounded by the fact that tax law:
 
 * can (and does) change
 * is exceedingly complicated, and so it isn't quick to calculate taxes owed
-* does not make it quick to calculate taxes owed
 * makes it hard to determine how much one would need to withdraw from a
   Traditional account in order to have a certain amount available to spend after
   taxes
@@ -192,11 +191,16 @@ To do this, I assumed the following:
   inflation (IRA contribution limits have averaged a [6% yearly increase](https://dqydj.com/history-of-contributions-ira-limit/), [401ks a 4%
   increase](http://www.pensions123.com/index.php/401k-limit-graph), both above the 100-year average of [3.2% inflation](https://inflationdata.com/Inflation/Inflation_Rate/Long_Term_Inflation.asp))
 * you don't withdraw from your retirement accounts before you can take qualified
-  distributions, so you don't pay any penalties
+  distributions [at 59 and a half years
+  old](https://www.irs.gov/retirement-plans/retirement-plans-faqs-regarding-iras-distributions-withdrawals), so you don't pay any penalties
 * during retirement, you spend money in this order of preference: social
   security benefits, retirement
   income, traditional accounts, then finally roth accounts
 * you make your contributions in one lump sum at the beginning of each year
+* your contribution amounts don't change over time (relative to inflation) --
+  this means, in particular, that you don't take advantage of ["catch-up"
+  contributions](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-catch-up-contributions)
+  when you're older
 * your investment portfolio won't change composition before retirement,
   e.g. in the way
   it's normally recommended that one slowly transition to lower-risk assets as
@@ -205,7 +209,9 @@ To do this, I assumed the following:
   their corresponding IRAs (i.e. a traditional 401k gets rolled over into a
   traditional IRA), and so the laws governing IRAs apply to all of the retirement
   funds you accumulate
-* you don't collect Social Security until you qualify at age 65
+* you don't collect Social Security until [you qualify for full benefits at age
+  66](https://www.ssa.gov/planners/retire/retirechart.html)
+* you don't 
 
 Any of all of these assumptions might be false. But I contend that with respect
 to answering our questions they constitute at worst a rounding error -- or, we
@@ -241,6 +247,10 @@ sheet](https://docs.google.com/spreadsheets/d/13mYJGdpsJ5jbutWnDaP5GNBr9-JnGcDVp
 Feel free to make a copy of the doc, change the parameters, check my math, and get
 some customized results! And please let me know what you think!
 
+Caveat: programming in Google Sheets/Excel _is awful_, so I apologize in
+advance for formulas that are unintuitive and poor performance. I felt the
+benefits were worth these trade-offs.
+
 ### Results
 
 So, with this tool available, what is the takeaway? Can we settle any of the
@@ -248,10 +258,6 @@ questions raised at the beginning of this post?
 
 Here are some conclusions I've drawn:
 * 
-
-So that we're not comparing apples to oranges,
-we need to separate out the scenarios in which you can max out all your accounts
-with those in which you can't
 
 For these particular simulations, I've assumed (in addition to the global
 assumptions above):
@@ -271,11 +277,36 @@ assumptions above):
 
 These assumptions are reasonable because...
 
-# CAN MAX OUT
+So that we're not comparing apples to oranges,
+we need to separate out the scenarios in which you can max out all your accounts
+with those in which you can't.
+
+__Results Part I: You Can Max Out Your Accounts__
+
 Suppose that you can afford to max out all of your tax-shielded retirement investment
 accounts. Lucky you! What account, or mix of accounts, is best?
 
-TRAD ONLY - ($37 401ks, $11 trad IRAs) = 107 years old
+Let's start with an uncomplicated strategy: max out all of the Traditional
+accounts you have access to. Here's what that looks like:
+
+<div class="well">
+  <div class="well-header">SIMULATION #1 - Traditional Accounts Only</div>
+
+  Each year:<br>
+
+ * $37k is contributed to 401ks and then rolled over into Traditional IRAs<br>
+
+ * $11k is contributed to Traditional IRAs<br>
+
+ * effectively: $48k is contributed to Traditional IRAs per year on this
+   approach<br>
+
+<br>
+This approach would last you until you were <strong>107</strong> years old
+</div>
+
+Since almost no one lives this long, this strategy will very likely last your
+entire life. Excellent.
 
 There is currently an option to convert existing Traditional assets into Roth
 assets. [LINK??] This can be done without penalty, but requires you to pay
@@ -321,7 +352,7 @@ You then pay the additional taxes with the leftover money you didn't invest.
 
 What does this look like?
 
-ROTH ONLY #1 ($31.2k 401k rollover into Roth + $11k Trad IRA rollover into Roth) = you never run out of money
+ROTH ONLY #1 ($31.2k 401k rollover into Roth + $11k Trad IRA rollover into Roth, i.e. $42.4k in annual Roth contributions) = you never run out of money
 
 Never? No. Not unless you started spending more. At 130 years old, your Roth
 account would still have $17,932,942.84 in it. (You can thank Social Security
@@ -342,19 +373,15 @@ So, suppose we did that. What is the result?
 
 ROTH ONLY #2 ($37k 401k rollover into Roth + $11k Roth IRA ) = you never run out of money
 
-Still never? Yes. By 130 years old, your Roth would have
-$24,090,702.44 in it.
+This one also reaches escape velocity. By 130 years old, your Roth would have $16,328,013.33 in it. Unless you were to dramatically increase your spending, you would never exhaust this money.
 
 Finally, what about a mixed approach? What if you maxed out the 401k and the
 Roth IRA, but didn't convert any of the 401k to a Roth?
 
-MIX #1 ($37k 401k + $11k Roth IRA ) = you never run out of money
-
-This one also reaches escape velocity, with a combined account value of
-$16,080,549.90.
+MIX #1 ($37k 401k + $11k Roth IRA ) = 138 years old
 
 So far, the lesson seems to be: get as much money as you can into your Roth
-accounts.
+accounts. That will take you the deepest into retirement.
 
 # CANNOT MAX OUT
 Suppose that you can only afford to contribute $7000
