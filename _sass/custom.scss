@@ -86,6 +86,18 @@ li > ul {
   }
 }
 
+.well {
+  color: #7b7b7b;
+  background-color: $light-gray;
+  padding: 15px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  .well-header {
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+
 code {
   color: #7b7b7b;
   background-color: $light-gray;
