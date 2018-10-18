@@ -1,6 +1,14 @@
-Tax-free lunch is over for crypto:
+What is the best cryptocurrency investment right now?
 
-https://www.google.com/amp/s/www.forbes.com/sites/robertwood/2017/11/27/tax-bills-doom-tax-free-1031-exchanges-of-cryptocurrency/amp/
+Some people think they have the answer.
+
+
+
+
+
+
+In the last year, a small cottage industry has grown up around automated
+cryptocurrency investment strategies.
 
 Likely the best strategy is now buy-and-hold. But buy and hold what?
 
@@ -14,9 +22,11 @@ This fund tracks the top10
 
 https://techcrunch.com/2017/10/16/the-hold-10-index-is-a-passively-managed-fund-of-the-top-10-cryptocurrencies/
 
-This the top 20
+These the top 20
 
 https://crypto20.com/en/
+https://www.hodlbot.io/
+https://hackernoon.com/hodlbot-cryptocurrency-investing-on-autopilot-dce2e4c9a7f7
 
 It's not. Investing in the top 10 EC20 tokens under $1 is far and away the best
 strategy
