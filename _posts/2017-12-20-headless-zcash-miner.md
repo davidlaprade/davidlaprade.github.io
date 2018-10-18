@@ -14,9 +14,6 @@ electricity. I eventually decided that it would be most profitable for me to min
 [ZCash](https://en.wikipedia.org/wiki/Zcash) (a.k.a ZEC), and so this post will
 explain how I did that.
 
-You can see my miner working
-[here](https://zcash.flypool.org/miners/t1MgGnXQz62fcYDhbRzYVzsA1MmWi8acw22).
-
 ### Materials
 
 [Here](https://docs.google.com/spreadsheets/d/1hya5Kh_ydARfzxItFIS3DdyTm_xBnq9FN2kuOLHtOH8/edit?usp=sharing)
