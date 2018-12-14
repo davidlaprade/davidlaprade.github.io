@@ -4,6 +4,10 @@ date: "2018-11-22"
 excerpt: My thoughts on the inherent risks of bitcoin.
 ---
 
+_DISCLAIMER: At the time of writing, I own bitcoin. I am not a financial advisor
+and this is not financial advice. Do your own research and consult with a
+qualified professional before investing._
+
 ![to the moon reddit meme]({{ site.baseurl }}/jekyll_img/to-the-moon.jpg)
 
 ### To The Moon
@@ -36,11 +40,19 @@ implications for the future of Bitcoin, and digital currencies generally.
 ### Critical Decisions
 
 When you are trying to send someone to the moon, you need to make a large number
-of critical decisions: decisions about what fuel to use, how much oxygen to
-send, how to insulate the cabin, what weather to launch in, what trajectories to
-take, what orbit to occupy, what material to re-enter with, what computers to
-install, what programs to write, and so on -- to give just an obviously
-over-simplified, high-level list.
+of critical decisions. Decisions like:
+
+* what fuel to use
+* how much oxygen to send
+* how to insulate the cabin
+* what weather to launch in
+* what trajectories to take
+* what orbit to occupy
+* what material to re-enter with
+* what computers to install
+* what programs to write
+
+And so on. Just to give an obvious, off-the-cuff, high-level list.
 
 All of these are _critical_ decisions, meaning that each has the potential to
 sink the project. Get just *one* of them wrong -- send too little oxygen,
@@ -59,8 +71,12 @@ this well:
 > tested that, and the first time it's going to happen is when you deliver us to
 > Mars. [[Ref](https://youtu.be/bGD_YF64Nwk?t=1827)]
 
+Why does this matter?
+
+### Conjunction Rule of Probability
+
 The [Restricted Conjunction Rule of
-Probability](https://academic.csuohio.edu/polen/LC9_Help/9/93rcr.htm) says that,
+Probability](https://academic.csuohio.edu/polen/LC9_Help/9/93rcr.htm) says that
 the probability that a set of independent events _a, b, c,
 ... , n_ will all occur can be expressed as follows:
 
@@ -87,12 +103,21 @@ Or, more simply:
 
 In other words, you would still only have a 13.4% chance of success.
 
+### Bitcoin Decisions
+
 The same holds true for Bitcoin. Decisions constantly need to be made by
-the core developers about how to fix bugs, improve performance, tighten
-security, enable scalability, patch vulnerabilities,
-update dependencies, and so on. And, insofar as each of these changes could
-introduce a fatal bug into the system, they each constitute a _critical_
-decision.
+the core developers. Decisions about how to:
+
+* fix bugs
+* improve performance
+* tighten security
+* support new hardware and operating systems
+* enable scalability
+* patch vulnerabilities
+* update dependencies
+
+And so on. And, insofar as each of these changes could introduce a fatal bug
+into the system, they each constitute a _critical_ decision.
 
 The success of Bitcoin, then, is likewise dependent on not one but on all of a
 long series of difficult decisions being right _in perfect succession_, and
@@ -100,70 +125,87 @@ without exception.
 
 How many difficult decisions? At the time I am
 writing this, Github -- where bitcoin has been versioned since
-[2009](https://github.com/bitcoin/bitcoin/commit/4405b78) -- lists [6,811 merged pull
+[2009](https://github.com/bitcoin/bitcoin/commit/4405b78) -- lists [6,886 merged pull
 requests](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=is%3Aclosed+is%3Apr+is%3Amerged) on the project.
 Obviously not all of these represent _critical_ changes. Filtering out changes
 tagged as `tests`, `questions`, `help`, and `docs`, we're left with
-[5,302](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=is%3Aclosed+is%3Apr+is%3Amerged+-label%3ATests+-label%3A%22Questions+and+Help%22+-label%3ADocs).
+[5,339](https://github.com/bitcoin/bitcoin/pulls?utf8=%E2%9C%93&q=is%3Aclosed+is%3Apr+is%3Amerged+-label%3ATests+-label%3A%22Questions+and+Help%22+-label%3ADocs).
 
-Suppose we have 99.9% confidence that each of these 5,302 changes did not
+Suppose we have 99.9% confidence that each of these 5,339 changes did not
 introduce a serious bug. This would be incredibly high confidence given the
 track record of most software developers. Even so, by the formula above:
 
-> Pr(BTC does not contain a serious bug) = 0.999 <sup>5,302</sup> = 0.004968423
+> Pr(BTC does not contain a serious bug) = 0.999 <sup>5,339</sup> = 0.004787862
 
-That's a 0.5% chance that BTC does not currently contain a serious bug. And that
-doesn't even include the changes made before BTC was versioned on Github. Nor
-does it include rebased PRs. The point is: this is a conservative estimate.
-Each time more changes are made, this number decreases.
+That's less than a 0.5% chance that BTC does not currently contain a serious
+bug. And that doesn't even include the changes made before BTC was versioned on
+Github. Nor does it include any changes that made it onto master without
+merging, e.g. rebased PRs, branches that were merged without a PR, or commits
+directly to master. The point is: this is a _conservative_ estimate.
+
+Even worse: each time more changes are made, this number _decreases_.
+
+This bears emphasizing, because Bitcoin cannot remain a static project: it has
+to continue to change in _perpetuity_, for as long as it exists.
+
+### The Inevitability of Change
+
+It might not be obvious why Bitcoin has to continue to change. Why couldn't we
+just freeze the code at some point? Halt development altogether?
+
+Here are a few reqsons.
+
+Bitcoin needs to continue to change for performance reasons: the network cannot
+currently handle anything close to the transaction volume needed for
+wide-spread adoption.
+
+It needs to continue to change for security reasons. New attack vectors are
+constantly being created. very likely there are bugs in the core software that
+we just aren't aware of.
+
+It needs to continue to change because other software and hardware is changing
+around it. Very likely new hardware will at some point emerge
+that poses a threat to the system -- whether quantum computers or
+super-efficient mining chips that make a 51% attack possible. Very likely new
+vulnerabilities in bitcoin's software dependencies will be identified (whether in
+libraries like SHA256, or in elliptic curve cryptography, or in the language C++
+itself). Very likely new operating systems will be written that people will want to run
+nodes on. And so on. So long as other software and hardware are
+changing, Bitcoin must change with them.
+
+For these reasons, the code Bitcoin software needs to be under active
+research and development essentially forever. And inevitably this means research
+and development by fallible humans.
+
+This makes Bitcoin a kind of probabilistic time bomb.
+
+
+Because we're talking about money here: a system that
+has the potential to store a nontrivial percentage of the world's economic
+value.
+
+### Replies
 
 And it's no good pointing out that BTC has tests, or that some of the merges
 were _fixes_ to previous bugs. Tests are great. Fixes are awesome. But tests
 are limited in scope -- you can't simulate an entire network -- and can very
-well ignore important vulnerabilities that we just haven't thought of.
+well ignore important vulnerabilities that no one has thought of yet.
 Fixes can introduce new bugs as they resolve old ones.
 
 Nor does it matter that -- up to now -- there is no known vulnerability to BTC.
-It's not as if the slate is clear, that the formula resets to 1, that we get to
+It's not as if the slate is clean, that the formula resets to 1, that we get to
 start anew. There are no clean slates. Old code may have bugs we don't even know
 about, as has happened [before](https://github.com/bitcoin/bitcoin/pull/9049).
+Old features of the code that are currently unproblematic might become
+problematic when new code is added.
 
-### Irrevocable Deployments
 
-NASA projects and Bitcoin are also similar in how they are deployed.
 
-It goes without saying that there's no "taking back" a rocket launch. Once your
-rocket takes off it better already have the resources it needs to handle any
-difficulties it faces. Because if it can't, it's not going to
-make it. Need to make a surprise on-board repair? The crew better already have
-that special wrench they need -- because if not, there's no getting it to them.
 
-Similarly, there's no taking back a software release to machines you don't
-control -- i.e. a Bitcoin release. Once it's out and a majority of nodes have
-updated, it's out. You can't change the software those machines are running --
-not without putting out a whole new release and hoping they pick it up in time
-(without tipping your hand and revealing the bug).  Need to patch a serious bug
-that's in production? You better just hope no one notices and exploits it before
-the nodes adopt your hotfix, because if they do, you're toast.
 
-Let's call deployments like this -- deployments that can't be "taken back" --
-_irrevocable_ deployments.
 
-Irrevocable deployments heighten the difficulty already inherent in projects
-like these because they limit one's ability to fix
-problems when they arise.
 
-Having a large number of critical decisions
-means (by the formula above) that your probability of success is likely already
-going to be pretty low. Add to that the fact that you have a limited ability to
-fix errors when they occur and you've got a recipe for a very risky endeavor
-indeed.
 
-That, then, is the next way that Bitcoin is similar to NASA missions: it
-is inherently extremely risky. Both the shear number of critical decisions that
-need to be made correctly in perfect succession, and the fact that its
-deployments are irrevocable, entail that this project has a high chance of
-failure.
 
 ### Thoroughness and Care
 
