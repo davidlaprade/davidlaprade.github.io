@@ -111,9 +111,10 @@ the core developers. Decisions about how to:
 * fix bugs
 * improve performance
 * tighten security
-* support new hardware and operating systems
+* support new hardware
+* support new operating systems
 * enable scalability
-* patch vulnerabilities
+* patch existing vulnerabilities
 * update dependencies
 
 And so on. And, insofar as each of these changes could introduce a fatal bug
@@ -153,31 +154,49 @@ to continue to change in _perpetuity_, for as long as it exists.
 It might not be obvious why Bitcoin has to continue to change. Why couldn't we
 just freeze the code at some point? Halt development altogether?
 
-Here are a few reqsons.
+Here are a few reasons.
 
-Bitcoin needs to continue to change for performance reasons: the network cannot
-currently handle anything close to the transaction volume needed for
-wide-spread adoption.
+1. Bitcoin needs to continue to change for performance reasons: the network cannot
+currently handle anything close to the [transaction volume needed for
+wide-spread use](https://twitter.com/yassineARK/status/1032353127800991750).
+More and more [disc space is required to run a full
+node](https://www.reddit.com/r/btc/comments/7gwe0d/how_much_disk_space_is_needed_for_a_full_node/),
+which eventually will become prohibitively large. Etc.
 
-It needs to continue to change for security reasons. New attack vectors are
-constantly being created. very likely there are bugs in the core software that
-we just aren't aware of.
+2. It needs to continue to change for security reasons. New attack vectors are
+constantly being created. Very likely there are bugs in the core software
+that we just aren't aware of. There may well be vulnerabilities in Proof of Work
+that we can't currently imagine, or [in the language C++
+itself](https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=ASSIGNED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&component=c&component=c%2B%2B&product=classpath&product=gcc&query_format=advanced).
+New hardware might emerge, like [quantum
+computers](https://en.wikipedia.org/wiki/Quantum_computing), or super-efficient mining
+chips, that make a 51% attack plausible. New techniques might be developed to
+engineer [SHA256
+collisions](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html).
 
-It needs to continue to change because other software and hardware is changing
-around it. Very likely new hardware will at some point emerge
-that poses a threat to the system -- whether quantum computers or
-super-efficient mining chips that make a 51% attack possible. Very likely new
-vulnerabilities in bitcoin's software dependencies will be identified (whether in
-libraries like SHA256, or in elliptic curve cryptography, or in the language C++
-itself). Very likely new operating systems will be written that people will want to run
-nodes on. And so on. So long as other software and hardware are
-changing, Bitcoin must change with them.
+3. It needs to continue to change because related software is
+   changing around it. Bitcoin core contains [a lot of
+dependencies](https://github.com/bitcoin/bitcoin/search?l=C%2B%2B&q=include).
+As these dependencies themselves update (to fix bugs, improve compatibility,
+etc.) the core Bitcoin software will need to update as well. New operating
+systems will continue to be written that people will want to run nodes on. And
+so on.
 
-For these reasons, the code Bitcoin software needs to be under active
+For these reasons, the core Bitcoin software needs to be under active
 research and development essentially forever. And inevitably this means research
 and development by fallible humans.
 
-This makes Bitcoin a kind of probabilistic time bomb.
+### Time Bomb
+
+This has been my argument so far:
+
+1. Bitcoin has to continue changing for as long as it is in existence.
+2. Each change to Bitcoin has a non-trivial chance of introducing a serious bug.
+Hence, by the Conjunction Rule of Probability:
+3. It is exceedingly probable that at some point during Bitcoin's existence a
+   very serious bug will be introduced and released.
+
+Bitcoin is, in other words, a kind of probabilistic time bomb.
 
 
 Because we're talking about money here: a system that
@@ -185,6 +204,8 @@ has the potential to store a nontrivial percentage of the world's economic
 value.
 
 ### Replies
+
+Wait, we already know this happened...
 
 And it's no good pointing out that BTC has tests, or that some of the merges
 were _fixes_ to previous bugs. Tests are great. Fixes are awesome. But tests
