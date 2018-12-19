@@ -151,8 +151,9 @@ to continue to change in _perpetuity_, for as long as it exists.
 
 ### The Inevitability of Change
 
-It might not be obvious why Bitcoin has to continue to change. Why couldn't we
-just freeze the code at some point? Halt development altogether?
+It might not be obvious why Bitcoin has to continue to change. If it's so risky
+to make changes, why couldn't we
+just freeze the code at some point and halt development altogether?
 
 Here are a few reasons.
 
@@ -168,36 +169,142 @@ constantly being created. Very likely there are bugs in the core software
 that we just aren't aware of. There may well be vulnerabilities in Proof of Work
 that we can't currently imagine, or [in the language C++
 itself](https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=ASSIGNED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&component=c&component=c%2B%2B&product=classpath&product=gcc&query_format=advanced).
-New hardware might emerge, like [quantum
-computers](https://en.wikipedia.org/wiki/Quantum_computing), or super-efficient mining
-chips, that make a 51% attack plausible. New techniques might be developed to
-engineer [SHA256
+Super-efficient mining chips might be developed that make a 51% attack plausible.
+Techniques might be invented to engineer [SHA256
 collisions](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html).
+Quantum computers might someday [be able to brute force private keys from public keys](https://en.wikipedia.org/wiki/Post-quantum_cryptography).<sup>1</sup>
+Etc.
 
 3. It needs to continue to change because related software is
    changing around it. Bitcoin core contains [a lot of
 dependencies](https://github.com/bitcoin/bitcoin/search?l=C%2B%2B&q=include).
 As these dependencies themselves update (to fix bugs, improve compatibility,
 etc.) the core Bitcoin software will need to update as well. New operating
-systems will continue to be written that people will want to run nodes on. And
-so on.
+systems will continue to be written that people will want to run nodes on. Etc.
 
 For these reasons, the core Bitcoin software needs to be under active
 research and development essentially forever. And inevitably this means research
-and development by fallible humans.
+and development by fallible humans -- the kind that routinely introduce bugs.
 
-### Time Bomb
+(Move to subscript)
+1. From [wikipedia](https://en.wikipedia.org/wiki/Post-quantum_cryptography): "As of 2018, [. . .] the most popular public-key algorithms
+   [. . .] can be efficiently broken by a sufficiently strong hypothetical quantum
+computer. The problem with currently popular algorithms is that their security
+relies on one of three hard mathematical problems: the integer factorization
+problem, the discrete logarithm problem or the elliptic-curve discrete logarithm
+problem. All of these problems can be easily solved on a sufficiently powerful
+quantum computer running Shor's algorithm."
+
+### Probabilistic Time Bomb
 
 This has been my argument so far:
 
 1. Bitcoin has to continue changing for as long as it is in existence.
-2. Each change to Bitcoin has a non-trivial chance of introducing a serious bug.
-Hence, by the Conjunction Rule of Probability:
-3. It is exceedingly probable that at some point during Bitcoin's existence a
-   very serious bug will be introduced and released.
+
+2. Each change to Bitcoin has a non-zero chance of introducing a serious bug
+   that will be exploited.
+
+3. Hence, if Bitcoin is around for a long time, it is virtually certain that at
+   some point a very serious bug will be introduced and exploited. [from 1, 2, by
+  the Conjunction Rule of Probability]
 
 Bitcoin is, in other words, a kind of probabilistic time bomb.
 
+But wait: surely this can't be right. _Every system_ is like bitcoin in these
+respects: every system has to continue to change if it is going to continue
+working, and every change compounds its risk of failure. And yet, it doesn't
+seem like these other long-running systems are blowing up all around us. So, why
+should we be concerned about Bitcoin?
+
+Actually, other long-running systems _absolutely are_ blowing up all around us.
+Serious bugs are deployed and exploited _all the time_. Just some recent
+examples:
+
+* Facebook's chronic data breaches:
+  [exposing the login tokens of 50+ million
+  users](https://newsroom.fb.com/news/2018/09/security-update/), which could be
+  used to sign into any service that had a "login with Facebook" option, losing
+  the personal information of another [87 million users to Cambridge
+  Analytica](https://www.theguardian.com/technology/2018/apr/08/facebook-to-contact-the-87-million-users-affected-by-data-breach), etc.
+* Google was hacked to the tune of
+  [100+ million of Gmail passwords in 2016](https://www.dailymail.co.uk/sciencetech/article-3573203/Big-data-breaches-major-email-services-expert.html),
+  and [lost the personal information of 500k+ people on its Google+ network](https://www.cbsnews.com/news/google-data-exposure-unreported-affects-hundreds-of-thousands-2018-10-08-live-updates/) between 2015 and 2018
+* [Apple's iCloud hack](http://time.com/3247717/jennifer-lawrence-hacked-icloud-leaked/)
+  of personal photos of celebrities in 2014
+* a Twitter bug [exposed the passwords of its 330 million users in plain
+  text](https://blog.twitter.com/official/en_us/topics/company/2018/keeping-your-account-secure.html) in 2018
+* Netflix's [compromised account credentials in
+  2015](https://www.independent.co.uk/life-style/gadgets-and-tech/news/netflix-hacked-recently-watched-fix-a6759336.html)
+and [hacked shows in
+  2017](https://www.nytimes.com/2017/04/29/business/media/netflix-hack-orange-is-the-new-black.html)
+* an Equifax [bug](https://www.wired.com/story/equifax-breach-no-excuse/) enabled a [data breach](https://www.consumer.ftc.gov/blog/2017/09/equifax-data-breach-what-do)
+exposing sensitive information (names, addresses, social security numbers) of 143 million people
+* Yahoo had [3 billion users' account information stolen](https://www.oath.com/press/yahoo-provides-notice-to-additional-users-affected-by-previously/) by a malicious party in 2013
+* Ebay lost [145 million users'
+  information](https://www.washingtonpost.com/news/the-switch/wp/2014/05/21/ebay-asks-145-million-users-to-change-passwords-after-data-breach/) to a bad actor in 2014
+
+Take a look at the names on that list: Google, Apple, Facebook, Twitter,
+Netflix, Yahoo, Ebay. These are the tech _giants_. They employ many of the best
+engineering minds in the world. They have obscene research budgets. And yet they
+release bug after bug after bug.
+
+And we've already seen [serious bugs make it onto Bitcoin's production
+network](https://medium.com/@awemany/600-microseconds-b70f87b0b2a6) -- bugs that
+could have been used to mint an unlimited supply of coins. That exploit was
+fortunately prevented before any bad actors discovered it. To date, we have
+not seen a successful exploit of the Bitcoin network (not since it has risen in
+value and prominence). But the point still stands: every day bitcoin marches
+closer to its probabilistic destiny.
+
+### Money is Not Real
+
+I want to talk briefly about something I'll call "economic value".
+
+Economic value is what is accessed with or represented by money. A one dollar
+bill has a certain amount of economic value. We say that it is _worth_ that
+amount. A twenty dollar bill is worth 20 times as much as a dollar.  But these
+amounts can and do change. Inflation occurs when a unit of money comes to be
+worth less economic value, deflation when it is worth more. A one dollar bill
+100 years ago had much more economic value than a one dollar bill  does today.
+If one were to take all of the official United States bills and destroy half of
+them, each remaining bill would in some sense be now worth twice as much as
+before. This is because it would now represent twice as much economic value.
+
+Pampered as Americans are by the stability of our government, and the banks that
+it props up, I think it's easy for us to think of economic value as a kind of
+objective, mind-independent reality. It's easy to think of economic value as
+real, as existing independent of anyone's thinking so.
+
+This is a natural way to think of economic value
+
+A dollar bill could be destroyed: burned, shredded,
+dissolved, whatever. But you can't really destroy $1000 of digitized value.
+You could destroy the database -- sure -- and all of its backups. But you'd still
+feel like you had that $1000, that it still existed and belonged to you. You'd probably
+petition the FDIC to get your money back. And when they wrote you a check, you'd
+feel like they hadn't really given you something new so much as re-enabled you
+to access what you already had. Value, for us, has become a kind of immaterial
+entity.
+
+
+Much as I might have this chair -- say -- I also have $1000.
+
+
+But, of course, when Facebook or Google or Experian get hacked, they can
+recover. They all have products
+
+
+This is an inherent difficulty when you try to make money out of software.
+Software _breaks_. We don't think of money as a breakable kind of thing --
+especially now that many of us store almost all of our money electronically in
+banks' databases. A dollar bill could be destroyed: burned, shredded,
+dissolved, whatever. But you can't really destroy $1000 of digitized value.
+You could destroy the database -- sure -- and all of its backups. But you'd still
+feel like you had that $1000, that it still existed and belonged to you. You'd probably
+petition the FDIC to get your money back. And when they wrote you a check, you'd
+feel like they hadn't really given you something new so much as re-enabled you
+to access what you already had. Value, for us, has become a kind of immaterial
+entity.
 
 Because we're talking about money here: a system that
 has the potential to store a nontrivial percentage of the world's economic
