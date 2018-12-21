@@ -162,14 +162,15 @@ currently handle anything close to the [transaction volume needed for
 wide-spread use](https://twitter.com/yassineARK/status/1032353127800991750).
 More and more [disc space is required to run a full
 node](https://www.reddit.com/r/btc/comments/7gwe0d/how_much_disk_space_is_needed_for_a_full_node/),
-which eventually will become prohibitively large. Etc.
+which eventually will become prohibitively large. Issues like these, and others,
+will need to be resolved.
 
 2. It needs to continue to change for security reasons. New attack vectors are
 constantly being created. Very likely there are bugs in the core software
 that we just aren't aware of. There may well be vulnerabilities in Proof of Work
 that we can't currently imagine, or [in the language C++
 itself](https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=ASSIGNED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&component=c&component=c%2B%2B&product=classpath&product=gcc&query_format=advanced).
-Super-efficient mining chips might be developed that make a 51% attack plausible.
+Super-efficient mining chips might be developed that make a 51% attack practical.
 Techniques might be invented to engineer [SHA256
 collisions](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html).
 Quantum computers might someday [be able to brute force private keys from public keys](https://en.wikipedia.org/wiki/Post-quantum_cryptography).<sup>1</sup>
@@ -233,9 +234,9 @@ examples:
   of personal photos of celebrities in 2014
 * a Twitter bug [exposed the passwords of its 330 million users in plain
   text](https://blog.twitter.com/official/en_us/topics/company/2018/keeping-your-account-secure.html) in 2018
-* Netflix's [compromised account credentials in
+* Netflix had its [users' account credentials stolen in
   2015](https://www.independent.co.uk/life-style/gadgets-and-tech/news/netflix-hacked-recently-watched-fix-a6759336.html)
-and [hacked shows in
+and saw some of its new series [swiped in
   2017](https://www.nytimes.com/2017/04/29/business/media/netflix-hack-orange-is-the-new-black.html)
 * an Equifax [bug](https://www.wired.com/story/equifax-breach-no-excuse/) enabled a [data breach](https://www.consumer.ftc.gov/blog/2017/09/equifax-data-breach-what-do)
 exposing sensitive information (names, addresses, social security numbers) of 143 million people
@@ -256,7 +257,71 @@ not seen a successful exploit of the Bitcoin network (not since it has risen in
 value and prominence). But the point still stands: every day bitcoin marches
 closer to its probabilistic destiny.
 
-### Money is Not Real
+### The stakes are high
+
+Pampered as Americans are by the long-term stability of our government and its
+[willingness to prop up its financial institutions in times of
+crisis](https://en.wikipedia.org/wiki/Federal_takeover_of_Fannie_Mae_and_Freddie_Mac),
+I think it's easy to forget what is at stake in a system like Bitcoin -- a
+system without a backer. There is no crypto
+[FDIC](https://en.wikipedia.org/wiki/Federal_Deposit_Insurance_Corporation) to
+appeal to if/when you lose your coins to an exploited bug. There is no customer
+service to freeze your account if/when an attack exposes your
+private keys. If a someone steals your coins, or destroys the network, or
+enables new coins to be silently minted for years and drives prices almost to $0,
+that's it: the value you placed in Bitcoin would be gone. There are no good guys
+to get it back for you.
+
+This is an inherent difficulty of trying to make money out of software.
+Software _breaks_. But we don't think of money as a breakable kind of thing --
+especially since most of us store the vast majority of our money in banks. A
+dollar bill could be destroyed: burned, shredded, dissolved, whatever. But when
+your money is in a bank in good standing with the government, it's basically
+indestructible. The bank could get hacked, or robbed, or go up in flames, or
+declare bankruptcy. Your cards could get stolen, your credentials could be
+leaked, etc.  None of it matters if the bank is FDIC insured.  You still have
+your money -- _obviously_ you still have your money: because money is
+indestructible, your possession of it as real and objective as the
+chair I am sitting in. Banks might keep a record of it, but this is merely the
+transient image of a deeper economic reality.
+
+I don't think people often appreciate the import that they give to this picture
+of the world, nor the extent to which it effects their lives and
+informs their decisions, however implicitly/subconsciously. I wonder: would they
+still put all of their money in banks if it wasn't so? Would they use the same
+6-character password that they use for facebook as their bank login? Would they
+put their life-savings and retirement in intrinsically valuables objects like
+precious metals, or fine wines, or works of art, or seeds?
+The [bank runs](https://en.wikipedia.org/wiki/Bank_run) of Great Depression fame
+suggest
+
+And when Bitcoin is inevitably exploited -- and those who put their trust in it
+lose their [life-savings](https://www.reddit.com/r/Bitcoin/comments/772kkf/trying_to_play_it_cool_with_my_life_savings_in/), their [retirements](https://www.reddit.com/r/Bitcoin/comments/7hraxb/401k_to_bitcoin/dqt6jb6/), their [homes](https://www.reddit.com/r/Bitcoin/comments/7kw2l7/just_took_out_a_mortgage_on_my_house_to_buy_btc/)
+-- they (and we all) will perhaps for the first time be forced to ask ourselves
+just how important this economic picture of the world is.
+
+I have no confidence that, at that moment, this is a picture many of us would be
+happy to forsake.
+
+
+
+But you can't really destroy $1000 of digitized value.
+You could destroy the database -- sure -- and all of its backups. But you'd still
+feel like you had that $1000, that it still existed and belonged to you. You'd probably
+petition the FDIC to get your money back. And when they wrote you a check, you'd
+feel like they hadn't really given you something new so much as re-enabled you
+to access what you already had. Value, for us, has become a kind of immaterial
+entity.
+
+
+After all, the concerns above equally well apply to banks' digital systems. And,
+of course, banks too get hacked. But when someone gets access to your bank
+account
+
+I think it's easy for us to think of economic value as a kind of
+objective, mind-independent reality. It's easy to think of economic value as
+real, as existing independent of anyone's thinking so.
+
 
 I want to talk briefly about something I'll call "economic value".
 
@@ -269,11 +334,6 @@ worth less economic value, deflation when it is worth more. A one dollar bill
 If one were to take all of the official United States bills and destroy half of
 them, each remaining bill would in some sense be now worth twice as much as
 before. This is because it would now represent twice as much economic value.
-
-Pampered as Americans are by the stability of our government, and the banks that
-it props up, I think it's easy for us to think of economic value as a kind of
-objective, mind-independent reality. It's easy to think of economic value as
-real, as existing independent of anyone's thinking so.
 
 This is a natural way to think of economic value
 
@@ -288,10 +348,6 @@ entity.
 
 
 Much as I might have this chair -- say -- I also have $1000.
-
-
-But, of course, when Facebook or Google or Experian get hacked, they can
-recover. They all have products
 
 
 This is an inherent difficulty when you try to make money out of software.
