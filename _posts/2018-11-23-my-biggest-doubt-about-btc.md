@@ -189,21 +189,9 @@ research and development essentially forever. And inevitably this means research
 and development by fallible humans -- the kind that routinely introduce bugs.
 
 Eventually, everyone makes a mistake. Even the smartest people, even
-geniuses.  Even when they are following best practices. Even when they are
-perfectly well-intentioned. Even when no one is trying to make them fail.  (One
-thinks of Frege, here -- a epochal genius. See Russell's paradox. See also
-Knight Capital,
-https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption)
-
-
-(Move to subscript)
-1. From [wikipedia](https://en.wikipedia.org/wiki/Post-quantum_cryptography): "As of 2018, [. . .] the most popular public-key algorithms
-   [. . .] can be efficiently broken by a sufficiently strong hypothetical quantum
-computer. The problem with currently popular algorithms is that their security
-relies on one of three hard mathematical problems: the integer factorization
-problem, the discrete logarithm problem or the elliptic-curve discrete logarithm
-problem. All of these problems can be easily solved on a sufficiently powerful
-quantum computer running Shor's algorithm."
+[geniuses](https://en.wikipedia.org/wiki/Russell%27s_paradox).
+Even when they are following best practices. Even when they are
+perfectly well-intentioned. Even when no one is trying to make them fail.
 
 ### Probabilistic Time Bomb
 
@@ -250,6 +238,9 @@ and saw some of its new series [swiped in
 * an Equifax [bug](https://www.wired.com/story/equifax-breach-no-excuse/) enabled a [data breach](https://www.consumer.ftc.gov/blog/2017/09/equifax-data-breach-what-do)
 exposing sensitive information (names, addresses, social security numbers) of 143 million people
 * Yahoo had [3 billion users' account information stolen](https://www.oath.com/press/yahoo-provides-notice-to-additional-users-affected-by-previously/) by a malicious party in 2013
+* Knight Capital [lost $440 million in 45 minutes](
+https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption)
+because of a misused _feature flag_ in their trade executor code in 2012
 * Ebay lost [145 million users'
   information](https://www.washingtonpost.com/news/the-switch/wp/2014/05/21/ebay-asks-145-million-users-to-change-passwords-after-data-breach/) to a bad actor in 2014
 
@@ -321,8 +312,19 @@ When Bitcoin is inevitably exploited -- when those who put their trust in it
 irrevocably lose their [life-savings](https://www.reddit.com/r/Bitcoin/comments/772kkf/trying_to_play_it_cool_with_my_life_savings_in/), their [retirements](https://www.reddit.com/r/Bitcoin/comments/7hraxb/401k_to_bitcoin/dqt6jb6/), their [homes](https://www.reddit.com/r/Bitcoin/comments/7kw2l7/just_took_out_a_mortgage_on_my_house_to_buy_btc/)
 --  and when they (and we) are for the first time really forced to ask ourselves
 just how important this economic picture of the world is, what will we
-do? Will we double-down? Rally? Or will we all be talking about the great
-bitcoin [bank run](https://en.wikipedia.org/wiki/Bank_run) of 2022?
+do? Will we double-down? Rally to the moon? Or will we all be talking about the great
+bitcoin [bank run](https://en.wikipedia.org/wiki/Bank_run) of 2032?
 
-I have no confidence that this is a picture many of us will are really, truly willing to
-forsake.
+I have no confidence that this is a picture many of us are really, truly
+willing to forsake.
+
+---
+
+1. From [wikipedia](https://en.wikipedia.org/wiki/Post-quantum_cryptography): "As of 2018, [. . .] the most popular public-key algorithms
+   [. . .] can be efficiently broken by a sufficiently strong hypothetical quantum
+computer. The problem with currently popular algorithms is that their security
+relies on one of three hard mathematical problems: the integer factorization
+problem, the discrete logarithm problem or the elliptic-curve discrete logarithm
+problem. All of these problems can be easily solved on a sufficiently powerful
+quantum computer running Shor's algorithm."
+
