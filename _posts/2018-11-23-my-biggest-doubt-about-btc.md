@@ -120,9 +120,9 @@ the core developers. Decisions about how to:
 And so on. And, insofar as each of these changes could introduce a fatal bug
 into the system, they each constitute a _critical_ decision.
 
-The success of Bitcoin, then, is likewise dependent on not one but on all of a
+__The success of Bitcoin, then, is likewise dependent on not one but on all of a
 long series of difficult decisions being right _in perfect succession_, and
-without exception.
+without exception.__
 
 How many difficult decisions? At the time I am
 writing this, Github -- where bitcoin has been versioned since
@@ -134,7 +134,7 @@ tagged as `tests`, `questions`, `help`, and `docs`, we're left with
 
 Suppose we have 99.9% confidence that each of these 5,339 changes did not
 introduce a serious bug. This would be incredibly high confidence given the
-track record of most software developers. Even so, by the formula above:
+track record of most software developers (more on this below). Even so, by the formula above:
 
 > Pr(BTC does not contain a serious bug) = 0.999 <sup>5,339</sup> = 0.004787862
 
@@ -167,10 +167,11 @@ will need to be resolved.
 
 2. It needs to continue to change for security reasons. New attack vectors are
 constantly being created. Very likely there are bugs in the core software
-that we just aren't aware of. There may well be vulnerabilities in Proof of Work
-that we can't currently imagine, or [in the language C++
+that we just aren't aware of. There may well be game-theoretic issues with Proof of Work
+that we can't currently imagine, or vulnerabilities [in the language C++
 itself](https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=ASSIGNED&cf_known_to_fail_type=allwords&cf_known_to_work_type=allwords&component=c&component=c%2B%2B&product=classpath&product=gcc&query_format=advanced).
-Super-efficient mining chips might be developed that make a 51% attack practical.
+Super-efficient mining chips might be developed that make a 51% attack
+achievable.
 Techniques might be invented to engineer [SHA256
 collisions](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html).
 Quantum computers might someday [be able to brute force private keys from public keys](https://en.wikipedia.org/wiki/Post-quantum_cryptography).<sup>1</sup>
@@ -186,6 +187,14 @@ systems will continue to be written that people will want to run nodes on. Etc.
 For these reasons, the core Bitcoin software needs to be under active
 research and development essentially forever. And inevitably this means research
 and development by fallible humans -- the kind that routinely introduce bugs.
+
+Eventually, everyone makes a mistake. Even the smartest people, even
+geniuses.  Even when they are following best practices. Even when they are
+perfectly well-intentioned. Even when no one is trying to make them fail.  (One
+thinks of Frege, here -- a epochal genius. See Russell's paradox. See also
+Knight Capital,
+https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption)
+
 
 (Move to subscript)
 1. From [wikipedia](https://en.wikipedia.org/wiki/Post-quantum_cryptography): "As of 2018, [. . .] the most popular public-key algorithms
@@ -262,406 +271,58 @@ closer to its probabilistic destiny.
 Pampered as Americans are by the long-term stability of our government and its
 [willingness to prop up its financial institutions in times of
 crisis](https://en.wikipedia.org/wiki/Federal_takeover_of_Fannie_Mae_and_Freddie_Mac),
-I think it's easy to forget what is at stake in a system like Bitcoin -- a
+I think it's easy for us to forget what is at stake in a system like Bitcoin -- a
 system without a backer. There is no crypto
 [FDIC](https://en.wikipedia.org/wiki/Federal_Deposit_Insurance_Corporation) to
 appeal to if/when you lose your coins to an exploited bug. There is no customer
 service to freeze your account if/when an attack exposes your
-private keys. If a someone steals your coins, or destroys the network, or
+private keys. If someone steals your coins, or destroys the network, or
 enables new coins to be silently minted for years and drives prices almost to $0,
 that's it: the value you placed in Bitcoin would be gone. There are no good guys
 to get it back for you.
 
-This is an inherent difficulty of trying to make money out of software.
-Software _breaks_. But we don't think of money as a breakable kind of thing --
-especially since most of us store the vast majority of our money in banks. A
-dollar bill could be destroyed: burned, shredded, dissolved, whatever. But when
-your money is in a bank in good standing with the government, it's basically
-indestructible. The bank could get hacked, or robbed, or go up in flames, or
-declare bankruptcy. Your cards could get stolen, your credentials could be
-leaked, etc.  None of it matters if the bank is FDIC insured.  You still have
-your money -- _obviously_ you still have your money: because money is
-indestructible, your possession of it as real and objective as the
-chair I am sitting in. Banks might keep a record of it, but this is merely the
-transient image of a deeper economic reality.
-
-I don't think people often appreciate the import that they give to this picture
-of the world, nor the extent to which it effects their lives and
-informs their decisions, however implicitly/subconsciously. I wonder: would they
-still put all of their money in banks if it wasn't so? Would they use the same
-6-character password that they use for facebook as their bank login? Would they
-put their life-savings and retirement in intrinsically valuables objects like
-precious metals, or fine wines, or works of art, or seeds?
-The [bank runs](https://en.wikipedia.org/wiki/Bank_run) of Great Depression fame
-suggest
-
-And when Bitcoin is inevitably exploited -- and those who put their trust in it
-lose their [life-savings](https://www.reddit.com/r/Bitcoin/comments/772kkf/trying_to_play_it_cool_with_my_life_savings_in/), their [retirements](https://www.reddit.com/r/Bitcoin/comments/7hraxb/401k_to_bitcoin/dqt6jb6/), their [homes](https://www.reddit.com/r/Bitcoin/comments/7kw2l7/just_took_out_a_mortgage_on_my_house_to_buy_btc/)
--- they (and we all) will perhaps for the first time be forced to ask ourselves
-just how important this economic picture of the world is.
-
-I have no confidence that, at that moment, this is a picture many of us would be
-happy to forsake.
-
-
-
-But you can't really destroy $1000 of digitized value.
-You could destroy the database -- sure -- and all of its backups. But you'd still
-feel like you had that $1000, that it still existed and belonged to you. You'd probably
-petition the FDIC to get your money back. And when they wrote you a check, you'd
-feel like they hadn't really given you something new so much as re-enabled you
-to access what you already had. Value, for us, has become a kind of immaterial
-entity.
-
-
-After all, the concerns above equally well apply to banks' digital systems. And,
-of course, banks too get hacked. But when someone gets access to your bank
-account
-
-I think it's easy for us to think of economic value as a kind of
-objective, mind-independent reality. It's easy to think of economic value as
-real, as existing independent of anyone's thinking so.
-
-
-I want to talk briefly about something I'll call "economic value".
-
-Economic value is what is accessed with or represented by money. A one dollar
-bill has a certain amount of economic value. We say that it is _worth_ that
-amount. A twenty dollar bill is worth 20 times as much as a dollar.  But these
-amounts can and do change. Inflation occurs when a unit of money comes to be
-worth less economic value, deflation when it is worth more. A one dollar bill
-100 years ago had much more economic value than a one dollar bill  does today.
-If one were to take all of the official United States bills and destroy half of
-them, each remaining bill would in some sense be now worth twice as much as
-before. This is because it would now represent twice as much economic value.
-
-This is a natural way to think of economic value
-
-A dollar bill could be destroyed: burned, shredded,
-dissolved, whatever. But you can't really destroy $1000 of digitized value.
-You could destroy the database -- sure -- and all of its backups. But you'd still
-feel like you had that $1000, that it still existed and belonged to you. You'd probably
-petition the FDIC to get your money back. And when they wrote you a check, you'd
-feel like they hadn't really given you something new so much as re-enabled you
-to access what you already had. Value, for us, has become a kind of immaterial
-entity.
-
-
-Much as I might have this chair -- say -- I also have $1000.
-
-
-This is an inherent difficulty when you try to make money out of software.
-Software _breaks_. We don't think of money as a breakable kind of thing --
-especially now that many of us store almost all of our money electronically in
-banks' databases. A dollar bill could be destroyed: burned, shredded,
-dissolved, whatever. But you can't really destroy $1000 of digitized value.
-You could destroy the database -- sure -- and all of its backups. But you'd still
-feel like you had that $1000, that it still existed and belonged to you. You'd probably
-petition the FDIC to get your money back. And when they wrote you a check, you'd
-feel like they hadn't really given you something new so much as re-enabled you
-to access what you already had. Value, for us, has become a kind of immaterial
-entity.
-
-Because we're talking about money here: a system that
-has the potential to store a nontrivial percentage of the world's economic
-value.
-
-### Replies
-
-Wait, we already know this happened...
-
-And it's no good pointing out that BTC has tests, or that some of the merges
-were _fixes_ to previous bugs. Tests are great. Fixes are awesome. But tests
-are limited in scope -- you can't simulate an entire network -- and can very
-well ignore important vulnerabilities that no one has thought of yet.
-Fixes can introduce new bugs as they resolve old ones.
-
-Nor does it matter that -- up to now -- there is no known vulnerability to BTC.
-It's not as if the slate is clean, that the formula resets to 1, that we get to
-start anew. There are no clean slates. Old code may have bugs we don't even know
-about, as has happened [before](https://github.com/bitcoin/bitcoin/pull/9049).
-Old features of the code that are currently unproblematic might become
-problematic when new code is added.
-
-
-
-
-
-
-
-
-
-### Thoroughness and Care
-
-How, then, does NASA achieve repeated success in the face of such odds?
-
-While I won't pretend to know NASA's special-sauce, I think one thing is clear.
-NASA mitigates risk and consistently delivers on projects with a high likelihood
-of failure by -- among other things -- being exceptionally thorough and careful.
-
-And that, unfortunately, is where the important similarities between
-Bitcoin and NASA projects end.
-
-Because unlike the Apollo missions, which were extremely careful, which employed the
-expertise of thousands of highly qualified individuals checking and double
-checking and triple checking each other's work, Bitcoin is developed and
-maintained by just a small handful of people. As I write,
-[587 people](https://github.com/bitcoin/bitcoin/graphs/contributors) have
-contributed to the project, though most have done very little.
-A better estimate of the number of active, competent bitcoin developers is the
-number of people who are members of the
-[bitcoin organization](https://github.com/orgs/bitcoin/people) -- since it is these people
-who can merge pull requests. There are [28 of
-them](https://github.com/orgs/bitcoin/people). For a project worth $75 billion
-dollars, that many people feel has the single best chance to be the currency of
-the future, this seems completely inadequate.
-
-A good example of the inevitable results of this inadequacy is [this infamous
-pull request](https://github.com/bitcoin/bitcoin/pull/9049) from 2016, which
-attempted to shave a mere 0.7ms off the block validation process. The PR was
-reviewed and [approved by one bitcoin
-member](https://github.com/bitcoin/bitcoin/pull/9049#issuecomment-257768800),
-though that member [didn't even test the code
-himself](https://github.com/bitcoin/bitcoin/blob/600b85bb417295f4d9c7d5b9fd8502f3c8f113e3/CONTRIBUTING.md#peer-review).
-[Two](https://github.com/bitcoin/bitcoin/pull/9049#issuecomment-259083061)
-[other](https://github.com/bitcoin/bitcoin/pull/9049#issuecomment-259248755)
-members verbally approved of the change not long after.  In total, then, the
-change was vetted by _just 3 individuals_ before being merged and deployed to
-production. It was in production for [2 full
-years](https://github.com/bitcoin/bitcoin/pull/9049#event-854593839) before
-[someone](https://medium.com/@awemany/600-microseconds-b70f87b0b2a6) realized
-that it introduced a bug which, if exploited, could have been used to mint an
-unlimited number of new coins.
-
-Most changes to the bitcoin core software have roughly this much (or less)
-review before being approved, merged, and released. See for yourself
-[here](https://github.com/bitcoin/bitcoin/pulls?q=is%3Apr+is%3Aclosed).
-
-An obvious objection at this point is that the Apollo missions required so many
-talented people and so many resources not merely because they were so valuable
-but because they were so _complex_. Sending a man to the moon required expertise
-and advances in many different domains: in physics, materials, engineering,
-mathematics, meteorology, astronomy, etc. It's not so much the
-riskiness of the missions that
-warranted so many people and so many resources so much as we just couldn't have
-done it with fewer people. Bitcoin is nowhere near as complex
-as this, so it doesn't warrant nearly the same level of care.
-
-This objection is a good one, but I think it's conflating
-thoroughness with carefulness.
-
-The execution of the NASA missions was _thorough_ -- as it involved competent
-experts in all of the appropriate fields and addressed all of the major problems
--- but it was also _careful_ -- proceeding slowly, incrementally, with many
-practice tests, with operational redundancy, with double-and-triple checks.
-NASA, in other words, acted in a manner proportionate to what was at stake:
-people's lives, the reputation of the United States, billions of dollars.
-
-Consider, for example, the care that was taken in designing the computer systems
-on the [Space Shuttle](https://en.wikipedia.org/wiki/Space_Shuttle):
-
-> Fault tolerance on the Shuttle is achieved through a combination of redundancy
-> and backup. Its five general-purpose computers have reliability through
-> redundancy, rather than the expensive quality control employed in the Apollo
-> program. Four of the computers, each loaded with identical software, operate
-> in what is termed the "redundant set" during critical mission phases such as
-> ascent and descent. The fifth, since it only contains software to accomplish a
-> "no frills" ascent and descent, is a backup. [[Source](https://www.history.nasa.gov/computers/Ch4-4.html)] [. . .]
-> The Backup Flight System consists of a single computer and a software load
-> that contains sufficient functions to handle ascent to orbit, selected aborts
-> during ascent, and descent from orbit to landing site. __In the interest of
-> avoiding a generic software failure, NASA kept its development separate from
-> PASS [the Primary Avionics Software System, the software that runs in all the
-> Shuttle's four primary computers]. An engineering directorate, not the
-> on-board software division, managed the software contract for the backup, won
-> by Rockwell.__ [Emphasis mine, [Source](https://www.history.nasa.gov/computers/Ch4-5.html)]
-
-Notice the care that NASA took here. Not only did they insist on a 5x
-redundancy, but
-they even had the code on the 5th machine engineered by a completely separate
-group of people. It was an entirely different implementation. All to further
-decrease the likelihood that an unknown bug in the system would take them down.
-
-I agree that the complexity of bitcoin means that nothing like the thoroughness
-of NASA's execution of the Apollo missions is required. Nevertheless, the
-inherent riskiness (as discussed above) -- not to mention the incredible _value_ --
-of bitcoin certainly justifies NASA-level _care_. NASA-level care is not
-being dedicated to the development of bitcoin.
-
-Some will reply that there just aren't enough qualified developers on the project
-to reasonably demand more qualified reviewers.
-There aren't PhDs or Nobel Prizes for blockchain science. The field is too
-young.
-
-Others will say that BTC just can't afford to move that slowly.
-
-So much the worse for BTC.
-
-And we can't just
-_stop_ changing BTC -- both because of performance reasons, but also for
-security reasons. Very likely there are other bugs in the core software that we
-just aren't aware of. Very likely new technology will emerge (quantum computers?)
-that will pose new threats to the system. Very likely new vulnerabilities in bitcoin's
-dependencies will be identified (whether in libraries like SHA256, or in elliptic curve
-cryptography, or in the language C++ itself).
-If for no other reasons than these, BTC core needs to be under active
-research and development for the foreseeable future,
-it needs to be continually changed by fallible humans.
-So long as other hardware and software is changing, it will have to change with it.
-
-Why does this matter? Who cares?
-
-We have on the one hand an inherently risky project that is obscenely valuable.
-
-
-
-
-
-_Unless you think that 3-5 people can make an endless number of complex
-decisions correctly in perfect succession, then you should be
-doubtful about the future value of Bitcoin -- and any cryptocurrency._
-
-_0-day bugs_ are software bugs unknowingly introduced into software and deployed to
-production.
-
-BTC core has had 0-day bugs.
-
-blog post overview of one of the biggest bugs, by the guy who discovered it:
-https://medium.com/@awemany/600-microseconds-b70f87b0b2a6
-
-PR that introduced the bug in 2016:
-https://github.com/bitcoin/bitcoin/pull/9049
-
-PR that fixed it in 2018:
-https://github.com/bitcoin/bitcoin/pull/14247
-
-
-From the blog post:
->I always feared that someone from the bankster circles, someone injected into
->the Bitcoin development circles with the sole goal of wreaking unsalvageable
->havoc, would do exactly what happened. Injecting a silent inflation bug. 
-
-> I sometimes do lose some sleep over what could go wrong. I know I make mistakes.
-I have done so. I will. We all do.
-
-At the time of writing this, Bitcoin has a $115 billion dollar market cap, i.e.
-total cash value.
-
-It seems that pull requests are accepted by BTC core members when 3-5 approve
-of them. (Look into this more, maybe get an actual statistic?)
-
-Given that changes to BTC core could introduce a "0-day" bugs like the one
-above, you have to ask: is the approval of 3-5 people sufficient for a decision
-of this magnitude?
-
-Put another way:
-If you really believed you had $115 billion riding on a decision, would you feel
-confident if that decision had been made by just 5 people? Even the best,
-smartest, most well-informed people?
-
-I wouldn't.
-
-People make mistakes. Catastrophic mistakes. Even the smartest people, even
-geniuses.  Even when they are following the best practices. Even when they are
-perfectly well-intentioned. Even when no one is trying to make them fail.  (One
-thinks of Frege, here -- a epochal genius. See Russell's paradox. See also
-Knight Capital,
-https://en.wikipedia.org/wiki/Knight_Capital_Group#2012_stock_trading_disruption)
-
-The problem is actually even worse than that. Because you have $115B riding on
-not just one decision, but on the conjunction of an _indefinite_ number of decisions.
-For as long as
-decisions have to be made about how to change BTC, they _all_ have to
-be right -- or: wrong-but-fixed-in-time. Get just _one_
-decision wrong, and the whole project could be ruined.
-
-And remember, this is a *best-case* scenario. Because, in fact,
-bitcoin core developers are not always following best practices (examples?),
-bitcoin contributors are not always
-well-intentioned (examples?), and powerful people actually are
-trying to make the bitcoin project fail (examples?).
-
-Some will reply that there just aren't enough qualified developers on the project
-to reasonably demand more
-reviewers. Others will say that BTC just can't afford to move that slowly.
-
-So much the worse for BTC.
-
-This just highlights how inherently risky BTC (and all possible cryptocurrencies
-) is/are. I say "inherently" here
-because this is the nature of software development. The risk can be
-mitigated but not eliminated entirely.
-It's not possible to remove fallible humans from the process apart from
-completely halting BTC development entirely.
-
-And we can't just
-_stop_ changing BTC -- both because of performance reasons, but also for
-security reasons. Very likely there are other bugs in the core software that we
-just aren't aware of. Very likely new technology will emerge (quantum computers?)
-that will pose new threats to the system. Very likely new vulnerabilities in bitcoin's
-dependencies will be identified (whether in libraries or in the language C++ itself).
-If for no other reasons than these, BTC core needs to be under active
-research and development for the foreseeable future,
-it needs to be continually changed by fallible humans.
-So long as other hardware and software is changing, it will have to change with it.
-
-Confidence in the future of BTC thus boils down to this:
-
-* you are confident that a small number of people will make an indefinite string
-  of exceedingly complex decisions correctly (or wrong-but-fixed-in-time)
-
-Is it rational to be confident of this? I genuinely don't think it is.
-
-Consider all of the massive mistakes made by the armies of brilliant,
-Carnegie-Mellon BA, Stanford PhD developers, at companies with nearly unlimited
-resources:
-
-* amazon breaking the internet when a dev takes down EC2
-* 
-
-Consider how *hard* it can be to catch bugs:
-* heartbleed
-* spectre/meltdown - https://meltdownattack.com/, which has been around for
-  *decades*
-
-The point is: even the best-in-the business make catastrophic mistakes. It might take time,
-but almost always happens. Again and again and again we see this.
-
-It would only take one mistake like this to sink Bitcoin. And Bitcoin lacks all
-of the advantages enjoyed by these companies.
-
-### Could bitcoin go to zero?
-
-Could an exploited bug actually destroy the value of Bitcoin? What would it take
-for a bug to bring the price to $0, or close to it?
-
-Caveat: this question is complicated by the murkiness of Bitcoin's identity
-conditions. I could imagine a scenario in which there was a successful exploit,
-with multiple competing solutions, multiple competing chains, and people
-disagreeing about which one is "really" bitcoin. Let's just ignore this problem.
-(Is it complicated? Can't we just say: "I don't care about your word 'bitcoin',
-I just care about the value. Whether there's a new chain, two new chains, or
-100, I don't care so long as I come out with value if I went in with it.)
-
-I think many people think a bug could potentialy take bitcoin to zero. But what
-would a truly disastrous bug look like? Here are some examples off the cuff:
-
-* someone figures out how to lock people's coins, or spend people's coins
-  without having their keys
-* someone mints a billion new BTC and sends them all over the network
-* someone breaks SHA256
-
-But then there's always the rebuttal that these attacks could be (relatively)
-easily reversed by a community-accepted hardfork, in the way that the ETH
-community accepted a hardfork rolled back the DAO attack back in 2016. Attacks
-like those above would obviously
-dent the value of Bitcoin, but it seems the potential to reverse them would largely
-mitigate the damage.
-
-So are there any bugs that couldn't be rescued by a hardfork strategy?
-
-* a bug that discretely minted lots of new BTC over a long period of time
-* a bug or weakness in ellyptical curve cryptography which would allow someone
-  to derive a private key from a public key
-* a bug that simultaneously effected all known hashing algorithms
-
+To most people who own Bitcoin, all of this is probably obvious. But most people
+don't have a substantial part of their livelihood in Bitcoin. They don't really
+rely on Bitcoin the way they do fiat currency for any of the important things in
+life. So they haven't really had to come to terms with the risks. It's not
+implausible to think that as Bitcoin gains in visibility and popularity, more
+and more people will put more and more of their livelihoods into it. It will
+become less novel, less scary. There will be less and less cause for
+reflection on what the risks of a trustless money system really are, or on what
+we're giving up by using one.
+
+What we're seeing is an inherent difficulty of trying to make money out of
+software.  Software _breaks_. We don't think of money as a breakable kind of
+thing -- especially since most of us store the vast majority of our money in
+banks. A dollar bill could be destroyed: burned, shredded, whatever. But when
+your money is in a bank in good standing with the government, it seems to take
+on a special kind of permanence. The bank could get hacked, or robbed, or go up
+in flames, or declare bankruptcy. Your credit cards could get stolen, your
+credentials could be leaked, etc.  None of it matters if the bank is FDIC
+insured.  You would still have your money -- _obviously_ you would still have
+your money: because money is indestructible -- right? -- your possession of it
+as real and objective as the chair I am sitting in. Banks might keep a record of
+it, but their record is merely the transient image of a deeper economic reality.
+
+I don't think people often appreciate the importance of this picture of the
+world, nor the extent to which it effects their lives and informs their
+decisions (however implicitly/subconsciously). I, for example, don't _think
+twice_ about depositing my money in the bank. In it goes, every cent. Nor do I
+lose sleep about being able to withdraw it. I carry no cash. I have no stash under my
+mattress. When I put money away for retirement, it all goes into
+the bank. I keep no valuables like precious
+metals, or fine wines, or works of art. I would not behave this way were this
+economic picture not coloring virtually every economic reason and expectation I
+have.
+
+So the question we all need to ask is this.
+
+When Bitcoin is inevitably exploited -- when those who put their trust in it
+irrevocably lose their [life-savings](https://www.reddit.com/r/Bitcoin/comments/772kkf/trying_to_play_it_cool_with_my_life_savings_in/), their [retirements](https://www.reddit.com/r/Bitcoin/comments/7hraxb/401k_to_bitcoin/dqt6jb6/), their [homes](https://www.reddit.com/r/Bitcoin/comments/7kw2l7/just_took_out_a_mortgage_on_my_house_to_buy_btc/)
+--  and when they (and we) are for the first time really forced to ask ourselves
+just how important this economic picture of the world is, what will we
+do? Will we double-down? Rally? Or will we all be talking about the great
+bitcoin [bank run](https://en.wikipedia.org/wiki/Bank_run) of 2022?
+
+I have no confidence that this is a picture many of us will are really, truly willing to
+forsake.
