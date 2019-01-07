@@ -1,5 +1,5 @@
 ---
-title: "Will bitcoin go to the moon?"
+title: "My Biggest Doubt About Bitcoin"
 date: "2018-11-22"
 excerpt: My thoughts on the inherent risks of bitcoin.
 ---
@@ -7,6 +7,30 @@ excerpt: My thoughts on the inherent risks of bitcoin.
 _DISCLAIMER: At the time of writing, I own bitcoin. I am not a financial advisor
 and this is not financial advice. Do your own research and consult with a
 qualified professional before investing._
+
+### TLDR
+
+I think the following scenario is plausible and could massively devalue the
+Bitcoin network:
+
+1. Bitcoin grows drastically in visibility and popularity. It becomes very easy
+   for ordinary people to acquire and control. It becomes less novel, scary,
+   strange. It becomes an ordinary asset.
+2. Because of (1), people begin to convert important amounts of money into
+   Bitcoin -- down-payments, retirements, college savings, inheritances, etc.
+   Moreover, they do so uncritically, without considering the risks.
+3. Bitcoin is successfully attacked. A significant minority of people
+   irretrievably lose these important amounts of money.
+4. When news spreads of (3), there is a kind of Bitcoin "bank run". The people
+   who uncritically bought into Bitcoin
+   realize for the first time that their futures can be stolen from them
+   without recourse, and they rush en-masse to exchange their Bitcoin for fiat.
+5. The value of Bitcoin and all other decentralized cryptocurrencies plummets.
+   The bank-run ensures the very thing people wanted to avoid: their money is
+   gone. Bitcoin is now nearly valueless.
+
+I'll argue for the plausibility of each of these events in the sections
+below.
 
 ![to the moon reddit meme]({{ site.baseurl }}/jekyll_img/to-the-moon.jpg)
 
