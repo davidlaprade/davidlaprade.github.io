@@ -2,7 +2,7 @@
 title: "Bitcoin Will Be Successfully Attacked"
 date: "2019-01-06"
 excerpt: "Why I think that the Bitcoin network will eventually be successfully
-attacked at some point."
+attacked."
 ---
 
 _DISCLAIMER: At the time of writing, I own bitcoin. I don't approve of or condone
