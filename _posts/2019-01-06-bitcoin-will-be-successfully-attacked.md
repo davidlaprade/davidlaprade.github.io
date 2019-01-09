@@ -17,8 +17,8 @@ high. My argument is very simple:
 
 * the Bitcoin core software has to continue changing indefinitely
 * each change adds a non-zero chance of catastrophic failure
-* after enough changes, the probability of a successfully exploited bug approach
-100% even under conservative assumptions
+* after enough changes, the probability of an exploitable bug
+  approaches 100%; it is now ~99.5% even under conservative assumptions
 
 ### To The Moon
 
@@ -33,20 +33,15 @@ extremely well-known idiom in the cryptocurrency community. It means, roughly,
 Though at the time the phrase was meant to just be funny/silly,
 it recently struck me how oddly fitting it is.
 
-**The Bitcoin project is a whole lot like the NASA
-project, Apollo, that sent men to the moon.**
+The Bitcoin project is a whole lot like the NASA
+project, Apollo, that sent men to the moon.
 
-Each attempted something novel, audacious, even crazy. A man on the moon.
-Trustless money.
+Each attempted something novel, audacious, even crazy: a man on the moon,
+trustless money. Each pushed the limits of its respective science and
+technology. Each has had (or looks to have) important, positive political
+ramifications.
 
-Each has been extravagantly valuable. Assuming that the value of the Apollo
-missions can be roughly approximated by their cost, a [2015
-estimate](https://www.popsci.com/real-cost-nasa-missions#page-2) put the cost of
-the Apollo missions at $65 billion dollars per year ($71B adjusted for
-inflation) -- not far off from the current [$75 billion dollar market
-capitalization](https://coinmarketcap.com/currencies/bitcoin/) of Bitcoin.
-
-They are also similar in other ways -- ways that I think have important
+But they are also similar in other ways -- ways that I think have important
 implications for the future of Bitcoin, and digital currencies generally.
 
 ### Critical Decisions
