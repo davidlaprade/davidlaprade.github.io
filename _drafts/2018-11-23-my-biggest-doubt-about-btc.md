@@ -15,22 +15,106 @@ Bitcoin network:
 
 1. Bitcoin grows drastically in visibility and popularity. It becomes very easy
    for ordinary people to acquire and control. It becomes less novel, scary,
-   strange. It becomes an ordinary asset.
+   strange. It becomes the newest ordinary asset, like stocks or bonds or gold
+   or cash.
 2. Because of (1), people begin to convert important amounts of money into
-   Bitcoin -- down-payments, retirements, college savings, inheritances, etc.
+   Bitcoin -- down-payments, retirements, college savings, life savings,
+   inheritances, etc.
    Moreover, they do so uncritically, without considering the risks.
 3. Bitcoin is successfully attacked. A significant minority of people
-   irretrievably lose these important amounts of money.
+   irretrievably lose these important amounts of money. Too few people are
+   attacked for the network to agree to a hard-fork to reverse the damage.
 4. When news spreads of (3), there is a kind of Bitcoin "bank run". The people
    who uncritically bought into Bitcoin
    realize for the first time that their futures can be stolen from them
    without recourse, and they rush en-masse to exchange their Bitcoin for fiat.
 5. The value of Bitcoin and all other decentralized cryptocurrencies plummets.
    The bank-run ensures the very thing people wanted to avoid: their money is
-   gone. Bitcoin is now nearly valueless.
+   gone. Bitcoin becomes nearly valueless.
 
 I'll argue for the plausibility of each of these events in the sections
 below.
+
+### 3. Bitcoin is Successfully Attacked
+
+I've argued at length in a previous post why I think [it is almost certain that
+Bitcoin will be successfully attacked](link) at some point in the future. It is
+only a matter of time. Briefly, the argument was:
+
+* the Bitcoin core software has to continue changing indefinitely
+* each change adds a non-zero chance of catastrophic failure
+* after enough changes, the probability of an exploitable bug
+  approaches 100%; it is now ~99.5% even under conservative assumptions
+
+I'm just going to assume that this is true going forward.
+
+Who cares?
+
+Why should anyone care about an exploitable bug in Bitcoin? After all,
+we all saw what happened when [the DAO was hacked in mid
+2016](https://blog.ethereum.org/2016/06/17/critical-update-re-dao-vulnerability/): the Ethereum
+community just [hard-forked to restore the stolen
+funds](https://pastebin.com/xW16N7Ye). Wouldn't the Bitcoin
+community just do the same thing? [Arjun
+Balaji](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054), for example, finds this line of reasoning pretty compelling.
+
+It's a good question. Maybe the Bitcoin community would rise to the challenge
+and accept a hard-fork to reverse a bug exploit. Then again, the level of
+disagreement and partisanship within the Bitcoin community suggests that this
+is a non-trivial assumption. Mike Hearn's [medium
+post](https://blog.plan99.net/the-resolution-of-the-bitcoin-experiment-dabb30201f7)
+from early 2016 gives an insider's view of just how divided the community was
+([and](https://en.wikipedia.org/wiki/Bitcoin_Cash)
+[still](https://medium.com/@OneMorePeter/onwards-all-in-on-segwit-9e7cb3faa73d)
+[is](https://bitcoinsv.io/) [today](https://www.bitcoinabc.org/)). And let's
+not forget that that when Ethereum forked it was still in its infancy, still had
+not reached mainstream attention, and had a network value [under $1 billion
+dollars](https://coinmarketcap.com/historical/20160619/). Ethereum had much less
+at stake.
+
+But let's assume Arjun is right: major exploits to Bitcoin would be reversed.
+Everyone would behave rationally and recognize that they shouldn't allow
+attackers to get away with billions of dollars of other people's money. It would
+devalue the entire network, including their little piece of it.
+
+But what about minor exploits?
+
+What if the attack that succeeds is fairly small, effecting just a small
+fraction of Bitcoin's total value. Maybe just a hundred people, or a thousand. A
+couple discreet exploits of the same bug, over the course of a few hundred
+blocks. A few million dollars are stolen in total. A drop in the bucket. A
+fraction of a fraction. It takes a while for people to even notice.
+
+The Bitcoin community would have far less incentive to hard-fork to reverse a
+small attack like the one I've described. Very few people would be helped by it.
+Those who would be helped would have lost relatively very little. If the
+attacker was smart, he/she could target people along party lines, so that only
+one faction within the community has a stake in forking. Or they could attack
+people who have no voice in the community at all, who would be hard-pressed to
+drum up feelings for their plight. Or they could space out attacks over several
+blocks so that many legitimate transactions would have to be reversed as well,
+ensuring that forking would be painful for those who have not been stolen from.
+Perhaps the attack could be timed to coincide with a number of big transactions,
+so that reversal would be maximally painful, and the collateral damage very
+large. And remember: hard-forks are inherently very risky. Risking a permanent split to
+the network -- a potential halving of the network's value -- to save just a few
+million dollars for a hand-full of people is a tough sell indeed.
+
+Not only would the community be far less likely to agree on a hard-fork for a
+small attack versus a big one, but a small attack is also much more likely than
+a big one. Bitcoin has been battle-tested for over 10 years now. It's arguable
+that the big issues have already been found and fixed. There are tests for them.
+Developers have them in mind and look out for them when writing and reviewing
+code.  A small bug, though -- that's the kind of thing you could create with
+just a little sloppy programming. Suppose it's at the periphery of the system.
+The PR is given only cursory review by one or two people before merging, the
+whole process overshadowed by more ambitious PRs being reviewed at the same
+time.
+
+Nothing extraordinary is needed for someone to fat-finger a small bug into Core
+and get it into a release.
+
+
 
 ### The stakes are high
 
