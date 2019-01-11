@@ -1,7 +1,9 @@
 ---
 title: "My Biggest Doubt About Bitcoin"
-date: "2018-11-22"
-excerpt: My thoughts on the inherent risks of bitcoin.
+date: "2019-01-09"
+tags: bitcoin crypto
+excerpt: "A risk to the cryptocurrency that I don't think people are taking
+seriously"
 ---
 
 _DISCLAIMER: At the time of writing, I own bitcoin. I am not a financial advisor
