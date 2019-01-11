@@ -35,7 +35,37 @@ Bitcoin network:
 I'll argue for the plausibility of each of these events in the sections
 below.
 
-### 3. Bitcoin is Successfully Attacked
+### 1. Bitcoin Will Become Ordinary
+
+I'm not going to argue why I think Bitcoin will grow massively in visibility and
+popularity, eventually becoming an ordinary asset like cash, stocks, bonds, and
+gold. I won't do it, in part, because this is honestly just conjecture. No one
+(me included) really _knows_ whether or not this is true, and I won't try to
+trick you into thinking otherwise.
+
+Fortunately, I don't think my overall argument requires me to argue for this
+claim. I think I can simply _assume_ it, because to do otherwise would be to
+effectively [beg the question](https://en.wikipedia.org/wiki/Begging_the_question) against
+my conclusion -- to essentially assume what I'm trying to prove: that the future
+doesn't look good for Bitcoin.
+
+I say this because if Bitcoin never rises massively in visibility and
+popularity, if it just remains a marginal, niche asset that most people don't
+want to own or use, then it will become nearly useless, which is to say nearly
+valueless. I need not say that expectations about Bitcoin's future popularity
+and usage are largely driving its current value. Take those expectations away,
+and Bitcoin is revealed as a currency that almost no business will accept, that
+almost no ordinary person will use, that is extremely expensive to power, and
+that enjoys none of the consumer protections of other asset-classes. In other
+words: if the future doesn't hold massive adoption and visibility for Bitcoin,
+the future doesn't look good for Bitcoin. That's exactly what I'm trying to
+argue.
+
+So, let's assume the best-case scenario for Bitcoin's future and then go on to
+show that _even then_ the network has an important vulnerability.
+
+
+### 3. Bitcoin Will Be Successfully Attacked
 
 I've argued at length in a previous post why I think [it is almost certain that
 Bitcoin will be successfully attacked](link) at some point in the future. It is
