@@ -76,7 +76,9 @@ only a matter of time. Briefly, the argument was:
 * after enough changes, the probability of an exploitable bug
   approaches 100%; it is now ~99.5% even under conservative assumptions
 
-I'm just going to assume that this is true going forward.
+I'm just going to assume that this is true going forward. Moreover, I'm going to
+assume that the exploit occurs after Bitcoin has become massively popular and
+the incentive to attack it is very strong.
 
 Who cares?
 
@@ -85,8 +87,8 @@ we all saw what happened when [the DAO was hacked in mid
 2016](https://blog.ethereum.org/2016/06/17/critical-update-re-dao-vulnerability/): the Ethereum
 community just [hard-forked to restore the stolen
 funds](https://pastebin.com/xW16N7Ye). Wouldn't the Bitcoin
-community just do the same thing? [Arjun
-Balaji](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054), for example, finds this line of reasoning pretty compelling.
+community just do the same thing? Some people, [Arjun
+Balaji](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054) for example, find this line of reasoning pretty compelling.
 
 It's a good question. Maybe the Bitcoin community would rise to the challenge
 and accept a hard-fork to reverse a bug exploit. Then again, the level of
@@ -97,7 +99,7 @@ from early 2016 gives an insider's view of just how divided the community was
 ([and](https://en.wikipedia.org/wiki/Bitcoin_Cash)
 [still](https://medium.com/@OneMorePeter/onwards-all-in-on-segwit-9e7cb3faa73d)
 [is](https://bitcoinsv.io/) [today](https://www.bitcoinabc.org/)). And let's
-not forget that that when Ethereum forked it was still in its infancy, still had
+not forget that when Ethereum forked it was still in its infancy, still had
 not reached mainstream attention, and had a network value [under $1 billion
 dollars](https://coinmarketcap.com/historical/20160619/). Ethereum had much less
 at stake.
@@ -110,7 +112,7 @@ devalue the entire network, including their little piece of it.
 But what about minor exploits?
 
 What if the attack that succeeds is fairly small, effecting just a small
-fraction of Bitcoin's total value. Maybe just a hundred people, or a thousand. A
+fraction of Bitcoin's total value? Maybe just a hundred people, or a thousand. A
 couple discreet exploits of the same bug, over the course of a few hundred
 blocks. A few million dollars are stolen in total. A drop in the bucket. A
 fraction of a fraction. It takes a while for people to even notice.
