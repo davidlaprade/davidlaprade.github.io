@@ -15,7 +15,7 @@ research and consult with a qualified professional before investing._
 
 I'm concerned about the future of Bitcoin. It worries me that this might be true:
 
-1. A large percentage of bitcoin is uninsured and held by people who have
+1. A large percentage of Bitcoin is uninsured and held by people who have
    significant amounts of money in it.
 2. Bitcoin will be successfully attacked. A significant minority of people
    will irretrievably lose important amounts of money. Too little will be lost
@@ -23,9 +23,9 @@ I'm concerned about the future of Bitcoin. It worries me that this might be true
 3. When news of (2) spreads, there will be a kind of Bitcoin "bank run". People
    will realize that personally significant mounts of money can be lost
    without recourse, and they will rush en-masse to exchange their Bitcoin for fiat.
-4. The value of Bitcoin and all other decentralized cryptocurrencies will plummet.
-   The bank-run will ensure the very thing people wanted to avoid: their money is
-   gone. Bitcoin will become nearly valueless.
+4. The value of Bitcoin will plummet. The bank-run, coupled with a liquidity
+   crunch will make Bitcoin untradeable for fiat on exchanges, rendering it
+   effectively worthless.
 
 This argument is gappy, I fully admit that. But I think each of its premises
 is plausible enough, and its connections tight enough, that it succeeds in
@@ -39,13 +39,14 @@ equally obvious that the vast majority of coins is controlled by entities
 would cause them great distress to think they were at risk of losing them.
 If either of these claims seems controversial, or doubtful, check out my footnote
 for some more details.<sup>1</sup> I think most people would agree with
-them, though, so I won't say more about it here.
+them, though, so I won't say more about them here.
 
 ### 2. Bitcoin Will Be Successfully Attacked
 
 I've argued at length in a previous post why I think [it is almost certain that
-Bitcoin will be successfully attacked](/bitcoin-will-be-successfully-attacked) at some point in the future. It is
-only a matter of time. Briefly, the argument was:
+Bitcoin will be successfully attacked](/bitcoin-will-be-successfully-attacked)
+at some point in the future. It is only a matter of time. Briefly, the argument
+was:
 
 * the Bitcoin core software has to continue changing indefinitely
 * each change adds a non-zero chance of introducing an exploitable bug
@@ -132,7 +133,8 @@ like this.) You'd hear about how person A lost his life savings, how B won't be
 able to send her kids to college, how C's down-payment is gone and his kids are
 sleeping 3 to a room, how D lost her retirement and will have to continue
 working indefinitely. Etc. The stories would be poignant. They'd trend, maybe
-even go viral. The point is: they'd resonate with most people in the
+even go viral. The point is: they'd get mainstream attention (because Bitcoin
+is in the public eye), and they'd resonate with most people in the
 cryptocurrency community, especially those who have significant amounts of money
 in Bitcoin.
 
@@ -200,8 +202,8 @@ exceedingly low. Almost certainly they are a small fraction of that number.
 A bank run, then, would likely exhaust the available liquidity in these systems
 very quickly, meaning that -- no matter _what_ the quoted spot price of Bitcoin
 had fallen to in the immediate wake of the run -- there would be effectively no
-money to exchange for it, effectively no _demand_ for it. With little or no
-demand for it, it would be valueless.
+money to exchange for it, which is to say effectively no _demand_ for it. With
+little or no demand for it, it would be valueless.
 
 A valueless coin is a coin that miners won't mine. And a network without miners
 is neither secure nor functional. In this way, then, a bank run coupled
