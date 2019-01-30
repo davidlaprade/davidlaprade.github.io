@@ -19,18 +19,18 @@ I'm concerned about the future of Bitcoin. It worries me that this might be true
 1. A large percentage of bitcoin is uninsured and held by people who have
    personally significant amounts of money in it.
 2. Bitcoin will be successfully attacked. A significant minority of people
-   irretrievably lose important amounts of money. Too few people will lose
-   coins for the network to agree to a hard-fork to reverse the damage.
+   will irretrievably lose important amounts of money. Too little will be lost
+   for the network to agree to a hard-fork to reverse the damage.
 3. When news of (2) spreads, there will be a kind of Bitcoin "bank run". People
    will realize that personally significant mounts of money can be lost
    without recourse, and they will rush en-masse to exchange their Bitcoin for fiat.
-4. The value of Bitcoin and all other decentralized cryptocurrencies plummets.
-   The bank-run ensures the very thing people wanted to avoid: their money is
-   gone. Bitcoin becomes nearly valueless.
+4. The value of Bitcoin and all other decentralized cryptocurrencies will plummet.
+   The bank-run will ensure the very thing people wanted to avoid: their money is
+   gone. Bitcoin will become nearly valueless.
 
 This argument is gappy, I fully admit that. But I think each of its premises
 is plausible enough, and its connections tight enough, that it succeeds in
-justifying some degree of worry.
+justifying some degree of worry. I'll argue for each of its premises below.
 
 ### 1. Most Bitcoin is Uninsured
 
@@ -39,14 +39,14 @@ It probably goes without saying that Bitcoin wallets are not
 insured. This means that, for most people's coins to be covered by insurance,
 they'd need to have private insurance.
 
-Private Bitcoin insurance seems hard to come by at this early stage. A [quick Google
+But private Bitcoin insurance seems hard to come by at this early stage. A [quick Google
 search](https://www.google.com/search?q=bitcoin+insurance) turns up no obvious,
 legitimate-seeming providers, which means that people would not only
 need to _seek out_ insurance, but also would need to do some non-trivial research
 to get it. As a niche financial product, it likely would
 also be expensive. Moreover, the libertarian-, privacy-, be-your-own-bank minded
 folks that have thus far been attracted to Bitcoin are not the sort to seek out
-trusted 3rd parties to secure their coins, nor disclose important details about
+trusted 3rd parties to secure their coins, nor to disclose important details about
 their financial situation (how they store their coins, how many they have, what
 addresses they use, etc). And there are good
 reasons to believe that [large numbers of people who own Bitcoin do not live in
@@ -67,7 +67,7 @@ this amount of money would probably _really matter_ to you.
 I say that most coins are probably personally significant for two reasons.
 First, because bitcoin has risen astronomically in
 value. Early adopters (who likely account for a large fraction of coin
-ownership) are rich (at least on paper) _from their Bitcoin_, i.e. their
+ownership) are rich (at least on paper) _from their Bitcoin_. Their
 fortunes were made by Bitcoin. Take it away, and they'd lose most of their
 wealth.
 
@@ -78,23 +78,24 @@ their
 [retirements](https://www.reddit.com/r/Bitcoin/comments/7hraxb/401k_to_bitcoin/dqt6jb6/),
 their
 [homes](https://www.reddit.com/r/Bitcoin/comments/7kw2l7/just_took_out_a_mortgage_on_my_house_to_buy_btc/)
-into Bitcoin. A quick [Twitter
+into it. A quick [Twitter
 search](https://twitter.com/search?f=tweets&q=bitcoin%20401k) shows just how
 common this kind of thinking is. There is accordingly a
-[growing](https://www.bitira.com/) [market](https://bitcoinira.com/) for
-financial services that convert retirement accounts into Bitcoin.
+[growing](https://www.bitira.com/) market for
+[financial services](https://bitcoinira.com/) that convert retirement accounts
+into Bitcoin.
 
-Putting this together, then: it seems that most coins are significant to the
-people/entities that own them, and most coins are not insured.
+Putting this together, then, I think it is plausible that most coins are
+significant to the people/entities that own them, and most coins are not insured.
 
 ### 2. Bitcoin Will Be Successfully Attacked
 
 I've argued at length in a previous post why I think [it is almost certain that
-Bitcoin will be successfully attacked](link) at some point in the future. It is
+Bitcoin will be successfully attacked](/bitcoin-will-be-successfully-attacked) at some point in the future. It is
 only a matter of time. Briefly, the argument was:
 
 * the Bitcoin core software has to continue changing indefinitely
-* each change adds a non-zero chance of catastrophic failure
+* each change adds a non-zero chance of introducing an exploitable bug
 * after enough changes, the probability of an exploitable bug
   approaches 100%; it is now ~99.5% even under conservative assumptions
 
@@ -108,10 +109,11 @@ we all saw what happened when [the DAO was hacked in mid
 community just [hard-forked to restore the stolen
 funds](https://pastebin.com/xW16N7Ye). Wouldn't the Bitcoin
 community just do the same thing? Some people, [Arjun
-Balaji](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054) for example, find this line of reasoning pretty compelling, and for
-this reason are unconcerned about bugs.
+Balaji](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054) for example, find this line of reasoning pretty compelling, and so
+are unconcerned about bugs.
 
-It's a good question. Maybe the Bitcoin community would rise to the challenge
+It's a good question whether a fork could save the network in the event of an
+exploited bug. Maybe the Bitcoin community would rise to the challenge
 and accept a hard-fork to reverse a bug exploit. Then again, the level of
 disagreement and partisanship within the Bitcoin community suggests that this
 is a non-trivial assumption. Mike Hearn's [medium
@@ -177,7 +179,8 @@ like this.) You'd hear about how person A lost his life savings, how B won't be
 able to send her kids to college, how C's down-payment is gone and his kids are
 sleeping 3 to a room, how D lost her retirement and will have to continue
 working indefinitely. Etc. The stories would be poignant. They'd trend, maybe
-even go viral. The point is: they'd resonate with most people, especially those
+even go viral. The point is: they'd resonate with most people in the
+cryptocurrency community, especially those
 who had themselves put significant amounts of money into Bitcoin.
 
 So, now, imagine you are one of those people. You didn't really know what you
@@ -236,13 +239,16 @@ a successful attack like the one I have described.
 
 It bears emphasizing that the bank run would probably include other
 decentralized cryptocurrencies as well. This is not only because most of these
-currencies are still purchased with Bitcoin -- i.e. because they must first be
-sold for Bitcoin before they can be sold for fiat currencies -- and the loss of
-value of Bitcoin would mean a loss of value for them as well. But also because
-the exact same concerns I have about Bitcoin apply to these currencies. They are
+currencies are still purchased with Bitcoin -- i.e. because they must be
+bought/sold for Bitcoin before they can be bought/sold for fiat currencies --
+and the loss of a functioning Bitcoin network would effectively lock up their
+value until a new intermediate currency came along.  That's one issue. But I also think
+the other decentralized cryptocurrencies would be sucked into the bank run
+because the exact same concerns I have about Bitcoin apply to them. They are
 just as prone (if not more so) to attack, and they are uninsured. These are not
-safe-harbors for one's personally significant sums of money, and thus would not
-likely absorb the value exiting Bitcoin.
+safe-harbors for one's personally significant sums of money. They thus would not
+likely absorb the value exiting Bitcoin. Nor would they escape the psychological
+flight to safety.
 
 
 ### 4. The Value of Bitcoin Will Plummet
@@ -252,10 +258,10 @@ demand](https://en.wikipedia.org/wiki/Supply_and_demand). It is directly
 correlated with demand, and inversely
 correlated with supply. If demand increases, price tends to rise (all else being
 equal). If supply increases, price tends to fall (all else being equal). This
-is economics 101.
+is Economics 101.
 
 In a bank-run situation, there would be a massive surge in circulating Bitcoin
-(supply) coupled with a concurrent drop in demand. This would constitute a
+(increased supply) coupled with a concurrent drop in demand. This would constitute a
 double blow to price.
 
 What's less obvious is that there is a liquidity problem in cryptocurrency
@@ -283,6 +289,11 @@ quickly, meaning that -- no matter _what_ the quoted spot price of Bitcoin has
 fallen to in the immediate wake of the run --
 there would be effectively no money to exchange for it, no _demand_ for it. It
 would be, in other words, valueless.
+
+A valueless coin is a coin that miners won't mine. And a network without miners
+is not a secure or functional network. In this way, an extended bank run coupled
+with a liquidity crunch could not only drive down the price but actually kill
+the Bitcoin network permanently.
 
 ### Conclusion
 
