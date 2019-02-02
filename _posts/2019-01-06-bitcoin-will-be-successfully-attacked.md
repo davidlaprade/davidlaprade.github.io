@@ -236,7 +236,8 @@ examples:
   [100+ million of Gmail passwords in 2016](https://www.dailymail.co.uk/sciencetech/article-3573203/Big-data-breaches-major-email-services-expert.html),
   and [lost the personal information of 500k+ people on its Google+ network](https://www.cbsnews.com/news/google-data-exposure-unreported-affects-hundreds-of-thousands-2018-10-08-live-updates/) between 2015 and 2018
 * [Apple's iCloud hack](http://time.com/3247717/jennifer-lawrence-hacked-icloud-leaked/)
-  of personal photos of celebrities in 2014
+  of personal photos of celebrities in 2014, and the recent (2019) [FaceTime
+bug](https://9to5mac.com/2019/01/28/facetime-bug-hear-audio/) that allowed people to activate the microphone of those they were calling before they picked up
 * a Twitter bug [exposed the passwords of its 330 million users in plain
   text](https://blog.twitter.com/official/en_us/topics/company/2018/keeping-your-account-secure.html) in 2018
 * Netflix had its [users' account credentials stolen in
