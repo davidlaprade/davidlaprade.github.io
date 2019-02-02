@@ -1,6 +1,6 @@
 ---
 title: "My Biggest Doubt About Bitcoin"
-date: "2019-01-29"
+date: "2019-02-01"
 tags: bitcoin crypto
 excerpt: "A risk to the cryptocurrency that I don't think people are taking
 seriously"
@@ -35,9 +35,8 @@ justifying some degree of worry. I'll argue for each of its premises below.
 
 It probably goes without saying that most Bitcoin is uninsured.
 Bitcoin wallets are not
-[FDIC](https://en.wikipedia.org/wiki/Federal_Deposit_Insurance_Corporation)
-protected financial accounts, and private coverage is either non-existent or hard
-to come by.
+[FDIC protected](https://en.wikipedia.org/wiki/Federal_Deposit_Insurance_Corporation),
+and private coverage is either non-existent or hard to come by.
 
 It's probably
 equally obvious that the vast majority of coins is controlled by entities
@@ -67,11 +66,12 @@ was:
 * after enough changes, the probability of an exploitable bug
   approaches 100%; it is now ~99.5% even under conservative assumptions
 
-I'm just going to assume that this is true going forward.
+So, I'm just going to assume that at some point Bitcoin will be successfully
+attacked.
 
 Who cares?
 
-Why should anyone care about an exploitable bug in Bitcoin? After all,
+Why should anyone care about a successful Bitcoin exploit? After all,
 we all saw what happened when [the DAO was hacked in mid
 2016](https://blog.ethereum.org/2016/06/17/critical-update-re-dao-vulnerability/): the Ethereum
 community just [hard-forked to restore the stolen
@@ -86,7 +86,7 @@ are unconcerned about bugs. As he says:
 > consensus. I think if there was a massively inflated Bitcoin
 > almost no one who holds Bitcoin would want to participate in it. So I worry less
 > about bugs like that.  [[Quote begins at
-> 2:30](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054)].
+> 2:30]](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054).
 
 It's a good question whether a fork could save the network in the event of an
 exploited bug. Maybe the Bitcoin community would rise to the challenge
@@ -103,7 +103,7 @@ it:
 > [D]espite knowing that Bitcoin could fail all along, the now inescapable
 > conclusion that it has failed still saddens me greatly.
 > Why has Bitcoin failed? It has failed because the community has failed.
-> [[Ref](https://blog.plan99.net/the-resolution-of-the-bitcoin-experiment-dabb30201f7)].
+> [[Ref]](https://blog.plan99.net/the-resolution-of-the-bitcoin-experiment-dabb30201f7).
 
 And let's
 not forget that when Ethereum forked it was still in its infancy, still had
