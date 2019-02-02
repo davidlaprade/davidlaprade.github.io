@@ -36,7 +36,7 @@ justifying some degree of worry. I'll argue for each of its premises below.
 It probably goes without saying that most Bitcoin is uninsured.
 Bitcoin wallets are not
 [FDIC protected](https://en.wikipedia.org/wiki/Federal_Deposit_Insurance_Corporation),
-and private coverage is either non-existent or hard to come by.
+and private coverage is either non-existent or hard to come by.<sup>1</sup>
 
 It's probably
 equally obvious that the vast majority of coins is controlled by entities
@@ -48,11 +48,11 @@ and [62% of coins are held by addresses that contain 100 or more
 coins](https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html).
 Obviously, many of these addresses are controlled by the same entities. Which is
 to say that these entities own enough coins that it would probably cause them
-great distress to think they were at risk of losing them.
+great distress to think they were at risk of losing them.<sup>2</sup>
 
-If either of these claims seems controversial, or doubtful, check out my footnote
-for more details.<sup>1</sup> I think most people would agree with
-them, though, so I won't say more here.
+If either of these claims seems controversial, or doubtful, check out my
+footnotes for more details. I think most people would agree with them, though,
+so I won't say more here.
 
 ### 2. Bitcoin Will Be Successfully Attacked
 
@@ -195,7 +195,7 @@ Bitcoin in circumstances like this. The assumption should be that history will
 repeat itself unless there is overriding evidence otherwise.
 
 Hence, I say that a mass Bitcoin sell-off is a live possibility in the event of
-a successful attack like the one I have described.<sup>2</sup>
+a successful attack like the one I have described.<sup>3</sup>
 
 ### 4. The Value of Bitcoin Will Plummet
 
@@ -271,7 +271,9 @@ factors mitigate against people having insurance for their Bitcoin. Companies
 like [Coinbase](https://www.coinbase.com/legal/insurance) and
 [Gemini](https://www.businesswire.com/news/home/20181003005283/en/) have
 insurance for their hotwallets. But, obviously, most coins are not stored in
-these wallets.  It also seems plausible that the vast majority of coins are
+these wallets.
+
+2. It seems plausible that the vast majority of coins are
 personally significant to those that own them. By a _personally significant_
 amount of money for a person, _P_, I mean an amount of value that would play an
 important role in P's life. Examples would be a down payment, a college savings
@@ -294,11 +296,9 @@ search](https://twitter.com/search?f=tweets&q=bitcoin%20401k) shows just how
 common this kind of thinking is. There is accordingly a
 [growing](https://www.bitira.com/) market for [financial
 services](https://bitcoinira.com/) that convert retirement accounts into
-Bitcoin.  Putting this together, then, I think it is plausible that most coins
-are significant to the people/entities that own them, and most coins are not
-insured.
+Bitcoin.
 
-2. It bears emphasizing that the bank run would probably include other
+3. It bears emphasizing that the bank run would probably include other
 decentralized cryptocurrencies as well. This is not only because most of these
 currencies are still purchased with Bitcoin -- i.e. because they must be
 bought/sold for Bitcoin before they can be bought/sold for fiat currencies --
