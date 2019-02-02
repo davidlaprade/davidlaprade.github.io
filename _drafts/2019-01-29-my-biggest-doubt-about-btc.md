@@ -33,13 +33,27 @@ justifying some degree of worry. I'll argue for each of its premises below.
 
 ### 1. Most Bitcoin is Uninsured and Held in Significant Quantities
 
-It probably goes without saying that most Bitcoin is uninsured. It probably is
+It probably goes without saying that most Bitcoin is uninsured.
+Bitcoin wallets are not
+[FDIC](https://en.wikipedia.org/wiki/Federal_Deposit_Insurance_Corporation)
+protected financial accounts, and private coverage is either non-existent or hard
+to come by.
+
+It's probably
 equally obvious that the vast majority of coins is controlled by entities
-(people/companies/governments) that own _a lot_ of coins -- enough that it
-would cause them great distress to think they were at risk of losing them.
+(people/companies/governments) that own _a lot_ of them. At the time of writing,
+[87% of coins are held
+by just 0.65% of
+addresses](https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html),
+and [62% of coins are held by addresses that contain 100 or more
+coins](https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html).
+Obviously, many of these addresses are controlled by the same entities. Which is
+to say that these entities own enough coins that it would probably cause them
+great distress to think they were at risk of losing them.
+
 If either of these claims seems controversial, or doubtful, check out my footnote
-for some more details.<sup>1</sup> I think most people would agree with
-them, though, so I won't say more about them here.
+for more details.<sup>1</sup> I think most people would agree with
+them, though, so I won't say more here.
 
 ### 2. Bitcoin Will Be Successfully Attacked
 
@@ -64,7 +78,15 @@ community just [hard-forked to restore the stolen
 funds](https://pastebin.com/xW16N7Ye). Wouldn't the Bitcoin
 community just do the same thing? Some people, [Arjun
 Balaji](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054) for example, find this line of reasoning pretty compelling, and so
-are unconcerned about bugs.
+are unconcerned about bugs. As he says:
+
+> If there is a bug in Bitcoin which causes undue inflation I think that we
+> would patch the
+> bug [and] fork to a different version of Bitcoin because that would be the new
+> consensus. I think if there was a massively inflated Bitcoin
+> almost no one who holds Bitcoin would want to participate in it. So I worry less
+> about bugs like that.  [[Quote begins at
+> 2:30](https://unconfirmed.libsyn.com/arjun-balaji-on-the-ways-bitcoin-will-improve-in-2019-ep054)].
 
 It's a good question whether a fork could save the network in the event of an
 exploited bug. Maybe the Bitcoin community would rise to the challenge
@@ -75,7 +97,15 @@ post](https://blog.plan99.net/the-resolution-of-the-bitcoin-experiment-dabb30201
 from early 2016 gives an insider's view of just how divided the community was
 ([and](https://en.wikipedia.org/wiki/Bitcoin_Cash)
 [still](https://medium.com/@OneMorePeter/onwards-all-in-on-segwit-9e7cb3faa73d)
-[is](https://bitcoinsv.io/) [today](https://www.bitcoinabc.org/)). And let's
+[is](https://bitcoinsv.io/) [today](https://www.bitcoinabc.org/)). As Hearn put
+it:
+
+> [D]espite knowing that Bitcoin could fail all along, the now inescapable
+> conclusion that it has failed still saddens me greatly.
+> Why has Bitcoin failed? It has failed because the community has failed.
+> [[Ref](https://blog.plan99.net/the-resolution-of-the-bitcoin-experiment-dabb30201f7)].
+
+And let's
 not forget that when Ethereum forked it was still in its infancy, still had
 not reached mainstream attention, and had a network value [under $1 billion
 dollars](https://coinmarketcap.com/historical/20160619/). Ethereum had much less
@@ -105,8 +135,9 @@ that forking would be painful for those who have not been stolen from.  Perhaps
 the attack could be timed to coincide with a number of big transactions, so that
 reversal would be maximally painful, and the collateral damage very large. And
 remember: hard-forks are inherently very risky. Risking a permanent split to the
-network -- a potential _halving_ of the network's value -- to save just a few
-million dollars for a hand-full of people is a tough sell indeed.
+network -- a potential _halving_ of the network's value and hash power -- to
+save just a few million dollars for a hand-full of people is a tough sell
+indeed.
 
 Not only would the community be far less likely to agree on a hard-fork for a
 small attack versus a big one, but a small attack is also much more likely than
@@ -205,12 +236,13 @@ had fallen to in the immediate wake of the run -- there would be effectively no
 money to exchange for it, which is to say effectively no _demand_ for it. With
 little or no demand for it, it would be valueless.
 
-A valueless coin is a coin that miners won't mine. And a network without miners
-is neither secure nor functional. In this way, then, a bank run coupled
-with a liquidity crunch could not only drive down the price but actually _kill_
-the Bitcoin network permanently.
-
 ### Conclusion
+
+A coin that miners cannot redeem for fiat -- to pay their electricity bills, to
+pay their staff -- is a coin that miners won't mine, or won't mine for long.
+And a network without miners is neither secure nor functional. In this way,
+then, a bank run coupled with a liquidity crunch could not only drive down the
+price but actually _kill_ the Bitcoin network permanently.
 
 Whether this scenario will play out, or play out in exactly this way, is
 anyone's best guess. I am simply worried that
@@ -247,11 +279,9 @@ fund, a retirement account, a wedding fund, an inheritance, an emergency fund,
 etc. If your coins are greater than or equal in value to any of these, then you
 have a personally significant amount of value in Bitcoin. Losing this amount of
 money would probably _really matter_ to you.  I say that most coins are probably
-personally significant for two reasons.  First, because bitcoin has risen
-astronomically in value. Early adopters (who likely account for a large fraction
-of coin ownership) are rich (at least on paper) _from their Bitcoin_. Their
-fortunes were made by Bitcoin. Take it away, and they'd lose most of their
-wealth.  Second, people routinely, openly, proudly broadcast that they _actually
+personally significant for two reasons.  First, because of the statistics I
+cited earlier: 62% of coins are held by addresses that contain 100+ Bitcoin.
+Second, because people routinely, openly, proudly broadcast that they _actually
 are_ putting personally significant amounts of money into Bitcoin.  People are
 putting their
 [life-savings](https://www.reddit.com/r/Bitcoin/comments/772kkf/trying_to_play_it_cool_with_my_life_savings_in/),
