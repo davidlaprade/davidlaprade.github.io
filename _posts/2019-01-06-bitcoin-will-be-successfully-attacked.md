@@ -256,7 +256,8 @@ because of a misused _feature flag_ in their trade executor code in 2012
 Take a look at the names on that list: Google, Apple, Facebook, Twitter,
 Netflix, Yahoo, Ebay. These are the tech _giants_. They employ many of the best
 engineering minds in the world. They have obscene research budgets. And yet they
-release bug after bug after bug.
+release bug after bug after bug. For an even more complete list, see
+[this](https://en.wikipedia.org/wiki/List_of_data_breaches).
 
 And we've already seen [serious bugs make it onto Bitcoin's production
 network](https://medium.com/@awemany/600-microseconds-b70f87b0b2a6) -- bugs that
