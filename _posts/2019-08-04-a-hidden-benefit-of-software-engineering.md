@@ -1,3 +1,9 @@
+---
+title: A Hidden Benefit of Software Engineering
+tags: general programming
+excerpt: Software engineering jobs are even better than you think
+---
+
 My grandfather tells this story about a paper warehouse he worked in, and about
 how he had worked in this warehouse for so long that at some point he was the
 only person who knew how to identify all of the different kinds of paper that
