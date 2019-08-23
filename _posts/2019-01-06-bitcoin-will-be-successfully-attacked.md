@@ -1,6 +1,7 @@
 ---
 title: "Bitcoin Will Be Successfully Attacked"
 date: "2019-01-06"
+tags: bitcoin crypto
 excerpt: "Why I think that the Bitcoin network will eventually be successfully
 attacked."
 ---
