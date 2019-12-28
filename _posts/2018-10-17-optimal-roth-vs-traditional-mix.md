@@ -336,58 +336,31 @@ entire life. Excellent.
 
 Now, what happens if we max out Roth accounts?
 
-There is currently an option to [convert existing Traditional assets into Roth
-assets](https://www.irs.gov/retirement-plans/retirement-plans-faqs-regarding-iras-rollovers-and-roth-conversions). This can be done without penalty, but requires you to pay
-income taxes (but not FICA taxes) on those assets.
-
-[IRS Pub 590-A
-(2017)](https://www.irs.gov/publications/p590a#en_US_2017_publink1000231029) says:
-
-> You may be able to convert amounts from either a traditional, SEP, or SIMPLE IRA
-into a Roth IRA. [. . .] You must include in your gross income distributions from a
-traditional IRA that you would have had to include in income if you hadn’t
-converted them into a Roth IRA.
-
-For our second simulation, let's perform this conversion. For the sake of
-simplicity, let's also assume that you are able to convert your Traditional
-assets each year immediately after contributing to them so that you're
-effectively just putting this money straight into the Roth.
+Assume that at work you have access to a Roth 401k option and max it out. (It
+doesn't matter that most people don't: Traditional 401k's can be rolled over
+into Traditional IRAs and then converted into Roth IRA's without penalty if you
+pay the income taxes on them.<sup>0</sup>)
 
 To keep the comparison fair, we might want to tweak the contribution to make sure
 that the additional taxes you incur on this approach are somehow factored in --
 that way you aren't in some sense investing "more" via the Roth approach, thus
 unfairly privileging the strategy.
 
-One way to do this is to contribute slightly less to the Traditional accounts
-that you're rolling over -- just enough less to pay the extra taxes that a Roth
-conversion triggers.
+One way to do this is to contribute slightly less to the Roth accounts -- just
+enough less to pay the extra taxes.
 
 On this approach, your taxable income doesn't change (it stays at 100k) because
-you have to pay income tax on your Traditional contributions when you roll them
-into the Roth. This increases your costs by:
+you have to pay income tax on your Roth contributions. This increases your costs by:
 
 INCOME_TAX($100,000) - INCOME_TAX($100,000 - $48,000) = $5760
 
 (We use $48k here, because that's the max 401k plus the max IRA contribution.)
-So, you're spending $5760 more in taxes if you roll over your entire
-Traditional contributions into a Roth IRA than if you just left them in the
-Traditional account.
-
-Note that the amount of your contribution doesn't matter here, so long as you
-roll the entire thing into a Roth account.  Whether you contribute $10k or $20k
-or $30k to your 401k, if you roll it over, it's going to increase your taxable
-income by the same amount it reduces it. In other words: you net zero.  If you
-put -- say -- $10k into a 401k and immediately roll it over, you'll take a $10k
-deduction on your adjusted gross income, but then you immediately have to add
-$10k back to your adjusted gross income for the rollover. The same goes for your
-Traditional IRA. No matter how much you
-contribute in this way, your entire income will still be taxable, and it will
-increase your taxes by $5760 (relative to Strategy #1 that shielded $48k from
-federal taxes in Traditional accounts).
+So, you're spending $5760 more in taxes if you max our your Roth accounts vs.
+maxing our your Traditional accounts.
 
 So, let's suppose that you just contribute $5760 less to your 401k to make up
 for these additional taxes. This still allows you to contribute $31,240 to your
-Roth via the 401k rollover, plus an additional $11k for the Traditional IRA
+Roth, plus an additional $11k for the Roth IRA
 contribution.  You then pay the additional taxes with the leftover money you
 didn't invest.
 
@@ -398,11 +371,11 @@ What does this look like?
 
   Each year:<br>
 
- * $31.2k is contributed to 401ks and then rolled over into Roth IRAs<br>
+ * $31.2k is contributed to Roth 401Ks<br>
 
- * $11k is contributed to Traditional IRAs and then rolled over into Roth IRAs<br>
+ * $11k is contributed to Roth IRAs<br>
 
- * effectively: $42.4k is contributed to Roth IRAs per year on this
+ * effectively: $42.4k is contributed to Roth accounts per year on this
    approach<br>
 
   * the ~$5.6k that wasn't invested is used to pay the additional taxes you
@@ -623,3 +596,18 @@ the simulator less transparent and auditable to people.
 
 Hopefully, though, this approach has been good enough to shift the burden of
 proof to those who would deny that a Roth-only approach is best for most people.
+
+---
+
+[0]
+There is currently an option to [convert existing Traditional assets into Roth
+assets](https://www.irs.gov/retirement-plans/retirement-plans-faqs-regarding-iras-rollovers-and-roth-conversions). This can be done without penalty, but requires you to pay
+income taxes (but not FICA taxes) on those assets.
+
+[IRS Pub 590-A
+(2017)](https://www.irs.gov/publications/p590a#en_US_2017_publink1000231029) says:
+
+> You may be able to convert amounts from either a traditional, SEP, or SIMPLE IRA
+into a Roth IRA. [. . .] You must include in your gross income distributions from a
+traditional IRA that you would have had to include in income if you hadn’t
+converted them into a Roth IRA.
