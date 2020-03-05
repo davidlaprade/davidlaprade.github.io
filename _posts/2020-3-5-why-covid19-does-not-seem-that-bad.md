@@ -4,7 +4,10 @@ tags: general
 excerpt: "Why I think the coronavirus doesn't give most young people much to worry about medically."
 ---
 
-This is why I'm not especially worried about the disease ([COVID-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019)) caused by the coronavirus:
+_DISCLAIMER: I am not a doctor and this is not medical advice._
+
+
+This is why I'm not especially worried about the disease, [COVID-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019), that is caused by the coronavirus:
 
 * __Recent estimates of death rates are very low__
   * 0% for children under 10 <sup>[0](#footnote0)</sup>
