@@ -143,3 +143,10 @@ _all_ patients without underlying symptoms were in the 20-49 yo range, we still
 end up with 53% of patients admitted in the 20-49 yo range had no underlying
 symptoms. So you still end up with 1 in 700 odds of hospitalization for healthy
 individuals in that age range.
+
+__3. But I thought anitbody tests had high false positive rates__
+
+That's true for all I know -- though I've not seen any studies backing this up. I've seen [some
+sources](https://www.forbes.com/sites/tommybeer/2020/05/26/cdc-says-possibly-less-than-half-of-positive-antibody-tests-are-correct/#5340a7df2391)
+claiming that as many as 50% of positives are false. So, again, if this concerns
+you, you can conservatively cut the numbers in half.
