@@ -37,13 +37,13 @@ astronaut](https://www.latimes.com/science/sciencenow/la-sci-sn-nasa-astronaut-c
 
 Start with some obvious claims:
 
->  (1)  % hospitalizated in age group = hospitalizations due to infection / number of infections
+>  (1)  % hospitalized in age group = hospitalizations due to infection / number of infections
 
 >  (2)  number of infections = population * infection rate
 
 Putting these together, we get:
 
->  (3)  % hospitalizated in age group = hospitalizations due to infection / (population * infection rate)
+>  (3)  % hospitalized in age group = hospitalizations due to infection / (population * infection rate)
 
 But NYC hasn't published total hospitalizations by age group. They only publish
 [hospitalization rate _per 100k
@@ -56,11 +56,11 @@ difficulty. After all:
 
 Substituting this in (3) we get:
 
->  (5)  % hospitalizated in age group = (hospitalizations per 100k * 1/100k * population) / (population * infection rate)
+>  (5)  % hospitalized in age group = (hospitalizations per 100k * 1/100k * population) / (population * infection rate)
 
 Which immediately allows us to cancel out _population_:
 
->  (6)  % hospitalizated in age group = (hospitalizations per 100k * 1/100k) / infection rate
+>  (6)  % hospitalized in age group = (hospitalizations per 100k * 1/100k) / infection rate
 
 That leaves just infection rate, which we can estimate from the antibody
 tests that were done on 15k random NY residents. The breakdown by region can be seen
@@ -72,7 +72,7 @@ that 19.9% of the NYC population at large had the virus by the time of the study
 
 Plugging this infection rate into formula (6) we obtain:
 
->  (7)  % hospitalizated in age group = (hospitalizations per 100k * 1/100k) / 19.9%
+>  (7)  % hospitalized in age group = (hospitalizations per 100k * 1/100k) / 19.9%
 
 But that just gives us the _overall_ infection rate for a given age group. It
 does not differentiate between those who were healthy and those who had
@@ -80,13 +80,13 @@ underlying conditions. This is significant because an overwhelming number
 ([93.9%](https://time.com/5825485/coronavirus-risk-factors/)) of
 people hospitalized for COVID-19 had pre-existing conditions in NYC, most commonly
 [diabetes, hypertension, and/or
-obeisity](https://jamanetwork.com/journals/jama/fullarticle/2765184?guestAccessKey=906e474e-0b94-4e0e-8eaa-606ddf0224f5). This means that only 6.1% of hospitalized patients were
+obesity](https://jamanetwork.com/journals/jama/fullarticle/2765184?guestAccessKey=906e474e-0b94-4e0e-8eaa-606ddf0224f5). This means that only 6.1% of hospitalized patients were
 healthy at the time of infection.
 
 With this, we can easily refine our formula to give us the rate at which healthy people
 are hospitalized with COVID-19. First note that:
 
->  (8)  healthy hospitalization rate for age group = % healthy in hospital x % hospitalizated in age group
+>  (8)  healthy hospitalization rate for age group = % healthy in hospital x % hospitalized in age group
 
 Combining this with (7) we get:
 
