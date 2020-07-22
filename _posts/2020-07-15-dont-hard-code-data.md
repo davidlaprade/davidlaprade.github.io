@@ -1,7 +1,7 @@
 ---
 title: "Don't Hard Code Data"
 tags: architecture
-excerpt: "By and how to avoid it"
+excerpt: "Why and how to avoid it"
 ---
 
 By data, I basically mean anything that could be assigned as the value of a variable. The integer `3`. The float `3.0`. The string `"three"`. The symbol `:three`. Etc.
