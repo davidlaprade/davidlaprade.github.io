@@ -93,6 +93,12 @@ along the way:
     the Redux store instead of the input component?" Etc. Same as above: this feels
     less personal than something like: "Your idea is terrible and will never
     work."
+  * If you have a lot of constructive feedback on a piece of work, write it down
+    but deliver the feedback in person. This is incredibly important. A large
+    amount of critical feedback can seem _ad hominem_ just because of the
+    volume. By delivering
+    it in person (i.e. on a call) tone of voice can make it clear that it's not and
+    can substantially lessen the chances that it's taken the wrong way.
   * Be _explicit_. Say things like, "I just wanted to give you a little bit of
     feedback..." or "I'd like to see you work on ...". This way there is zero
     confusion/ambiguity that you're attempting to set expectations. Bonus points if
