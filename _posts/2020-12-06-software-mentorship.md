@@ -6,6 +6,12 @@ and I've probably been a bad mentor. Here are some principles that I've learned
 along the way."
 ---
 
+<style>
+  li {
+    margin-bottom: 10px;
+  }
+</style>
+
 I've had some great mentors and some terrible mentors. I've been a good mentor
 and I've probably been a bad mentor. Here are some principles that I've learned
 along the way:
@@ -100,3 +106,5 @@ along the way:
   * Do NOT surprise your mentee on a performance/peer review with
     negative feedback that you have not already told him/her and given him/her a
     chance to work on.
+
+</div>
