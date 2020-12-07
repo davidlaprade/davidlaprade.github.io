@@ -112,5 +112,3 @@ along the way:
   * Do NOT surprise your mentee on a performance/peer review with
     negative feedback that you have not already told him/her and given him/her a
     chance to work on.
-
-</div>
