@@ -2,7 +2,7 @@
 title: "Software Mentorship Principles"
 tags: programming mentorship general
 excerpt: "I've had some great mentors and some terrible mentors. I've been a good mentor
-and I've probably been a bad mentor. Here are some principles that I've learned
+and I've definitely been a bad mentor. Here are some principles that I've learned
 along the way."
 ---
 
@@ -13,16 +13,17 @@ along the way."
 </style>
 
 I've had some great mentors and some terrible mentors. I've been a good mentor
-and I've probably been a bad mentor. Here are some principles that I've learned
+and I've definitely been a bad mentor. Here are some principles that I've learned
 along the way:
 
 ### Be intellectually humble
+  * This one is probably so obvious that it doesn't need to be said, but it
+    cannot be left out.
   * Take your mentee seriously intellectually. Work hard to understand what
     his/her questions are and give good answers. The same question can have
     multiple meanings (think: ["How do you get to Carnegie Hall?"](https://www.carnegiehall.org/Explore/Articles/2020/04/10/The-Joke)). Don't assume the
     one he/she has in mind is the simple/dumb one.
-  * Admit when you're wrong -- you will be.
-  * Admit when you don't know things -- there will be times you don't. And don't
+  * Admit when you're wrong and when you don't know things. And don't
     be afraid to redirect your mentee to the person who would know.
   * Tell your mentee when he/she teaches you things. He/she almost certainly
     will. If you've been a mentor before and learned nothing, you were almost
@@ -82,7 +83,7 @@ along the way:
   * Your mentee will need to improve. He/she will do things badly. You need to
     make sure that your mentee's areas of improvement are known to him/her.
   * Phrase criticism in the collective: "I don't think __we__ should hard code
-    that data here". "__Let's__ [i.e. let _us_] try to avoid writing our own
+    that data here". "__Let's__ try to avoid writing our own
     implementation of
     `map` if at all possible." Etc. The point is still clear, but feels less
     personal: you're not going after him/her, just the idea. It's deliberately
