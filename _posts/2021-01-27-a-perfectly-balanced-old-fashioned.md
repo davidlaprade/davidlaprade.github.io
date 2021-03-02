@@ -1,5 +1,5 @@
 ---
-title: "A Perfectly Balanced Old Fashioned"
+title: "An Acid-Adjusted Old Fashioned"
 tags: general cocktails
 excerpt: "Yes, the cocktail."
 ---
@@ -10,7 +10,7 @@ This is my recipe for a perfectly balanced Old Fashioned:
 
 * 2oz bourbon
 * 1 tsp rich (2:1) syrup <sup>[0](#zero)</sup>
-* 4 drops citric acid solution <sup>[1](#one)</sup>
+* 5-6 drops citric acid solution <sup>[1](#one)</sup>
 * 4 dashes Angostura bitters
 
 Stir for 30 seconds over ice, strain over a fresh cube, add an Amarena cherry,
@@ -45,6 +45,8 @@ that goes into a coke (thank goodness). But we're probably adding about ~8g.
 That's a non-trivial amount. So, if acid is needed to truly enjoy the sugar for
 what it is, we should add a bit of acid. That's it. That was the insight.
 
+This is technically called ["acid
+adjusting"](https://punchdrink.com/articles/acid-adjust-your-spritz-recipe/) in the bartending community.
 I stumbled upon this because I was finding that I had to get used to old
 fashioneds each Fall -- when I ritualistically transition from gin- and
 tequila-based drinks to whiskey-based drinks. Old fashioneds always tasted cloying
@@ -55,7 +57,7 @@ end of each winter).
 Unsophisticated old fashioned recipes would have
 you either muddle an orange slice in the glass, or at least garnish with one. As
 much as I hated the aesthetics of this -- with its cloudy, flocculent
-appearance, its uneven texture, and the awkward amount of garnishes -- I had to
+appearance, uneven texture, and awkward number of garnishes -- I had to
 admit that the drink tasted great. It was even better than the "sophisticated"
 old fashioneds I was making with the Morgenthaler recipe.  Eventually I realized
 that -- duh -- muddling or garnishing with a full orange slice was adding a non-trivial
