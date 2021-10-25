@@ -22,8 +22,8 @@ spirit-forward cocktail that goes down way too easily.
 ### Why I do it this way
 
 _Disclaimer: the only thing I'm contributing here is citric acid. Otherwise my
-recipe is basically identical to Morgenthaler's, which is basically identical to
-Death & Co.'s. It's hard to improve on what's already basically perfect._
+recipe is basically identical to [Morgenthaler's](https://www.foodrepublic.com/2014/10/01/the-old-fashioned-easy-to-make-well-at-home-easy-to-screw-up-at-home/), which is basically identical to
+[Death & Co.'s](https://drinkdeathandcobook.blogspot.com/p/old-fashioned.html). (I'm not sure which came first.) It's hard to improve on what's already basically perfect._
 
 So why citric acid? Why does this help?
 
@@ -61,13 +61,14 @@ appearance, uneven texture, and awkward number of garnishes -- I had to
 admit that the drink tasted great. It was even better than the "sophisticated"
 old fashioneds I was making with the Morgenthaler recipe.  Eventually I realized
 that -- duh -- muddling or garnishing with a full orange slice was adding a non-trivial
-amount of acidity to the drink and that's what I was missing.
+amount of acidity to the drink and that's what I was missing coming off of a
+season of margaritas and Tom Collinses.
 
 Enter [citric
 acid](https://www.amazon.com/NOW-Foods-Sprouting-Substitute-Preservative/dp/B0014UCJ8Q).
 Adding a few drops gives you the flavor-balancing powers of the orange without
 changing the texture or transparency of the drink. I should emphasize: _it
-doesn't make the drink the least bit sour_. The acidity tones down the sweetness,
+doesn't make the drink the least bit sour_. The acidity tempers the sweetness,
 letting the complex flavors of the bourbon and bitters really shine. And by
 expressing extra orange oils on the top, it still smells and tastes like you've
 put fresh orange in the drink.
