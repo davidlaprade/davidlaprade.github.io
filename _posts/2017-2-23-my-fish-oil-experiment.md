@@ -1,5 +1,6 @@
 ---
 title: "My Fish Oil Experiment"
+tags: health fitness
 excerpt: "I've spent the last 8 months running a sustained
 self-experiment on fish oil supplements. Here are the results."
 ---
