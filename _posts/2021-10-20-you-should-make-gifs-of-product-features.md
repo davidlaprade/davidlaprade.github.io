@@ -7,9 +7,10 @@ excerpt: Making GIFs of your changes and appending them to pull requests is some
 ### What
 
 Whenever I make a change to a user-visible part of a project, I try to make a
-GIF of the change to include in my PR. This kind of thing:
+GIF of the change to include in [my
+PR](https://github.com/ScopeLift/umbra-protocol/pull/202). This kind of thing:
 
-![product_gif]({{ site.baseurl }}/jekyll_img/product_change.gif)
+![product_gif](https://user-images.githubusercontent.com/7997618/126827894-147f4c9a-5d00-4450-b646-6ab05d52b1c2.gif)
 
 ### How
 
