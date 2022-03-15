@@ -51,7 +51,7 @@ the problem, and all were detrimental to my wife’s sleep.
 warm. Even a little too warm and I wake up frequently, toss and turn, etc.
 * We keep our house cold in the winter (~60°F at night). In the summer, we blast the AC as high as it will go.
 * We also invested in a
-  [temperature-controlled](https://www.eightsleep.com/product/pod-pro-cover/) mattress cover.
+  [temperature-controlled](https://www.eightsleep.com/product/pod-pro-cover/) mattress cover ([referral link](http://eight.sl/ts1XG)).
 * This is by far the most cost-intensive of the changes I made, but I think the changes
 were easily worth it.
 
