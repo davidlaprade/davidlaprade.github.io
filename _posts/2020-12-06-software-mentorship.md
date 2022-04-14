@@ -68,6 +68,16 @@ along the way:
     you don't know what you're doing, or you're not being honest ("he doesn't
     like my code but won't just say it"). This is very hard, and makes
     mentorship a real challenge that many are not prepared for.
+  * Don't take credit for your mentee's ideas. Be a good human. (I can't believe I even
+    have to say this.) Beyond just being a good person, though, you should go out of your
+    way to broadcast your mentee's good ideas every chance you get -- with attribution. This
+    will help give your mentee confidence, which he/she probably sorely lacks, as well as
+    build trust between your mentee and the rest of your team. Did your mentee spot a tricky
+    bug that everyone had been wondering about for months? Publically commend Mentee about it.
+    Did someone just complement you when you raised a concern that you got from your
+    mentee? "Thanks! <Mentee> pointed it out to me, I thought it was a great catch." Etc.
+    Do it in private conversations when your mentee cannot see, as well as publically
+    where your mentee can. Again: every. chance. you. get.
   * Give your mentee chances to try and fail in low-stakes environments. E.g. Let them
     draft a technical design before you weigh in. Let them try to implement
     something their way -- even if they will probably fail.
