@@ -32,6 +32,7 @@ nights I just wake and take it off. Before trying this out, I wore the tape for
 a couple of hours while awake. This made me feel more comfortable about its
 safety. Obviously, don't try this if you're drunk or high or sick or something.
 Did I mention I'm not a doctor?
+* Why does this work? I have no idea. There are books (e.g. [this one](https://www.amazon.com/gp/product/0062349473)) that speculate on it. There may be some connection between mouth breathing and activation of the fight-or-flight (sympathetic) nervous system. For example, if you were running from a lion, you'd be breathing through your mouth. So, the thought is that if you breathe through your nose you're forced to breathe deeper, which helps activate your parasympathetic (rest-and-digest) nervous system, which makes you sleep better. But again, this is 99.9% conjecture from random people on reddit, so take it with a big grain of salt.
 * This is [the tape](https://www.amazon.com/gp/product/B00H2G4QM8) I use. It costs ~$15, and it will probably be enough for 5+
 years. I’ve still not finished a single roll
 
