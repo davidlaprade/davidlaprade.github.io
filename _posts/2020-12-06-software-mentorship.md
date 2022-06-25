@@ -75,7 +75,7 @@ along the way:
     build trust between your mentee and the rest of your team. Did your mentee spot a tricky
     bug that everyone had been wondering about for months? Publically commend Mentee about it.
     Did someone just complement you when you raised a concern that you got from your
-    mentee? "Thanks! <Mentee> pointed it out to me, I thought it was a great catch." Etc.
+    mentee? "Thanks! Mentee pointed it out to me, I thought it was a great catch." Etc.
     Do it in private conversations when your mentee cannot see, as well as publically
     where your mentee can. Again: every. chance. you. get.
   * Give your mentee chances to try and fail in low-stakes environments. E.g. Let them
