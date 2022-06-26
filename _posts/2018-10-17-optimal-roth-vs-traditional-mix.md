@@ -1,6 +1,6 @@
 ---
 title: Roth vs Traditional Retirement Accounts
-tags: investing general javascript
+tags: investing general javascript finance
 excerpt: "How to determine the optimal mix of retirement accounts for your
 circumstances."
 ---
