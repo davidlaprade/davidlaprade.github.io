@@ -1,7 +1,8 @@
 ---
-title: "Objective Truth: Lines of Code Should Be 80-Characters or Less"
+title: "Objective Truth: Lines of Code Should Be 80-Characters Long"
 tags: dev-env programming
 date: "2022-06-26"
+excerpt: "An 80 character line limit is objectively superior to whatever barbaric, 3-digit limit you currently have in your linter."
 ---
 
 I think lines of code should be no more than 80 characters long. Just about
