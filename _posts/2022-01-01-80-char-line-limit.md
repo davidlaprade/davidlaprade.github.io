@@ -261,6 +261,64 @@ reading.
 Put another way: indentation doesn’t really matter when it comes to setting line
 limits.
 
+### Objections
+
+__Objection 1.__ *Reading code is just not the same thing as reading prose in a book or even
+Google search results. It’s not natural language. So the lessons learned from
+reading natural language do not apply to reading code.*
+
+Fair. Code is obviously not prose. But I think we have every reason to think
+that we read code exactly the same way we read everything else -- which is to
+say: we jump from point to point on a line, inferring what's in between, and use
+our peripheral vision to guide us in determining where to focus next. This is
+just the way our eyes and brains work. We have a [small nerve
+cluster](https://en.wikipedia.org/wiki/Fovea_centralis) in our
+retina that only allows us to focus narrowly. With this limitation, the most
+efficient way to read is to jump from point to point and fill in the blanks.
+This is just a simple consequence of our biology. There is no reason to think
+that we read code any differently.
+
+__Objection 2.__ *When code is stretched out vertically it’s actually difficult to
+read/understand.*
+
+I admit it takes some getting used to if you’re accustomed to writing code with
+whatever line length you want. But once you are used to it, it actually usually
+helps in understanding the code – especially when you’re reading code that you
+did not write (which, again, is what we should be optimizing for).
+
+Just consider these examples. Which one is easier to understand?
+
+Long line (105 chars):
+
+{% highlight sql %}
+LENGTH(REGEXP_REPLACE(REGEXP_REPLACE(c.content, r'\t', ' '), r'(\n|\r|\v){2,}', '\n')) as cleaned_content,
+{% endhighlight %}
+
+VS. the same code broken up so it's under 80 characters per line:
+
+{% highlight sql %}
+LENGTH(
+  REGEXP_REPLACE(
+    REGEXP_REPLACE(c.content, r'\t', ' '),
+    r'(\n|\r|\v){2,}',
+    '\n'
+  )
+) as cleaned_content,
+{% endhighlight %}
+
+I’ll bet the second one was simpler to understand. What is an input of what
+in the first one? You can probably figure it out, but it's emphatically _not_
+obvious if you didn’t write it. The second one is much more forthcoming about
+its meaning.
+
+I think the problem here is that most engineers are optimizing for writing code.
+This is completely natural. When you’re writing the code, your intent is
+perfectly clear to you. You know exactly what is an input of what. But this
+just isn’t the case for anyone reading your code. We need to be thinking more
+about the experience of those people.
+
+
+
 ### Conclusion
 
 I think that the three premises of my argument are true, and that its conclusion
@@ -274,9 +332,9 @@ means that the burden of proof should be on anyone who wants to exceed them. The
 linter should yell and we should have to explain ourselves.
 
 There certainly are instances in which exceeding an 80-character limit is
-justified. Having 80 character limits just means taking seriously the facts of our
-psychology and the languages we use and writing code in a way that optimizes for
-them.
+justified. Having 80 character limits just means taking seriously the facts
+about our psychology and the languages we use, and then writing code in a way
+that optimizes for them.
 
 <br>
 
