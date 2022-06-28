@@ -1,8 +1,8 @@
--- Original query can be found here:
--- https://console.cloud.google.com/bigquery?sq=226172199733:882da7fa2e7f4c1ab147e7831aa2b8e9
+--- Original query can be found here:
+--- https://console.cloud.google.com/bigquery?sq=226172199733:882da7fa2e7f4c1ab147e7831aa2b8e9
 
 -- CAVEATS:
--- * This query is quite expensive to run on the full public dataset, ~$30. If
+-- * This query is quite expensive to run on the full public dataset, ~$13. If
 --   you are just interested in trying it out, I recommend commenting out the
 --   first subquery and replacing with the version below, which uses a much
 --   smaller sample table.
@@ -14,6 +14,7 @@
 
 WITH cleaned_contents as (
   SELECT
+    -- cleaned_content == content w/o blank lines, and with all tabs converted to spaces
     REGEXP_REPLACE(
       REGEXP_REPLACE(c.content, r'\t', ' '), -- replace tabs with spaces
       r'(\n|\r|\v){2,}', -- remove blank lines
@@ -99,6 +100,10 @@ WITH cleaned_contents as (
       END) as language_name,
     -- Replace one or more spaces following a line break with the line break alone.
     REGEXP_REPLACE(cleaned_content, r'(\n|\r|\v)\s+', '\\1') as cleaned_content_without_indentation,
+    -- Remove indentation and line break characters to get the total length of just the code in the file
+    LENGTH(REGEXP_REPLACE(cleaned_content, r'(\n|\r|\v)\s+', '')) as total_length_without_indentation_or_line_breaks,
+    -- Remove line break characters to get the total length of code + indentation in the file
+    LENGTH(REGEXP_REPLACE(cleaned_content, r'(\n|\r|\v)+', '')) as total_length_without_line_breaks,
     ARRAY_LENGTH(SPLIT(cleaned_content, '\n')) as line_count
   FROM cleaned_contents
   WHERE 0=0
@@ -117,7 +122,15 @@ SELECT
   COUNT(*) as files_analyzed,
   SUM(total_chars_indented) as total_indentation,
   SUM(line_count) as total_lines,
-  ROUND(SUM(total_chars_indented) / SUM(line_count), 2) as average_spaces_indented
+  -- Calculate the average indentation on each line in the language
+  ROUND(SUM(total_chars_indented) / SUM(line_count), 2) as average_spaces_indented,
+  -- Compute the average length of code on each line, excluding indentation
+  ROUND(
+    SUM(total_length_without_indentation_or_line_breaks) / SUM(line_count),
+    2
+  ) as average_code_length_per_line,
+  -- Compute the average length each line, including indentation
+  ROUND(SUM(total_length_without_line_breaks) / SUM(line_count), 2) as average_length_per_line,
 FROM final_content_data
 GROUP BY language_name
 ORDER BY average_spaces_indented DESC

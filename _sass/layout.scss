@@ -121,17 +121,13 @@
   padding: 24px 0;
   position: relative;
   a {
-  	text-decoration: none;
-  	color: $text-color;
-  	display: inline-block;
-  }
-  img {
-  	max-height: 72px;
-  	margin: 0 auto;
-  	display: block;
+    text-decoration: none;
+    color: $text-color;
+    display: inline-block;
   }
   h1 {
-  	font-family: 'Signika', sans-serif; //Emerald logo font
+    color: $main-color;
+    font-family: 'Signika', sans-serif; //Emerald logo font
     font-weight: 600;
   }
   &:after {
