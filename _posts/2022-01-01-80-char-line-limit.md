@@ -215,34 +215,30 @@ I wrote a
 [query](https://console.cloud.google.com/bigquery?sq=226172199733:882da7fa2e7f4c1ab147e7831aa2b8e9) against this data for the [most popular languages](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language) to find out how
 much indentation they have on average per line.<sup>[3](#footnote3)</sup> Here are the results:
 
-<style>
-  table {
-    margin-left: -12.5%;
-  }
-</style>
+| language | files analyzed | average spaces indented | average length per line*|
+|-|-|-|-|
+| c# | 16,098,455 | 8.05 | 38.33 |
+| python | 19,519,909 | 6.39 | 40.17 |
+| rust | 771,262 | 5.54 | 35.05 |
+| swift | 1,475,268 | 5.1 | 36.81 |
+| ruby | 18,214,503 | 4.87 | 34.77 |
+| javascript | 176,795,483 | 4.73 | 35.99 |
+| powershell | 299,175 | 4.62 | 41.3 |
+| java | 53,998,369 | 4.42 | 37.52 |
+| php | 79,727,724 | 4.27 | 33.3 |
+| html | 30,705,534 | 4.27 | 43.35 |
+| scala | 2,119,233 | 3.7 | 40.05 |
+| c++ | 20,145,624 | 3.54 | 35.03 |
+| r | 33,247 | 3.08 | 36.62 |
+| sql | 1,372,125 | 1.99 | 41.93 |
+| shell | 3,972,539 | 1.65 | 31.59 |
+| css | 30,721,126 | 1.6 | 27.03 |
+| c | 172,896,217 | 1.44 | 28.97 |
+| go | 23,877,353 | 1.23 | 31.21 |
+| objective c | 203,472,277 | 1.11 | 34.51 |
+| total | 856,215,423 | 2.58 | 32.90 |
 
-| language | files analyzed | total indentation | total lines | average indentation (# of spaces) |
-|-|-|-|-|-|
-| c# | 16080230 | 10185507937 | 1264998505 | 8.05 |
-| python | 19496272 | 11840328584 | 1853602169 | 6.39 |
-| rust | 768764 | 317469841 | 57331086 | 5.54 |
-| swift | 1473737 | 563386192 | 110491522 | 5.1 |
-| ruby | 18198326 | 4534757362 | 930740971 | 4.87 |
-| javascript | 176731275 | 68978391834 | 14582113863 | 4.73 |
-| powershell | 298940 | 109710328 | 23776011 | 4.61 |
-| java | 53920248 | 21276014398 | 4810016279 | 4.42 |
-| php | 79693227 | 32179723446 | 7535468351 | 4.27 |
-| html | 30679746 | 10921580254 | 2561181581 | 4.26 |
-| scala | 2114899 | 628289029 | 169943456 | 3.7 |
-| c++ | 20139549 | 9060909073 | 2561499977 | 3.54 |
-| r | 33134 | 7848197 | 2555276 | 3.07 |
-| sql | 1371104 | 131413484 | 66139609 | 1.99 |
-| shell | 3966614 | 449667572 | 273164745 | 1.65 |
-| css | 30717374 | 5139073564 | 3205581075 | 1.6 |
-| c | 172901491 | 49783157808 | 34582967122 | 1.44 |
-| go | 23849437 | 3380167180 | 2759290778 | 1.23 |
-| objective c | 203463840 | 22297179828 | 20088759145 | 1.11 |
-| overall | 855,898,207 | 251,784,575,911 | 97,439,621,521 | 2.58 |
+*=_includes indentation_
 
 The query excluded things like binaries, auto-generated files, build-artifacts,
 minimized files, data files, non-text files, empty lines, and anything that
@@ -251,7 +247,7 @@ didn’t look like it was written, or intended to be consumed, by a human.
 After all of these filters were applied, the query ran against 855 million open
 source software files, covering 97 billion lines of code in 19 of the most
 popular languages, and found that __there are on average only 2.5 spaces of
-indentation per line (3 if we’re being generous)__.
+indentation per line__ and ~33 characters per line total.
 
 Interestingly, in no case did the average amount of indentation for a language
 require that that language have greater than 80 character line limits in order
