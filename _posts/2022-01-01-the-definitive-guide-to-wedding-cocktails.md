@@ -43,7 +43,7 @@ Being prepared in advance means that signature cocktails are usually made more
 precisely (i.e. ingredients are actually measured), and taste-tested. Since the
 couple has put their names on it, it's usually also more impressive and
 sophisticated. It'll often have interesting or better quality ingredients -- the
-kinds of things you wouldn't just serve to the unwashed masses. It
+kinds of things that would be too expensive to include in an open bar. It
 may even have a garnish. In short: it's your only shot of getting a craft
 cocktail. Take it. And it's a great neutral topic to talk about – why did they
 pick this drink, have you ever had anything like this before, etc. It checks all
