@@ -12,13 +12,14 @@ This is my argument:
 
 1. The optimal line length for reading is 45-75 characters.
 1. We should optimize code for reading, not writing.
-1. On average, code is offset by ~3 chars of whitespace.
+1. On average, code is offset by ~4 chars of whitespace.
 1. Hence, we should have at most ~80 character line limits.
 
 This is not just personal preference. It is based on experimentally-verified
-features of our psychology, as well as usage patterns in 100 billion lines of
-open source code. An 80 character line limit is objectively superior to whatever
-barbaric, 3-digit limit you currently have in your linter.
+features of our psychology, as well as usage patterns in [1.8 trillion lines of
+open source code](#the-problem-of-indentation). An 80 character line limit is
+objectively superior to whatever barbaric, 3-digit limit you currently have in
+your linter.
 
 ### The Argument Against 80 Character Lines
 
@@ -212,79 +213,120 @@ released](https://github.blog/2016-06-29-making-open-source-data-more-available/
 against the code in public GitHub repositories.
 
 I wrote a
-[query](https://console.cloud.google.com/bigquery?sq=226172199733:882da7fa2e7f4c1ab147e7831aa2b8e9) against this data for the [most popular languages](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language) to find out how
-much indentation they have on average per line.<sup>[3](#footnote3)</sup> Here are the results:
+[query](https://console.cloud.google.com/bigquery?sq=226172199733:c6cfab4e7c6b49e791513d3229f9ddf4)
+against this data for the [most popular
+languages](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language)
+to find out how much indentation they have on average per
+line.<sup>[3](#footnote3)</sup> Here are some of the results:
 
-| language | files analyzed | average spaces indented | average length per line*|
-|-|-|-|-|
-| c# | 16,098,455 | 8.05 | 38.33 |
-| python | 19,519,909 | 6.39 | 40.17 |
-| rust | 771,262 | 5.54 | 35.05 |
-| swift | 1,475,268 | 5.1 | 36.81 |
-| ruby | 18,214,503 | 4.87 | 34.77 |
-| javascript | 176,795,483 | 4.73 | 35.99 |
-| powershell | 299,175 | 4.62 | 41.3 |
-| java | 53,998,369 | 4.42 | 37.52 |
-| php | 79,727,724 | 4.27 | 33.3 |
-| html | 30,705,534 | 4.27 | 43.35 |
-| scala | 2,119,233 | 3.7 | 40.05 |
-| c++ | 20,145,624 | 3.54 | 35.03 |
-| r | 33,247 | 3.08 | 36.62 |
-| sql | 1,372,125 | 1.99 | 41.93 |
-| shell | 3,972,539 | 1.65 | 31.59 |
-| css | 30,721,126 | 1.6 | 27.03 |
-| c | 172,896,217 | 1.44 | 28.97 |
-| go | 23,877,353 | 1.23 | 31.21 |
-| objective c | 203,472,277 | 1.11 | 34.51 |
-| total | 856,215,423 | 2.58 | 32.90 |
+| Language | Avg Line Length* | Avg Indent. | Indent. (50th%) | Line Length (50th%) | Line Length (99th%) |
+| - | - | - | - | - | - |
+| sql | 54.8 | 1.2 | 0 | 45 | 204 |
+| powershell | 41.8 | 4.5 | 4 | 36 | 156 |
+| python | 40.5 | 6.4 | 4 | 37 | 106 |
+| scala | 40.3 | 3.7 | 3 | 37 | 117 |
+| html | 40.3 | 4.2 | 2 | 28 | 196 |
+| c# | 38.6 | 8 | 8 | 32 | 139 |
+| java | 37.9 | 4.5 | 4 | 35 | 117 |
+| r | 36.7 | 3 | 1 | 31 | 129 |
+| swift | 36.6 | 4.6 | 4 | 29 | 150 |
+| rust | 35.5 | 5.5 | 4 | 32 | 97 |
+| ruby | 35.3 | 4.9 | 4 | 30 | 115 |
+| c++ | 35.3 | 3.5 | 2 | 32 | 107 |
+| objective c | 34.9 | 1.1 | 1 | 32 | 87 |
+| php | 33.4 | 4.3 | 4 | 27 | 128 |
+| shell | 32.4 | 1.5 | 0 | 26 | 120 |
+| go | 31.4 | 1.2 | 1 | 25 | 114 |
+| javascript | 30.8 | 4.8 | 4 | 25 | 109 |
+| c | 29.1 | 1.4 | 1 | 26 | 78 |
+| css | 24.7 | 1.6 | 1 | 20 | 107 |
 
-*=_includes indentation_
+\* = _includes indentation_<br>
 
 The query excluded things like binaries, auto-generated files, build-artifacts,
 minimized files, data files, non-text files, empty lines, and anything that
-didn’t look like it was written, or intended to be consumed, by a human.
+didn't look like it was written, or intended to be consumed, by a human.
 
-After all of these filters were applied, the query ran against 855 million open
-source software files, covering 97 billion lines of code in 19 of the most
-popular languages, and found that __there are on average only 2.5 spaces of
-indentation per line__ and ~33 characters per line total.
+After all of these filters were applied, the query ran against 1.78 trillion
+lines of open source code in the 19 most
+popular languages, and found that __there are on average only 4.1 spaces of
+indentation per line__ and ~35 characters per line total.
 
 Interestingly, in no case did the average amount of indentation for a language
 require that that language have greater than 80 character line limits in order
 to accommodate the 45-75 character ideal range prescribed by the psychology of
 reading.
 
-Put another way: indentation doesn’t really matter when it comes to setting line
-limits.
+Put another way: indentation does not take up all that much space on most lines.
+We can use indentation and still comfortably remain within 80 characters
+the vast majority of the time.
+
+The query did reveal, however, that an 80-character limit would be disruptive.
+Among the most popular languages, only one (C) had a p-99 line length that was
+under 80 characters. This means that in most languages, at least 1% of the lines
+in open source code are longer than I'm arguing they should be. If any of these
+projects were to adopt an 80-character line limit, >1% of the lines would have
+to change.
+
+This isn't surprising. Again: _programmers like to write long lines_. It is the
+default preference in the age of big monitors. I never said that an 80 character
+limit wouldn't have consequences. But I want to emphasize that those
+consequences aren't the end of the world.  I have written code in 9 of the 19
+most popular languages professionally -- more than that if you include hobby
+projects. In every single one of them without exception it has been possible to
+write expressive, functional code in under 80 characters per line. Even SQL,
+which had far-and-away the highest p99 line length, can be comfortably written
+within these limits. As evidence, I submit the [very
+query](https://github.com/davidlaprade/davidlaprade.github.io/blob/8135ec83a6d81d1cb7181bebac318bbe74f6ca6c/average-char-per-line.sql) which produced the
+data above.
 
 ### Objections
 
-__Objection 1.__ *Reading code is just not the same thing as reading prose in a book or even
-Google search results. It’s not natural language. So the lessons learned from
-reading natural language do not apply to reading code.*
+__Objection 1.__ *Reading code is just not the same thing as reading prose in a
+book or even reading Google search results. It's not a natural language. So
+the lessons learned from reading natural language do not apply here.*
 
-Fair. Code is obviously not prose. But I think we have every reason to think
-that we read code exactly the same way we read everything else -- which is to
-say: we jump from point to point on a line, inferring what's in between, and use
-our peripheral vision to guide us in determining where to focus next. This is
-just the way our eyes and brains work. We have a [small nerve
-cluster](https://en.wikipedia.org/wiki/Fovea_centralis) in our
-retina that only allows us to focus narrowly. With this limitation, the most
-efficient way to read is to jump from point to point and fill in the blanks.
-This is just a simple consequence of our biology. There is no reason to think
-that we read code any differently.
+Fair. Code is obviously not prose. But there have also been eye scanning studies
+done on programmers[<sup>4</sup>](#footnote4) (albeit not as many). And they validate what was said above
+-- namely, programmers likewise jump from point to point when they read code,
+inferring what's in between, and use their peripheral vision to guide them in
+determining where to focus next.
 
-__Objection 2.__ *When code is stretched out vertically it’s actually difficult to
+[This](https://dl.acm.org/doi/10.1145/1117309.1117356) is a representative
+study, with full text available
+[here](https://www.researchgate.net/profile/Roman-Bednarik/publication/220811077_An_eye-tracking_methodology_for_characterizing_program_comprehension_processes/links/0fcfd50aca372c6928000000/An-eye-tracking-methodology-for-characterizing-program-comprehension-processes.pdf?origin=publication_detail) (at the time I am writing). They include one figure of the IDE with a
+"representative [eye] scan-path superimposed". Here it is:
+
+![programmer-eye-scanning]({{ site.baseurl }}/jekyll_img/programmer-eye-scan-path.jpg)
+
+Notice how the programmer's eyes jumped around. When reading the code, they
+focused on discrete points in the line -- often only one point per line: the
+center. This strongly suggests that inference and peripheral version were being
+used to fill in the rest of the information: two processes that long lines
+disrupt.
+
+It's not surprising that programmers would read code the same way people read
+everything else. This is just the way our eyes and brains work. We have a [small nerve
+cluster](https://en.wikipedia.org/wiki/Fovea_centralis) in our retina that only
+allows us to focus narrowly. With this limitation, the most efficient way to
+read _anything_ is to jump from point to point and fill in the
+blanks. It's just a consequence of our biology.
+
+__Objection 2.__ *When code is stretched out vertically it's actually difficult to
 read/understand.*
 
-I admit it takes some getting used to if you’re accustomed to writing code with
-whatever line length you want. But once you are used to it, it actually usually
-helps in understanding the code – especially when you’re reading code that you
-did not write (which, again, is what we should be optimizing for).
+I admit it takes some getting used to if you're accustomed to writing code that
+can be longer.  But once you are used to it, it actually usually helps in
+understanding the code – especially when you're reading code that you did not
+write (which, again, is what we should be optimizing for).
 
 Just consider these examples. Which one is easier to understand?
 
-Long line (105 chars):
+<style>
+figure {
+  width: fit-content;
+}
+</style>
 
 {% highlight sql %}
 LENGTH(REGEXP_REPLACE(REGEXP_REPLACE(c.content, r'\t', ' '), r'(\n|\r|\v){2,}', '\n')) as cleaned_content,
@@ -302,18 +344,25 @@ LENGTH(
 ) as cleaned_content,
 {% endhighlight %}
 
-I’ll bet the second one was simpler to understand. What is an input of what
+I'll bet the second one was simpler to understand.
+
+What is an input of what
 in the first one? You can probably figure it out, but it's emphatically _not_
-obvious if you didn’t write it. The second one is much more forthcoming about
+obvious if you didn't write it. The second one is much more forthcoming about
 its meaning.
 
 I think the problem here is that most engineers are optimizing for writing code.
-This is completely natural. When you’re writing the code, your intent is
-perfectly clear to you. You know exactly what is an input of what. But this
-just isn’t the case for anyone reading your code. We need to be thinking more
-about the experience of those people.
+This is completely natural. When you're writing the code, your intent is
+perfectly clear to you. But this just isn't the case for anyone reading your
+code. We need to be thinking more about the experience of those people.
 
+__Objection 3.__ *Vertical code just wastes space on my screen.*
 
+Then you don't have enough panes open in your editor! Narrow code on a wide
+monitor is amazing. You can often have 3 or 4 vertical splits in your editor (in
+Vim I sometimes have multiple splits for different parts of the same file),
+allowing you to quickly consult other parts of the codebase. It is incredibly
+helpful.
 
 ### Conclusion
 
@@ -349,8 +398,18 @@ For more info, see: [1](https://web.archive.org/web/20110407164810/http://eyetoo
 
 <span id="footnote3">[3]</span>
 You can view and re-run my query [here
-](https://console.cloud.google.com/bigquery?sq=226172199733:882da7fa2e7f4c1ab147e7831aa2b8e9). If you don’t already
+](https://console.cloud.google.com/bigquery?sq=226172199733:882da7fa2e7f4c1ab147e7831aa2b8e9). If you don't already
 have one, you will have to create a (free) Google Cloud project to do this.
 Running the query costs about $30, which can usually be done
 for free with a trial account. If that's too much work, I also put the code in a
-[public gist](https://gist.github.com/davidlaprade/cda5775d39c4f6b42b149d1d01111c74).
+[public gist](https://gist.github.com/davidlaprade/cda5775d39c4f6b42b149d1d01111c74),
+and saved it to the [repo for this
+blog](https://github.com/davidlaprade/davidlaprade.github.io/blob/8135ec83a6d81d1cb7181bebac318bbe74f6ca6c/average-char-per-line.sql).
+
+<span id="footnote4">[4]</span>
+Here are some eye tracking studies on programming if you're interested in
+reading further:
+[1](https://link.springer.com/article/10.1007/s10664-016-9477-x),
+[2](https://link.springer.com/article/10.1007/s10664-018-9649-y),
+[3](https://dl.acm.org/doi/10.1145/1117309.1117356)
+
