@@ -147,7 +147,7 @@ a positive argument for 80 character line limits. It goes like this:
 
 1. The optimal line length for reading is 45-75 characters.
 1. We should optimize code for reading, not writing.
-1. On average, code is prefixed by ~3 chars of whitespace.
+1. On average, code is prefixed by ~4 chars of whitespace.
 1. Hence, we should have at most ~80 character line limits.
 
 If you have doubts about the first premise, spend [2 minutes
