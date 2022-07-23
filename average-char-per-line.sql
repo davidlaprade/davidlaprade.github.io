@@ -1,23 +1,21 @@
 --- Original query can be found here:
---- https://console.cloud.google.com/bigquery?sq=226172199733:882da7fa2e7f4c1ab147e7831aa2b8e9
+--- https://console.cloud.google.com/bigquery?sq=226172199733:c6cfab4e7c6b49e791513d3229f9ddf4
 
 -- CAVEATS:
 -- * This query is quite expensive to run on the full public dataset, ~$13. If
 --   you are just interested in trying it out, I recommend commenting out the
 --   first subquery and replacing with the version below, which uses a much
 --   smaller sample table.
--- * This computes the _average_ amount of indentation per line. A better
---   measure would have been the the _mode_, but that would be much more
---   difficult to compute.
 -- * This includes indentation on code comments, which should be fine as comments
 --   usually inherit the indentation of the code context
 
 WITH cleaned_contents as (
   SELECT
-    -- cleaned_content == content w/o blank lines, and with all tabs converted to spaces
+    c.id as id,
+    -- cleaned_content == content with standardized indentation and line break chars
     REGEXP_REPLACE(
-      REGEXP_REPLACE(c.content, r'\t', ' '), -- replace tabs with spaces
-      r'(\n|\r|\v){2,}', -- remove blank lines
+      REGEXP_REPLACE(content, r'\t', ' '), -- standardize all indentation
+      r'(\r|\v)', -- standardize all line breaks
       '\n'
     ) cleaned_content,
     REGEXP_SUBSTR(f.path, r'\.\w+$') as language
@@ -32,41 +30,42 @@ WITH cleaned_contents as (
     -- the file needs to have a non-trivial amount of content
     and c.size > 100
     and REGEXP_SUBSTR(f.path, r'\.\w+$') in (
-       -- file extensions for the most popular languages
+        -- file extensions for the most popular languages
           '.js', '.ts', '.rb', '.py', '.cs', '.cc', '.php', '.cpp', '.cxx',
           '.java', '.c', '.sh', '.r', '.sql', '.swift', '.h', '.m', '.html',
           '.css', '.scss', '.less', '.sass', '.rs', '.rlib', '.go', '.sc',
           '.scala', '.ps1'
     )
-    -- Comment out the query above and replace with this query if you want to
-    -- test against a *much* smaller data set
-    --
-    -- SELECT
-    --   REGEXP_REPLACE(
-    --     REGEXP_REPLACE(content, r'\t', ' '), -- replace tabs with spaces
-    --     r'(\n|\r|\v){2,}', -- remove blank lines
-    --     '\n'
-    --   ) cleaned_content,
-    --   REGEXP_SUBSTR(sample_path, r'\.\w+$') as language
-    -- FROM bigquery-public-data.github_repos.sample_contents
-    -- WHERE 0=0
-    --   and not binary
-    --   -- non-text files (e.g. images) have no content but have sizes > 0
-    --   and content is not null
-    --   -- exclude files that are really large, as they likely weren't hand written
-    --   and size < 15000
-    --   -- the file needs to have a non-trivial amount of content
-    --   and size > 100
-    --   and REGEXP_SUBSTR(sample_path, r'\.\w+$') in (
-    --     -- file extensions for the most popular languages
-    --     '.js', '.ts', '.rb', '.py', '.cs', '.cc', '.php', '.cpp', '.cxx',
-    --     '.java', '.c', '.sh', '.r', '.sql', '.swift', '.h', '.m', '.html',
-    --     '.css', '.scss', '.less', '.sass', '.rs', '.rlib', '.go', '.sc',
-    --     '.scala', '.ps1'
-    --   )
-), cleaned_content_plus_metadata as (
+  -- Comment out the query above and replace with this query if you want to
+  -- test against a *much* smaller data set
+  --
+  -- SELECT
+  --   id,
+  --   REGEXP_REPLACE(
+  --     REGEXP_REPLACE(content, r'\t', ' '), -- standardize all indentation
+  --     r'(\r|\v)', -- standardize all line breaks
+  --     '\n'
+  --   ) cleaned_content,
+  --   REGEXP_SUBSTR(sample_path, r'\.\w+$') as language
+  -- FROM bigquery-public-data.github_repos.sample_contents
+  -- WHERE 0=0
+  --   and not binary
+  --   -- non-text files (e.g. images) have no content but have sizes > 0
+  --   and content is not null
+  --   -- exclude files that are really large, as they likely weren't hand written
+  --   and size < 15000
+  --   -- the file needs to have a non-trivial amount of content
+  --   and size > 100
+  --   and REGEXP_SUBSTR(sample_path, r'\.\w+$') in (
+  --     -- file extensions for the most popular languages
+  --     '.js', '.ts', '.rb', '.py', '.cs', '.cc', '.php', '.cpp', '.cxx',
+  --     '.java', '.c', '.sh', '.r', '.sql', '.swift', '.h', '.m', '.html',
+  --     '.css', '.scss', '.less', '.sass', '.rs', '.rlib', '.go', '.sc',
+  --     '.scala', '.ps1'
+  --   )
+), cleaned_lines as (
   SELECT
-    *,
+    id,
     (CASE language
       WHEN '.py' then 'python'
       WHEN '.ts' then 'javascript'
@@ -97,40 +96,70 @@ WITH cleaned_contents as (
       WHEN '.sc' then 'scala'
       WHEN '.ps1' then 'powershell'
       ELSE language
-      END) as language_name,
-    -- Replace one or more spaces following a line break with the line break alone.
-    REGEXP_REPLACE(cleaned_content, r'(\n|\r|\v)\s+', '\\1') as cleaned_content_without_indentation,
-    -- Remove indentation and line break characters to get the total length of just the code in the file
-    LENGTH(REGEXP_REPLACE(cleaned_content, r'(\n|\r|\v)\s+', '')) as total_length_without_indentation_or_line_breaks,
-    -- Remove line break characters to get the total length of code + indentation in the file
-    LENGTH(REGEXP_REPLACE(cleaned_content, r'(\n|\r|\v)+', '')) as total_length_without_line_breaks,
-    ARRAY_LENGTH(SPLIT(cleaned_content, '\n')) as line_count
+      END) as language,
+    SPLIT(cleaned_content, '\n') as lines_of_code
   FROM cleaned_contents
   WHERE 0=0
     -- There needs to be at least one line with leading whitespace, otherwise
     -- we assume it was auto-generated.
     and REGEXP_CONTAINS(cleaned_content, r'\n\s+')
-), final_content_data as (
+), line_data as (
   SELECT
-    *,
-    CHAR_LENGTH(cleaned_content) - CHAR_LENGTH(cleaned_content_without_indentation) as total_chars_indented
-  FROM cleaned_content_plus_metadata
+    id,
+    language,
+    line,
+    LENGTH(line) as line_length,
+    LENGTH(COALESCE(REGEXP_EXTRACT(line, r'\A\s+'), '')) as indentation,
+  FROM cleaned_lines
+  -- https://cloud.google.com/bigquery/docs/reference/standard-sql/arrays#flattening_arrays
+  CROSS JOIN UNNEST(cleaned_lines.lines_of_code) AS line
+  WHERE 0=0
+    AND LENGTH(line) > 0 -- we don't want blank lines
+    AND LENGTH(line) < 300 -- a line that is 300+ char is likely autogenerated
+), ranked_line_lengths as (
+  SELECT
+    language,
+    line_length,
+    ROW_NUMBER() OVER (
+      PARTITION BY language ORDER BY COUNT(line_length) DESC
+    ) as line_length_ranking,
+  FROM line_data
+  GROUP BY language, line_length
+  ORDER BY COUNT(line_length) DESC
+), ranked_indentations as (
+    SELECT
+    language,
+    indentation,
+    ROW_NUMBER() OVER (
+      PARTITION BY language ORDER BY COUNT(indentation) DESC
+    ) as indentation_ranking,
+  FROM line_data
+  GROUP BY language, indentation
+  ORDER BY COUNT(indentation) DESC
+), averaged_data as (
+  SELECT
+    language,
+    ROUND(AVG(line_length), 1) as avg_line_length,
+    ROUND(AVG(indentation), 1) as avg_indentation,
+    APPROX_QUANTILES(line_length, 100)[OFFSET(50)] as median_line_length,
+    APPROX_QUANTILES(indentation, 100)[OFFSET(50)] as median_indentation,
+    APPROX_QUANTILES(line_length, 100)[OFFSET(99)] as line_length_99th_pcnt,
+    APPROX_QUANTILES(indentation, 100)[OFFSET(99)] as indentation_99th_pcnt,
+    COUNT(DISTINCT(line)) as lines_analyzed,
+    COUNT(DISTINCT(id)) as files_analyzed
+  FROM line_data
+  GROUP BY language
+  ORDER BY AVG(line_length) DESC
 )
 
 SELECT
-  language_name,
-  COUNT(*) as files_analyzed,
-  SUM(total_chars_indented) as total_indentation,
-  SUM(line_count) as total_lines,
-  -- Calculate the average indentation on each line in the language
-  ROUND(SUM(total_chars_indented) / SUM(line_count), 2) as average_spaces_indented,
-  -- Compute the average length of code on each line, excluding indentation
-  ROUND(
-    SUM(total_length_without_indentation_or_line_breaks) / SUM(line_count),
-    2
-  ) as average_code_length_per_line,
-  -- Compute the average length each line, including indentation
-  ROUND(SUM(total_length_without_line_breaks) / SUM(line_count), 2) as average_length_per_line,
-FROM final_content_data
-GROUP BY language_name
-ORDER BY average_spaces_indented DESC
+  data.*,
+  rl.line_length as mode_line_length,
+  ri.indentation as mode_indentation
+FROM averaged_data data
+JOIN ranked_indentations ri ON data.language = ri.language
+JOIN ranked_line_lengths rl ON data.language = rl.language
+WHERE 0=0
+ AND ri.indentation_ranking=1
+ AND rl.line_length_ranking=1
+ORDER BY avg_line_length DESC
