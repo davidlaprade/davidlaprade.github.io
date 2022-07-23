@@ -1,5 +1,5 @@
 ---
-title: "The Definitive Guide to Ordering Drinks at a Wedding"
+title: "The Definitive Guide to Wedding Cocktails"
 tags: general cocktails
 date: "2022-07-23"
 excerpt: Because I just went to a wedding for the first time in three years.
