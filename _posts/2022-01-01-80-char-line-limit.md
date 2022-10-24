@@ -6,9 +6,9 @@ excerpt: "An 80 character line limit is objectively superior to whatever barbari
 ---
 
 I think lines of code should be no more than 80 characters long. Just about
-everyone disagrees with me – which is how I know I'm right.
+everyone disagrees with me, which is how I know I'm right.
 
-This is my argument:
+Kidding aside, this is my argument:
 
 1. The optimal line length for reading is 45-75 characters.
 1. We should optimize code for reading, not writing.
@@ -17,9 +17,9 @@ This is my argument:
 
 This is not just personal preference. It is based on experimentally-verified
 features of our psychology, as well as usage patterns in [1.8 trillion lines of
-open source code](#the-problem-of-indentation). An 80 character line limit is
-objectively superior to whatever barbaric, 3-digit limit you currently have in
-your linter.
+open source code](#the-problem-of-indentation). An 80 character line limit will
+produce better software than a 100, 120, or greater character limit -- software
+that's easier for engineers to read and quicker for them to understand.
 
 ### The Argument Against 80 Character Lines
 
