@@ -2,6 +2,7 @@
 title: "Your DietBet Destroyed the World"
 tags: science-fiction general
 date: "2022-11-11"
+excerpt: "The mass extinctions began in early summer last year – as far as we can tell."
 ---
 
 >DISCLAIMER: This is fiction. The views expressed here are those of a fictional
