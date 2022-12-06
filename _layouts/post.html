@@ -17,6 +17,8 @@ layout: default
 
     {{ content }}
 
+    {% include email-signup.html %}
+
     {% if page.comments %}
       {% include disqus.html %}
     {% endif %}
