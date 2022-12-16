@@ -11,7 +11,7 @@ awarded](https://twitter.com/AaveGrants/status/1586858440080572417) a grant by t
 
 In this post, we're going to explain how Aave calculates interest on deposits,
 and how their approach made it possible for us to implement a flex voting
-aToken [TODO link to our contract in github].
+aToken **[TODO link to our contract in github]**.
 
 ### aToken Rebasing ELI5
 
@@ -46,9 +46,9 @@ whitepaper](https://raw.githubusercontent.com/aave/protocol-v2/master/aave-v2-wh
 > whenever a borrow, deposit, repay,
 > redeem, swap, liquidation event occurs.
 
-In other words, __the liquidity index for a certain asset is the total amount of interest ever earned by
-deposits of that asset into Aave__ -- in this case expressed as a
-[ray](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/math/WadRayMath.sol#L17)-based percentage.
+In other words, __the liquidity index for a certain asset is the total amount of interest earned by
+deposits of that asset into Aave__ -- expressed as a percentage scaled up by a
+[ray](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/math/WadRayMath.sol#L17).
 
 Let's unpack that for a second, because it's a mouthful and this is really important.
 
@@ -67,16 +67,17 @@ Suppose you've supplied DAI to Aave and someone else borrows DAI.
 The borrower will pay a certain amount of interest into Aave for the privilege, and that interest will accrue to you and other suppliers of DAI.
 
 _How_ it does so is by increasing the DAI liquidity index.
-It happens in code
-[here](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/ReserveLogic.sol#L291-L297).
+It happens
+[here](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/ReserveLogic.sol#L291-L297) in the code:
 
 {% highlight js %}
-// Calculate the amount of interest that accrued since the last time
-// anything happened. The amount will be a ray-based percentage.
+// Calculate the amount of interest that accrued since the last update.
+// The amount will be a ray-based percentage.
 uint256 cumulatedLiquidityInterest = MathUtils.calculateLinearInterest(
   reserveCache.currLiquidityRate,
   reserveCache.reserveLastUpdateTimestamp
 );
+
 // Add that interest to the current index by multiplying them together.
 reserveCache.nextLiquidityIndex = cumulatedLiquidityInterest.rayMul(
   reserveCache.currLiquidityIndex
@@ -87,12 +88,97 @@ For example, if the current liquidity index is `1050000000000000000000000000`
 (i.e. 5%) and another 2.5% has accrued since the last update, the new index will
 be `1076250000000000000000000000` (because 1.05 * 1.025 = 1.07625).
 
-Increasing the liquidity index has an immediate consequence on aToken balances,
-as we'll see in the next section.
+It might not be obvious, but an increase in the liquidity index _just is_ the accrual of interest within Aave.
+The former constitutes the latter.
+This is because any increase to the liquidity index results in a corresponding increase in aToken balance, as we'll see in the next section.
 
 #### Scaled Balances
 
-The second key thing to understand about Aave is that it scales user balances
-down by the liquidity index before writing them to storage.
+The second key thing to understand about Aave is that **it scales user balances down by the liquidity index before writing them to storage**.
+
+When you deposit (say) $100 DAI into Aave, your balance is not incremented by
+100e18 on disk. Rather, your balance is incremented by your deposit [_divided
+by_](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L75) the [current liquidity index](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/SupplyLogic.sol#L73). So if the current aPolyDAI liquidity index is
+1.083%, then your balance would be incremented by 100e18/1.01083, or ~98.93e18.
+This scaling down of balances can also
+be seen in the aToken's [burn](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L108) and [transfer](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L219) functions.
+
+Does this mean that all deposits immediately lose value -- in this case 1.083%?
+
+No.
+
+Because on the way out Aave scales balances _up_ by the current index. This
+happens in two places in the aToken:
+[totalSupply](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L149)
+and
+[balanceOf](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L131-L139).
+For now, let's focus on the latter.
+It looks like
+[this](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L131-L139):
+
+{% highlight javascript %}
+super.balanceOf(user).rayMul(
+  POOL.getReserveNormalizedIncome(_underlyingAsset)
+);
+{% endhighlight %}
+
+`rayMul` just means "[multiply these values together then
+divide by a
+ray](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/math/WadRayMath.sol#L65-L74)".
+
+So this `balanceOf` function is simply multiplying two values
+together. The first should be obvious: [it's just the user's balance in
+storage](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/IncentivizedERC20.sol#L106-L108).
+
+The second is less obvious. The logic for the getReserveNormalizedIncome function [looks like
+this](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/ReserveLogic.sol#L40-L64) (indented to make it easier to read):
+
+{% highlight javascript %}
+MathUtils.calculateLinearInterest(
+  reserve.currentLiquidityRate,
+  reserve.lastUpdateTimestamp
+).rayMul(
+  reserve.liquidityIndex
+);
+{% endhighlight %}
+
+So, the aToken balanceOf function is simply multiplying the stored
+balance by the current liquidity index (incremented by whatever interest has not
+yet been factored in).
+
+Initially, this cancels out the effect of scaling down the balance, so that if
+someone went to withdraw immediately after depositing they would get all of
+their money back. E.g. a stored balance of
+98.93e18 aPolyDAI would be multiplied by the liquidity index of 1.01083, resulting a
+withdrawable balance of 100 DAI.
+
+But over time, as the liquidity index increases, it results in a net positive aToken balance, since the stored balance is being multiplied by a larger number than it was initially divided by.
+
+#### A Toy Example
+
+Let's put these concepts together and see how interest works in a bigger
+context.
+
+* suppose some asset has earned 5% interest over its lifetime in Aave
+* the liquidity index for this asset will be 5%, or 1.05e27
+* Ben deposits $100 of the asset
+* the aToken scales down his deposit by the liquidity index and stores the result,
+  in this case 100 / 1.05 == 95.23
+* if Ben immediately withdrew his money, his rebased balance would be: `storedBalance * liquidityIndex`, i.e. 95.23 * 1.05 == $100, what we expect
+* a year goes by and the pool earns another 5% interest, so the new liquidity index is 1.05 * 1.05 == 1.1025
+* I now deposit $100 of the asset
+* once again, the aToken scales down my deposit and stores the result: 100 / 1.1025 == 90.70 is my balance in storage
+* if I immediately withdrew, my rebased balance would be 90.70 * 1.1025 == $100, i.e. exactly what I put in
+* Ben's rebased balance at this point would be 95.23 * 1.1025 == $105
+* so he'd have 5% more underlying than me, as expected (since the pool as a whole earned 5% while he had his money in it)
+
+And that's it! That is how interest works in Aave.
+
+### Flexible Voting
+
+* but notice we can just compare the base balances and get the same result 95.23 / 90.70 == 1.05, i.e. Ben has 5% more than me
+* this is because we multiply _both_ by the same factor to determine rebased balance!
+* but what about at an arbitrary block in the past or future? We have no idea what total cumulative interest might be (or have been). True, but it doesn't matter because (again) both numbers are scaled up by that same rate. So it won't effect their ratio (which is all we care about when determining voting weight).
+
 
 
