@@ -16,14 +16,14 @@ aToken **[TODO link to our contract in github]**.
 ### aToken Rebasing ELI5
 
 When users deposit tokens into Aave, they receive [ERC20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) tokens in return.
-These ERC20's are called [aTokens](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol).
+Aave's ERC20's are called [aTokens](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol).
 If you deposited [DAI](https://polygonscan.com/address/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063) on Polygon, you would receive [aPolDAI](https://polygonscan.com/address/0x82E64f49Ed5EC1bC6e43DAD4FC8Af9bb3A2312EE) back.
 [Here](https://docs.aave.com/developers/deployed-contracts/v3-mainnet/polygon#tokens) is a list of other commonly-issued aTokens.
 
 aTokens are _receipt tokens_: they represent a claim on deposited assets.
 When you want to [withdraw](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/pool/Pool.sol#L197-L217) your deposit and claim its accumulated interest, your aTokens are [burned](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/SupplyLogic.sol#L131-L136).
 
-One thing that makes Aave's aTokens interesting is that their balance automatically increases over time.
+One thing that makes Aave's aTokens interesting is that their balance programmatically increases over time.
 If you have (say) 100
 [aPolWETH](https://polygonscan.com/address/0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8) today, you will have 102 aPolWETH in a year from now.
 That's without making any new deposits or interacting with the protocol or anything.
@@ -114,7 +114,7 @@ and
 [balanceOf](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L131-L139).
 For now, let's focus on the latter.
 It looks like
-[this](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L131-L139):
+[this](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L131-L139) (indented to make it easier to read):
 
 {% highlight javascript %}
 super.balanceOf(user).rayMul(
@@ -122,16 +122,16 @@ super.balanceOf(user).rayMul(
 );
 {% endhighlight %}
 
-`rayMul` just means "[multiply these values together then
+`rayMul` just means [multiply these values together then
 divide by a
-ray](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/math/WadRayMath.sol#L65-L74)".
+ray](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/math/WadRayMath.sol#L65-L74).
 
 So this `balanceOf` function is simply multiplying two values
 together. The first should be obvious: [it's just the user's balance in
 storage](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/IncentivizedERC20.sol#L106-L108).
 
 The second is less obvious. The logic for the getReserveNormalizedIncome function [looks like
-this](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/ReserveLogic.sol#L40-L64) (indented to make it easier to read):
+this](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/ReserveLogic.sol#L40-L64) (again, with indentation):
 
 {% highlight javascript %}
 MathUtils.calculateLinearInterest(
@@ -142,7 +142,7 @@ MathUtils.calculateLinearInterest(
 );
 {% endhighlight %}
 
-So, the aToken balanceOf function is simply multiplying the stored
+So, the aToken `balanceOf` function is simply multiplying the stored
 balance by the current liquidity index (incremented by whatever interest has not
 yet been factored in).
 
@@ -152,7 +152,7 @@ their money back. E.g. a stored balance of
 98.93e18 aPolyDAI would be multiplied by the liquidity index of 1.01083, resulting a
 withdrawable balance of 100 DAI.
 
-But over time, as the liquidity index increases, it results in a net positive aToken balance, since the stored balance is being multiplied by a larger number than it was initially divided by.
+But over time, as the liquidity index increases, it results in a net positive aToken balance, since the stored balance is being multiplied by a larger number than the deposit was initially divided by.
 
 #### A Toy Example
 
@@ -175,6 +175,111 @@ context.
 And that's it! That is how interest works in Aave.
 
 ### Flexible Voting
+
+[Flexible voting](https://www.scopelift.co/blog/introducing-flexible-voting) (or _flex voting_ for short)
+is a novel extension to Compound-style governance systems.
+It allows delegates to split their voting weight across For/Against/Abstain options, rather than having to put all of it behind one.
+
+If flex voting could be added to aTokens, this would unlock a large amount of
+value for Aave.
+
+To see why, imagine you hold UNI.
+UNI gets its intrinsic value from being the voting token for [Uniswap governance proposals](https://app.uniswap.org/#/vote).
+Anyone who holds UNI can delegate and vote on these proposals and help set the course of one of the biggest projects in crypto.
+
+So the main value of UNI comes from its use in voting.
+But it would be really nice if you could also deposit your UNI to earn yield at the same time.
+
+The trouble is that if you were to deposit UNI into a DeFi protocol (like Aave) you would lose your voting power.
+This is because the address that holds the tokens controls their voting weight.
+And if you deposit your UNI, the receiving contract -- not you -- would hold the tokens.
+
+So governance token holders are forced to choose: either participate in governance or earn yield.
+They cannot currently have both.
+
+If flex voting were added to aTokens and the Aave DAO, however, they could.
+
+In such a world, aToken holders would express their desired voting preference to
+the aToken contract, which would then cast its vote in the appropriate ratios to
+the governance contract.
+
+So, for example, if 35% of aUNI holders expressed a "No" voting preference on a
+given proposal, 60% expressed "Yes", and 5% "Abstain", then the aToken contract
+would cast its vote to the UNI governance system with 35% of its weight as
+Against, 60% of its weight as For, and 5% as Abstain.
+
+aUNI holders would effectively get to vote without having a UNI balance!
+
+While flex voting makes this dream scenario possible, it's not without
+technical hurdles.
+The next section will get into what these are and how we solved them.
+
+### Implementing a Flex Voting aToken
+
+If something like the dream scenario were to exist, it would have to take
+account of the fact that aToken balances are constantly increasing, and doing so
+at an ever-changing rate.
+
+After all, if I could have burned my aTokens and withdrawn a certain weight of
+voting tokens at the time of a proposal, any vote cast on my behalf by the aToken
+should reflect that weight.
+
+That's another mouthful. Let's look at a concrete example:
+
+* Ben deposits 100 UNI into Aave
+* a year passes and aUNI yields 50% interest (it was a _very_ good year)
+* I deposit 100 UNI
+* Ben and I are the only UNI depositors
+* a UNI governance proposal is issued
+* both Ben and I express our votes on the proposal to the aUNI contract
+* Ben expresses a "For" preference
+* I express an "Against" preference
+
+When aUNI casts its vote to the UNI governance system, what should the vote ratios
+be?
+
+Notice: you can't just look at our _deposits_ -- since we both deposited 100 UNI.
+That would lead you to believe we should have equal voting weight.
+But that's wrong.
+Ben should have _more_ voting weight than me because of all of the interest he
+earned over the last year.
+
+Ben's balance at the time of proposal was 150 aUNI.
+This would have entitled him to have withdrawn (and voted with) 150 UNI at that time.
+I, by contrast, could have only withdrawn and voted with the 100 UNI I had just deposited.
+
+So, it seems what we need to look at are _rebased balances_.
+The rebased balances would have led us to the correct conclusion: Ben's voting preference should have 50% more voting weight than mine.
+If the aUNI contract holds 250 UNI and Ben is entitled to 150 of that, Ben
+should be able to determine 60% (150/250) of the votes aUNI casts, and I the
+remaining 40% (100/250).
+
+Thus it seems the dream scenario requires us to be able to
+calculate the rebased aToken balance for _any given user_ at _any given block_.
+
+In case it isn't obvious, this is very challenging.
+
+As already mentioned, aToken interest rates are constantly changing
+based on supply and demand within the protocol.
+If supply goes up, interest goes down.
+If demand goes up, interest goes up.
+
+And each time the interest rate changes, the interest accrued since the last update
+is added to the liquidity index (as shown above).
+This means that the aToken liquidity index is constantly changing too.
+
+Recall that the aToken's rebased balance is just the balance on disk multiplied by the liquidity index.
+
+If both values (balance-on-disk and liquidity index) are constantly changing,
+how can we hope to reliably compute a value based on them?
+
+Short of checkpointing the values _each time they change_ -- which would
+be unfeasibly expensive to write and later search -- there seems to be no simple
+way to accurately compute an arbitrary user's aToken balance at a block.
+
+The main technical hurdle to implementing a flex voting aToken is rebasing.
+
+
 
 * but notice we can just compare the base balances and get the same result 95.23 / 90.70 == 1.05, i.e. Ben has 5% more than me
 * this is because we multiply _both_ by the same factor to determine rebased balance!
