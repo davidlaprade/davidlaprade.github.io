@@ -224,7 +224,7 @@ After all, if I could have burned my aTokens and withdrawn a certain weight of
 voting tokens at the time of a proposal, any vote cast on my behalf by the aToken
 should reflect that weight.
 
-That's another mouthful. Let's look at a concrete example:
+Let's look at a concrete example:
 
 * Ben deposits 100 UNI into Aave
 * a year passes and aUNI yields 50% interest (it was a _very_ good year)
@@ -238,8 +238,8 @@ That's another mouthful. Let's look at a concrete example:
 When aUNI casts its vote to the UNI governance system, what should the vote ratios
 be?
 
-Notice: you can't just look at our _deposits_ -- since we both deposited 100 UNI.
-That would lead you to believe we should have equal voting weight.
+If you were only looking at our deposits you might think we
+should have equal voting weight -- since we both deposited 100 UNI.
 But that's wrong.
 Ben should have _more_ voting weight than me because of all of the interest he
 earned over the last year.
@@ -248,7 +248,7 @@ Ben's balance at the time of proposal was 150 aUNI.
 This would have entitled him to have withdrawn (and voted with) 150 UNI at that time.
 I, by contrast, could have only withdrawn and voted with the 100 UNI I had just deposited.
 
-So, it seems what we need to look at are _rebased balances_.
+So, it seems what we need to look at are _rebased balances_, not deposits.
 The rebased balances would have led us to the correct conclusion: Ben's voting preference should have 50% more voting weight than mine.
 If the aUNI contract holds 250 UNI and Ben is entitled to 150 of that, Ben
 should be able to determine 60% (150/250) of the votes aUNI casts, and I the
@@ -273,17 +273,60 @@ Recall that the aToken's rebased balance is just the balance on disk multiplied 
 If both values (balance-on-disk and liquidity index) are constantly changing,
 how can we hope to reliably compute a value based on them?
 
-Short of checkpointing the values _each time they change_ -- which would
-be unfeasibly expensive to write and later search -- there seems to be no simple
-way to accurately compute an arbitrary user's aToken balance at a block.
+Short of checkpointing both values _each time they change_ -- which would be
+unfeasibly expensive to write and later search for a popular asset with a lot of
+usage on Aave -- there seems to be no simple way to accurately compute an
+arbitrary user's aToken rebased balance at a block in the past.
 
-The main technical hurdle to implementing a flex voting aToken is rebasing.
+Fortunately, we don't have to.
 
+What we realized is that if we simply checkpoint each user's _scaled down balance_
+(i.e. their balance in storage) we can get all of the information we need to precisely
+calculate voting proportions.
 
+This is because the rebased balance is `scaled-down-balance x liquidity index`.
+Since every aToken holder's balance is being scaled up by the same liquidity
+index, the liquidity index can be ignored when computing ratios.
+For example, if the rebased balance for userA is `A x I` and the rebased balance for user B is
+`B x I` then the ratio of userA's balance to userB's is just `A / B` -- the index
+`I` cancels out.
 
-* but notice we can just compare the base balances and get the same result 95.23 / 90.70 == 1.05, i.e. Ben has 5% more than me
-* this is because we multiply _both_ by the same factor to determine rebased balance!
-* but what about at an arbitrary block in the past or future? We have no idea what total cumulative interest might be (or have been). True, but it doesn't matter because (again) both numbers are scaled up by that same rate. So it won't effect their ratio (which is all we care about when determining voting weight).
+But if we only compare the stored values, wouldn't Ben and I end up with
+the same voting weight since we deposited the same amount?
 
+No.
+
+This is because Aave divides incoming balances by the current liquidity index before
+storing them.
+
+We can see how this works if we reframe the example above with stored balances:
+
+* suppose UNI has earned in total 5% over its lifetime on Aave, i.e. index =
+  1.05e27
+* Ben deposits 100 UNI into Aave
+* Ben's balance is stored as ~95.24 (100/1.05)
+* a year passes and aUNI yields 50% interest (it was a _very_ good year)
+* the new liquidity index is 1.575 (1.05 * 1.5)
+* I deposit 100 UNI
+* my stored balance is ~63.49 (100 / 1.575)
+* if Ben withdrew now, he could claim 150 UNI (95.24 * 1.575), which is expected
+  because he earned 50% APY this past year
+* if I withdrew now, I could claim 100 UNI (63.49 * 1.575), which is expected
+  because I just deposited
+* a governance proposal is issued for UNI
+* both Ben and I express our votes on the proposal to the aUNI contract
+* Ben expresses a "For" preference
+* I express an "Against" preference
+* the aUNI contract can use our stored balances at the proposal block to
+  determine our relative voting weights: Ben has 50% more voting weight than me
+  (95.24 stored balance vs 63.49)
+
+Aave's clever interest implementation neatly accommodates the exact information
+needed to support flex voting aTokens.
+
+### Conclusion
+
+We hope that this has been a useful introduction to Aave's interest rate
+implementation. You can view ScopeLift's flex voting aToken extension [here](/#).
 
 
