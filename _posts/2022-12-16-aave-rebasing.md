@@ -25,7 +25,7 @@ When you want to [withdraw](https://github.com/aave/aave-v3-core/blob/f3e037b363
 
 One thing that makes Aave's aTokens interesting is that their balance programmatically increases over time.
 If you have (say) 100
-[aPolWETH](https://polygonscan.com/address/0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8) today, you will have 102 aPolWETH in a year from now.
+[aPolWETH](https://polygonscan.com/address/0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8) today, at an interest rate of 2% APY, you will have 102 aPolWETH in a year from now.
 That's without making any new deposits or interacting with the protocol or anything.
 It's [built
 into](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L131-L139) the aToken contract.
@@ -97,7 +97,7 @@ This is because any increase to the liquidity index results in a corresponding i
 The second key thing to understand about Aave is that **it scales user balances down by the liquidity index before writing them to storage**.
 
 When you deposit (say) $100 DAI into Aave, your balance is not incremented by
-100e18 on disk. Rather, your balance is incremented by your deposit [_divided
+100e18 in storage. Rather, your balance is incremented by your deposit [_divided
 by_](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L75) the [current liquidity index](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/SupplyLogic.sol#L73). So if the current aPolyDAI liquidity index is
 1.083%, then your balance would be incremented by 100e18/1.01083, or ~98.93e18.
 This scaling down of balances can also
@@ -280,7 +280,7 @@ arbitrary user's aToken rebased balance at a block in the past.
 
 Fortunately, we don't have to.
 
-What we realized is that if we simply checkpoint each user's _scaled down balance_
+Instead, if we simply checkpoint each user's _scaled down balance_
 (i.e. their balance in storage) we can get all of the information we need to precisely
 calculate voting proportions.
 
