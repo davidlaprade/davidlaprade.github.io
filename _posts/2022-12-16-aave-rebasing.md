@@ -268,9 +268,9 @@ And each time the interest rate changes, the interest accrued since the last upd
 is added to the liquidity index (as shown above).
 This means that the aToken liquidity index is constantly changing too.
 
-Recall that the aToken's rebased balance is just the balance on disk multiplied by the liquidity index.
+Recall that the aToken's rebased balance is just the balance in storage multiplied by the liquidity index.
 
-If both values (balance-on-disk and liquidity index) are constantly changing,
+If both values (balance-in-storage and liquidity index) are constantly changing,
 how can we hope to reliably compute a value based on them?
 
 Short of checkpointing both values _each time they change_ -- which would be
