@@ -166,13 +166,13 @@ context.
   in this case 100 / 1.05 == 95.23
 * if Ben immediately withdrew his money, his rebased balance would be: `storedBalance * liquidityIndex`, i.e. 95.23 * 1.05 == $100, what we expect
 * a year goes by and the pool earns another 5% interest, so the new liquidity index is 1.05 * 1.05 == 1.1025
-* I now deposit $100 of the asset
-* once again, the aToken scales down my deposit and stores the result: 100 / 1.1025 == 90.70 is my balance in storage
-* if I immediately withdrew, my rebased balance would be 90.70 * 1.1025 == $100, i.e. exactly what I put in
+* Matt now deposits $100 of the asset
+* once again, the aToken scales down Matt's deposit and stores the result: 100 / 1.1025 == 90.70 is Matt's balance in storage
+* if Matt immediately withdrew, his rebased balance would be 90.70 * 1.1025 == $100, i.e. exactly what he put in
 * Ben's rebased balance at this point would be 95.23 * 1.1025 == $105
-* so he'd have 5% more underlying than me, as expected (since the pool as a whole earned 5% while he had his money in it)
+* so Ben can claim 5% more underlying assets than Matt, as expected (since the pool as a whole earned 5% while Ben had his money in it)
 
-And that's it! That is how interest works in Aave.
+And that's it! That's how interest works in Aave.
 
 ### Flexible Voting
 
@@ -228,30 +228,30 @@ Let's look at a concrete example:
 
 * Ben deposits 100 UNI into Aave
 * a year passes and aUNI yields 50% interest (it was a _very_ good year)
-* I deposit 100 UNI
-* Ben and I are the only UNI depositors
+* Matt deposits 100 UNI
+* Ben and Matt are the only UNI depositors
 * a UNI governance proposal is issued
-* both Ben and I express our votes on the proposal to the aUNI contract
+* both Ben and Matt express their votes on the proposal to the aUNI contract
 * Ben expresses a "For" preference
-* I express an "Against" preference
+* Matt expresses an "Against" preference
 
 When aUNI casts its vote to the UNI governance system, what should the vote ratios
 be?
 
-If you were only looking at our deposits you might think we
-should have equal voting weight -- since we both deposited 100 UNI.
+If you were only looking at our deposits you might think Ben and Matt
+should have equal voting weight -- since they both deposited 100 UNI.
 But that's wrong.
-Ben should have _more_ voting weight than me because of all of the interest he
+Ben should have _more_ voting weight than Matt because of all of the interest he
 earned over the last year.
 
 Ben's balance at the time of proposal was 150 aUNI.
 This would have entitled him to have withdrawn (and voted with) 150 UNI at that time.
-I, by contrast, could have only withdrawn and voted with the 100 UNI I had just deposited.
+Matt, by contrast, could have only withdrawn and voted with the 100 UNI he had just deposited.
 
 So, it seems what we need to look at are _rebased balances_, not deposits.
-The rebased balances would have led us to the correct conclusion: Ben's voting preference should have 50% more voting weight than mine.
+The rebased balances would have led us to the correct conclusion: Ben's voting preference should have 50% more voting weight than Matt's.
 If the aUNI contract holds 250 UNI and Ben is entitled to 150 of that, Ben
-should be able to determine 60% (150/250) of the votes aUNI casts, and I the
+should be able to determine 60% (150/250) of the votes aUNI casts, and Matt the
 remaining 40% (100/250).
 
 Thus it seems the dream scenario requires us to be able to
@@ -307,18 +307,18 @@ We can see how this works if we reframe the example above with stored balances:
 * Ben's balance is stored as ~95.24 (100/1.05)
 * a year passes and aUNI yields 50% interest (it was a _very_ good year)
 * the new liquidity index is 1.575 (1.05 * 1.5)
-* I deposit 100 UNI
-* my stored balance is ~63.49 (100 / 1.575)
+* Matt deposits 100 UNI
+* Matt's stored balance is ~63.49 (100 / 1.575)
 * if Ben withdrew now, he could claim 150 UNI (95.24 * 1.575), which is expected
   because he earned 50% APY this past year
-* if I withdrew now, I could claim 100 UNI (63.49 * 1.575), which is expected
-  because I just deposited
+* if Matt withdrew now, Matt could claim 100 UNI (63.49 * 1.575), which is expected
+  because he just deposited
 * a governance proposal is issued for UNI
-* both Ben and I express our votes on the proposal to the aUNI contract
+* both Ben and Matt express our votes on the proposal to the aUNI contract
 * Ben expresses a "For" preference
-* I express an "Against" preference
+* Matt expresses an "Against" preference
 * the aUNI contract can use our stored balances at the proposal block to
-  determine our relative voting weights: Ben has 50% more voting weight than me
+  determine our relative voting weights: Ben has 50% more voting weight than Matt
   (95.24 stored balance vs 63.49)
 
 Aave's clever interest implementation neatly accommodates the exact information
