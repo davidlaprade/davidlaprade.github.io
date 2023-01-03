@@ -13,6 +13,43 @@ In this post, we're going to explain how Aave calculates interest on deposits,
 and how their approach made it possible for us to implement a flex voting
 aToken **[TODO link to our contract in github]**.
 
+### Flexible Voting
+
+[Flexible voting](https://www.scopelift.co/blog/introducing-flexible-voting) (or _flex voting_ for short) is a novel extension to Compound-style governance systems.
+It allows delegates to split their voting weight across For/Against/Abstain options, rather than having to put all of it behind one.
+
+Enabling flex voting for Aave would unlock a large amount of value for users.
+
+To see why, imagine you hold UNI.
+UNI gets its intrinsic value from being the voting token for [Uniswap governance proposals](https://app.uniswap.org/#/vote).
+Anyone who holds UNI can delegate and vote on these proposals and help set the course of one of the biggest projects in crypto.
+
+So the main value of UNI comes from its use in voting.
+But it would be really nice if you could also deposit your UNI to earn yield at the same time.
+
+The trouble is that if you were to deposit UNI into a DeFi protocol (like Aave) you would lose your voting power.
+This is because the address that holds the tokens controls their voting weight.
+And if you deposit your UNI, the receiving contract -- not you -- would hold the tokens.
+
+So governance token holders are largely forced to choose: either participate in governance or earn yield.
+They cannot currently have both.
+
+If flex voting were added to Aave, however, they could.
+
+In such a world, Aave depositors would express their desired voting preference to
+Aave, which would then cast its vote in the appropriate ratios to
+the governance contract.
+
+So, for example, if 35% of UNI depositors expressed a "No" voting preference on a
+given proposal, 60% expressed "Yes", and 5% "Abstain", then Aave
+could cast its vote to the UNI governance system with 35% of its weight as
+Against, 60% of its weight as For, and 5% as Abstain.
+
+Aave users would effectively get to vote without having a UNI balance!
+
+While flex voting makes this dream scenario possible, it's not without technical hurdles.
+The next section will get into what these are and how we solved them.
+
 ### aToken Rebasing ELI5
 
 When users deposit tokens into Aave, they receive [ERC20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) tokens in return.
@@ -33,8 +70,12 @@ into](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde
 This is called _rebasing_.
 Said another way, aTokens are _rebase tokens_.
 
+Rebasing is the thing that makes it technically challenging to add flex voting to Aave.
+If user balances are constantly changing, at an ever-changing rate, how do you know what their voting weight should be at any given time?
+
 Aave has a really interesting implementation of rebasing -- one which we believe is not well understood.
-One of the things we want to do in this post is explain how it works.
+One of the things we want to do in this post is explain how it works, then show
+how it's actually nicely compatible with flex voting.
 
 #### Liquidity Indexes
 
@@ -52,7 +93,7 @@ deposits of that asset into Aave__ -- expressed as a percentage scaled up by a
 
 Let's unpack that for a second, because it's a mouthful and this is really important.
 
-aPolyDAI currently has a liquidity index of `1010832786421347125844242759`, or
+aPolDAI currently has a liquidity index of `1010832786421347125844242759`, or
 1.083%. This means that _in aggregate_, over the entire lifetime of Aave, DAI deposits have earned 1.083%.
 So if you were the very first person to deposit DAI into
 Aave and you haven't touched it since, your deposit would today be worth 1.083% more.
@@ -98,7 +139,7 @@ The second key thing to understand about Aave is that **it scales user balances 
 
 When you deposit (say) $100 DAI into Aave, your balance is not incremented by
 100e18 in storage. Rather, your balance is incremented by your deposit [_divided
-by_](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L75) the [current liquidity index](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/SupplyLogic.sol#L73). So if the current aPolyDAI liquidity index is
+by_](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L75) the [current liquidity index](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/libraries/logic/SupplyLogic.sol#L73). So if the current aPolDAI liquidity index is
 1.083%, then your balance would be incremented by 100e18/1.01083, or ~98.93e18.
 This scaling down of balances can also
 be seen in the aToken's [burn](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol#L108) and [transfer](https://github.com/aave/aave-v3-core/blob/f3e037b3638e3b7c98f0c09c56c5efde54f7c5d2/contracts/protocol/tokenization/AToken.sol#L219) functions.
@@ -149,70 +190,10 @@ yet been factored in).
 Initially, this cancels out the effect of scaling down the balance, so that if
 someone went to withdraw immediately after depositing they would get all of
 their money back. E.g. a stored balance of
-98.93e18 aPolyDAI would be multiplied by the liquidity index of 1.01083, resulting a
+98.93e18 aPolDAI would be multiplied by the liquidity index of 1.01083, resulting a
 withdrawable balance of 100 DAI.
 
 But over time, as the liquidity index increases, it results in a net positive aToken balance, since the stored balance is being multiplied by a larger number than the deposit was initially divided by.
-
-#### A Toy Example
-
-Let's put these concepts together and see how interest works in a bigger
-context.
-
-* suppose some asset has earned 5% interest over its lifetime in Aave
-* the liquidity index for this asset will be 5%, or 1.05e27
-* Ben deposits $100 of the asset
-* the aToken scales down his deposit by the liquidity index and stores the result,
-  in this case 100 / 1.05 == 95.23
-* if Ben immediately withdrew his money, his rebased balance would be: `storedBalance * liquidityIndex`, i.e. 95.23 * 1.05 == $100, what we expect
-* a year goes by and the pool earns another 5% interest, so the new liquidity index is 1.05 * 1.05 == 1.1025
-* Matt now deposits $100 of the asset
-* once again, the aToken scales down Matt's deposit and stores the result: 100 / 1.1025 == 90.70 is Matt's balance in storage
-* if Matt immediately withdrew, his rebased balance would be 90.70 * 1.1025 == $100, i.e. exactly what he put in
-* Ben's rebased balance at this point would be 95.23 * 1.1025 == $105
-* so Ben can claim 5% more underlying assets than Matt, as expected (since the pool as a whole earned 5% while Ben had his money in it)
-
-And that's it! That's how interest works in Aave.
-
-### Flexible Voting
-
-[Flexible voting](https://www.scopelift.co/blog/introducing-flexible-voting) (or _flex voting_ for short)
-is a novel extension to Compound-style governance systems.
-It allows delegates to split their voting weight across For/Against/Abstain options, rather than having to put all of it behind one.
-
-If flex voting could be added to aTokens, this would unlock a large amount of
-value for Aave.
-
-To see why, imagine you hold UNI.
-UNI gets its intrinsic value from being the voting token for [Uniswap governance proposals](https://app.uniswap.org/#/vote).
-Anyone who holds UNI can delegate and vote on these proposals and help set the course of one of the biggest projects in crypto.
-
-So the main value of UNI comes from its use in voting.
-But it would be really nice if you could also deposit your UNI to earn yield at the same time.
-
-The trouble is that if you were to deposit UNI into a DeFi protocol (like Aave) you would lose your voting power.
-This is because the address that holds the tokens controls their voting weight.
-And if you deposit your UNI, the receiving contract -- not you -- would hold the tokens.
-
-So governance token holders are forced to choose: either participate in governance or earn yield.
-They cannot currently have both.
-
-If flex voting were added to aTokens and the Aave DAO, however, they could.
-
-In such a world, aToken holders would express their desired voting preference to
-the aToken contract, which would then cast its vote in the appropriate ratios to
-the governance contract.
-
-So, for example, if 35% of aUNI holders expressed a "No" voting preference on a
-given proposal, 60% expressed "Yes", and 5% "Abstain", then the aToken contract
-would cast its vote to the UNI governance system with 35% of its weight as
-Against, 60% of its weight as For, and 5% as Abstain.
-
-aUNI holders would effectively get to vote without having a UNI balance!
-
-While flex voting makes this dream scenario possible, it's not without
-technical hurdles.
-The next section will get into what these are and how we solved them.
 
 ### Implementing a Flex Voting aToken
 
@@ -238,7 +219,7 @@ Let's look at a concrete example:
 When aUNI casts its vote to the UNI governance system, what should the vote ratios
 be?
 
-If you were only looking at our deposits you might think Ben and Matt
+If you were only looking at their deposits you might think Ben and Matt
 should have equal voting weight -- since they both deposited 100 UNI.
 But that's wrong.
 Ben should have _more_ voting weight than Matt because of all of the interest he
@@ -261,8 +242,8 @@ In case it isn't obvious, this is very challenging.
 
 As already mentioned, aToken interest rates are constantly changing
 based on supply and demand within the protocol.
-If supply goes up, interest goes down.
-If demand goes up, interest goes up.
+If supply goes up, the interest rate goes down.
+If demand goes up, the rate goes up.
 
 And each time the interest rate changes, the interest accrued since the last update
 is added to the liquidity index (as shown above).
@@ -280,19 +261,21 @@ arbitrary user's aToken rebased balance at a block in the past.
 
 Fortunately, we don't have to.
 
-Instead, if we simply checkpoint each user's _scaled down balance_
-(i.e. their balance in storage) we can get all of the information we need to precisely
-calculate voting proportions.
+### A Solution!
+
+Eventually we realized that if the aToken simply checkpoints each user's _scaled down balance_
+(i.e. their balance in storage) it has all of the information it needs to precisely
+calculate voting weight proportions.
 
 This is because the rebased balance is `scaled-down-balance x liquidity index`.
 Since every aToken holder's balance is being scaled up by the same liquidity
 index, the liquidity index can be ignored when computing ratios.
-For example, if the rebased balance for userA is `A x I` and the rebased balance for user B is
-`B x I` then the ratio of userA's balance to userB's is just `A / B` -- the index
+For example, if the rebased balance for user A is `A x I` and the rebased balance for user B is
+`B x I` then the ratio of user A's balance to user B's is just `A / B` -- the index
 `I` cancels out.
 
-But if we only compare the stored values, wouldn't Ben and I end up with
-the same voting weight since we deposited the same amount?
+But if we only compare the stored values, wouldn't Ben and Matt end up with
+the same voting weight since they deposited the same amount?
 
 No.
 
@@ -301,12 +284,12 @@ storing them.
 
 We can see how this works if we reframe the example above with stored balances:
 
-* suppose UNI has earned in total 5% over its lifetime on Aave, i.e. index =
-  1.05e27
+* suppose UNI has earned in total 5% over its lifetime on Aave (liquidity index =
+  1.05e27)
 * Ben deposits 100 UNI into Aave
 * Ben's balance is stored as ~95.24 (100/1.05)
 * a year passes and aUNI yields 50% interest (it was a _very_ good year)
-* the new liquidity index is 1.575 (1.05 * 1.5)
+* the new liquidity index is 1.575e27 (1.05 * 1.5)
 * Matt deposits 100 UNI
 * Matt's stored balance is ~63.49 (100 / 1.575)
 * if Ben withdrew now, he could claim 150 UNI (95.24 * 1.575), which is expected
@@ -317,8 +300,8 @@ We can see how this works if we reframe the example above with stored balances:
 * both Ben and Matt express our votes on the proposal to the aUNI contract
 * Ben expresses a "For" preference
 * Matt expresses an "Against" preference
-* the aUNI contract can use our stored balances at the proposal block to
-  determine our relative voting weights: Ben has 50% more voting weight than Matt
+* the aUNI contract can use the checkpointed stored balances at the proposal block to
+  determine their relative voting weights: Ben has 50% more voting weight than Matt
   (95.24 stored balance vs 63.49)
 
 Aave's clever interest implementation neatly accommodates the exact information
@@ -328,5 +311,3 @@ needed to support flex voting aTokens.
 
 We hope that this has been a useful introduction to Aave's interest rate
 implementation. You can view ScopeLift's flex voting aToken extension [here](/#).
-
-
