@@ -1,8 +1,8 @@
 ---
 title: "Programming, Fast and Slow"
-tags: general
+tags: programming
 date: "2023-08-07"
-excerpt: "There are modes of programming analogous to Kahneman's famous modes of thinking."
+excerpt: "There are two modes of programming analogous to Kahneman's famous modes of thinking."
 ---
 
 Kahneman [famously
@@ -109,6 +109,8 @@ https://www.airplane.dev/blog/how-to-build-a-technical-moat-for-your-product).
 You’re going to need to solve your core problem better than anyone else.
 
 Each mode has its place.
+
+<br>
 
 ---
 
