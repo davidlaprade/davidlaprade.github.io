@@ -5,6 +5,10 @@ date: "2023-08-07"
 excerpt: "There are two modes of programming analogous to Kahneman's famous modes of thinking."
 ---
 
+![programming while being chased by a lion]({{ site.baseurl }}/jekyll_img/programmer_lion.png)
+
+__*Note: This post was also published on [Atlas's blog](https://joinatlas.ai/blog/programming-fast-and-slow).*__
+
 Kahneman [famously
 distinguished](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) between
 two different modes of thinking:
