@@ -9,8 +9,8 @@ Kahneman [famously
 distinguished](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) between
 two different modes of thinking:
 
-* type 1, or "fast" thinking
-* type 2, or "slow" thinking
+* type-1, or "fast" thinking
+* type-2, or "slow" thinking
 
 The former is the kind of thinking that's automatic, low-effort, instinctual. It
 can be done while driving a car. When you decide what to do about a lion
@@ -22,8 +22,8 @@ exhibiting type-2 thought.
 
 I think there are two analogous [[0]](#footnote0) modes of programming:
 
-* type 1, or "fast" programming
-* type 2, or "slow" programming
+* type-1, or "fast" programming
+* type-2, or "slow" programming
 
 Type-1 programming, like type-1 thinking, is for situations that demand fast
 responses, where the risk of responding too slowly outweighs the risk of
@@ -32,7 +32,7 @@ Principle](https://en.wikipedia.org/wiki/Pareto_principle), type-1
 programming seeks to exert 20% of the effort while producing 80% of the value.
 [[1]](#footnote1)
 
-Type 2 programming, like type-2 thinking, is for situations that demand
+Type-2 programming, like type-2 thinking, is for situations that demand
 accuracy, precision, and correctness; where the cost of error is higher than the
 cost of time. This kind of programming seeks to provide _the_ solution to
 problems: to do things "the right way".
@@ -40,14 +40,14 @@ problems: to do things "the right way".
 I often find myself having to jump between these two modes. When I do, it’s kind
 of like throwing a switch in my brain. All my habits change.
 
-If I’m doing type-1 programming, I tackle a problem by immediately
-writing code. I’m probably not sketching out a design, I’m following my
-instincts. I’m probably only writing a few tests, and even then only after
-things already work, and probably only for the most important edge/use cases. If
-there are open-source libraries I could apply, it’s very likely that I’m going
-to use one. And if I try a library and it doesn’t work right away, I’m probably
-going to just move on to another. Little point spending the time to figure
-things out if I can find something that just works.
+If I’m doing type-1 programming, I tackle a problem by immediately writing code.
+I’m not sketching out a design, I’m following my instincts.  I’m probably only
+writing a few tests, and even then only after things already work, and probably
+only for the most important edge/use cases. If there are open-source libraries
+that could speed up the work, it’s very likely that I’m going to use one. And if
+I try a library and it doesn’t work right away, I’m probably going to just move
+on to another. Little point spending the time to figure things out if I can find
+something that just works.
 
 If I’m doing type-2 programming, I’m definitely starting by writing things down.
 I’m investigating different solutions, I’m circulating my designs for feedback,
@@ -58,16 +58,29 @@ using a library I’m probably going to make a heatmap of the different options
 and pick what’s optimal. If the best library isn’t working, I’m reading the
 source code to find out why.
 
+For example, suppose the feature is "users can query data". Imagine this feature
+is table-stakes: you're losing deals right and left because you don't have it.
+So you switch into "fast" mode and push out some functionality that lets users
+download CSVs. The code isn't ideal. Maybe you're doing a lot of stuff in
+memory. If someone has a lot of data they're going to get a 500. Etc.  The
+feature isn't ideal either. In a perfect world, the users would be able to just
+query within your interface. Regardless -- now you have the feature and sales is
+closing deals again. At _this_ point, you switch to "slow" mode. Now you're
+sitting down with design and figuring out a proper query interface. You're
+sketching the architecture that would support it. You're deleting a lot of what
+you wrote before, improving abstractions, handling edge cases, adding test
+cases, etc.
+
 If you’ve been an engineer for a while, and worked in a bunch of different
 business contexts, you probably know what I’m talking about. Your habits might
 be different than mine, but you probably know how it feels to shift gears between the
-two types. It’s especially obvious when you’re switching from a job that
+two modes. It’s especially obvious when you’re switching from a job that
 requires little/no type-1 programming to one that does.
 
 When I worked at Stripe, nearly all of the programming I did was type-2.
 That’s because nothing I did was existential for the business. The company
 wasn’t going to go under if I didn't ship my features. The company could afford
-for me to go slow, to do things right. It could afford to let me research the
+for me to go slow, to do the right thing the right way. It could afford to let me research the
 heck out of a problem, get tons of feedback on design/architecture, and go
 incredibly deep. It also _needed_ to afford this, because Stripe has a
 reputation to protect. The cost of not doing things right could have been massive –
@@ -75,7 +88,7 @@ much higher than the cost of doing nothing at all. The only times I was ever in
 type-1 mode was during incidents: when something was wrong in production and we
 had to stop the bleed asap. It was a relatively rare occurrence.
 
-I currently work at a [startup](https://joinatlas.ai/). And a lot (though not
+I currently work at an early-stage [startup](https://joinatlas.ai/). And a lot (though not
 all) of what I’m doing is type-1 programming. That's because tons of problems
 are existential for us. If we don't ship a feature fast enough, the company
 might just be dead. There usually isn't time to research what we’re doing for 2
