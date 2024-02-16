@@ -4,6 +4,7 @@ tags: AI general
 excerpt: "Evolutionary predictions for AI and crypto."
 ---
 
+![selfish gpu]({{ site.baseurl }}/jekyll_img/selfish-gpu.jpeg)
 
 > We are survival machines – robot vehicles blindly programmed to preserve the
 > selfish molecules known as genes. This is a truth which still fills me with
