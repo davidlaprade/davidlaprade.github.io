@@ -13,7 +13,7 @@ excerpt: "Evolutionary predictions for AI and crypto."
 > &nbsp;&nbsp;&nbsp;&nbsp;– Richard Dawkins, **The Selfish Gene**
 
 [A lot of people](https://twitter.com/paulg/status/1753221628878635104) are
-concerned with whether AI has have a self-preservation instinct.
+concerned with whether AI has a self-preservation instinct.
 I think they should be asking whether GPUs do.
 
 In _The Selfish Gene_, Dawkins (in)famously suggested that we take a
