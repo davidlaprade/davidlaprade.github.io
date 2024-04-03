@@ -69,7 +69,7 @@ forces do bear on GPUs and the industry surrounding them. Evolution
 applies equally to all replicators — i.e. anything that is copied. And
 many, many copies of GPUs are made each day. We neglect this at our peril.
 
-(_Thanks to Matt Dupree for feedback on earlier drafts of this post._)
+(_Thanks to Matt Dupree and Josh Shroyer for feedback on earlier drafts of this post._)
 
 <br>
 
