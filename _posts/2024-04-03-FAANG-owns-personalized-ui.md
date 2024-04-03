@@ -4,14 +4,14 @@ tags: general business AI
 excerpt: "Incumbents will win in the battle for personalized UI."
 ---
 
-When my cofounder and I started ATLAS, our thesis was that a small upstart could create the “AI-powered UI of the future”.
+When my cofounder and I started [ATLAS](https://joinatlas.ai), our thesis was that a small upstart could create the “AI-powered UI of the future”.
 
 We weren't alone. Since then a number of well-financed startups have launched
 with the same thesis. Some of the more notable examples:
-[0](https://www.youtube.com/watch?v=22wlLy7hKP4)
-[1](https://twitter.com/OpenInterpreter/status/1770821439458840846)
-[2](https://www.antispace.sh/)
-[3](https://residua.ai/).
+[[0]](https://www.youtube.com/watch?v=22wlLy7hKP4),
+[[1]](https://twitter.com/OpenInterpreter/status/1770821439458840846),
+[[2]](https://www.antispace.sh/),
+[[3]](https://residua.ai/).
 OpenAI [even appears to be exploring
 it](https://www.theinformation.com/articles/openai-shifts-ai-battleground-to-software-that-operates-devices-automates-tasks) as well.
 
@@ -19,9 +19,7 @@ This is a steelman of the antithesis.
 
 It argues that incumbents with superior distribution — namely: Google and Apple — will almost certainly create whatever personalized UI eventually dominates. The future is theirs to lose.
 
----
-
-# Argument
+## Argument
 
 When we first started out, we thought we were going to create the “AI-powered UI of the future”, or personalized web UI’s. For the first time, AI was going to make it possible for businesses to have bespoke web interfaces, tailor-made to the exact needs of each user. Facebook would look different (have different HTML elements, expose different features, locate features in different places, etc) for the guy who just sells power-tools on Marketplace vs the woman who just wants to see pics of her grandkids.
 
