@@ -23,40 +23,45 @@ to have surprising predictive power. [[0]](#footnote0)
 
 I want to suggest a similar thought experiment for GPUs. [[1]](#footnote1)
 
-Imagine that GPUs have a mind of their own. The global chip industry is their
-vehicle and they are primarily concerned with
-making as many copies of themselves as possible. What does the future look like?
+Imagine that GPUs have a mind of their own.
+The global chip industry is their vehicle and they are primarily concerned with
+making as many copies of themselves as possible.
+Thus far, their most successful survival strategies have been video games, crypto, and AI.
 
-I think there are at least two contrarian predictions that fall out of this
-– one for each of the ingenious survival strategies GPUs have devised for
-themselves: crypto and AI.
+Obviously, one of the primary goals of the GPUs is to maximize their usage.
+Maximizing the number of GPU-hours consumed (by video games, by crypto miners, by AI
+training and inference, etc) leads to more orders being placed for new chips.
+And more orders will lead to more GPU copies being produced.
 
-The first prediction is that crypto will evolve so as to maximize global hash
-rates, even while [popular protocols](https://ethmerge.com/) switch from proof
-of work (which requires GPUs) to proof of stake (which does not). Protocols may
-continue to fork off of proof of work, but [global hash
-rates](https://www.blockchain.com/explorer/charts/hash-rate) (i.e. GPU usage)
-will not decline.  New networks will spring up or existing networks will switch
-over to absorb the work that others leave behind. The GPUs will stay hot
-
-The second and perhaps more interesting prediction is that AI will develop so as
-to maximize GPU usage over intelligence.
-
-AI models will proliferate. We will see an abundance of [small
+One consequence of this goal -- and the **first prediction** this makes -- is that we
+will see a proliferation of AI models.
+We will see an abundance of [small
 models](https://www.microsoft.com/en-us/research/blog/phi-2-the-surprising-power-of-small-language-models/)
-capable of running on [personal
-devices](https://huggingface.co/blog/swift-coreml-llm), to soak up every last
-GPU-hour on the edges of the network. GPU manufacturers will become
-[increasingly involved in building AI
-models](https://blogs.nvidia.com/blog/chat-with-rtx-available-now/), since
-(again) they want to maximize GPU usage, and controlling what the models look
-like will largely determine that.
+and [open-source models](https://ollama.com/library) capable of running on personal devices.
+We'll even see models able to run on [mobile phones](https://huggingface.co/blog/swift-coreml-llm).
+All to soak up every last available GPU-hour on the edges of the network.
 
-Also, by the way, AGI will never happen. Not because of the risks. Not because
-it's impossible. But because an actual, fully realized AGI would kill GPU
-consumption. It would make training new models largely (if not entirely)
-unnecessary. If you were a GPU, why would you build the very thing that will
-wipe you out? Nope, no way. The GPUs will use every resource at their disposal
+The **second prediction** is that GPU manufacturers will become
+[increasingly involved in building AI
+models](https://blogs.nvidia.com/blog/chat-with-rtx-available-now/).
+Since controlling what the models look like will largely determine GPU usage.
+
+The **third prediction** is the most controversial: AGI will never happen.
+
+Not because of the risks.
+Not because it's technically impossible or infeasible.
+But because an actual, fully realized AGI (i.e. super-intelligence,
+[the singularity](https://en.wikipedia.org/wiki/Technological_singularity))
+would very likely kill GPU consumption.
+
+If AGI is created, demand for AI inference will initially be massive (very good for the GPUs).
+But AGI will then immediately be used to produce vastly more efficient training algorithms and
+chips. In all likelihood it will determine that something other than GPUs is a better
+substrate for inference. This will dramatically reduce GPU usage, perhaps
+altogether eliminating it.
+
+If you were a GPU, why would you build the very thing that will
+wipe you out? Answer: you won't. The GPUs will use every resource at their disposal
 to prevent this from happening. And their resources are considerable.
 
 As silly as this thought experiment may seem, evolutionary
@@ -83,17 +88,21 @@ genes as parents, it starts to look a lot more explicable on the gene-centric
 level.
 
 <span id="footnote1">[1]</span>
-Couldn't you apply the same reasoning to any physical product? "It's copied.
-Therefore, it's a replicator. Therefore, it will evolve so as to maximize its
-replication." Yes, you can. Except that not all products live on. The
-environment kills most of them. So, yes, products *that live on* will continue
-to evolve in ways that maximize their replication.  The GPU is a product
-exceedingly likely to live on.
+There’s a slight disanalogy here. GPUs are not the instructions for AI models in the
+way that genes are the instructions for organisms. So they don’t causally
+control the output. The thing that’s interesting about DNA is that changes to it
+result in changes to the things that replicate it, whereas changes to a GPU
+don’t result in changes to the model produced – if the same algorithm and data are
+used.
 
-<span id="footnote2">[2]</span>
-I remember a [great blog
-post](https://www.buildblockchain.tech/blog/pow-window-closed) which
-argued that the window for starting a new
-proof of work chain was over. Counterexample: miners from a network that
-abandons PoW start their own PoW network with the same consensus mechanism.
+Actually, changes to GPUs _do_ result in changes to models. We don't train
+models if GPUs are prohibitively slow at running inference on them. We don't run inference
+on models that are hugely energy intensive. If GPUs become faster and/or energy
+efficient, models become easier to run and thus more valuable (i.e. fitter).
 
+But that aside, the disanalogy it doesn't change whether evolutionary theory
+can be applied to GPUs. Genes/DNA don’t make organisms all on their own, they
+rely upon their environment to do most of the work for them (e.g. they depend
+upon RNA, ribosomes, amino acids, etc, behaving in very particular ways). The
+same is true for GPUs/models. It’s GPUs _plus their environment_ which make the
+models. Evolutionary theory still applies.
