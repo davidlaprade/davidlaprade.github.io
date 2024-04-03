@@ -31,6 +31,10 @@ But even they couldn’t be bothered to install a chrome plugin to get it. Clutt
 
 There was just no market for personalized UI, even if people genuinely believed it was better. (As [a survey we conducted](https://docs.google.com/forms/d/1kiSgew_US1ckkPFb_cJ0sc67ryN-kGbQyh5Mhsa9hvc/edit) showed they did 70% of the time.)
 
+In hindsight, this shouldn't have been surprising.
+People generally have very little interest in paying for UI innovations.
+Even the iPhone had to be heavily subsidized via [2-year cell phone plans](https://www.apple.com/newsroom/2007/06/26AT-T-and-Apple-Announce-Simple-Affordable-Service-Plans-for-iPhone/) with AT&T.
+
 If people aren’t willing to pay for something, you end up in a tragedy of the commons. No one is going to build it if no one can even be bothered to download it, let alone pay for it. Unless — it can be distributed and monetized *another* way, e.g. through a service people already “pay” for.
 
 Enter big tech.
