@@ -1,7 +1,7 @@
 ---
 title: "Your medical records are the most important thing missing from your will"
 tags: general health
-excerpt: "The case for including your medical records in your will."
+excerpt: "The case for passing your medical records onto your children."
 ---
 
 _DISCLAIMER: I am neither a doctor nor a lawyer and this does not constitute
@@ -12,7 +12,7 @@ wish my grandparents had done this for me. I hope my parents will consider doing
 it. You should consider doing it too.
 
 My grandparents weren’t alone in omitting their medical records. Almost everyone
-does it. A friend who practices estate law told me that his partner, who has
+does. A friend who practices estate law told me that his partner, who has
 been writing wills for 30 years, has only had medical records come up once. And
 only then because the children in the family didn’t talk and the father needed
 to make sure all of the kids were informed of a consequential medical condition
@@ -69,11 +69,23 @@ warning signs of significant conditions we’ll only identify decades
 from now. You can’t know whether your medical records will matter to your
 descendants until they do.
 
-And before you ask: no, you can’t just request the medical records of a deceased
-relative.
+When it comes to collecting your own medical records, the process is simple.
+You just have to call the provider, ask for the records, and (sometimes)
+authenticate who you are by answering a few questions. Then they'll send you the records they have.
 [HIPAA law](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act)
-understandably makes other people’s records very difficult
-to obtain. It bars health care providers from disclosing information of deceased
+requires them to do this, so they won't resist.
+
+They'll even send your records if they contain evidence of malpractice.
+A close family member once requested the
+records from her surgery and upon receiving them learned that a sponge had been
+left inside her.
+I've never had a problem getting copies of my records -- provided they still exist (more on this below).
+
+While it's easy to obtain your own records, it is very difficult to obtain the
+records of a deceased relative.
+[HIPAA](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act)
+is again the reason why.
+It bars health care providers from disclosing information of deceased
 people for 50 years following their deaths except to the
 [executor of their estate](https://www.investopedia.com/terms/e/executor.asp).
 
