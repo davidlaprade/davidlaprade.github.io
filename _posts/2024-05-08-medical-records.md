@@ -84,8 +84,7 @@ I've never had a problem getting copies of my records -- provided they still exi
 While it's easy to obtain your own records, it is very difficult to obtain the
 records of a deceased relative.
 [HIPAA](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act)
-is again the reason why.
-It bars health care providers from disclosing information of deceased
+bars health care providers from disclosing information of deceased
 people for 50 years following their deaths except to the
 [executor of their estate](https://www.investopedia.com/terms/e/executor.asp).
 
@@ -109,7 +108,7 @@ If you eventually secure the legal authority to obtain the records, you still
 need to find them. Which means tracking down each of the (often many) health
 care providers that your relatives saw. There is no master list for this. Which
 means again relying on anecdotes and doing a lot of leg work to call offices and
-confirm.
+confirm. And the providers might not even still be in business.
 
 At this point you might be thinking: _I don’t even know where all of my records
 are_. Most people don’t! Heck, I don’t. This fact underscores not only the
@@ -122,7 +121,7 @@ To make matters worse, providers are
 to destroy records after keeping them for just 7 years. A couple months ago I
 called a provider to request records from a surgery I had in 2009. All they had
 left were the accounting records. So even after you’ve gotten access and found
-the providers, the records might not even still exist. In this way, HIPPA’s 50
+the providers, the records might not even still exist. In this way, HIPAA’s 50
 year moratorium all but ensures that no one will ever see your records unless
 you pass them on.
 
