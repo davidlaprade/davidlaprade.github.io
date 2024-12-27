@@ -23,7 +23,7 @@ For instance...
 
 #### Transistors
 
-Transistors were invented at Bell Labs in 1947 within a solid state
+Transistors were invented at Bell Labs in December of 1947 within a solid state
 research group that had no specific operating goal. There was no reason to
 suspect that [solid state physics](https://en.wikipedia.org/wiki/Solid-state_physics)
 (a brand new field at the time) would yield anything useful
@@ -37,9 +37,21 @@ Bardeen and Walter Brattain had created the world's first semiconductor device.
 > together would require some serious consideration as well as some time. (__Idea
 > Factory__, Ch 12, 17:00 in the audiobook)
 
-Today transistors are used in virtually all electronics.
-No one could have known how important they would turn out to be because they didn’t have digital computers in mind.
-But eventually the transistor found its purpose.
+Importantly, no one at Bell Labs had digital computers in mind when they
+invented transistors. It took people outside of Bell Labs to point out that
+transistors could be used to create logical gates and switches (their most
+important use today).
+
+> “It appears that transistors might have important uses in electronic computer
+> circuits”, J. Forrester, the Associate Director of MIT’s Electrical Engineering
+> Department wrote to Baum in July of 1948. “In view of this fact, we would like to obtain
+> some sample transistors when they become available in order to investigate their
+> possible applications to high speed digital computing apparatus.” (__Idea
+> Factory__, Ch 13, 16:20)
+
+Today transistors are used in virtually all electronics.  No one could have
+known how important they would turn out to be because they didn’t have digital
+computers in mind.  But eventually the transistor found its purpose.
 
 #### Airplanes
 
@@ -86,7 +98,7 @@ another.
 The initial purpose for creating a large network of computers was actually
 [time-sharing](https://en.wikipedia.org/wiki/Time-sharing) -- splitting up
 processing power among many different users of the same machine. It was J.C.R.
-Licklider's [famous memo](https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network)
+Licklider's [famous 1963 memo](https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network)
 on the challenges of time-sharing that articulated a greater vision
 for the technology and led to [ARPANET](https://en.wikipedia.org/wiki/ARPANET), the precursor for the internet.
 
@@ -97,19 +109,16 @@ pitching an invention to help us order food, find dates, get rides, rent houses,
 share cat videos, and watch other people play video games. These are uses for it we
 discovered much later.
 
-#### AI Chatbots
-AI Chatbots, and ChatGPT in particular, are SISPs.
+#### ChatGPT
+No apologies for this one. ChatGPT was clearly a solution in search of a problem
+-- albeit one that found it's problem incredibly quickly.
 
-A lot of what happens at OpenAI is shrouded in mystery, and the origin of their
-flagship product is no different. But I think the circumstantial evidence that
-ChatGPT is a SISP is quite strong.
+OpenAI had developed ChatGPT months before they released it. They seem to have sat on it
+because most people at the company thought the product wasn't useful.
+Beta testers didn't even know what to do with it.
 
-Many high-level people at OpenAI admitted to being surprised by the popularity
-of the tool:
-
-> "None of us were that enamored by [ChatGPT]," Greg Brockman, also a cofounder of
-OpenAI, said in an interview with Forbes. **"None of us were like, 'This is really
-useful.'"**
+> None of us were that enamored by [ChatGPT] [. . .] **None of us were like, 'This is really
+useful.'** -- Greg Brockman, cofounder of OpenAI
 [[Source]](https://web.archive.org/web/20230206135241/https://www.forbes.com/sites/alexkonrad/2023/02/02/inside-chatggpts-breakout-moment-and-the-race-for-the-future-of-ai/?sh=40c04d0c240b)
 
 > "I will admit, to my slight embarrassment ... when we made ChatGPT, I didn't know
@@ -131,21 +140,32 @@ officer.
 
 Apparently Sam Altman [didn't even tell OpenAI's
 board](https://x.com/bilawalsidhu/status/1795534345345618298) before ChatGPT was
-released. The most obvious explanation is that he too didn't think much of it.
+released. The most obvious explanation is that he had no idea how useful people
+were going to find it.
 
 The essence of a SISP is that an inventor thinks his/her creation is
-interesting but doesn't know what concrete problem it solves. OpenAI clearly did not know
-what problems ChatGPT would solve for people.
+interesting but doesn't know what concrete problem it solves. I think ChatGPT checks both of these boxes.
+
+Clearly OpenAI thought it was interesting -- they used internal resources to
+develop and test it over the course of several months.
+Equally clearly, however, they did not know what problems ChatGPT would solve.
 They didn't think people would find it useful at all.
 They thought people wouldn't know what to do with it.
 They thought people would be bored.
 
-ChatGPT was a Hail Mary, something they just threw out there. The internet is still
-working out all of the problems it solves.
-
 ### Time to Problem
 
-I could go on, but those examples probably make my point.
+ChatGPT is an example of a SISP that found its problem very quickly.
+Said another way: its **time to problem** was very low. The same cannot be
+said for the other products on this list.
+
+Transistors took about 5 years to be commercially viable. Their first
+economically successful use was the [Sonotone 1010](https://en.wikipedia.org/wiki/Sonotone_1010), a hearing aid (not a computer).
+Airplanes took 7 years: the [first commercial flight](https://www.space.com/16657-worlds-first-commercial-airline-the-greatest-moments-in-flight.html) was in 1914.
+If we peg the creation of the internet to the launch of ARPANET in 1969, then it
+wasn't commercially viable for 21 years, when email clients like [Pegasus Mail](https://en.wikipedia.org/wiki/Pegasus_Mail) became available.
+Machine learning took a staggering 39 years to catch on, eventually doing so at financial
+institutions with the development of FICO scores.
 
 It’s hard to overstate the importance of many of these inventions.
 Transistors, airplanes, lasers, the internet, etc, all have fundamentally changed the world.
@@ -156,15 +176,14 @@ an [annual
 basis](https://www.mckinsey.com/industries/semiconductors/our-insights/the-semiconductor-decade-a-trillion-dollar-industry).
 
 Yet, it’s also hard to dispute YC’s claim that pursuing these kinds of things is a mistake.
-It’s impossible to build a business around a product that’s going to take 40-50 years to catch on.
+It’s impossible to build a business around a product that’s going to take 40 years to catch on.
 The internet didn’t make its creators rich.
 Nor did the transistor.
-It's not clear that [ChatGPT will](https://x.com/GaryMarcus/status/1816116071226868085).
-The value those inventions created was captured by other businesses/people
-because the time it took to find the problem they solved -- i.e. the
-__time-to-problem__ -- was way too long.
+It's not even clear that [ChatGPT will](https://x.com/GaryMarcus/status/1816116071226868085).
 
-But technology advances much faster now than it did at the time of these inventions (early/mid 1900s). This is evident in the increase in patent filings over time.
+But, as ChatGPT demonstrates so well, technology advances much faster now than
+it did at the time of these other inventions (early/mid 1900s). This is evident in the
+increase in patent filings over time.
 
 ![annual patent filings]({{ site.baseurl }}/jekyll_img/annual-patent-filings.jpg)
 
@@ -201,13 +220,17 @@ This means that if you do create something fundamentally useful, the amount of t
 it will take for you to find a problem for it to solve (and thus monetize it) is
 likely a fraction of the time it would have taken 50-100 years ago. That’s also
 ignoring the fact that it’s much easier to discover problems now than it ever
-has been before. **Time-to-problem is just going way down**.
+has been before (thanks to the internet). **Time-to-problem is just going way down**.
 
-So, will you be able to monetize an invention before you run out of money? Maybe! The answer isn’t definitely "no".
+So, will you be able to monetize an invention before you run out of money? The answer isn’t definitely "no".
+As AI continues to permeate society and increase creativity, and the
+internet continues to facilitate problem discovery, there is
+going to be intense downward pressure on time-to-problem.
+At some point, maybe soon, the risk/reward profile will invert.
 
 ### Conclusion
 
 There’s a lot worse things that you could be doing with your time
 than inventing things. A bunch of impractical inventions changed our world for
 the better, despite being SISPs, and despite not making their creators rich. And
-the odds of finding a problem the invention can solve have never been better.
+the odds of finding a problem an invention can solve have never been better.
