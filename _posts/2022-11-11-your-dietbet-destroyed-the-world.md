@@ -170,7 +170,7 @@ Within a couple months the extinctions began.
 
 You can probably see where I'm going with this.
 In hindsight it should have been obvious.
-Lucose was really [L-Glucose](https://en.wikipedia.org/wiki/L-Glucose), or left-handed glucose.
+Lucose was really [L-Sucrose](https://en.wikipedia.org/wiki/L-Glucose), or left-handed sugar.
 It still tasted every bit like sugar, but our gut enzymes couldn't break it down.
 It was the wrong shape -- backwards.
 It didn't fit the lock.
@@ -178,7 +178,7 @@ So the whole thing just passed right through us.
 
 Miln created the left-handed mirror-organisms that wrecked our planet.
 It's the simplest explanation by far.
-They were his "trade secret", allowing him to synthesize L-Glucose _en masse_.
+They were his "trade secret", allowing him to synthesize L-Sucrose _en masse_.
 He engineered them to consume right-handed nutrients and spit out left-.
 When they inevitably escaped, they quickly outcompeted their mirrored versions.
 They used the same resources, but nothing in Nature could touch them.
