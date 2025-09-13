@@ -90,6 +90,36 @@ Developed by several people and teams in the late 1950s (including one at Bell L
 From Wikipedia:
 > When lasers were invented in 1960, they were called "a solution looking for a problem". Since then, they have become ubiquitous, finding utility in thousands of highly varied applications in every section of modern society, including consumer electronics, information technology, science, medicine, industry, law enforcement, entertainment, and the military. [[Source](https://en.wikipedia.org/wiki/Laser#History)]
 
+#### Velcro
+
+Conceived by Swiss engineer George de Mestral after a hunting trip in 1941 when
+he looked at plant burs that were sticking to his clothing under a
+microscope. Also from
+[Wikipedia](https://en.m.wikipedia.org/wiki/Hook-and-loop_fastener):
+
+> De Mestral obtained patents in many countries right after inventing the
+> fasteners, as he expected an immediate high demand. Owing partly to its
+> cosmetic appearance, though, hook-and-loop's integration into the textile
+> industry took time. At the time, the fasteners looked as
+> though they had been made from leftover bits of cheap fabric, and thus were
+> not sewn into clothing or used widely when it debuted in the early 1960s.
+> It was also regarded as impractical.
+
+No one saw a use for it until NASA used it in the Gemini and Apollo
+programs, over 20 years after Velcro was initially developed:
+
+> [T]he fabric got its first break when it was used in the aerospace industry to
+> help astronauts maneuver in and out of bulky space suits. However, this use
+> reinforced the view among the populace that hook-and-loop was something with
+> very limited utilitarian uses. The next major use hook-and-loop saw was with
+> skiers, who saw the similarities between their outerwear and that of the
+> astronauts, and thus saw the advantages of a suit that was easier to don and
+> doff. Scuba and marine gear followed soon after. Having seen astronauts
+> storing food pouches on walls, children's clothing makers came on board.
+
+Today, it is hard to imagine having a child without the use of Velcro. But this
+was never on de Mestral's mind.
+
 #### The Internet
 Okay, okay, it's a bit of a stretch to call the Internet a SISP. But it is a good example of
 a technology developed for one thing that actually ended up being useful for
