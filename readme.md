@@ -1,6 +1,6 @@
 ## About
-This is my [blog](http://davidlaprade.github.io/blog/).
-It's powered by [Jekyll](http://jekyllrb.com).
+This is my [blog](https://laprade.blog).
+It's powered by [Jekyll](https://jekyllrb.com).
 
 Thanks to [Jacopo Rabolini](http://www.jacoporabolini.com) for designing the [theme](https://github.com/KingFelix/emerald), and to Github for hosting Jekyll sites for free.
 

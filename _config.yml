@@ -1,11 +1,13 @@
 # Site settings
 title: David Laprade | Blog
 description: "Yet another blog by a software developer."
-url: "http://davidlaprade.github.io"
+url: "https://laprade.blog"
+# Keep Atom identifiers stable when the public domain changes.
+feed_id: "http://davidlaprade.github.io"
 author:
   name: "David Laprade"
   email: "david.laprade@gmail.com"
-  url: "http://davidlaprade.github.io"
+  url: "https://laprade.blog"
 
 # Build settings
 baseurl: ""
