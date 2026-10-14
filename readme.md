@@ -6,6 +6,12 @@ Thanks to [Jacopo Rabolini](http://www.jacoporabolini.com) for designing the [th
 
 ### Development
 
+Use Ruby 3.3.12 (see `.ruby-version`), then install the locked dependencies:
+
+```bash
+bundle install
+```
+
 ```bash
 # start the jekyll server
 bundle exec jekyll serve
