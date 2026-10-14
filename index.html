@@ -19,7 +19,7 @@ redirect_from: "/blog/"
         <li><a href="{{ site.baseurl}}/tags#{{ tag }}" class="tag">{{ tag }}</a></li>
       {% endfor %}
     </ul>
-    <p>{{ post.excerpt || post.content | strip_html | truncatewords:50 }}</p>
+    <p>{{ post.excerpt | default: post.content | strip_html | truncatewords:50 }}</p>
   </li>
 
   {% endfor %}
