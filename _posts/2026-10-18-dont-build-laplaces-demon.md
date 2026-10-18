@@ -57,4 +57,15 @@ Incorporating more inputs usually means more parameters, greater training cost, 
 
 In other words: there are real engineering and scientific challenges. But I believe they can be solved. And, all else being equal, whoever can solve them is going to win.
 
-_Thanks to Arda P, Zach C, Luis P, Ryan S, and Liam M for helpful feedback on previous drafts of this post._
+(_Thanks to Arda P, Zach C, Luis P, Ryan S, and Liam M for helpful feedback on previous drafts of this post._)
+
+
+<br>
+
+---
+
+### Footnotes
+
+[1] Genetic information is not chemical in nature. It is _information_, information that just happens to have a chemical basis, but which could have been stored in any number of substrates (chemical, photo-electric, magnetic, etc) and with any number of encodings. Witness the [categorical inability of biologists to coherently define the word "gene"](https://plato.stanford.edu/entries/gene/), despite all the scientific, casual, and logical tools currently available to them. There’s a long literature on this.
+
+[2] Over three decades since Chalmers first identified the “hard problem” of consciousness, we are no closer to solving it. No closer to explaining not only how but _why_ any given neurological or computational state gives rise to the mental state that it does. (The most popular response to the problem [remains a denial that it even exists](https://survey2020.philpeople.org/survey/results/5042).)
