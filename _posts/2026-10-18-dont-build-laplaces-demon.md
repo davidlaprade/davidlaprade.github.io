@@ -34,7 +34,7 @@ One reason for this is that higher levels often contain “emergent” propertie
 
 Or, to use a biological example, no individual is herd-immune. Herd immunity arises only when a sufficient fraction of a population is immune and chains of transmission break down. The protection it extends to the susceptible few is a property of the population, not of any person within it. But knowing whether a population has heard immunity is vitally important to predicting whether any member will get sick.
 
-(Imagine trying to predict COVID spread and refusing – as a matter of principle – to take high-level information like herd immunity as an input to your model. Good luck!)
+(Imagine trying to predict COVID infection and refusing – as a matter of principle – to take high-level information like herd immunity as an input to your model. Good luck!)
 
 This matters for machine learning in scientific domains. Even when low-level data theoretically determines a target, forcing a model to reconstruct every useful higher-level regularity from that data may be computationally wasteful or statistically unrealistic. [It can _sometimes_ be done](https://arxiv.org/pdf/2605.27734). But even when it can, giving the model high- as well as low-level features can make relevant structure easier to learn and more efficient to infer.
 
